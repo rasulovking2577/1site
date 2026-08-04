@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Rasulov — начинающий Web Developer. HTML, CSS, JavaScript."
+    >
+
+    <title>Rasulov — Web Developer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Фоновое свечение -->
+    <div class="cursor-glow"></div>
+
+    <!-- Частицы -->
+    <canvas id="particles"></canvas>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container header-inner">
+
+            <a href="#home" class="logo">
+                Rasulov<span>.</span>
+            </a>
+
+
+            <nav class="nav" id="nav">
+
+                <a href="#home">Главная</a>
+                <a href="#about">Обо мне</a>
+                <a href="#skills">Навыки</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contacts">Контакты</a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <!-- Переключатель темы -->
+                <button
+                    class="theme-button"
+                    id="themeButton"
+                    aria-label="Переключить тему"
+                >
+                    ☀
+                </button>
+
+
+                <!-- Мобильное меню -->
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Открыть меню"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-content">
+
+                <div class="hero-info reveal">
+
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        Доступен для новых проектов
+                    </div>
+
+
+                    <p class="hero-small">
+                        HELLO, I'M
+                    </p>
+
+
+                    <h1>
+                        Rasulov<span>.</span>
+                    </h1>
+
+
+                    <h2>
+                        Начинающий
+                        <span id="typing"></span>
+                    </h2>
+
+
+                    <p class="hero-description">
+                        Изучаю HTML, CSS и JavaScript и создаю свои первые
+                        реальные проекты. Постепенно превращаю знания
+                        в современные и удобные веб-сайты.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="button primary-button">
+                            Смотреть проекты
+                            <span>→</span>
+                        </a>
+
+
+                        <a href="#contacts" class="button secondary-button">
+                            Связаться
+                        </a>
+
+                    </div>
+
+
+                    <div class="social-links">
+
+                        <a
+                            href="https://github.com/rasulovking2577"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                        <span></span>
+
+                        <p>WEB DEVELOPER</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Декоративная карточка -->
+                <div class="hero-card reveal">
+
+                    <div class="code-window">
+
+                        <div class="window-top">
+
+                            <div class="window-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <p>portfolio.js</p>
+
+                        </div>
+
+
+                        <div class="code-content">
+
+                            <p>
+                                <span class="code-purple">const</span>
+                                developer =
+                                <span class="code-red">"Rasulov"</span>;
+                            </p>
+
+                            <p>
+                                <span class="code-purple">const</span>
+                                skills = [
+                            </p>
+
+                            <p class="indent">
+                                <span class="code-red">"HTML"</span>,
+                            </p>
+
+                            <p class="indent">
+                                <span class="code-red">"CSS"</span>,
+                            </p>
+
+                            <p class="indent">
+                                <span class="code-red">"JavaScript"</span>
+                            </p>
+
+                            <p>];</p>
+
+                            <br>
+
+                            <p>
+                                <span class="code-purple">while</span>
+                                (learning) {
+                            </p>
+
+                            <p class="indent">
+                                improve();
+                            </p>
+
+                            <p class="indent">
+                                build();
+                            </p>
+
+                            <p class="indent">
+                                repeat();
+                            </p>
+
+                            <p>}</p>
+
+                            <div class="code-cursor"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="scroll-down">
+                <span>SCROLL</span>
+                <div></div>
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-number">01 / ABOUT</p>
+
+                    <h2>
+                        Обо <span>мне</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-text reveal">
+
+                        <p class="large-text">
+                            Я начинающий Web Developer, который
+                            <span>изучает веб-разработку</span>
+                            и постепенно превращает знания
+                            в реальные проекты.
+                        </p>
+
+
+                        <p>
+                            Сейчас я изучаю HTML, CSS и JavaScript.
+                            Мне нравится создавать интерфейсы,
+                            экспериментировать с дизайном и узнавать,
+                            как работают современные сайты.
+                        </p>
+
+
+                        <p>
+                            Каждый новый проект — это возможность
+                            научиться чему-то новому и стать лучше
+                            как разработчик.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-stats reveal">
+
+                        <div class="stat-card">
+                            <strong>01</strong>
+                            <span>Developer</span>
+                        </div>
+
+                        <div class="stat-card">
+                            <strong>04</strong>
+                            <span>Навыка</span>
+                        </div>
+
+                        <div class="stat-card">
+                            <strong>∞</strong>
+                            <span>Идей</span>
+                        </div>
+
+                        <div class="stat-card">
+                            <strong>24/7</strong>
+                            <span>Learning</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section class="section skills-section" id="skills">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-number">02 / SKILLS</p>
+
+                    <h2>
+                        Мои <span>навыки</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="skills-list">
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-header">
+
+                            <div>
+                                <span class="skill-index">01</span>
+                                <h3>HTML</h3>
+                            </div>
+
+                            <span class="skill-percent">90%</span>
+
+                        </div>
+
+
+                        <div class="skill-bar">
+                            <div
+                                class="skill-progress"
+                                data-width="90%"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-header">
+
+                            <div>
+                                <span class="skill-index">02</span>
+                                <h3>CSS</h3>
+                            </div>
+
+                            <span class="skill-percent">85%</span>
+
+                        </div>
+
+
+                        <div class="skill-bar">
+                            <div
+                                class="skill-progress"
+                                data-width="85%"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-header">
+
+                            <div>
+                                <span class="skill-index">03</span>
+                                <h3>JavaScript</h3>
+                            </div>
+
+                            <span class="skill-percent">65%</span>
+
+                        </div>
+
+
+                        <div class="skill-bar">
+                            <div
+                                class="skill-progress"
+                                data-width="65%"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="skill reveal">
+
+                        <div class="skill-header">
+
+                            <div>
+                                <span class="skill-index">04</span>
+                                <h3>GitHub</h3>
+                            </div>
+
+                            <span class="skill-percent">70%</span>
+
+                        </div>
+
+
+                        <div class="skill-bar">
+                            <div
+                                class="skill-progress"
+                                data-width="70%"
+                            ></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section class="section" id="projects">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-number">03 / PROJECTS</p>
+
+                    <h2>
+                        Мои <span>проекты</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Здесь будут появляться мои новые работы
+                        по мере развития навыков.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-number">
+                            01
+                        </div>
+
+
+                        <div class="project-icon">
+                            &lt;/&gt;
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-label">
+                                IN DEVELOPMENT
+                            </p>
+
+                            <h3>
+                                Первый сайт
+                            </h3>
+
+                            <p>
+                                Первый проект, созданный для практики
+                                HTML и CSS.
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-bottom">
+
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+
+                            <span class="project-arrow">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-number">
+                            02
+                        </div>
+
+
+                        <div class="project-icon">
+                            { }
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-label">
+                                COMING SOON
+                            </p>
+
+                            <h3>
+                                JavaScript Project
+                            </h3>
+
+                            <p>
+                                Интерактивный проект, который появится
+                                после изучения JavaScript.
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-bottom">
+
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+
+                            <span class="project-arrow">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-number">
+                            03
+                        </div>
+
+
+                        <div class="project-icon">
+                            #
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-label">
+                                FUTURE
+                            </p>
+
+                            <h3>
+                                Новый проект
+                            </h3>
+
+                            <p>
+                                Здесь появится один из будущих
+                                проектов Rasulov.
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-bottom">
+
+                            <div class="tags">
+                                <span>Coming Soon</span>
+                            </div>
+
+                            <span class="project-arrow">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACTS
+        ========================== -->
+
+        <section class="section contact-section" id="contacts">
+
+            <div class="container">
+
+                <div class="contact-box reveal">
+
+                    <p class="section-number">
+                        04 / CONTACT
+                    </p>
+
+
+                    <h2>
+                        Давай создадим
+                        <span>что-нибудь крутое.</span>
+                    </h2>
+
+
+                    <p>
+                        Я продолжаю учиться и создавать новые проекты.
+                        Следить за моим развитием можно на GitHub.
+                    </p>
+
+
+                    <a
+                        href="https://github.com/rasulovking2577"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button primary-button"
+                    >
+                        Открыть GitHub
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <a href="#home" class="logo">
+                Rasulov<span>.</span>
+            </a>
+
+
+            <p>
+                Designed & built by Rasulov
+            </p>
+
+
+            <a
+                href="https://github.com/rasulovking2577"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub ↗
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
