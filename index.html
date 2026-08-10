@@ -1,799 +1,1202 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>1САЙТ — разработка сайтов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ОСНОВНЫЕ СТИЛИ (как на твоём website) ===== */
+        :root {
+            --deep: #0A1F1A;
+            --deep-2: #08160F;
+            --green: #12352A;
+            --green-2: #1A4D2E;
+            --green-bright: #006B4D;
+            --gold: #D4AF37;
+            --gold-soft: #C9A84C;
+            --gold-dim: #8f7a2c;
+            --white: #FFFFFF;
+            --gray: #B0BEC5;
+            --gray-dim: #7c8b90;
+            --radius: 14px;
+            --ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
-  <meta
-    name="description"
-    content="Rasulov — разработка современных сайтов для бизнеса. Сайты-визитки, лендинги и портфолио."
-  >
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--deep);
+            color: var(--white);
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            letter-spacing: -.01em;
+        }
+        a { color: inherit; text-decoration: none; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        button { font-family: inherit; border: none; cursor: pointer; background: none; color: inherit; }
+        ::selection { background: var(--gold); color: var(--deep-2); }
 
-  <meta name="theme-color" content="#090909">
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+        section { position: relative; padding: 110px 0; }
 
-  <title>Rasulov — сайты для бизнеса</title>
+        /* ===== КАСТОМНЫЙ КУРСОР ===== */
+        .custom-cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 28px; height: 28px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width .3s var(--ease), height .3s var(--ease), background .3s var(--ease);
+            mix-blend-mode: difference;
+        }
+        .custom-cursor::after {
+            content: "1";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 11px;
+            color: var(--gold);
+            opacity: 0;
+            transition: opacity .3s var(--ease);
+        }
+        .custom-cursor.grow { width: 56px; height: 56px; background: rgba(212, 175, 55, 0.08); }
+        .custom-cursor.grow::after { opacity: 1; }
+        @media (hover: none), (pointer: coarse) { .custom-cursor { display: none; } }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        /* ===== ШАПКА ===== */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 22px 0;
+            background: rgba(10, 31, 26, 0);
+            border-bottom: 1px solid transparent;
+            transition: background .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease);
+        }
+        header.scrolled {
+            background: rgba(8, 22, 15, .88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(212, 175, 55, .15);
+            padding: 14px 0;
+        }
+        header .container { display: flex; align-items: center; justify-content: space-between; }
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); display: inline-block; }
+        nav ul { display: flex; gap: 38px; }
+        nav a {
+            font-size: .92rem;
+            color: var(--gray);
+            position: relative;
+            padding: 4px 0;
+            transition: color .3s var(--ease);
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 0; height: 1.5px;
+            background: var(--gold);
+            transition: width .3s var(--ease);
+        }
+        nav a:hover { color: var(--white); }
+        nav a:hover::after { width: 100%; }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+        .burger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+        .burger span { width: 24px; height: 1.5px; background: var(--gold); display: block; transition: transform .3s var(--ease), opacity .3s var(--ease); }
 
-  <link rel="stylesheet" href="style.css">
+        /* ===== ГЛАВНЫЙ ЭКРАН ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--deep) 0%, var(--deep-2) 40%, #0d2b21 70%, var(--deep) 100%);
+            background-size: 300% 300%;
+            animation: gradientShift 18s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 18% 20%, rgba(0, 107, 77, .35), transparent 45%),
+                radial-gradient(circle at 82% 78%, rgba(212, 175, 55, .08), transparent 40%);
+            pointer-events: none;
+        }
+        #particles {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        .hero .container { position: relative; z-index: 2; }
+        .hero-inner { max-width: 760px; }
+        .hero h1 {
+            font-size: clamp(2.1rem, 5vw, 3.6rem);
+            line-height: 1.15;
+            color: var(--white);
+            min-height: calc(1.15 * clamp(2.1rem, 5vw, 3.6rem) * 2);
+        }
+        .hero h1 .cycle {
+            color: var(--gold-soft);
+            text-shadow: 0 0 30px rgba(212, 175, 55, .4);
+            display: inline-block;
+        }
+        .hero h1 .cursor-blink {
+            display: inline-block;
+            width: 3px;
+            background: var(--gold);
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+            vertical-align: -.1em;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        .hero p.sub {
+            margin-top: 26px;
+            font-size: 1.08rem;
+            color: var(--gray);
+            max-width: 520px;
+        }
+        .hero .cta-row {
+            display: flex;
+            gap: 18px;
+            margin-top: 44px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 30px;
+            border-radius: 100px;
+            font-size: .95rem;
+            font-weight: 700;
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+        }
+        .btn-primary { background: var(--gold); color: var(--deep-2); }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -8px rgba(212, 175, 55, .55); }
+        .btn-ghost { background: transparent; color: var(--gold-soft); border: 1px solid rgba(212, 175, 55, .4); }
+        .btn-ghost:hover { background: rgba(212, 175, 55, .08); border-color: var(--gold); transform: translateY(-4px); }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 36px;
+            left: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .7rem;
+            letter-spacing: .15em;
+            color: var(--gray-dim);
+            text-transform: uppercase;
+            z-index: 2;
+        }
+        .scroll-hint .line {
+            width: 34px; height: 1px;
+            background: var(--gray-dim);
+            position: relative;
+            overflow: hidden;
+        }
+        .scroll-hint .line::after {
+            content: "";
+            position: absolute;
+            left: -100%; top: 0;
+            width: 100%; height: 100%;
+            background: var(--gold);
+            animation: hintMove 2.2s ease infinite;
+        }
+        @keyframes hintMove {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        /* ===== REVEAL (появление при скролле) ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .9s var(--ease), transform .9s var(--ease);
+        }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+
+        /* ===== ВЫЕЗД СПРАВА (с упругостью) ===== */
+        .slide-right {
+            opacity: 0;
+            transform: translateX(120px);
+            transition: opacity 1s var(--ease), transform 1s var(--ease);
+        }
+        .slide-right.in { opacity: 1; transform: translateX(0); }
+
+        /* ===== ЗАГОЛОВКИ СЕКЦИЙ ===== */
+        .section-head { max-width: 640px; margin-bottom: 64px; }
+        .section-head .eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .72rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--gold-soft);
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+        .section-head h2 {
+            font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+            color: var(--white);
+        }
+        .section-head p {
+            color: var(--gray);
+            margin-top: 16px;
+            font-size: 1.02rem;
+        }
+
+        /* ===== ПРОБЛЕМА ===== */
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .path-card {
+            background: linear-gradient(180deg, var(--green) 0%, rgba(18, 53, 42, .4) 100%);
+            border: 1px solid rgba(212, 175, 55, .15);
+            border-radius: var(--radius);
+            padding: 38px 30px;
+        }
+        .path-card .icon {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, .1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-bottom: 22px;
+        }
+        .path-card h3 { font-size: 1.15rem; color: var(--white); margin-bottom: 10px; }
+        .path-card p { color: var(--gray); font-size: .94rem; }
+        .path-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-dim);
+            font-size: 1.4rem;
+        }
+        @media (max-width: 860px) {
+            .path-grid { grid-template-columns: 1fr; gap: 18px; }
+            .path-arrow { transform: rotate(90deg); height: 24px; }
+        }
+
+        /* ===== УСЛУГИ (с 3D-наклоном) ===== */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+        .service-card {
+            background: var(--green);
+            border: 1px solid rgba(212, 175, 55, .14);
+            border-radius: var(--radius);
+            padding: 36px 30px;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
+            display: flex;
+            flex-direction: column;
+            min-height: 340px;
+            transform-style: preserve-3d;
+            perspective: 900px;
+        }
+        .service-card .tilt-inner {
+            transition: transform .12s ease-out, box-shadow .4s var(--ease);
+            transform: rotateX(var(--ry, 0)) rotateY(var(--rx, 0));
+            will-change: transform;
+        }
+        .service-card:hover,
+        .service-card.active {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .55);
+            border-color: rgba(212, 175, 55, .4);
+        }
+        .service-card .num {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--gold-dim);
+            font-size: .8rem;
+            margin-bottom: 18px;
+        }
+        .service-card h3 { font-size: 1.3rem; color: var(--white); margin-bottom: 12px; }
+        .service-card p.desc { color: var(--gray); font-size: .94rem; flex: 1; }
+        .service-extra {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s var(--ease), margin .5s var(--ease);
+            font-size: .87rem;
+            color: var(--gold-soft);
+            border-top: 1px solid transparent;
+        }
+        .service-card:hover .service-extra,
+        .service-card.active .service-extra {
+            max-height: 120px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(212, 175, 55, .2);
+        }
+        .service-card .go {
+            margin-top: 20px;
+            color: var(--gold);
+            font-size: .9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .service-card .go svg { transition: transform .3s var(--ease); }
+        .service-card:hover .go svg { transform: translateX(4px); }
+        @media (max-width: 860px) { .service-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ПОРТФОЛИО ===== */
+        .folio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
+        }
+        .folio-card {
+            background: var(--green);
+            border: 1px solid rgba(212, 175, 55, .14);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+            transform-style: preserve-3d;
+            perspective: 900px;
+        }
+        .folio-card .tilt-inner {
+            transition: transform .12s ease-out;
+            transform: rotateX(var(--ry, 0)) rotateY(var(--rx, 0));
+            will-change: transform;
+        }
+        .folio-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .6);
+        }
+        .folio-shot {
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, var(--green-2), var(--deep-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .folio-shot iframe {
+            width: 180%;
+            height: 180%;
+            border: 0;
+            transform: scale(.56);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+        .folio-body { padding: 26px 28px 30px; }
+        .folio-body h3 { font-size: 1.25rem; color: var(--white); }
+        .folio-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 14px 0 16px;
+        }
+        .folio-tags span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .7rem;
+            color: var(--gold-soft);
+            border: 1px solid rgba(212, 175, 55, .3);
+            border-radius: 100px;
+            padding: 4px 12px;
+        }
+        .folio-extra {
+            font-size: .88rem;
+            color: var(--gray);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s var(--ease);
+        }
+        .folio-card:hover .folio-extra,
+        .folio-card.active .folio-extra { max-height: 60px; }
+        .folio-link {
+            margin-top: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: .92rem;
+        }
+        .folio-next {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 32px;
+            background: repeating-linear-gradient(135deg, var(--green) 0 12px, var(--deep-2) 12px 24px);
+        }
+        .folio-next h3 { color: var(--white); font-size: 1.4rem; margin-bottom: 10px; }
+        .folio-next p { color: var(--gray); font-size: .92rem; margin-bottom: 22px; }
+        @media (max-width: 860px) { .folio-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ТАЙМЛАЙН (с авто-прогрессом) ===== */
+        .timeline-track {
+            position: relative;
+            height: 2px;
+            background: rgba(212, 175, 55, .18);
+            border-radius: 2px;
+        }
+        .timeline-progress {
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%;
+            width: 0%;
+            background: var(--gold);
+            border-radius: 2px;
+            transition: width 1s var(--ease);
+            box-shadow: 0 0 16px rgba(212, 175, 55, .6);
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            margin-top: -1px;
+        }
+        .step {
+            padding-top: 28px;
+            position: relative;
+            cursor: pointer;
+        }
+        .step::before {
+            content: "";
+            position: absolute;
+            top: -6px; left: 0;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: var(--deep);
+            border: 2px solid var(--gold-dim);
+            transition: background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease), transform .4s var(--ease);
+        }
+        .step.active::before {
+            background: var(--gold);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, .18);
+            transform: scale(1.1);
+        }
+        .step .step-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .72rem;
+            color: var(--gold-dim);
+        }
+        .step.active .step-num { color: var(--gold); }
+        .step h4 {
+            margin-top: 8px;
+            font-size: 1rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        .step p {
+            margin-top: 10px;
+            font-size: .86rem;
+            color: var(--gray);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s var(--ease);
+        }
+        .step.active p { max-height: 140px; }
+        @media (max-width: 860px) {
+            .steps { grid-template-columns: 1fr; gap: 0; }
+            .step { padding: 18px 0 18px 24px; border-left: 2px solid rgba(212, 175, 55, .18); }
+            .step::before { top: 22px; left: -7px; }
+            .timeline-track { display: none; }
+        }
+
+        /* ===== ПОЧЕМУ Я + СЧЁТЧИКИ ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-bottom: 70px;
+        }
+        .why-card {
+            padding: 30px 24px;
+            background: var(--green);
+            border: 1px solid rgba(212, 175, 55, .12);
+            border-radius: var(--radius);
+        }
+        .why-card .icon {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, .4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 18px;
+            transition: transform .5s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
+        }
+        .why-card:hover .icon {
+            transform: rotate(360deg);
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+        .why-card h4 { font-size: 1rem; color: var(--white); font-weight: 600; }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            border-top: 1px solid rgba(212, 175, 55, .15);
+            padding-top: 50px;
+        }
+        .stat { text-align: center; }
+        .stat .num {
+            font-family: 'Fraunces', serif;
+            font-size: 2.6rem;
+            color: var(--gold);
+            font-weight: 600;
+            display: inline-block;
+            transition: transform .3s ease;
+        }
+        .stat .num.pulse {
+            animation: statPulse .5s ease;
+        }
+        @keyframes statPulse {
+            0% { transform: scale(1); text-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+            50% { transform: scale(1.15); text-shadow: 0 0 30px rgba(212, 175, 55, .7); }
+            100% { transform: scale(1); text-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        .stat .label {
+            margin-top: 8px;
+            font-size: .85rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+        @media (max-width: 860px) {
+            .why-grid { grid-template-columns: 1fr 1fr; }
+            .stats-row { grid-template-columns: 1fr; gap: 34px; }
+        }
+
+        /* ===== КОНТАКТЫ ===== */
+        .contact-section {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 107, 77, .28), transparent 60%), var(--deep-2);
+            text-align: center;
+        }
+        .contact-section .eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .72rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--gold-soft);
+            display: block;
+            margin-bottom: 14px;
+        }
+        .contact-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            max-width: 680px;
+            margin: 0 auto 20px;
+        }
+        .contact-section p.lead {
+            color: var(--gray);
+            max-width: 480px;
+            margin: 0 auto 46px;
+        }
+        .pulse-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 22px 46px;
+            background: var(--gold);
+            color: var(--deep-2);
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+        .pulse-btn::before, .pulse-btn::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 100px;
+            border: 1.5px solid var(--gold);
+            animation: pulseRing 2.4s var(--ease) infinite;
+        }
+        .pulse-btn::after { animation-delay: 1.2s; }
+        @keyframes pulseRing {
+            0% { transform: scale(1); opacity: .6; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .contact-meta {
+            margin-top: 34px;
+            display: flex;
+            gap: 26px;
+            justify-content: center;
+            flex-wrap: wrap;
+            color: var(--gray-dim);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .82rem;
+        }
+        .contact-meta a { color: var(--gray); transition: color .3s; }
+        .contact-meta a:hover { color: var(--gold); }
+
+        /* ===== ПОДВАЛ ===== */
+        footer {
+            padding: 44px 0;
+            border-top: 1px solid rgba(212, 175, 55, .12);
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        footer .copy { color: var(--gray-dim); font-size: .85rem; }
+        footer .socials { display: flex; gap: 20px; }
+        footer .socials a { color: var(--gray-dim); font-size: .85rem; transition: color .3s; }
+        footer .socials a:hover { color: var(--gold); }
+
+        /* ===== МОБИЛЬНАЯ ШАПКА ===== */
+        @media (max-width: 900px) {
+            nav {
+                position: fixed;
+                top: 0; right: 0;
+                height: 100vh;
+                width: min(78vw, 320px);
+                background: var(--deep-2);
+                border-left: 1px solid rgba(212, 175, 55, .15);
+                transform: translateX(100%);
+                transition: transform .45s var(--ease);
+                z-index: 1001;
+                padding: 100px 36px;
+            }
+            nav.open { transform: translateX(0); }
+            nav ul { flex-direction: column; gap: 28px; }
+            nav a { font-size: 1.05rem; }
+            .burger { display: flex; }
+            .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+            .burger.open span:nth-child(2) { opacity: 0; }
+            .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+        }
+        @media (max-width: 640px) {
+            section { padding: 76px 0; }
+            .hero { padding-top: 110px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="header" id="header">
+<div class="custom-cursor" id="customCursor"></div>
 
-  <a href="#home" class="logo">
-    R<span>.</span>
-  </a>
-
-  <nav class="nav">
-    <a href="#services">Услуги</a>
-    <a href="#portfolio">Работы</a>
-    <a href="#process">Процесс</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
-
-  <a href="#contacts" class="header-btn">
-    Обсудить проект
-  </a>
-
-  <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">
-    <span></span>
-    <span></span>
-  </button>
-
+<header id="siteHeader">
+    <div class="container">
+        <a href="#home" class="logo"><span class="dot"></span>1САЙТ</a>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#process">Процесс</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="burger" id="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+    </div>
 </header>
 
-
-<div class="mobile-menu" id="mobileMenu">
-
-  <a href="#services">Услуги</a>
-  <a href="#portfolio">Работы</a>
-  <a href="#process">Процесс</a>
-  <a href="#contacts">Контакты</a>
-
-  <a href="#contacts" class="mobile-cta">
-    Обсудить проект →
-  </a>
-
-</div>
-
-
-<main>
-
-  <!-- HERO -->
-
-  <section class="hero" id="home">
-
-    <div class="hero-grid"></div>
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-        <span class="status"></span>
-        МАХАЧКАЛА · РАБОТАЮ УДАЛЁННО
-      </div>
-
-      <h1>
-        Разрабатываю сайты,
-        <span>которые помогают бизнесу получать заявки.</span>
-      </h1>
-
-      <p class="hero-text">
-        Создаю современные сайты для бизнеса:
-        от простых сайтов-визиток до продающих лендингов.
-        Дизайн, адаптив, вёрстка и запуск — в одном проекте.
-      </p>
-
-      <div class="hero-actions">
-
-        <a href="#portfolio" class="btn btn-primary">
-          Посмотреть работы
-          <span>↓</span>
-        </a>
-
-        <a href="#contacts" class="btn btn-secondary">
-          Обсудить проект
-          <span>↗</span>
-        </a>
-
-      </div>
-
-      <div class="hero-meta">
-
-        <div>
-          <strong>03</strong>
-          <span>реальных проекта</span>
+<!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
+<section class="hero" id="home">
+    <canvas id="particles"></canvas>
+    <div class="container">
+        <div class="hero-inner">
+            <span class="eyebrow" style="font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);display:inline-block;margin-bottom:14px;">1САЙТ / веб-студия одного человека</span>
+            <h1 id="typewriter"></h1>
+            <p class="sub reveal">Создаю современные сайты для бизнеса — от визиток до лендингов. Махачкала / работаю удалённо.</p>
+            <div class="cta-row reveal">
+                <a href="#portfolio" class="btn btn-primary">Посмотреть работы</a>
+                <a href="#contact" class="btn btn-ghost">Обсудить проект</a>
+            </div>
         </div>
-
-        <div>
-          <strong>100%</strong>
-          <span>адаптив под телефон</span>
-        </div>
-
-        <div>
-          <strong>1:1</strong>
-          <span>работа напрямую</span>
-        </div>
-
-      </div>
-
     </div>
+    <div class="scroll-hint"><span>Листайте вниз</span><span class="line"></span></div>
+</section>
 
-    <div class="hero-side">
-      <span>WEB DEVELOPMENT</span>
-      <span>2026</span>
+<!-- ===== ПРОБЛЕМА ===== -->
+<section id="problem">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Знакомая ситуация?</span>
+            <h2>От проблемы к результату — три шага</h2>
+            <p>Большинство сайтов малого бизнеса выглядят одинаково и не приносят заявок. Вот что я меняю.</p>
+        </div>
+        <div class="path-grid">
+            <div class="path-card slide-right">
+                <div class="icon">⚠</div>
+                <h3>Сайт есть, а заявок нет</h3>
+                <p>Посетители заходят и уходят — нет понятного призыва к действию и доверия с первого экрана.</p>
+            </div>
+            <div class="path-arrow slide-right" style="transition-delay:.1s;">→</div>
+            <div class="path-card slide-right" style="transition-delay:.2s;">
+                <div class="icon">✎</div>
+                <h3>Продумываю путь клиента</h3>
+                <p>Строю структуру так, чтобы каждый блок вёл человека к заявке, а не просто рассказывал о вас.</p>
+            </div>
+            <div class="path-arrow slide-right" style="transition-delay:.3s;">→</div>
+            <div class="path-card slide-right" style="transition-delay:.4s;">
+                <div class="icon">✓</div>
+                <h3>Сайт, который продаёт</h3>
+                <p>Быстрый, адаптивный, с понятными кнопками связи — работает на телефоне так же хорошо, как на компьютере.</p>
+            </div>
+        </div>
     </div>
+</section>
 
-  </section>
-
-
-  <!-- PROBLEM -->
-
-  <section class="section problem-section">
-
-    <div class="section-label">
-      <span>01</span>
-      ПРОБЛЕМА
+<!-- ===== УСЛУГИ ===== -->
+<section id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Услуги</span>
+            <h2>Три формата — под разные задачи бизнеса</h2>
+            <p>Выбираем формат под вашу цель: познакомить, продать или привести локальных клиентов.</p>
+        </div>
+        <div class="service-grid">
+            <div class="service-card slide-right">
+                <div class="tilt-inner">
+                    <div class="num">01</div>
+                    <h3>Сайт-визитка</h3>
+                    <p class="desc">Компактный сайт о вас или компании: услуги, портфолио, контакты. Быстро запускается и легко обновляется.</p>
+                    <div class="service-extra">Пример: одностраничный сайт с формой связи и адаптивной вёрсткой под все экраны.</div>
+                    <a href="https://rasulovking2577.github.io/website/" target="_blank" rel="noopener" class="go">Смотреть пример
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="service-card slide-right" style="transition-delay:.15s;">
+                <div class="tilt-inner">
+                    <div class="num">02</div>
+                    <h3>Продающий лендинг</h3>
+                    <p class="desc">Одностраничник под конкретный продукт или услугу: боли клиента, выгоды, отзывы, чёткий призыв к заявке.</p>
+                    <div class="service-extra">Пример: лендинг для автосервиса с блоками услуг, ценами и кнопкой записи.</div>
+                    <a href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener" class="go">Смотреть пример
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="service-card slide-right" style="transition-delay:.3s;">
+                <div class="tilt-inner">
+                    <div class="num">03</div>
+                    <h3>Сайт для локального бизнеса</h3>
+                    <p class="desc">Барбершопы, салоны, мастерские: карта, часы работы, услуги с ценами и быстрая связь в один клик.</p>
+                    <div class="service-extra">Пример в разработке — покажу по запросу в переписке.</div>
+                    <a href="#contact" class="go">Обсудить проект
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="problem-grid">
-
-      <div>
-        <h2>
-          Клиент ищет ваш бизнес,
-          <span>а сайт не помогает ему выбрать.</span>
-        </h2>
-      </div>
-
-      <div class="problem-list">
-
-        <div class="problem-item">
-          <span>01</span>
-          <div>
-            <h3>Сайта нет</h3>
-            <p>
-              Потенциальный клиент видит только социальные сети
-              и не получает полноценного представления о бизнесе.
-            </p>
-          </div>
+<!-- ===== ПОРТФОЛИО ===== -->
+<section id="portfolio">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Портфолио</span>
+            <h2>Реальные проекты, не макеты</h2>
+            <p>Каждый сайт — рабочий, с формой связи и адаптивом под телефон.</p>
         </div>
-
-        <div class="problem-item">
-          <span>02</span>
-          <div>
-            <h3>Сайт устарел</h3>
-            <p>
-              Старый дизайн и неудобная мобильная версия
-              снижают доверие к компании.
-            </p>
-          </div>
+        <div class="folio-grid">
+            <div class="folio-card slide-right">
+                <div class="tilt-inner">
+                    <div class="folio-shot"><iframe src="https://rasulovking2577.github.io/website/" loading="lazy" title="Превью: сайт-визитка"></iframe></div>
+                    <div class="folio-body">
+                        <h3>Сайт-визитка</h3>
+                        <div class="folio-tags"><span>HTML/CSS/JS</span><span>Адаптив</span></div>
+                        <div class="folio-extra">Адаптив, быстрая загрузка, форма связи.</div>
+                        <a href="https://rasulovking2577.github.io/website/" target="_blank" rel="noopener" class="folio-link">Открыть проект ↗</a>
+                    </div>
+                </div>
+            </div>
+            <div class="folio-card slide-right" style="transition-delay:.15s;">
+                <div class="tilt-inner">
+                    <div class="folio-shot"><iframe src="https://rasulovking2577.github.io/Aragvi/" loading="lazy" title="Превью: лендинг Aragvi"></iframe></div>
+                    <div class="folio-body">
+                        <h3>Лендинг для автосервиса «Aragvi»</h3>
+                        <div class="folio-tags"><span>HTML/CSS/JS</span><span>Лендинг</span></div>
+                        <div class="folio-extra">Блоки услуг, цены, кнопка записи, мобильная версия.</div>
+                        <a href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener" class="folio-link">Открыть проект ↗</a>
+                    </div>
+                </div>
+            </div>
+            <div class="folio-card folio-next slide-right" style="transition-delay:.3s;">
+                <h3>Следующий проект — ваш?</h3>
+                <p>Расскажите о задаче — отвечу с решением и ценой в течение дня.</p>
+                <a href="#contact" class="btn btn-primary">Заказать сайт →</a>
+            </div>
         </div>
-
-        <div class="problem-item">
-          <span>03</span>
-          <div>
-            <h3>Нет понятного действия</h3>
-            <p>
-              Клиент не понимает, что делать дальше:
-              звонить, писать или оставлять заявку.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
     </div>
+</section>
 
-  </section>
-
-
-  <!-- SERVICES -->
-
-  <section class="section services-section" id="services">
-
-    <div class="section-label">
-      <span>02</span>
-      УСЛУГИ
+<!-- ===== ПРОЦЕСС ===== -->
+<section id="process">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Процесс</span>
+            <h2>Пять шагов от идеи до запуска</h2>
+            <p>Таймлайн проходит сам — или нажмите на шаг, чтобы посмотреть детали.</p>
+        </div>
+        <div class="reveal">
+            <div class="timeline-track"><div class="timeline-progress" id="timelineProgress"></div></div>
+            <div class="steps" id="stepsList">
+                <div class="step active" data-i="1"><div class="step-num">01</div><h4>Обсуждаем</h4><p>Разбираем задачу, целевых клиентов и то, какой результат должен дать сайт.</p></div>
+                <div class="step" data-i="2"><div class="step-num">02</div><h4>Прототип</h4><p>Собираю структуру блоков — вы видите логику сайта ещё до дизайна.</p></div>
+                <div class="step" data-i="3"><div class="step-num">03</div><h4>Верстаю</h4><p>Делаю адаптивную вёрстку с анимациями и формой связи.</p></div>
+                <div class="step" data-i="4"><div class="step-num">04</div><h4>Тестирую</h4><p>Проверяю на телефонах, планшетах и разных браузерах.</p></div>
+                <div class="step" data-i="5"><div class="step-num">05</div><h4>Запускаю</h4><p>Публикую сайт и передаю доступ — вы получаете готовый рабочий инструмент.</p></div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="section-heading">
-
-      <h2>
-        Проблема →
-        <span>решение.</span>
-      </h2>
-
-      <p>
-        Не продаю просто набор страниц.
-        Сначала разбираюсь, что должен сделать сайт,
-        затем собираю решение вокруг этой задачи.
-      </p>
-
+<!-- ===== ПОЧЕМУ Я ===== -->
+<section id="why">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Почему я</span>
+            <h2>Работаю напрямую, без агентства</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal"><div class="icon">◆</div><h4>Без посредников</h4></div>
+            <div class="why-card reveal"><div class="icon">▣</div><h4>Адаптив под телефон</h4></div>
+            <div class="why-card reveal"><div class="icon">⚡</div><h4>Быстрая связь</h4></div>
+            <div class="why-card reveal"><div class="icon">●</div><h4>Реальные проекты</h4></div>
+        </div>
+        <div class="stats-row reveal">
+            <div class="stat"><div class="num" data-target="5" data-suffix="+">0</div><div class="label">Проектов</div></div>
+            <div class="stat"><div class="num" data-target="100" data-suffix="%">0</div><div class="label">Адаптив</div></div>
+            <div class="stat"><div class="num" data-target="24" data-suffix="/7">0</div><div class="label">На связи</div></div>
+        </div>
     </div>
+</section>
 
-
-    <div class="services">
-
-      <article class="service-card">
-
-        <div class="service-number">01</div>
-
-        <div class="service-main">
-
-          <h3>Сайт-визитка</h3>
-
-          <p>
-            Для компаний и специалистов, которым нужно
-            профессионально представить себя в интернете.
-          </p>
-
-          <a
-            href="https://rasulovking2577.github.io/website/"
-            target="_blank"
-            class="service-example"
-          >
-            Смотреть пример →
-          </a>
-
+<!-- ===== КОНТАКТЫ ===== -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <span class="eyebrow">Контакты</span>
+        <h2 class="reveal">Пришлите задачу — я предложу решение и цену за 1 день.</h2>
+        <p class="lead reveal">Опишите, что нужно: визитка, лендинг или сайт для локального бизнеса — отвечу в переписке.</p>
+        <a href="https://wa.me/79696656414" target="_blank" rel="noopener" class="pulse-btn reveal">Обсудить проект →</a>
+        <div class="contact-meta reveal">
+            <a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://t.me/79696656414" target="_blank" rel="noopener">Telegram</a>
+            <span>+7 969 665-64-14</span>
+            <span>Махачкала / удалённо</span>
         </div>
-
-        <div class="service-tag">
-          БИЗНЕС
-        </div>
-
-      </article>
-
-
-      <article class="service-card">
-
-        <div class="service-number">02</div>
-
-        <div class="service-main">
-
-          <h3>Продающий лендинг</h3>
-
-          <p>
-            Страница, которая показывает предложение,
-            вызывает доверие и ведёт посетителя к заявке.
-          </p>
-
-          <a
-            href="https://rasulovking2577.github.io/Aragvi/"
-            target="_blank"
-            class="service-example"
-          >
-            Смотреть пример →
-          </a>
-
-        </div>
-
-        <div class="service-tag">
-          ЗАЯВКИ
-        </div>
-
-      </article>
-
-
-      <article class="service-card">
-
-        <div class="service-number">03</div>
-
-        <div class="service-main">
-
-          <h3>Сайт для локального бизнеса</h3>
-
-          <p>
-            Структура под конкретную нишу:
-            услуги, работы, преимущества, контакты и связь.
-          </p>
-
-          <a
-            href="https://rasulovking2577.github.io/BARBERSHOP/"
-            target="_blank"
-            class="service-example"
-          >
-            Смотреть пример →
-          </a>
-
-        </div>
-
-        <div class="service-tag">
-          НИША
-        </div>
-
-      </article>
-
     </div>
+</section>
 
-  </section>
-
-
-  <!-- PORTFOLIO -->
-
-  <section class="section portfolio-section" id="portfolio">
-
-    <div class="section-label">
-      <span>03</span>
-      ПОРТФОЛИО
-    </div>
-
-    <div class="section-heading portfolio-heading">
-
-      <h2>
-        Не обещаю.
-        <span>Показываю.</span>
-      </h2>
-
-      <p>
-        Ниже — реальные проекты, которые можно открыть
-        и посмотреть прямо сейчас.
-      </p>
-
-    </div>
-
-
-    <div class="projects">
-
-
-      <!-- PROJECT 1 -->
-
-      <article class="project-card">
-
-        <a
-          href="https://rasulovking2577.github.io/website/"
-          target="_blank"
-          class="project-preview project-one"
-        >
-
-          <div class="project-overlay">
-            Открыть сайт ↗
-          </div>
-
-        </a>
-
-        <div class="project-info">
-
-          <div>
-
-            <span class="project-type">
-              САЙТ-ВИЗИТКА
-            </span>
-
-            <h3>
-              Сайт-визитка для бизнеса
-            </h3>
-
-          </div>
-
-          <a
-            href="https://rasulovking2577.github.io/website/"
-            target="_blank"
-            class="project-arrow"
-          >
-            ↗
-          </a>
-
-        </div>
-
-        <div class="project-features">
-          <span>Адаптив</span>
-          <span>Быстрая загрузка</span>
-          <span>Форма связи</span>
-        </div>
-
-      </article>
-
-
-      <!-- PROJECT 2 -->
-
-      <article class="project-card">
-
-        <a
-          href="https://rasulovking2577.github.io/Aragvi/"
-          target="_blank"
-          class="project-preview project-two"
-        >
-
-          <div class="project-overlay">
-            Открыть сайт ↗
-          </div>
-
-        </a>
-
-        <div class="project-info">
-
-          <div>
-
-            <span class="project-type">
-              LANDING PAGE
-            </span>
-
-            <h3>
-              Лендинг для автосервиса
-            </h3>
-
-          </div>
-
-          <a
-            href="https://rasulovking2577.github.io/Aragvi/"
-            target="_blank"
-            class="project-arrow"
-          >
-            ↗
-          </a>
-
-        </div>
-
-        <div class="project-features">
-          <span>Адаптив</span>
-          <span>Быстрая загрузка</span>
-          <span>Форма связи</span>
-        </div>
-
-      </article>
-
-
-      <!-- PROJECT 3 -->
-
-      <article class="project-card project-next">
-
-        <div class="next-project-content">
-
-          <span class="project-type">
-            СЛЕДУЮЩИЙ ПРОЕКТ
-          </span>
-
-          <h3>
-            Возможно,
-            <span>ваш бизнес.</span>
-          </h3>
-
-          <p>
-            Если вашему бизнесу нужен сайт,
-            можно начать с обсуждения задачи.
-          </p>
-
-          <a href="#contacts" class="btn btn-primary">
-            Заказать сайт →
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROOF -->
-
-  <section class="proof">
-
-    <div class="proof-inner">
-
-      <div class="proof-big">
-        <span>Сайт должен</span>
-        работать на бизнес,
-        <strong>а не просто существовать.</strong>
-      </div>
-
-      <div class="proof-line"></div>
-
-      <div class="proof-small">
-        Поэтому я связываю дизайн, структуру,
-        мобильную адаптацию и точки контакта
-        в одну систему.
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROCESS -->
-
-  <section class="section process-section" id="process">
-
-    <div class="section-label">
-      <span>04</span>
-      ПРОЦЕСС
-    </div>
-
-    <div class="section-heading">
-
-      <h2>
-        От задачи
-        <span>до запуска.</span>
-      </h2>
-
-      <p>
-        Я не просто «нажимаю кнопку».
-        Каждый проект проходит несколько этапов.
-      </p>
-
-    </div>
-
-
-    <div class="process">
-
-      <div class="process-step">
-
-        <span>01</span>
-
-        <div>
-          <h3>Обсуждаем задачу</h3>
-          <p>
-            Разбираемся в бизнесе, аудитории,
-            цели сайта и нужных действиях клиента.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="process-step">
-
-        <span>02</span>
-
-        <div>
-          <h3>Делаю прототип</h3>
-          <p>
-            Определяем структуру страницы,
-            блоки и путь пользователя.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="process-step">
-
-        <span>03</span>
-
-        <div>
-          <h3>Верстаю</h3>
-          <p>
-            Собираю дизайн, HTML, CSS и JavaScript
-            в полноценный сайт.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="process-step">
-
-        <span>04</span>
-
-        <div>
-          <h3>Тестирую</h3>
-          <p>
-            Проверяю мобильную версию,
-            кнопки, ссылки и отображение.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="process-step">
-
-        <span>05</span>
-
-        <div>
-          <h3>Запускаю</h3>
-          <p>
-            Подключаю сайт, проверяю финальную версию
-            и передаю готовый результат.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="process-bottom">
-      Все примеры работ — в
-      <a href="#portfolio">портфолио выше →</a>
-    </div>
-
-  </section>
-
-
-  <!-- WHY ME -->
-
-  <section class="section why-section">
-
-    <div class="section-label">
-      <span>05</span>
-      ПОЧЕМУ Я
-    </div>
-
-    <div class="why-grid">
-
-      <div>
-
-        <h2>
-          Работаю
-          <span>напрямую.</span>
-        </h2>
-
-        <p class="why-intro">
-          Без агентства, посредников и длинной цепочки людей.
-          Вы общаетесь непосредственно с разработчиком.
-        </p>
-
-      </div>
-
-
-      <div class="advantages">
-
-        <div class="advantage">
-
-          <span>01</span>
-
-          <div>
-            <h3>Без посредников</h3>
-            <p>
-              Вы напрямую общаетесь со мной
-              на всех этапах проекта.
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="advantage">
-
-          <span>02</span>
-
-          <div>
-            <h3>Адаптив под телефон</h3>
-            <p>
-              Сайт нормально работает не только
-              на компьютере, но и на смартфоне.
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="advantage">
-
-          <span>03</span>
-
-          <div>
-            <h3>Быстрая связь</h3>
-            <p>
-              Отвечаю на сообщения и вопросы
-              максимально оперативно.
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="advantage">
-
-          <span>04</span>
-
-          <div>
-            <h3>Результат можно увидеть</h3>
-            <p>
-              У меня уже есть реальные проекты,
-              которые можно открыть и проверить.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="proof-projects">
-
-      <a
-        href="https://rasulovking2577.github.io/website/"
-        target="_blank"
-      >
-        Сайт-визитка ↗
-      </a>
-
-      <a
-        href="https://rasulovking2577.github.io/Aragvi/"
-        target="_blank"
-      >
-        Aragvi ↗
-      </a>
-
-      <a
-        href="https://rasulovking2577.github.io/BARBERSHOP/"
-        target="_blank"
-      >
-        BARBERSHOP ↗
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-
-  <section class="final-cta" id="contacts">
-
-    <div class="final-label">
-      06 / КОНТАКТЫ
-    </div>
-
-    <h2>
-      Есть задача?
-      <span>Давайте обсудим.</span>
-    </h2>
-
-    <p>
-      Пришлите задачу — я предложу решение
-      и ориентировочную стоимость.
-    </p>
-
-    <div class="contact-actions">
-
-      <a
-        href="https://github.com/rasulovking2577"
-        target="_blank"
-        class="btn btn-primary"
-      >
-        Написать / связаться ↗
-      </a>
-
-      <a
-        href="https://github.com/rasulovking2577"
-        target="_blank"
-        class="contact-secondary"
-      >
-        GitHub · мои проекты
-      </a>
-
-    </div>
-
-    <div class="contact-note">
-      Махачкала · Работаю удалённо
-    </div>
-
-  </section>
-
-</main>
-
-
+<!-- ===== ПОДВАЛ ===== -->
 <footer>
-
-  <div class="footer-logo">
-    R<span>.</span>
-  </div>
-
-  <div>
-    Rasulov · Web Developer
-  </div>
-
-  <a href="#home">
-    Наверх ↑
-  </a>
-
+    <div class="container">
+        <span class="copy">© 2026 1САЙТ. Махачкала — Россия.</span>
+        <div class="socials">
+            <a href="#" rel="noopener">Telegram</a>
+            <a href="#" rel="noopener">WhatsApp</a>
+            <a href="#" rel="noopener">GitHub</a>
+        </div>
+    </div>
 </footer>
 
+<script>
+    (function() {
+        "use strict";
 
-<script src="script.js"></script>
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var hasFinePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
+        // ===== ШАПКА =====
+        var header = document.getElementById('siteHeader');
+        function onScroll() {
+            if (window.scrollY > 40) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // ===== МОБИЛЬНОЕ МЕНЮ =====
+        var burger = document.getElementById('burger');
+        var nav = document.getElementById('mainNav');
+        burger.addEventListener('click', function() {
+            burger.classList.toggle('open');
+            nav.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                burger.classList.remove('open');
+                nav.classList.remove('open');
+            });
+        });
+
+        // ===== КАСТОМНЫЙ КУРСОР =====
+        var cursor = document.getElementById('customCursor');
+        if (hasFinePointer) {
+            window.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            document.querySelectorAll('a, button, .service-card, .folio-card, .step').forEach(function(el) {
+                el.addEventListener('mouseenter', function() { cursor.classList.add('grow'); });
+                el.addEventListener('mouseleave', function() { cursor.classList.remove('grow'); });
+            });
+        } else {
+            cursor.style.display = 'none';
+        }
+
+        // ===== TYPEWRITER (с переключением слов) =====
+        var typewriterEl = document.getElementById('typewriter');
+        var words = ["Разрабатываю", "Создаю", "Проектирую"];
+        var fullEnd = " сайты, которые помогают бизнесу получать заявки.";
+        var wIndex = 0, charIndex = 0, isDeleting = false;
+
+        function typeStep() {
+            if (isDeleting) {
+                charIndex--;
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    wIndex = (wIndex + 1) % words.length;
+                    charIndex = 0;
+                    setTimeout(typeStep, 500);
+                    return;
+                }
+            } else {
+                charIndex++;
+                if (charIndex > words[wIndex].length) {
+                    isDeleting = true;
+                    setTimeout(typeStep, 1400);
+                    return;
+                }
+            }
+            var word = words[wIndex].slice(0, charIndex);
+            typewriterEl.innerHTML = '<span class="cycle">' + word + '</span>' + fullEnd + '<span class="cursor-blink">&nbsp;</span>';
+            setTimeout(typeStep, isDeleting ? 45 : 85);
+        }
+        if (reduceMotion) {
+            typewriterEl.innerHTML = '<span class="cycle">Разрабатываю</span>' + fullEnd + '<span class="cursor-blink">&nbsp;</span>';
+        } else {
+            setTimeout(typeStep, 600);
+        }
+
+        // ===== REVEAL (fade-up) =====
+        var revealEls = document.querySelectorAll('.reveal, .slide-right');
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    var siblings = Array.prototype.filter.call(el.parentElement.children, function(c) {
+                        return c.classList.contains('slide-right') || c.classList.contains('reveal');
+                    });
+                    var idx = siblings.indexOf(el);
+                    var delay = Math.max(idx, 0) * 120;
+                    setTimeout(function() { el.classList.add('in'); }, delay);
+                    io.unobserve(el);
+                }
+            });
+        }, { threshold: .15, rootMargin: '0px 0px -60px 0px' });
+        revealEls.forEach(function(el) { io.observe(el); });
+
+        // ===== 3D TILT =====
+        if (hasFinePointer && !reduceMotion) {
+            document.querySelectorAll('.service-card, .folio-card').forEach(function(card) {
+                var inner = card.querySelector('.tilt-inner');
+                if (!inner) return;
+                card.addEventListener('mousemove', function(e) {
+                    var rect = card.getBoundingClientRect();
+                    var px = (e.clientX - rect.left) / rect.width - 0.5;
+                    var py = (e.clientY - rect.top) / rect.height - 0.5;
+                    inner.style.setProperty('--rx', (px * 12) + 'deg');
+                    inner.style.setProperty('--ry', (py * -12) + 'deg');
+                    inner.style.transform = 'rotateX(' + (py * -10) + 'deg) rotateY(' + (px * 12) + 'deg)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    inner.style.transform = 'rotateX(0) rotateY(0)';
+                });
+            });
+        }
+
+        // ===== ТАЙМЛАЙН (авто-прогресс + клик) =====
+        var steps = document.querySelectorAll('.step');
+        var progress = document.getElementById('timelineProgress');
+        var autoTimer = null;
+
+        function activateStep(target) {
+            steps.forEach(function(s) { s.classList.remove('active'); });
+            target.classList.add('active');
+            var idx = parseInt(target.getAttribute('data-i'), 10);
+            var pct = ((idx - 1) / (steps.length - 1)) * 100;
+            progress.style.width = pct + '%';
+        }
+
+        function startAutoProgress() {
+            var current = 1;
+            activateStep(steps[0]);
+            clearInterval(autoTimer);
+            autoTimer = setInterval(function() {
+                current++;
+                if (current > steps.length) { clearInterval(autoTimer); return; }
+                activateStep(steps[current - 1]);
+            }, 1800);
+        }
+
+        steps.forEach(function(step) {
+            step.addEventListener('click', function() {
+                clearInterval(autoTimer);
+                activateStep(step);
+            });
+        });
+        progress.style.width = '0%';
+
+        var processSection = document.getElementById('process');
+        var processIO = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    startAutoProgress();
+                    processIO.disconnect();
+                }
+            });
+        }, { threshold: .3 });
+        processIO.observe(processSection);
+
+        // ===== СЧЁТЧИКИ С ПУЛЬСАЦИЕЙ =====
+        var counters = document.querySelectorAll('.stat .num');
+        var counted = false;
+        var whySection = document.getElementById('why');
+        var countIO = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !counted) {
+                    counted = true;
+                    counters.forEach(function(el) {
+                        var target = parseInt(el.getAttribute('data-target'), 10);
+                        var suffix = el.getAttribute('data-suffix') || '';
+                        var duration = 1300;
+                        var startTime = null;
+
+                        function step(ts) {
+                            if (!startTime) startTime = ts;
+                            var p = Math.min((ts - startTime) / duration, 1);
+                            var eased = 1 - Math.pow(1 - p, 3);
+                            var val = Math.round(target * eased);
+                            el.textContent = val + suffix;
+                            if (p < 1) {
+                                requestAnimationFrame(step);
+                            } else {
+                                el.classList.add('pulse');
+                                setTimeout(function() { el.classList.remove('pulse'); }, 500);
+                            }
+                        }
+                        requestAnimationFrame(step);
+                    });
+                    countIO.disconnect();
+                }
+            });
+        }, { threshold: .4 });
+        countIO.observe(whySection);
+
+        // ===== TOUCH FALLBACK =====
+        document.querySelectorAll('.service-card, .folio-card').forEach(function(card) {
+            card.addEventListener('click', function(e) {
+                if (!hasFinePointer) {
+                    var isLink = e.target.closest('a');
+                    if (!isLink) {
+                        var group = card.classList.contains('service-card') ? '.service-card' : '.folio-card';
+                        document.querySelectorAll(group).forEach(function(c) {
+                            if (c !== card) c.classList.remove('active');
+                        });
+                        card.classList.toggle('active');
+                    }
+                }
+            });
+        });
+
+        // ===== PARTICLES =====
+        var canvas = document.getElementById('particles');
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var heroSection = document.querySelector('.hero');
+
+        function resizeCanvas() {
+            canvas.width = heroSection.offsetWidth;
+            canvas.height = heroSection.offsetHeight;
+        }
+
+        function initParticles() {
+            particles = [];
+            var count = Math.min(60, Math.floor(canvas.width / 22));
+            for (var p = 0; p < count; p++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 1.6 + .4,
+                    vx: (Math.random() - .5) * .18,
+                    vy: (Math.random() - .5) * .18,
+                    a: Math.random() * .5 + .15
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(function(p) {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0) p.x = canvas.width;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height;
+                if (p.y > canvas.height) p.y = 0;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(212,175,55,' + p.a + ')';
+                ctx.fill();
+            });
+            requestAnimationFrame(drawParticles);
+        }
+
+        resizeCanvas();
+        initParticles();
+        if (!reduceMotion) { requestAnimationFrame(drawParticles); }
+        window.addEventListener('resize', function() {
+            resizeCanvas();
+            initParticles();
+        });
+
+    })();
+</script>
 </body>
 </html>
