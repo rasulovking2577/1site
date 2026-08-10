@@ -1,87 +1,153 @@
-// Плавное появление элементов при прокрутке
-
-const observer = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
+/* =========================
+   1САЙТ — INTERACTIONS
+========================= */
 
 
-// Элементы для анимации
+/* CURSOR GLOW */
 
-document
-    .querySelectorAll(
-        ".section, .skill-card, .project, .cta"
-    )
-    .forEach((element) => {
+const cursorGlow = document.querySelector(".cursor-glow");
 
-        element.classList.add("hidden");
+window.addEventListener("mousemove", (e) => {
 
-        observer.observe(element);
+    if (!cursorGlow) return;
+
+    cursorGlow.style.left = `${e.clientX}px`;
+    cursorGlow.style.top = `${e.clientY}px`;
+
+});
+
+
+/* MOBILE MENU */
+
+const menuButton = document.querySelector(".menu-btn");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+menuButton.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+
+});
+
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
 
     });
 
+});
 
-// Эффект движения карточки мышью
 
-const card = document.querySelector(".developer-card");
+/* SCROLL REVEAL */
 
-if (card) {
+const revealElements =
+    document.querySelectorAll(".reveal");
 
-    document.addEventListener("mousemove", (event) => {
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-        if (window.innerWidth < 800) return;
+            entries.forEach((entry) => {
 
-        const x =
-            (window.innerWidth / 2 - event.clientX) / 40;
+                if (entry.isIntersecting) {
 
-        const y =
-            (window.innerHeight / 2 - event.clientY) / 40;
+                    entry.target.classList.add("visible");
 
-        card.style.transform =
-            `rotateY(${x}deg) rotateX(${y}deg)`;
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* MAGNETIC BUTTONS */
+
+const magneticElements =
+    document.querySelectorAll(".magnetic");
+
+if (window.matchMedia("(hover:hover)").matches) {
+
+    magneticElements.forEach((element) => {
+
+        element.addEventListener("mousemove", (event) => {
+
+            const rect =
+                element.getBoundingClientRect();
+
+            const x =
+                event.clientX -
+                rect.left -
+                rect.width / 2;
+
+            const y =
+                event.clientY -
+                rect.top -
+                rect.height / 2;
+
+            element.style.transform =
+                `translate(${x * 0.12}px, ${y * 0.12}px)`;
+
+        });
+
+
+        element.addEventListener("mouseleave", () => {
+
+            element.style.transform =
+                "translate(0, 0)";
+
+        });
 
     });
 
 }
 
 
-// Активная ссылка навигации
+/* FAQ */
 
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav a");
+const faqItems =
+    document.querySelectorAll(".faq-item");
 
-window.addEventListener("scroll", () => {
+faqItems.forEach((item) => {
 
-    let current = "";
+    const button =
+        item.querySelector("button");
 
-    sections.forEach((section) => {
+    button.addEventListener("click", () => {
 
-        const sectionTop = section.offsetTop - 200;
+        const isActive =
+            item.classList.contains("active");
 
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
 
-    });
+        faqItems.forEach((otherItem) => {
 
-    navLinks.forEach((link) => {
+            otherItem.classList.remove("active");
 
-        link.classList.remove("active");
+        });
 
-        if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
+
+        if (!isActive) {
+
+            item.classList.add("active");
+
         }
 
     });
@@ -89,20 +155,258 @@ window.addEventListener("scroll", () => {
 });
 
 
-// Анимация чисел/статусов
+/* WHATSAPP FORM */
 
-const status = document.querySelector(".status");
+const contactForm =
+    document.getElementById("contactForm");
 
-if (status) {
 
-    setInterval(() => {
+contactForm.addEventListener("submit", (event) => {
 
-        status.style.opacity = "0.65";
+    event.preventDefault();
 
-        setTimeout(() => {
-            status.style.opacity = "1";
-        }, 400);
 
-    }, 2500);
+    const name =
+        document.getElementById("name").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    if (!name || !phone || !message) {
+
+        alert("Заполните все поля.");
+
+        return;
+
+    }
+
+
+    const text =
+        `Здравствуйте! Меня зовут ${name}.
+
+Телефон: ${phone}
+
+Мне нужен сайт:
+${message}`;
+
+
+    const whatsappURL =
+        `https://wa.me/79696656414?text=${encodeURIComponent(text)}`;
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+
+/* SMOOTH ANCHOR OFFSET */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(event) {
+
+        const targetId =
+            this.getAttribute("href");
+
+        if (
+            targetId === "#" ||
+            targetId.length < 2
+        ) {
+            return;
+        }
+
+
+        const target =
+            document.querySelector(targetId);
+
+        if (!target) return;
+
+
+        event.preventDefault();
+
+
+        const headerOffset = 90;
+
+        const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerOffset;
+
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+/* ACTIVE NAV */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navLinks =
+    document.querySelectorAll(".desktop-nav a");
+
+
+const navObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    navLinks.forEach(link => {
+
+                        link.style.color =
+                            "rgba(255,255,255,.65)";
+
+                    });
+
+
+                    const active =
+                        document.querySelector(
+                            `.desktop-nav a[href="#${entry.target.id}"]`
+                        );
+
+
+                    if (active) {
+
+                        active.style.color =
+                            "#ffffff";
+
+                    }
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.35
+        }
+    );
+
+
+sections.forEach(section => {
+
+    navObserver.observe(section);
+
+});
+
+
+/* 3D PROJECT EFFECT */
+
+const projectCards =
+    document.querySelectorAll(".project");
+
+
+if (window.matchMedia("(hover:hover)").matches) {
+
+    projectCards.forEach(card => {
+
+        card.addEventListener("mousemove", (event) => {
+
+            const rect =
+                card.getBoundingClientRect();
+
+
+            const x =
+                (event.clientX - rect.left) /
+                rect.width;
+
+            const y =
+                (event.clientY - rect.top) /
+                rect.height;
+
+
+            const rotateX =
+                (0.5 - y) * 3;
+
+            const rotateY =
+                (x - 0.5) * 3;
+
+
+            card.style.transform =
+                `perspective(1000px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)`;
+
+        });
+
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform =
+                "perspective(1000px) rotateX(0) rotateY(0)";
+
+        });
+
+    });
 
 }
+
+
+/* HERO PARALLAX */
+
+const heroGrid =
+    document.querySelector(".hero-grid");
+
+
+window.addEventListener("scroll", () => {
+
+    if (!heroGrid) return;
+
+    const scroll =
+        window.scrollY;
+
+    if (scroll < window.innerHeight) {
+
+        heroGrid.style.transform =
+            `translateY(${scroll * 0.12}px)`;
+
+    }
+
+});
+
+
+/* CONTACT BUTTON MICRO FEEDBACK */
+
+const submitButton =
+    document.querySelector(".submit-button");
+
+
+contactForm.addEventListener("submit", () => {
+
+    submitButton.querySelector("span").textContent =
+        "Открываю WhatsApp…";
+
+});
+
+
+/* CURRENT YEAR */
+
+document.querySelectorAll(".footer").forEach(footer => {
+
+    const year =
+        footer.querySelector(".current-year");
+
+    if (year) {
+
+        year.textContent =
+            new Date().getFullYear();
+
+    }
+
+});
