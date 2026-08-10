@@ -864,3 +864,53 @@ footer {
     }
 
 }
+/* SCROLL ANIMATIONS */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav a.active {
+    color: #fff;
+}
+
+.status {
+    transition: opacity .4s ease;
+}
+
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff1744;
+    border-radius: 10px;
+}
+
+
+/* MOBILE TAP */
+
+@media (hover: none) {
+
+    .skill-card:hover,
+    .project:hover {
+        transform: none;
+    }
+
+}
