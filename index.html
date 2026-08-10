@@ -1,2197 +1,522 @@
-<!DOCTYPE html><html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>1САЙТ — разработка сайтов</title><style>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-:root{
-    --bg:#0a0a0a;
-    --bg2:#101010;
-    --card:#151515;
-    --gold:#d4af37;
-    --gold2:#f0d56a;
-    --white:#fff;
-    --text:#b5b5b5;
-    --muted:#686868;
+    <title>Rasulov — Web Developer</title>
 
-    --ease:cubic-bezier(.22,1,.36,1);
-}
+    <meta
+        name="description"
+        content="Rasulov — начинающий Web Developer. Создаю современные сайты и цифровые решения."
+    >
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <link rel="stylesheet" href="style.css">
+</head>
 
-html{
-    scroll-behavior:smooth;
-}
+<body>
 
-body{
-    background:var(--bg);
-    color:var(--white);
-    font-family:Manrope,sans-serif;
-    overflow-x:hidden;
-}
+    <!-- Фоновое свечение -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
 
-body.menu-open{
-    overflow:hidden;
-}
+    <!-- Навигация -->
+    <header class="header">
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
+        <a href="#home" class="logo">
+            R<span>.</span>
+        </a>
 
-button{
-    font:inherit;
-}
+        <nav class="nav">
+            <a href="#about">Обо мне</a>
+            <a href="#skills">Навыки</a>
+            <a href="#projects">Проекты</a>
+            <a href="#contact">Контакты</a>
+        </nav>
 
-::selection{
-    background:var(--gold);
-    color:#000;
-}
+        <a href="#contact" class="header-btn">
+            Связаться
+        </a>
 
-/* =========================
-   BACKGROUND
-========================= */
+    </header>
 
-.noise{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:9998;
-    opacity:.035;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
-}
 
-.grid-bg{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    opacity:.045;
-    background-image:
-        linear-gradient(rgba(212,175,55,.25) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(212,175,55,.25) 1px,transparent 1px);
-    background-size:80px 80px;
-    mask-image:linear-gradient(to bottom,black,transparent 80%);
-    z-index:-2;
-}
+    <!-- HERO -->
+    <main>
 
-.cursor{
-    width:24px;
-    height:24px;
-    border:1px solid var(--gold);
-    border-radius:50%;
-    position:fixed;
-    pointer-events:none;
-    z-index:9999;
-    transform:translate(-50%,-50%);
-    transition:
-        width .35s var(--ease),
-        height .35s var(--ease),
-        background .35s ease;
-    mix-blend-mode:difference;
-}
+        <section class="hero" id="home">
 
-.cursor.active{
-    width:64px;
-    height:64px;
-    background:rgba(212,175,55,.12);
-}
+            <div class="hero-content">
 
-/* =========================
-   PROGRESS
-========================= */
+                <div class="status">
+                    <span></span>
+                    AVAILABLE FOR PROJECTS
+                </div>
 
-.progress{
-    position:fixed;
-    top:0;
-    left:0;
-    height:3px;
-    width:0;
-    background:linear-gradient(90deg,var(--gold),var(--gold2));
-    z-index:10000;
-    box-shadow:0 0 20px rgba(212,175,55,.7);
-}
+                <p class="hero-mini">
+                    WEB DEVELOPER / CREATIVE CODER
+                </p>
 
-/* =========================
-   HEADER
-========================= */
+                <h1>
+                    Создаю сайты,<br>
+                    которые <span>запоминаются.</span>
+                </h1>
 
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:5000;
-    padding:24px 0;
-    transition:.5s var(--ease);
-}
+                <p class="hero-description">
+                    Я Rasulov — начинающий Web Developer.
+                    Изучаю HTML, CSS и JavaScript и превращаю идеи
+                    в современные цифровые продукты.
+                </p>
 
-header.scrolled{
-    padding:14px 0;
-    background:rgba(10,10,10,.72);
-    backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(212,175,55,.12);
-}
+                <div class="hero-buttons">
 
-.container{
-    width:min(1180px,calc(100% - 40px));
-    margin:auto;
-}
+                    <a href="#projects" class="btn btn-main">
+                        Смотреть проекты
+                        <span>↗</span>
+                    </a>
 
-.header-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:"Space Grotesk",sans-serif;
-    font-weight:700;
-    font-size:20px;
-}
-
-.logo-mark{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:var(--gold);
-    box-shadow:0 0 18px var(--gold);
-}
-
-.logo span:last-child{
-    color:var(--gold);
-}
-
-nav{
-    display:flex;
-    gap:38px;
-}
-
-nav a{
-    color:#999;
-    font-size:14px;
-    position:relative;
-    transition:.3s;
-}
-
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-7px;
-    width:0;
-    height:1px;
-    background:var(--gold);
-    transition:.4s var(--ease);
-}
-
-nav a:hover{
-    color:white;
-}
-
-nav a:hover::after{
-    width:100%;
-}
-
-.menu{
-    display:none;
-    border:0;
-    background:none;
-    color:white;
-    cursor:pointer;
-}
-
-.menu span{
-    display:block;
-    width:26px;
-    height:2px;
-    margin:5px;
-    background:var(--gold);
-    transition:.4s var(--ease);
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.hero-orb{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(80px);
-    pointer-events:none;
-}
-
-.orb1{
-    width:500px;
-    height:500px;
-    background:rgba(212,175,55,.08);
-    top:-220px;
-    right:-120px;
-}
-
-.orb2{
-    width:350px;
-    height:350px;
-    background:rgba(212,175,55,.045);
-    bottom:-150px;
-    left:-100px;
-}
-
-.hero-lines{
-    position:absolute;
-    inset:0;
-    opacity:.18;
-    background:
-        linear-gradient(115deg,transparent 40%,rgba(212,175,55,.08) 41%,transparent 42%),
-        linear-gradient(65deg,transparent 60%,rgba(212,175,55,.05) 61%,transparent 62%);
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
-}
-
-.status{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    border:1px solid rgba(212,175,55,.25);
-    border-radius:100px;
-    padding:8px 15px;
-    color:#aaa;
-    font-size:12px;
-    margin-bottom:28px;
-    background:rgba(212,175,55,.03);
-}
-
-.status-dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#4caf50;
-    box-shadow:0 0 15px #4caf50;
-    animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-    50%{transform:scale(.55);opacity:.4}
-}
-
-.hero h1{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(48px,8vw,105px);
-    line-height:.95;
-    letter-spacing:-.065em;
-}
-
-.hero-word{
-    color:var(--gold);
-    text-shadow:
-        0 0 35px rgba(212,175,55,.2),
-        0 0 90px rgba(212,175,55,.08);
-}
-
-.hero h1 .line{
-    display:block;
-}
-
-.hero-description{
-    margin-top:32px;
-    max-width:650px;
-    font-size:18px;
-    line-height:1.7;
-    color:#999;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:14px;
-    margin-top:42px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:16px 27px;
-    border-radius:100px;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    font-size:14px;
-    font-weight:700;
-    transition:.45s var(--ease);
-}
-
-.btn-primary{
-    color:#080808;
-    background:var(--gold);
-}
-
-.btn-primary:hover{
-    transform:translateY(-5px);
-    box-shadow:0 20px 50px rgba(212,175,55,.22);
-}
-
-.btn-secondary{
-    border:1px solid rgba(212,175,55,.25);
-    color:#ddd;
-}
-
-.btn-secondary:hover{
-    border-color:var(--gold);
-    color:var(--gold);
-    transform:translateY(-5px);
-}
-
-.hero-bottom{
-    position:absolute;
-    bottom:35px;
-    left:0;
-    right:0;
-    display:flex;
-    justify-content:space-between;
-    color:#555;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:.18em;
-}
-
-.scroll-line{
-    width:55px;
-    height:1px;
-    background:#444;
-    display:inline-block;
-    vertical-align:middle;
-    margin-left:10px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section{
-    padding:140px 0;
-    position:relative;
-}
-
-.section-label{
-    color:var(--gold);
-    font-size:11px;
-    letter-spacing:.25em;
-    text-transform:uppercase;
-    margin-bottom:18px;
-}
-
-.section-title{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(38px,5vw,66px);
-    line-height:1;
-    letter-spacing:-.045em;
-}
-
-.section-description{
-    max-width:600px;
-    color:#777;
-    margin-top:20px;
-    line-height:1.7;
-}
-
-/* =========================
-   REVEAL
-========================= */
-
-.reveal{
-    opacity:0;
-    transform:translateX(110px);
-    transition:
-        opacity 1s var(--ease),
-        transform 1s var(--ease);
-}
-
-.reveal.visible{
-    opacity:1;
-    transform:translateX(0);
-}
-
-/* =========================
-   PROBLEM
-========================= */
-
-.problem-grid{
-    margin-top:70px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.card{
-    position:relative;
-    background:
-        linear-gradient(145deg,rgba(255,255,255,.035),transparent 50%),
-        var(--card);
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:24px;
-    padding:38px;
-    overflow:hidden;
-    transform-style:preserve-3d;
-    transition:
-        border-color .4s,
-        box-shadow .5s,
-        transform .15s ease-out;
-}
-
-.card::before{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    background:rgba(212,175,55,.08);
-    filter:blur(70px);
-    top:-130px;
-    right:-130px;
-    opacity:0;
-    transition:.5s;
-}
-
-.card:hover::before{
-    opacity:1;
-}
-
-.card:hover{
-    border-color:rgba(212,175,55,.3);
-    box-shadow:0 30px 70px rgba(0,0,0,.45);
-}
-
-.card-number{
-    color:var(--gold);
-    font-family:"Space Grotesk";
-    font-size:13px;
-    margin-bottom:35px;
-}
-
-.card-icon{
-    width:54px;
-    height:54px;
-    border:1px solid rgba(212,175,55,.2);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--gold);
-    font-size:20px;
-    margin-bottom:30px;
-}
-
-.card h3{
-    font-family:"Space Grotesk";
-    font-size:24px;
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#777;
-    line-height:1.7;
-    font-size:14px;
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.services{
-    background:#0d0d0d;
-}
-
-.services-grid{
-    margin-top:70px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.service-card{
-    min-height:470px;
-    display:flex;
-    flex-direction:column;
-}
-
-.service-card h3{
-    font-size:28px;
-}
-
-.service-description{
-    margin-top:12px;
-    color:#777;
-    line-height:1.7;
-    font-size:14px;
-}
-
-.features{
-    margin-top:28px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.features li{
-    color:#999;
-    font-size:13px;
-}
-
-.features li::before{
-    content:"✦";
-    color:var(--gold);
-    margin-right:10px;
-}
-
-.card-link{
-    margin-top:auto;
-    color:var(--gold);
-    font-weight:700;
-    font-size:14px;
-}
-
-/* =========================
-   PORTFOLIO
-========================= */
-
-.portfolio-grid{
-    margin-top:70px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.project{
-    padding:0;
-    overflow:hidden;
-}
-
-.project-preview{
-    height:330px;
-    overflow:hidden;
-    position:relative;
-    background:#111;
-}
-
-.project-preview iframe{
-    width:180%;
-    height:180%;
-    border:0;
-    transform:scale(.56);
-    transform-origin:top left;
-    pointer-events:none;
-}
-
-.project-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(0,0,0,.68);
-    opacity:0;
-    transition:.5s;
-}
-
-.project:hover .project-overlay{
-    opacity:1;
-}
-
-.project-open{
-    padding:14px 24px;
-    border:1px solid var(--gold);
-    color:var(--gold);
-    border-radius:100px;
-    transform:translateY(20px);
-    transition:.5s var(--ease);
-}
-
-.project:hover .project-open{
-    transform:translateY(0);
-}
-
-.project-info{
-    padding:28px;
-}
-
-.project-info h3{
-    font-family:"Space Grotesk";
-    font-size:23px;
-}
-
-.project-tags{
-    display:flex;
-    gap:8px;
-    margin-top:15px;
-    flex-wrap:wrap;
-}
-
-.project-tags span{
-    font-size:10px;
-    color:var(--gold);
-    border:1px solid rgba(212,175,55,.2);
-    border-radius:100px;
-    padding:5px 10px;
-}
-
-.your-project{
-    grid-column:span 2;
-    min-height:260px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:40px;
-    background:
-        linear-gradient(120deg,rgba(212,175,55,.08),transparent),
-        #111;
-}
-
-.your-project h3{
-    font-family:"Space Grotesk";
-    font-size:36px;
-}
-
-.your-project p{
-    color:#777;
-    max-width:450px;
-    margin-top:12px;
-}
-
-/* =========================
-   PROCESS
-========================= */
-
-.process{
-    background:#0d0d0d;
-}
-
-.timeline{
-    margin-top:80px;
-}
-
-.timeline-line{
-    height:2px;
-    background:#222;
-    position:relative;
-}
-
-.timeline-progress{
-    position:absolute;
-    left:0;
-    top:0;
-    height:100%;
-    width:0;
-    background:var(--gold);
-    box-shadow:0 0 20px rgba(212,175,55,.6);
-    transition:width 1s var(--ease);
-}
-
-.steps{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:20px;
-}
-
-.step{
-    padding-top:30px;
-    cursor:pointer;
-    position:relative;
-}
-
-.step-dot{
-    width:13px;
-    height:13px;
-    border:2px solid #555;
-    border-radius:50%;
-    position:absolute;
-    top:-6px;
-    left:0;
-    background:#0d0d0d;
-    transition:.4s;
-}
-
-.step.active .step-dot{
-    background:var(--gold);
-    border-color:var(--gold);
-    box-shadow:0 0 0 8px rgba(212,175,55,.08);
-}
-
-.step-number{
-    color:#555;
-    font-size:11px;
-}
-
-.step.active .step-number{
-    color:var(--gold);
-}
-
-.step h3{
-    font-family:"Space Grotesk";
-    font-size:19px;
-    margin-top:9px;
-}
-
-.step p{
-    color:#666;
-    font-size:13px;
-    line-height:1.7;
-    margin-top:10px;
-}
-
-/* =========================
-   WHY
-========================= */
-
-.why-grid{
-    margin-top:70px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.why-card{
-    padding:30px;
-    border-top:1px solid #222;
-}
-
-.why-card h3{
-    font-family:"Space Grotesk";
-    margin-top:22px;
-}
-
-.why-card p{
-    color:#666;
-    font-size:13px;
-    margin-top:10px;
-    line-height:1.7;
-}
-
-.why-icon{
-    color:var(--gold);
-    font-size:22px;
-}
-
-.stats{
-    margin-top:80px;
-    padding-top:60px;
-    border-top:1px solid #1d1d1d;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    text-align:center;
-}
-
-.stat-number{
-    color:var(--gold);
-    font-family:"Space Grotesk";
-    font-size:60px;
-    font-weight:700;
-}
-
-.stat-label{
-    color:#666;
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:.15em;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-    text-align:center;
-    background:
-        radial-gradient(circle at 50% 0,rgba(212,175,55,.12),transparent 45%),
-        #080808;
-}
-
-.contact .section-description{
-    margin:25px auto 40px;
-}
-
-.contact-button{
-    position:relative;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px 40px;
-    background:var(--gold);
-    color:#080808;
-    border-radius:100px;
-    font-weight:800;
-    transition:.4s var(--ease);
-}
-
-.contact-button:hover{
-    transform:scale(1.06);
-    box-shadow:0 0 70px rgba(212,175,55,.3);
-}
-
-.contact-button::before{
-    content:"";
-    position:absolute;
-    inset:-10px;
-    border:1px solid rgba(212,175,55,.4);
-    border-radius:100px;
-    animation:ring 2.4s infinite;
-}
-
-@keyframes ring{
-    0%{transform:scale(.9);opacity:1}
-    100%{transform:scale(1.25);opacity:0}
-}
-
-.contact-links{
-    margin-top:35px;
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap;
-    color:#666;
-    font-size:13px;
-}
-
-.contact-links a:hover{
-    color:var(--gold);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    border-top:1px solid #171717;
-    padding:35px 0;
-    color:#555;
-    font-size:12px;
-}
-
-.footer-inner{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    .container{
-        width:min(100% - 30px,700px);
-    }
-
-    nav{
-        position:fixed;
-        inset:0 0 0 auto;
-        width:min(85%,350px);
-        height:100vh;
-        background:#0d0d0d;
-        flex-direction:column;
-        justify-content:center;
-        padding:40px;
-        transform:translateX(100%);
-        transition:.6s var(--ease);
-        border-left:1px solid #222;
-    }
-
-    nav.open{
-        transform:translateX(0);
-    }
-
-    nav a{
-        font-size:24px;
-    }
-
-    .menu{
-        display:block;
-        position:relative;
-        z-index:6000;
-    }
-
-    .menu.open span:first-child{
-        transform:translateY(7px) rotate(45deg);
-    }
-
-    .menu.open span:nth-child(2){
-        opacity:0;
-    }
-
-    .menu.open span:last-child{
-        transform:translateY(-7px) rotate(-45deg);
-    }
-
-    .problem-grid,
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-    .portfolio-grid{
-        grid-template-columns:1fr;
-    }
-
-    .your-project{
-        grid-column:auto;
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .steps{
-        grid-template-columns:1fr;
-        gap:0;
-        border-left:2px solid #222;
-    }
-
-    .timeline-line{
-        display:none;
-    }
-
-    .step{
-        padding:20px 0 25px 30px;
-    }
-
-    .step-dot{
-        left:-8px;
-        top:22px;
-    }
-
-    .why-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-        gap:45px;
-    }
-
-    .hero h1{
-        font-size:clamp(45px,13vw,80px);
-    }
-}
-
-@media(max-width:550px){
-
-    section{
-        padding:90px 0;
-    }
-
-    .hero{
-        min-height:100svh;
-    }
-
-    .hero-description{
-        font-size:15px;
-    }
-
-    .hero-bottom{
-        display:none;
-    }
-
-    .card{
-        padding:28px;
-    }
-
-    .project-preview{
-        height:230px;
-    }
-
-    .why-grid{
-        grid-template-columns:1fr;
-    }
-
-    .your-project h3{
-        font-size:28px;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-    }
-
-    .cursor{
-        display:none;
-    }
-}
-
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-        animation-duration:.01ms!important;
-        animation-iteration-count:1!important;
-        scroll-behavior:auto!important;
-        transition-duration:.01ms!important;
-    }
-}
-</style></head><body><div class="progress"></div>
-<div class="grid-bg"></div>
-<div class="noise"></div>
-<div class="cursor"></div><header id="header">
-    <div class="container header-inner">    <a href="#home" class="logo">
-        <span class="logo-mark"></span>
-        <span>1</span>САЙТ
-    </a>
-
-    <nav id="nav">
-        <a href="#portfolio">Портфолио</a>
-        <a href="#services">Услуги</a>
-        <a href="#process">Процесс</a>
-        <a href="#contact">Контакты</a>
-    </nav>
-
-    <button class="menu" id="menu" aria-label="Меню">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-</div>
-
-</header><!-- =========================
-     HERO
-========================= --><section class="hero" id="home"><div class="hero-orb orb1 parallax" data-speed="0.12"></div>
-<div class="hero-orb orb2 parallax" data-speed="-0.08"></div>
-<div class="hero-lines parallax" data-speed="0.04"></div>
-
-<div class="container">
-
-    <div class="hero-content">
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Доступен для новых проектов
-        </div>
-
-        <h1>
-            <span class="line">
-                <span id="typewriter" class="hero-word">Разрабатываю</span>
-            </span>
-            <span class="line">сайты, которые</span>
-            <span class="line">запоминаются.</span>
-        </h1>
-
-        <p class="hero-description">
-            Создаю современные сайты с сильной визуальной подачей,
-            интерактивными анимациями и адаптивом под любой экран.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#portfolio" class="btn btn-primary">
-                Смотреть работы →
-            </a>
-
-            <a href="#contact" class="btn btn-secondary">
-                Обсудить проект
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-<div class="container hero-bottom">
-    <span>1САЙТ / WEB DEVELOPMENT</span>
-    <span>
-        SCROLL
-        <span class="scroll-line"></span>
-    </span>
-</div>
-
-</section><!-- =========================
-     ПРОБЛЕМА
-========================= --><section id="problem"><div class="container">
-
-    <div class="section-label">01 / Проблема</div>
-
-    <h2 class="section-title">
-        Сайт должен<br>
-        цеплять сразу.
-    </h2>
-
-    <p class="section-description">
-        Большинство сайтов выглядят одинаково.
-        Я использую интерактив, движение и визуальную систему,
-        чтобы сайт выделял бизнес среди конкурентов.
-    </p>
-
-
-    <div class="problem-grid">
-
-        <article class="card reveal" data-delay="0">
-
-            <div class="card-number">01</div>
-
-            <div class="card-icon">◇</div>
-
-            <h3>Сайт как у всех</h3>
-
-            <p>
-                Шаблонная страница не вызывает эмоций
-                и быстро забывается.
-            </p>
-
-        </article>
-
-
-        <article class="card reveal" data-delay="150">
-
-            <div class="card-number">02</div>
-
-            <div class="card-icon">✦</div>
-
-            <h3>Добавляем движение</h3>
-
-            <p>
-                Анимации направляют внимание пользователя
-                и делают интерфейс живым.
-            </p>
-
-        </article>
-
-
-        <article class="card reveal" data-delay="300">
-
-            <div class="card-number">03</div>
-
-            <div class="card-icon">✧</div>
-
-            <h3>Получаем впечатление</h3>
-
-            <p>
-                Клиент не просто смотрит сайт —
-                он взаимодействует с ним.
-            </p>
-
-        </article>
-
-    </div>
-
-</div>
-
-</section><!-- =========================
-     УСЛУГИ
-========================= --><section class="services" id="services"><div class="container">
-
-    <div class="section-label">02 / Услуги</div>
-
-    <h2 class="section-title">
-        Не шаблон.<br>
-        Решение под задачу.
-    </h2>
-
-    <p class="section-description">
-        От простой страницы до полноценного продающего лендинга.
-        Каждый проект собирается под конкретный бизнес.
-    </p>
-
-
-    <div class="services-grid">
-
-        <article class="card service-card reveal" data-delay="0">
-
-            <div class="card-number">01 / START</div>
-
-            <div class="card-icon">◈</div>
-
-            <h3>Сайт-визитка</h3>
-
-            <p class="service-description">
-                Компактный сайт для специалиста,
-                компании или личного бренда.
-            </p>
-
-            <ul class="features">
-                <li>Адаптив под телефон</li>
-                <li>Современный дизайн</li>
-                <li>Плавные анимации</li>
-                <li>Форма связи</li>
-            </ul>
-
-            <a href="https://rasulovking2577.github.io/website/"
-               target="_blank"
-               class="card-link">
-                Смотреть пример →
-            </a>
-
-        </article>
-
-
-        <article class="card service-card reveal" data-delay="150">
-
-            <div class="card-number">02 / BUSINESS</div>
-
-            <div class="card-icon">↗</div>
-
-            <h3>Продающий лендинг</h3>
-
-            <p class="service-description">
-                Страница, построенная вокруг одной цели:
-                привести клиента к заявке.
-            </p>
-
-            <ul class="features">
-                <li>Интерактивные блоки</li>
-                <li>3D hover-эффекты</li>
-                <li>Анимированные элементы</li>
-                <li>Конверсионная структура</li>
-            </ul>
-
-            <a href="https://rasulovking2577.github.io/Aragvi/"
-               target="_blank"
-               class="card-link">
-                Смотреть пример →
-            </a>
-
-        </article>
-
-
-        <article class="card service-card reveal" data-delay="300">
-
-            <div class="card-number">03 / LOCAL</div>
-
-            <div class="card-icon">⌁</div>
-
-            <h3>Сайт для бизнеса</h3>
-
-            <p class="service-description">
-                Полноценная презентация локального бизнеса
-                с услугами, контактами и заявками.
-            </p>
-
-            <ul class="features">
-                <li>Услуги и цены</li>
-                <li>Контакты</li>
-                <li>Адаптив</li>
-                <li>Интерактив</li>
-            </ul>
-
-            <a href="#contact" class="card-link">
-                Обсудить проект →
-            </a>
-
-        </article>
-
-    </div>
-
-</div>
-
-</section><!-- =========================
-     ПОРТФОЛИО
-========================= --><section id="portfolio"><div class="container">
-
-    <div class="section-label">03 / Портфолио</div>
-
-    <h2 class="section-title">
-        Не макеты.<br>
-        Рабочие проекты.
-    </h2>
-
-    <p class="section-description">
-        Открывай, нажимай, проверяй.
-        Это реальные сайты, которые можно посмотреть прямо сейчас.
-    </p>
-
-
-    <div class="portfolio-grid">
-
-        <article class="card project reveal" data-delay="0">
-
-            <div class="project-preview">
-
-                <iframe
-                    src="https://rasulovking2577.github.io/website/"
-                    loading="lazy"
-                    title="Сайт-визитка">
-                </iframe>
-
-                <div class="project-overlay">
-
-                    <a
-                        href="https://rasulovking2577.github.io/website/"
-                        target="_blank"
-                        class="project-open">
-                        Открыть проект ↗
+                    <a href="#contact" class="btn btn-outline">
+                        Обсудить проект
                     </a>
 
                 </div>
 
-            </div>
+                <div class="hero-stats">
 
-            <div class="project-info">
+                    <div>
+                        <strong>01</strong>
+                        <span>Developer</span>
+                    </div>
 
-                <h3>Сайт-визитка</h3>
+                    <div>
+                        <strong>HTML</strong>
+                        <span>Structure</span>
+                    </div>
 
-                <div class="project-tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Responsive</span>
-                </div>
+                    <div>
+                        <strong>CSS</strong>
+                        <span>Design</span>
+                    </div>
 
-            </div>
-
-        </article>
-
-
-        <article class="card project reveal" data-delay="150">
-
-            <div class="project-preview">
-
-                <iframe
-                    src="https://rasulovking2577.github.io/Aragvi/"
-                    loading="lazy"
-                    title="Aragvi">
-                </iframe>
-
-                <div class="project-overlay">
-
-                    <a
-                        href="https://rasulovking2577.github.io/Aragvi/"
-                        target="_blank"
-                        class="project-open">
-                        Открыть проект ↗
-                    </a>
+                    <div>
+                        <strong>JS</strong>
+                        <span>Interaction</span>
+                    </div>
 
                 </div>
 
             </div>
 
-            <div class="project-info">
 
-                <h3>Aragvi — автосервис</h3>
+            <!-- 3D CARD -->
+            <div class="hero-visual">
 
-                <div class="project-tags">
-                    <span>Landing</span>
-                    <span>HTML/CSS/JS</span>
-                    <span>Animation</span>
+                <div class="orbit orbit-1"></div>
+                <div class="orbit orbit-2"></div>
+
+                <div class="developer-card">
+
+                    <div class="card-top">
+                        <span>RASULOV.DEV</span>
+                        <span>2026</span>
+                    </div>
+
+                    <div class="card-center">
+                        <div class="big-r">R</div>
+                    </div>
+
+                    <div class="code-lines">
+
+                        <div>
+                            <span class="pink">const</span>
+                            developer =
+                            <span class="green">"Rasulov"</span>;
+                        </div>
+
+                        <div>
+                            <span class="pink">const</span>
+                            passion =
+                            <span class="green">"web"</span>;
+                        </div>
+
+                        <div>
+                            <span class="pink">return</span>
+                            create();
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
-        </article>
+        </section>
 
 
-        <article class="card your-project reveal" data-delay="300">
+        <!-- ABOUT -->
+        <section class="section" id="about">
 
-            <div>
+            <div class="section-label">
+                01 / ABOUT
+            </div>
 
-                <div class="card-number">03 / NEXT PROJECT</div>
+            <div class="section-grid">
 
-                <h3>Следующий проект — ваш?</h3>
+                <div>
+                    <h2>
+                        Не просто код.<br>
+                        <span>Идея → результат.</span>
+                    </h2>
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        Я изучаю веб-разработку и постепенно превращаю
+                        знания в реальные проекты.
+                    </p>
+
+                    <p>
+                        Мне нравится создавать интерфейсы, которые выглядят
+                        современно, работают быстро и помогают бизнесу
+                        получать результат.
+                    </p>
+
+                    <div class="quote">
+                        «Хороший сайт — это не просто дизайн.
+                        Это впечатление, которое остаётся у человека.»
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section class="section skills-section" id="skills">
+
+            <div class="section-label">
+                02 / SKILLS
+            </div>
+
+            <h2 class="section-title">
+                Мой <span>стек.</span>
+            </h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <div class="skill-number">
+                        01
+                    </div>
+
+                    <div class="skill-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        Создание правильной и понятной
+                        структуры веб-страниц.
+                    </p>
+
+                    <div class="skill-line">
+                        <span></span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">
+                        02
+                    </div>
+
+                    <div class="skill-icon">
+                        #
+                    </div>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Современный дизайн, адаптивность,
+                        анимации и визуальные эффекты.
+                    </p>
+
+                    <div class="skill-line">
+                        <span></span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">
+                        03
+                    </div>
+
+                    <div class="skill-icon">
+                        JS
+                    </div>
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        Интерактивность, логика и динамическое
+                        поведение интерфейса.
+                    </p>
+
+                    <div class="skill-line">
+                        <span></span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-number">
+                        04
+                    </div>
+
+                    <div class="skill-icon">
+                        Git
+                    </div>
+
+                    <h3>GitHub</h3>
+
+                    <p>
+                        Работа с версиями проектов
+                        и публикация сайтов.
+                    </p>
+
+                    <div class="skill-line">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section class="section" id="projects">
+
+            <div class="section-label">
+                03 / PROJECTS
+            </div>
+
+            <div class="projects-heading">
+
+                <h2>
+                    Из идеи<br>
+                    в <span>реальность.</span>
+                </h2>
 
                 <p>
-                    Расскажите, какой сайт нужен.
-                    Я предложу структуру, дизайн и решение.
+                    Проекты, которые я создаю,
+                    изучая разработку и дизайн.
                 </p>
 
             </div>
 
-            <a href="#contact" class="btn btn-primary">
-                Начать проект →
+
+            <div class="projects-grid">
+
+                <article class="project project-large">
+
+                    <div class="project-image project-red">
+
+                        <div class="fake-browser">
+
+                            <div class="browser-top">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+
+                            <div class="fake-content">
+                                <span>01SITE</span>
+                                <h3>Digital<br>Experience</h3>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span class="project-type">
+                                WEBSITE
+                            </span>
+
+                            <h3>
+                                Business Landing
+                            </h3>
+                        </div>
+
+                        <span class="arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-image project-dark">
+
+                        <div class="project-symbol">
+                            &lt;R /&gt;
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span class="project-type">
+                                PORTFOLIO
+                            </span>
+
+                            <h3>
+                                Rasulov Portfolio
+                            </h3>
+                        </div>
+
+                        <span class="arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-image project-gradient">
+
+                        <div class="project-symbol">
+                            WEB
+                        </div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span class="project-type">
+                                IN DEVELOPMENT
+                            </span>
+
+                            <h3>
+                                Next Project
+                            </h3>
+                        </div>
+
+                        <span class="arrow">↗</span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta" id="contact">
+
+            <div class="cta-circle"></div>
+
+            <p class="section-label">
+                04 / CONTACT
+            </p>
+
+            <h2>
+                Есть идея?
+            </h2>
+
+            <h3>
+                Давайте создадим её.
+            </h3>
+
+            <p>
+                Расскажите о проекте — обсудим задачу,
+                дизайн и возможный результат.
+            </p>
+
+            <a
+                href="mailto:rasulov2588@gmail.com"
+                class="btn btn-main cta-button"
+            >
+                Написать мне
+                <span>↗</span>
             </a>
 
-        </article>
+            <div class="contact-links">
 
-    </div>
+                <a
+                    href="mailto:rasulov2588@gmail.com"
+                    class="contact-link"
+                >
+                    Email
+                    <span>rasulov2588@gmail.com</span>
+                </a>
 
-</div>
+                <a
+                    href="tel:+78969656414"
+                    class="contact-link"
+                >
+                    Телефон
+                    <span>8 969 665-64-14</span>
+                </a>
 
-</section><!-- =========================
-     PROCESS
-========================= --><section class="process" id="process"><div class="container">
+                <a href="#" class="contact-link">
+                    Telegram
+                    <span>@rasulov</span>
+                </a>
 
-    <div class="section-label">04 / Процесс</div>
+                <a href="#" class="contact-link">
+                    WhatsApp
+                    <span>Написать</span>
+                </a>
 
-    <h2 class="section-title">
-        От идеи<br>
-        до запуска.
-    </h2>
-
-    <p class="section-description">
-        Пять понятных этапов. Никакой магии —
-        просто нормальный процесс разработки.
-    </p>
-
-
-    <div class="timeline">
-
-        <div class="timeline-line">
-            <div class="timeline-progress" id="timelineProgress"></div>
-        </div>
-
-        <div class="steps">
-
-            <div class="step active" data-step="1">
-                <span class="step-dot"></span>
-                <div class="step-number">01</div>
-                <h3>Обсуждаем</h3>
-                <p>Определяем задачу, аудиторию и цель сайта.</p>
             </div>
 
-            <div class="step" data-step="2">
-                <span class="step-dot"></span>
-                <div class="step-number">02</div>
-                <h3>Проектируем</h3>
-                <p>Создаём структуру и визуальную концепцию.</p>
-            </div>
+        </section>
 
-            <div class="step" data-step="3">
-                <span class="step-dot"></span>
-                <div class="step-number">03</div>
-                <h3>Разрабатываем</h3>
-                <p>Верстаем интерфейс и добавляем интерактив.</p>
-            </div>
+    </main>
 
-            <div class="step" data-step="4">
-                <span class="step-dot"></span>
-                <div class="step-number">04</div>
-                <h3>Тестируем</h3>
-                <p>Проверяем сайт на разных устройствах.</p>
-            </div>
 
-            <div class="step" data-step="5">
-                <span class="step-dot"></span>
-                <div class="step-number">05</div>
-                <h3>Запускаем</h3>
-                <p>Публикуем готовый сайт и передаём его вам.</p>
-            </div>
+    <!-- FOOTER -->
+    <footer>
 
+        <div class="footer-logo">
+            R<span>.</span>
         </div>
 
-    </div>
+        <p>
+            Designed & coded by Rasulov
+        </p>
 
-</div>
+        <p>
+            © 2026
+        </p>
 
-</section><!-- =========================
-     WHY
-========================= --><section id="why"><div class="container">
+    </footer>
 
-    <div class="section-label">05 / Почему я</div>
 
-    <h2 class="section-title">
-        Небольшая команда.<br>
-        Один разработчик.
-    </h2>
+    <script src="script.js"></script>
 
-    <div class="why-grid">
-
-        <article class="why-card reveal">
-            <div class="why-icon">◆</div>
-            <h3>Напрямую</h3>
-            <p>Вы общаетесь непосредственно с разработчиком.</p>
-        </article>
-
-        <article class="why-card reveal">
-            <div class="why-icon">▣</div>
-            <h3>Адаптив</h3>
-            <p>Сайт нормально работает на телефоне и компьютере.</p>
-        </article>
-
-        <article class="why-card reveal">
-            <div class="why-icon">⚡</div>
-            <h3>Интерактив</h3>
-            <p>Анимации делают интерфейс живым, а не статичным.</p>
-        </article>
-
-        <article class="why-card reveal">
-            <div class="why-icon">●</div>
-            <h3>Результат</h3>
-            <p>Можно открыть реальные проекты и всё проверить.</p>
-        </article>
-
-    </div>
-
-
-    <div class="stats">
-
-        <div>
-            <div class="stat-number counter" data-target="5">0</div>
-            <div class="stat-label">Проектов</div>
-        </div>
-
-        <div>
-            <div class="stat-number counter" data-target="100">0</div>
-            <div class="stat-label">Адаптивность</div>
-        </div>
-
-        <div>
-            <div class="stat-number counter" data-target="24">0</div>
-            <div class="stat-label">Часа на связи</div>
-        </div>
-
-    </div>
-
-</div>
-
-</section><!-- =========================
-     CONTACT
-========================= --><section class="contact" id="contact"><div class="container">
-
-    <div class="section-label">06 / Контакты</div>
-
-    <h2 class="section-title">
-        Сделаем сайт,<br>
-        который заметят.
-    </h2>
-
-    <p class="section-description">
-        Напишите мне, что вам нужно.
-        Обсудим задачу и я предложу решение.
-    </p>
-
-    <a
-        href="https://wa.me/79696656414"
-        target="_blank"
-        class="contact-button">
-        Обсудить проект →
-    </a>
-
-    <div class="contact-links">
-        <a href="https://wa.me/79696656414" target="_blank">WhatsApp</a>
-        <a href="https://t.me/79696656414" target="_blank">Telegram</a>
-        <span>+7 969 665-64-14</span>
-        <span>Махачкала / удалённо</span>
-    </div>
-
-</div>
-
-</section><footer><div class="container footer-inner">
-
-    <span>
-        © 2026 1САЙТ
-    </span>
-
-    <span>
-        HTML / CSS / JavaScript
-    </span>
-
-</div>
-
-</footer><script>
-"use strict";
-
-/* =========================
-   HEADER
-========================= */
-
-const header = document.getElementById("header");
-
-window.addEventListener("scroll", () => {
-
-    header.classList.toggle(
-        "scrolled",
-        window.scrollY > 50
-    );
-
-});
-
-
-/* =========================
-   PROGRESS BAR
-========================= */
-
-const progressBar = document.querySelector(".progress");
-
-window.addEventListener("scroll", () => {
-
-    const max =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const percent =
-        max > 0
-        ? window.scrollY / max * 100
-        : 0;
-
-    progressBar.style.width = percent + "%";
-
-}, {passive:true});
-
-
-/* =========================
-   MOBILE MENU
-========================= */
-
-const menu = document.getElementById("menu");
-const nav = document.getElementById("nav");
-
-menu.addEventListener("click", () => {
-
-    menu.classList.toggle("open");
-    nav.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
-
-});
-
-nav.querySelectorAll("a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        menu.classList.remove("open");
-        nav.classList.remove("open");
-        document.body.classList.remove("menu-open");
-
-    });
-
-});
-
-
-/* =========================
-   CUSTOM CURSOR
-========================= */
-
-const cursor = document.querySelector(".cursor");
-
-if(
-    window.matchMedia("(pointer:fine)").matches
-){
-
-    window.addEventListener("mousemove", e => {
-
-        cursor.style.left = e.clientX + "px";
-        cursor.style.top = e.clientY + "px";
-
-    });
-
-    document
-        .querySelectorAll("a,button,.card,.step")
-        .forEach(el => {
-
-            el.addEventListener(
-                "mouseenter",
-                () => cursor.classList.add("active")
-            );
-
-            el.addEventListener(
-                "mouseleave",
-                () => cursor.classList.remove("active")
-            );
-
-        });
-
-}else{
-
-    cursor.style.display = "none";
-
-}
-
-
-/* =========================
-   TYPEWRITER
-========================= */
-
-const typewriter =
-    document.getElementById("typewriter");
-
-const words = [
-    "Разрабатываю",
-    "Создаю",
-    "Проектирую"
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function type(){
-
-    const word = words[wordIndex];
-
-    if(!deleting){
-
-        charIndex++;
-
-        typewriter.textContent =
-            word.substring(0,charIndex);
-
-        if(charIndex === word.length){
-
-            deleting = true;
-
-            setTimeout(type,1700);
-
-            return;
-        }
-
-    }else{
-
-        charIndex--;
-
-        typewriter.textContent =
-            word.substring(0,charIndex);
-
-        if(charIndex === 0){
-
-            deleting = false;
-
-            wordIndex =
-                (wordIndex + 1) % words.length;
-
-            setTimeout(type,350);
-
-            return;
-        }
-
-    }
-
-    setTimeout(
-        type,
-        deleting ? 45 : 90
-    );
-}
-
-setTimeout(type,500);
-
-
-/* =========================
-   REVEAL CARDS
-========================= */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if(!entry.isIntersecting)
-                    return;
-
-                const el = entry.target;
-
-                const delay =
-                    Number(el.dataset.delay || 0);
-
-                setTimeout(() => {
-
-                    el.classList.add("visible");
-
-                },delay);
-
-                revealObserver.unobserve(el);
-
-            });
-
-        },
-        {
-            threshold:.15,
-            rootMargin:"0px 0px -60px 0px"
-        }
-    );
-
-revealElements.forEach(el =>
-    revealObserver.observe(el)
-);
-
-
-/* =========================
-   3D CARD TILT
-========================= */
-
-if(
-    window.matchMedia("(pointer:fine)").matches
-){
-
-    document
-        .querySelectorAll(".card")
-        .forEach(card => {
-
-            card.addEventListener(
-                "mousemove",
-                e => {
-
-                    const rect =
-                        card.getBoundingClientRect();
-
-                    const x =
-                        (e.clientX - rect.left)
-                        / rect.width - .5;
-
-                    const y =
-                        (e.clientY - rect.top)
-                        / rect.height - .5;
-
-                    const rotateX =
-                        y * -7;
-
-                    const rotateY =
-                        x * 7;
-
-                    card.style.transform =
-                        `perspective(900px)
-                         rotateX(${rotateX}deg)
-                         rotateY(${rotateY}deg)
-                         translateY(-5px)`;
-
-                }
-            );
-
-            card.addEventListener(
-                "mouseleave",
-                () => {
-
-                    card.style.transform = "";
-
-                }
-            );
-
-        });
-
-}
-
-
-/* =========================
-   PARALLAX
-========================= */
-
-const parallax =
-    document.querySelectorAll(".parallax");
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const scroll =
-            window.scrollY;
-
-        parallax.forEach(el => {
-
-            const speed =
-                Number(el.dataset.speed || 0);
-
-            el.style.transform =
-                `translate3d(0,${scroll * speed}px,0)`;
-
-        });
-
-    },
-    {passive:true}
-);
-
-
-/* =========================
-   COUNTERS
-========================= */
-
-const counters =
-    document.querySelectorAll(".counter");
-
-let countersStarted = false;
-
-const counterObserver =
-    new IntersectionObserver(
-        entries => {
-
-            if(!entries[0].isIntersecting)
-                return;
-
-            if(countersStarted)
-                return;
-
-            countersStarted = true;
-
-            counters.forEach(counter => {
-
-                const target =
-                    Number(counter.dataset.target);
-
-                const duration = 1500;
-
-                const start =
-                    performance.now();
-
-                function animate(now){
-
-                    const progress =
-                        Math.min(
-                            (now - start) / duration,
-                            1
-                        );
-
-                    const eased =
-                        1 -
-                        Math.pow(
-                            1-progress,
-                            3
-                        );
-
-                    counter.textContent =
-                        Math.floor(
-                            target * eased
-                        );
-
-                    if(progress < 1){
-
-                        requestAnimationFrame(
-                            animate
-                        );
-
-                    }else{
-
-                        counter.textContent =
-                            target;
-
-                        counter.animate(
-                            [
-                                {
-                                    transform:"scale(1)"
-                                },
-                                {
-                                    transform:"scale(1.18)"
-                                },
-                                {
-                                    transform:"scale(1)"
-                                }
-                            ],
-                            {
-                                duration:600,
-                                easing:"ease-out"
-                            }
-                        );
-
-                    }
-
-                }
-
-                requestAnimationFrame(animate);
-
-            });
-
-        },
-        {threshold:.4}
-    );
-
-counterObserver.observe(
-    document.getElementById("why")
-);
-
-
-/* =========================
-   TIMELINE
-========================= */
-
-const steps =
-    document.querySelectorAll(".step");
-
-const timelineProgress =
-    document.getElementById(
-        "timelineProgress"
-    );
-
-let currentStep = 0;
-let timelineTimer;
-
-function activateStep(index){
-
-    steps.forEach(
-        step => step.classList.remove("active")
-    );
-
-    steps[index].classList.add("active");
-
-    const percent =
-        (index / (steps.length - 1)) * 100;
-
-    timelineProgress.style.width =
-        percent + "%";
-
-    currentStep = index;
-
-}
-
-function startTimeline(){
-
-    activateStep(0);
-
-    clearInterval(timelineTimer);
-
-    timelineTimer =
-        setInterval(() => {
-
-            currentStep++;
-
-            if(currentStep >= steps.length){
-
-                clearInterval(timelineTimer);
-
-                return;
-
-            }
-
-            activateStep(currentStep);
-
-        },2000);
-
-}
-
-steps.forEach((step,index) => {
-
-    step.addEventListener(
-        "click",
-        () => {
-
-            clearInterval(timelineTimer);
-
-            activateStep(index);
-
-        }
-    );
-
-});
-
-
-const processObserver =
-    new IntersectionObserver(
-        entries => {
-
-            if(entries[0].isIntersecting){
-
-                startTimeline();
-
-                processObserver.disconnect();
-
-            }
-
-        },
-        {threshold:.3}
-    );
-
-processObserver.observe(
-    document.getElementById("process")
-);
-
-
-/* =========================
-   FADE THROUGH BLACK
-========================= */
-
-const sections =
-    document.querySelectorAll("section");
-
-const fadeObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target.style
-                        .setProperty(
-                            "--section-opacity",
-                            "1"
-                        );
-
-                }
-
-            });
-
-        },
-        {threshold:.05}
-    );
-
-sections.forEach(section =>
-    fadeObserver.observe(section)
-);
-
-
-/* =========================
-   TOUCH CARD INTERACTION
-========================= */
-
-if(
-    !window.matchMedia("(pointer:fine)").matches
-){
-
-    document
-        .querySelectorAll(".card")
-        .forEach(card => {
-
-            card.addEventListener(
-                "click",
-                () => {
-
-                    card.animate(
-                        [
-                            {
-                                transform:"scale(1)"
-                            },
-                            {
-                                transform:"scale(.97)"
-                            },
-                            {
-                                transform:"scale(1)"
-                            }
-                        ],
-                        {
-                            duration:350,
-                            easing:"ease-out"
-                        }
-                    );
-
-                }
-            );
-
-        });
-
-}
-
-
-/* =========================
-   FADE-THROUGH BLACK
-========================= */
-
-let lastScroll = window.scrollY;
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const current =
-            window.scrollY;
-
-        if(
-            Math.abs(current-lastScroll) > 80
-        ){
-
-            document.body.style
-                .setProperty(
-                    "--scroll-depth",
-                    current
-                );
-
-            lastScroll = current;
-
-        }
-
-    },
-    {passive:true}
-);
-
-</script></body>
+</body>
 </html>
