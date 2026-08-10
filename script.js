@@ -1,412 +1,592 @@
-/* =========================
-   1САЙТ — INTERACTIONS
-========================= */
+/* =========================================
+   RASULOV — MOTION SYSTEM
+========================================= */
 
 
-/* CURSOR GLOW */
+/* =========================================
+   NAVIGATION
+========================================= */
 
-const cursorGlow = document.querySelector(".cursor-glow");
+const nav = document.querySelector(".nav");
 
-window.addEventListener("mousemove", (e) => {
+window.addEventListener("scroll", () => {
 
-    if (!cursorGlow) return;
-
-    cursorGlow.style.left = `${e.clientX}px`;
-    cursorGlow.style.top = `${e.clientY}px`;
-
-});
-
-
-/* MOBILE MENU */
-
-const menuButton = document.querySelector(".menu-btn");
-const mobileMenu = document.querySelector(".mobile-menu");
-
-menuButton.addEventListener("click", () => {
-
-    mobileMenu.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
+  if (window.scrollY > 50) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
 
 });
 
 
-document.querySelectorAll(".mobile-menu a").forEach(link => {
+/* =========================================
+   SCROLL REVEAL
+========================================= */
 
-    link.addEventListener("click", () => {
+const revealElements = document.querySelectorAll(
+  ".reveal, .reveal-left, .reveal-right"
+);
 
-        mobileMenu.classList.remove("open");
-        document.body.classList.remove("menu-open");
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("visible");
+
+        revealObserver.unobserve(entry.target);
+
+      }
 
     });
 
-});
-
-
-/* SCROLL REVEAL */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-const revealObserver =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    revealObserver.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
+  },
+  {
+    threshold: 0.12,
+    rootMargin: "0px 0px -70px 0px"
+  }
+);
 
 
 revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
 
-    revealObserver.observe(element);
+
+/* =========================================
+   MAGNETIC BUTTONS
+========================================= */
+
+const magneticElements = document.querySelectorAll(".magnetic");
+
+magneticElements.forEach((element) => {
+
+  element.addEventListener("mousemove", (event) => {
+
+    if (window.innerWidth < 900) return;
+
+    const rect = element.getBoundingClientRect();
+
+    const x =
+      event.clientX -
+      rect.left -
+      rect.width / 2;
+
+    const y =
+      event.clientY -
+      rect.top -
+      rect.height / 2;
+
+    element.style.transform =
+      `translate(${x * 0.18}px, ${y * 0.18}px)`;
+
+  });
+
+
+  element.addEventListener("mouseleave", () => {
+
+    element.style.transform = "";
+
+  });
 
 });
 
 
-/* MAGNETIC BUTTONS */
+/* =========================================
+   CUSTOM CURSOR
+========================================= */
 
-const magneticElements =
-    document.querySelectorAll(".magnetic");
+const cursor = document.querySelector(".cursor");
+const follower = document.querySelector(".cursor-follower");
 
-if (window.matchMedia("(hover:hover)").matches) {
+let mouseX = 0;
+let mouseY = 0;
 
-    magneticElements.forEach((element) => {
-
-        element.addEventListener("mousemove", (event) => {
-
-            const rect =
-                element.getBoundingClientRect();
-
-            const x =
-                event.clientX -
-                rect.left -
-                rect.width / 2;
-
-            const y =
-                event.clientY -
-                rect.top -
-                rect.height / 2;
-
-            element.style.transform =
-                `translate(${x * 0.12}px, ${y * 0.12}px)`;
-
-        });
+let followerX = 0;
+let followerY = 0;
 
 
-        element.addEventListener("mouseleave", () => {
+document.addEventListener("mousemove", (event) => {
 
-            element.style.transform =
-                "translate(0, 0)";
+  mouseX = event.clientX;
+  mouseY = event.clientY;
 
-        });
+  cursor.style.left = `${mouseX}px`;
+  cursor.style.top = `${mouseY}px`;
 
-    });
+});
+
+
+function animateCursor() {
+
+  followerX +=
+    (mouseX - followerX) * 0.12;
+
+  followerY +=
+    (mouseY - followerY) * 0.12;
+
+  follower.style.left = `${followerX}px`;
+  follower.style.top = `${followerY}px`;
+
+  requestAnimationFrame(animateCursor);
+
+}
+
+animateCursor();
+
+
+const interactiveElements = document.querySelectorAll(
+  "a, button, .project-card, .service"
+);
+
+
+interactiveElements.forEach((element) => {
+
+  element.addEventListener("mouseenter", () => {
+    follower.classList.add("active");
+  });
+
+  element.addEventListener("mouseleave", () => {
+    follower.classList.remove("active");
+  });
+
+});
+
+
+/* =========================================
+   HERO PARALLAX
+========================================= */
+
+const heroOrb = document.querySelector(".hero-orb");
+
+window.addEventListener("mousemove", (event) => {
+
+  if (!heroOrb || window.innerWidth < 900) {
+    return;
+  }
+
+  const x =
+    (event.clientX / window.innerWidth - 0.5) * 30;
+
+  const y =
+    (event.clientY / window.innerHeight - 0.5) * 30;
+
+  heroOrb.style.transform =
+    `translate(${x}px, ${y}px)`;
+
+});
+
+
+/* =========================================
+   HORIZONTAL PROJECT SCROLL
+========================================= */
+
+const horizontalSection =
+  document.querySelector(".projects-section");
+
+const horizontalTrack =
+  document.querySelector(".horizontal-track");
+
+
+function updateHorizontalScroll() {
+
+  if (
+    !horizontalSection ||
+    !horizontalTrack ||
+    window.innerWidth < 800
+  ) {
+    return;
+  }
+
+
+  const rect =
+    horizontalSection.getBoundingClientRect();
+
+  const sectionHeight =
+    horizontalSection.offsetHeight;
+
+  const viewportHeight =
+    window.innerHeight;
+
+
+  const start =
+    viewportHeight - rect.top;
+
+  const total =
+    sectionHeight + viewportHeight;
+
+
+  let progress =
+    start / total;
+
+
+  progress =
+    Math.max(0, Math.min(1, progress));
+
+
+  const maxMove =
+    horizontalTrack.scrollWidth -
+    window.innerWidth;
+
+
+  const move =
+    progress * maxMove;
+
+
+  horizontalTrack.style.transform =
+    `translate3d(${-move}px, 0, 0)`;
 
 }
 
 
-/* FAQ */
+window.addEventListener(
+  "scroll",
+  updateHorizontalScroll,
+  { passive: true }
+);
+
+window.addEventListener(
+  "resize",
+  updateHorizontalScroll
+);
+
+updateHorizontalScroll();
+
+
+/* =========================================
+   PROJECT CARD PARALLAX
+========================================= */
+
+const projectCards =
+  document.querySelectorAll(".project-card");
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    if (window.innerWidth < 800) {
+      return;
+    }
+
+    projectCards.forEach((card) => {
+
+      const rect =
+        card.getBoundingClientRect();
+
+      const center =
+        window.innerWidth / 2;
+
+      const cardCenter =
+        rect.left + rect.width / 2;
+
+      const distance =
+        cardCenter - center;
+
+      const rotate =
+        Math.max(
+          -3,
+          Math.min(
+            3,
+            distance / 250
+          )
+        );
+
+      card.style.rotate =
+        `${rotate}deg`;
+
+    });
+
+  },
+  { passive: true }
+);
+
+
+/* =========================================
+   FAQ
+========================================= */
 
 const faqItems =
-    document.querySelectorAll(".faq-item");
+  document.querySelectorAll(".faq-item");
+
 
 faqItems.forEach((item) => {
 
-    const button =
-        item.querySelector("button");
+  const question =
+    item.querySelector(".faq-question");
 
-    button.addEventListener("click", () => {
-
-        const isActive =
-            item.classList.contains("active");
+  const answer =
+    item.querySelector(".faq-answer");
 
 
-        faqItems.forEach((otherItem) => {
+  question.addEventListener(
+    "click",
+    () => {
 
-            otherItem.classList.remove("active");
+      const isActive =
+        item.classList.contains("active");
 
-        });
+
+      faqItems.forEach((otherItem) => {
+
+        otherItem.classList.remove("active");
+
+        const otherAnswer =
+          otherItem.querySelector(".faq-answer");
+
+        otherAnswer.style.maxHeight = null;
+
+      });
 
 
-        if (!isActive) {
+      if (!isActive) {
 
-            item.classList.add("active");
+        item.classList.add("active");
 
-        }
+        answer.style.maxHeight =
+          `${answer.scrollHeight}px`;
 
-    });
+      }
+
+    }
+  );
 
 });
 
 
-/* WHATSAPP FORM */
+/* =========================================
+   SMOOTH ANCHOR
+========================================= */
 
-const contactForm =
-    document.getElementById("contactForm");
+document.querySelectorAll(
+  'a[href^="#"]'
+).forEach((link) => {
+
+  link.addEventListener("click", (event) => {
+
+    const targetId =
+      link.getAttribute("href");
+
+    if (
+      !targetId ||
+      targetId === "#"
+    ) {
+      return;
+    }
 
 
-contactForm.addEventListener("submit", (event) => {
+    const target =
+      document.querySelector(targetId);
+
+    if (!target) {
+      return;
+    }
+
 
     event.preventDefault();
 
 
-    const name =
-        document.getElementById("name").value.trim();
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
 
-    const phone =
-        document.getElementById("phone").value.trim();
+  });
 
-    const message =
-        document.getElementById("message").value.trim();
+});
 
 
-    if (!name || !phone || !message) {
+/* =========================================
+   TEXT MOUSE TILT
+========================================= */
 
-        alert("Заполните все поля.");
+const titles =
+  document.querySelectorAll(
+    ".hero-title, .contact-title"
+  );
 
+
+titles.forEach((title) => {
+
+  title.addEventListener(
+    "mousemove",
+    (event) => {
+
+      if (window.innerWidth < 900) {
         return;
+      }
+
+      const rect =
+        title.getBoundingClientRect();
+
+      const x =
+        (event.clientX - rect.left) /
+        rect.width -
+        0.5;
+
+      const y =
+        (event.clientY - rect.top) /
+        rect.height -
+        0.5;
+
+      title.style.transform =
+        `perspective(1000px)
+         rotateX(${y * -1.5}deg)
+         rotateY(${x * 1.5}deg)`;
 
     }
+  );
 
 
-    const text =
-        `Здравствуйте! Меня зовут ${name}.
+  title.addEventListener(
+    "mouseleave",
+    () => {
 
-Телефон: ${phone}
+      title.style.transform = "";
 
-Мне нужен сайт:
-${message}`;
-
-
-    const whatsappURL =
-        `https://wa.me/79696656414?text=${encodeURIComponent(text)}`;
-
-
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
+    }
+  );
 
 });
 
 
-/* SMOOTH ANCHOR OFFSET */
+/* =========================================
+   SCROLL VELOCITY
+========================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+let lastScroll =
+  window.scrollY;
 
-    anchor.addEventListener("click", function(event) {
-
-        const targetId =
-            this.getAttribute("href");
-
-        if (
-            targetId === "#" ||
-            targetId.length < 2
-        ) {
-            return;
-        }
+let scrollVelocity =
+  0;
 
 
-        const target =
-            document.querySelector(targetId);
+window.addEventListener(
+  "scroll",
+  () => {
 
-        if (!target) return;
+    const currentScroll =
+      window.scrollY;
+
+    scrollVelocity =
+      currentScroll -
+      lastScroll;
+
+    lastScroll =
+      currentScroll;
+
+  },
+  { passive: true }
+);
 
 
-        event.preventDefault();
+/* =========================================
+   PROJECT VELOCITY EFFECT
+========================================= */
 
+window.addEventListener(
+  "scroll",
+  () => {
 
-        const headerOffset = 90;
+    if (window.innerWidth < 800) {
+      return;
+    }
 
-        const targetPosition =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            headerOffset;
+    projectCards.forEach((card) => {
 
+      const speed =
+        Math.max(
+          -8,
+          Math.min(
+            8,
+            scrollVelocity * 0.15
+          )
+        );
 
-        window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth"
-        });
+      card.style.marginTop =
+        `${speed}px`;
 
     });
 
-});
+  },
+  { passive: true }
+);
 
 
-/* ACTIVE NAV */
+/* =========================================
+   PAGE LOAD
+========================================= */
 
-const sections =
-    document.querySelectorAll("section[id]");
+window.addEventListener(
+  "load",
+  () => {
 
-const navLinks =
-    document.querySelectorAll(".desktop-nav a");
-
-
-const navObserver =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    navLinks.forEach(link => {
-
-                        link.style.color =
-                            "rgba(255,255,255,.65)";
-
-                    });
-
-
-                    const active =
-                        document.querySelector(
-                            `.desktop-nav a[href="#${entry.target.id}"]`
-                        );
-
-
-                    if (active) {
-
-                        active.style.color =
-                            "#ffffff";
-
-                    }
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.35
-        }
+    document.body.classList.add(
+      "loaded"
     );
 
+    document
+      .querySelectorAll(".hero .reveal")
+      .forEach((element, index) => {
 
-sections.forEach(section => {
+        setTimeout(() => {
 
-    navObserver.observe(section);
+          element.classList.add(
+            "visible"
+          );
 
-});
+        }, 150 + index * 180);
 
+      });
 
-/* 3D PROJECT EFFECT */
-
-const projectCards =
-    document.querySelectorAll(".project");
-
-
-if (window.matchMedia("(hover:hover)").matches) {
-
-    projectCards.forEach(card => {
-
-        card.addEventListener("mousemove", (event) => {
-
-            const rect =
-                card.getBoundingClientRect();
+  }
+);
 
 
-            const x =
-                (event.clientX - rect.left) /
-                rect.width;
+/* =========================================
+   IMAGE LAZY LOAD SUPPORT
+========================================= */
 
-            const y =
-                (event.clientY - rect.top) /
-                rect.height;
+document
+  .querySelectorAll("img")
+  .forEach((image) => {
 
+    image.loading = "lazy";
 
-            const rotateX =
-                (0.5 - y) * 3;
-
-            const rotateY =
-                (x - 0.5) * 3;
+  });
 
 
-            card.style.transform =
-                `perspective(1000px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)`;
+/* =========================================
+   MOBILE HORIZONTAL PROJECTS
+========================================= */
 
-        });
+if (window.innerWidth < 800) {
 
+  const track =
+    document.querySelector(".horizontal-track");
 
-        card.addEventListener("mouseleave", () => {
+  if (track) {
 
-            card.style.transform =
-                "perspective(1000px) rotateX(0) rotateY(0)";
+    track.style.transform =
+      "none";
 
-        });
-
-    });
+  }
 
 }
 
 
-/* HERO PARALLAX */
+/* =========================================
+   CONSOLE
+========================================= */
 
-const heroGrid =
-    document.querySelector(".hero-grid");
+console.log(
+  "%cRasulov — Web Developer",
+  "font-size:20px;font-weight:bold;"
+);
 
-
-window.addEventListener("scroll", () => {
-
-    if (!heroGrid) return;
-
-    const scroll =
-        window.scrollY;
-
-    if (scroll < window.innerHeight) {
-
-        heroGrid.style.transform =
-            `translateY(${scroll * 0.12}px)`;
-
-    }
-
-});
-
-
-/* CONTACT BUTTON MICRO FEEDBACK */
-
-const submitButton =
-    document.querySelector(".submit-button");
-
-
-contactForm.addEventListener("submit", () => {
-
-    submitButton.querySelector("span").textContent =
-        "Открываю WhatsApp…";
-
-});
-
-
-/* CURRENT YEAR */
-
-document.querySelectorAll(".footer").forEach(footer => {
-
-    const year =
-        footer.querySelector(".current-year");
-
-    if (year) {
-
-        year.textContent =
-            new Date().getFullYear();
-
-    }
-
-});
+console.log(
+  "Welcome to the code."
+);
