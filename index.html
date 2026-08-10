@@ -1,1515 +1,2197 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1САЙТ — премиальная разработка</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* ============================================================
-           1САЙТ — ПОЛНЫЙ СТИЛЬ (встроен в HTML)
-           ============================================================ */
-        :root {
-            --deep: #0A1F1A;
-            --deep-2: #08160F;
-            --green: #12352A;
-            --green-2: #1A4D2E;
-            --gold: #D4AF37;
-            --gold-soft: #C9A84C;
-            --gold-dim: #8f7a2c;
-            --white: #FFFFFF;
-            --gray: #B0BEC5;
-            --gray-dim: #7c8b90;
-            --radius: 18px;
-            --ease: cubic-bezier(0.34, 1.56, 0.64, 1);
-            --ease-out: cubic-bezier(0.19, 1, 0.22, 1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>1САЙТ — разработка сайтов</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+:root{
+    --bg:#0a0a0a;
+    --bg2:#101010;
+    --card:#151515;
+    --gold:#d4af37;
+    --gold2:#f0d56a;
+    --white:#fff;
+    --text:#b5b5b5;
+    --muted:#686868;
 
-        body {
-            background: var(--deep);
-            color: var(--white);
-            font-family: 'Manrope', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    --ease:cubic-bezier(.22,1,.36,1);
+}
 
-        h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -.01em; }
-        a { color: inherit; text-decoration: none; }
-        ul { list-style: none; }
-        button { font-family: inherit; border: none; cursor: pointer; background: none; color: inherit; }
-        ::selection { background: var(--gold); color: var(--deep-2); }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-        section { position: relative; padding: 120px 0; }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* ---- PROGRESS BAR ---- */
-        .progress-bar {
-            position: fixed; top: 0; left: 0;
-            width: 0%; height: 2px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-soft));
-            z-index: 10000;
-            transition: width .15s ease;
-            box-shadow: 0 0 12px rgba(212, 175, 55, .4);
-        }
+body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:Manrope,sans-serif;
+    overflow-x:hidden;
+}
 
-        /* ---- КАСТОМНЫЙ КУРСОР ---- */
-        .custom-cursor {
-            position: fixed; top: 0; left: 0;
-            width: 28px; height: 28px;
-            border: 1.5px solid var(--gold);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width .35s var(--ease), height .35s var(--ease),
-                        background .35s var(--ease), border-color .35s var(--ease);
-            mix-blend-mode: difference;
-        }
-        .custom-cursor::after {
-            content: "1";
-            position: absolute; inset: 0;
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Fraunces', serif; font-size: 11px;
-            color: var(--gold);
-            opacity: 0;
-            transition: opacity .35s var(--ease);
-        }
-        .custom-cursor.grow { width: 56px; height: 56px; background: rgba(212, 175, 55, .08); border-color: var(--gold-soft); }
-        .custom-cursor.grow::after { opacity: 1; }
-        @media (hover: none), (pointer: coarse) { .custom-cursor { display: none; } }
+body.menu-open{
+    overflow:hidden;
+}
 
-        /* ---- ШАПКА ---- */
-        header {
-            position: fixed; top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 22px 0;
-            background: rgba(10, 31, 26, 0);
-            border-bottom: 1px solid transparent;
-            transition: background .5s var(--ease-out), border-color .5s var(--ease-out), padding .4s var(--ease-out);
-        }
-        header.scrolled {
-            background: rgba(8, 22, 15, .9);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(212, 175, 55, .1);
-            padding: 14px 0;
-        }
-        header .container { display: flex; align-items: center; justify-content: space-between; }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        .logo {
-            font-family: 'Fraunces', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); display: inline-block; }
-        .logo-badge {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .55rem;
-            color: var(--gold-dim);
-            background: rgba(212, 175, 55, .08);
-            padding: 2px 10px;
-            border-radius: 100px;
-            border: 1px solid rgba(212, 175, 55, .1);
-            letter-spacing: .06em;
-        }
+button{
+    font:inherit;
+}
 
-        nav ul { display: flex; gap: 40px; }
-        nav a {
-            font-size: .9rem;
-            color: var(--gray);
-            position: relative;
-            padding: 4px 0;
-            transition: color .3s var(--ease);
-        }
-        nav a::after {
-            content: attr(data-text);
-            position: absolute; left: 0; bottom: 0;
-            width: 0; height: 100%;
-            color: var(--white);
-            overflow: hidden;
-            transition: width .4s var(--ease);
-            white-space: nowrap;
-        }
-        nav a:hover::after { width: 100%; }
-        nav a:hover { color: transparent; }
+::selection{
+    background:var(--gold);
+    color:#000;
+}
 
-        .burger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
-        .burger span { width: 24px; height: 1.5px; background: var(--gold); display: block; transition: transform .35s var(--ease), opacity .35s var(--ease); }
+/* =========================
+   BACKGROUND
+========================= */
 
-        /* ---- ГЛАВНЫЙ ЭКРАН ---- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 120px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--deep) 0%, var(--deep-2) 35%, #0d2b21 65%, var(--deep) 100%);
-            background-size: 350% 350%;
-            animation: gradientShift 20s ease infinite;
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+.noise{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9998;
+    opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
 
-        .hero-glows { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-        .glow {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: .4;
-        }
-        .glow-1 {
-            width: 600px; height: 600px;
-            top: -200px; left: -200px;
-            background: radial-gradient(circle, rgba(0, 107, 77, .25), transparent 70%);
-            animation: glowFloat 14s ease-in-out infinite alternate;
-        }
-        .glow-2 {
-            width: 500px; height: 500px;
-            bottom: -100px; right: -100px;
-            background: radial-gradient(circle, rgba(212, 175, 55, .12), transparent 70%);
-            animation: glowFloat 16s ease-in-out infinite alternate-reverse;
-        }
-        .glow-3 {
-            width: 350px; height: 350px;
-            top: 30%; left: 40%;
-            background: radial-gradient(circle, rgba(212, 175, 55, .06), transparent 70%);
-            animation: glowFloat 20s ease-in-out infinite alternate;
-        }
-        .glow-4 {
-            width: 250px; height: 250px;
-            bottom: 20%; right: 25%;
-            background: radial-gradient(circle, rgba(0, 107, 77, .15), transparent 70%);
-            animation: glowFloat 12s ease-in-out infinite alternate-reverse;
-        }
-        @keyframes glowFloat {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(40px, -30px) scale(1.15); }
-        }
+.grid-bg{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.045;
+    background-image:
+        linear-gradient(rgba(212,175,55,.25) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(212,175,55,.25) 1px,transparent 1px);
+    background-size:80px 80px;
+    mask-image:linear-gradient(to bottom,black,transparent 80%);
+    z-index:-2;
+}
 
-        .hero-grid-lines {
-            position: absolute; inset: 0;
-            pointer-events: none; z-index: 0;
-            opacity: .03;
-            background:
-                linear-gradient(rgba(212, 175, 55, .3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(212, 175, 55, .3) 1px, transparent 1px);
-            background-size: 80px 80px;
-        }
+.cursor{
+    width:24px;
+    height:24px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:
+        width .35s var(--ease),
+        height .35s var(--ease),
+        background .35s ease;
+    mix-blend-mode:difference;
+}
 
-        #particles { position: absolute; inset: 0; z-index: 1; }
-        .hero .container { position: relative; z-index: 2; }
-        .hero-inner { max-width: 800px; }
+.cursor.active{
+    width:64px;
+    height:64px;
+    background:rgba(212,175,55,.12);
+}
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .7rem;
-            color: var(--gold-soft);
-            border: 1px solid rgba(212, 175, 55, .15);
-            padding: 6px 16px 6px 12px;
-            border-radius: 100px;
-            margin-bottom: 24px;
-            background: rgba(212, 175, 55, .04);
-        }
-        .hero-badge-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: #4CAF50;
-            display: inline-block;
-            animation: dotPulse 2s ease infinite;
-        }
-        @keyframes dotPulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: .4; transform: scale(.8); }
-        }
+/* =========================
+   PROGRESS
+========================= */
 
-        .eyebrow {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .7rem;
-            letter-spacing: .25em;
-            text-transform: uppercase;
-            color: var(--gold-soft);
-            display: inline-block;
-            margin-bottom: 16px;
-            opacity: .8;
-        }
+.progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    width:0;
+    background:linear-gradient(90deg,var(--gold),var(--gold2));
+    z-index:10000;
+    box-shadow:0 0 20px rgba(212,175,55,.7);
+}
 
-        .hero h1 {
-            font-size: clamp(2.4rem, 5.6vw, 4.4rem);
-            line-height: 1.1;
-        }
-        .hero h1 .cycle {
-            color: var(--gold-soft);
-            text-shadow: 0 0 50px rgba(212, 175, 55, .3), 0 0 100px rgba(212, 175, 55, .08);
-            display: inline-block;
-        }
-        .hero h1 .cursor-blink {
-            display: inline-block;
-            width: 3px;
-            background: var(--gold);
-            margin-left: 4px;
-            animation: blink 1s step-end infinite;
-            vertical-align: -.1em;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
+/* =========================
+   HEADER
+========================= */
 
-        .hero p.sub {
-            margin-top: 28px;
-            font-size: 1.15rem;
-            color: var(--gray);
-            max-width: 560px;
-        }
-        .hero .cta-row {
-            display: flex;
-            gap: 18px;
-            margin-top: 46px;
-            flex-wrap: wrap;
-        }
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:5000;
+    padding:24px 0;
+    transition:.5s var(--ease);
+}
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 17px 36px;
-            border-radius: 100px;
-            font-size: .95rem;
-            font-weight: 700;
-            transition: transform .4s var(--ease), box-shadow .4s var(--ease), background .4s var(--ease);
-        }
-        .btn-primary { background: var(--gold); color: var(--deep-2); }
-        .btn-primary:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 50px -10px rgba(212, 175, 55, .5); }
-        .btn-ghost { background: transparent; color: var(--gold-soft); border: 1px solid rgba(212, 175, 55, .25); }
-        .btn-ghost:hover { background: rgba(212, 175, 55, .08); border-color: var(--gold); transform: translateY(-4px); }
+header.scrolled{
+    padding:14px 0;
+    background:rgba(10,10,10,.72);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(212,175,55,.12);
+}
 
-        .hero-stats {
-            display: flex;
-            gap: 36px;
-            margin-top: 48px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .8rem;
-            color: var(--gray-dim);
-        }
-        .hero-stats span { display: flex; align-items: center; gap: 6px; }
-        .hero-stat-num {
-            font-family: 'Fraunces', serif;
-            font-size: 1.2rem;
-            color: var(--gold);
-            font-weight: 700;
-        }
+.container{
+    width:min(1180px,calc(100% - 40px));
+    margin:auto;
+}
 
-        .scroll-hint {
-            position: absolute;
-            bottom: 36px;
-            left: 24px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .6rem;
-            letter-spacing: .2em;
-            color: var(--gray-dim);
-            text-transform: uppercase;
-            z-index: 2;
-        }
-        .scroll-hint .line {
-            width: 34px; height: 1px;
-            background: var(--gray-dim);
-            position: relative;
-            overflow: hidden;
-        }
-        .scroll-hint .line::after {
-            content: "";
-            position: absolute;
-            left: -100%; top: 0;
-            width: 100%; height: 100%;
-            background: var(--gold);
-            animation: hintMove 2.2s ease infinite;
-        }
-        @keyframes hintMove {
-            0% { left: -100%; }
-            50% { left: 0; }
-            100% { left: 100%; }
-        }
+.header-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        /* ---- СЕКЦИИ ---- */
-        .section-head { max-width: 640px; margin-bottom: 64px; }
-        .section-head h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); color: var(--white); }
-        .section-head p { color: var(--gray); margin-top: 14px; font-size: 1.02rem; }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+    font-size:20px;
+}
 
-        /* ---- ПРОБЛЕМА ---- */
-        .path-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            align-items: center;
-        }
-        .path-card {
-            background: linear-gradient(180deg, rgba(18, 53, 42, .5) 0%, rgba(18, 53, 42, .15) 100%);
-            border: 1px solid rgba(212, 175, 55, .08);
-            border-radius: var(--radius);
-            padding: 40px 32px;
-            opacity: 0;
-            transform: translateX(80px) scale(.95);
-            transition: opacity .9s var(--ease), transform .9s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
-            backdrop-filter: blur(4px);
-            position: relative;
-            overflow: hidden;
-        }
-        .path-card::before {
-            content: "";
-            position: absolute; top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0;
-            transition: opacity .4s var(--ease);
-        }
-        .path-card:hover::before { opacity: 1; }
-        .path-card.visible { opacity: 1; transform: translateX(0) scale(1); }
-        .path-card:hover { border-color: rgba(212, 175, 55, .2); box-shadow: 0 20px 40px -20px rgba(0,0,0,.5); }
-        .icon-wrapper {
-            width: 56px; height: 56px;
-            border-radius: 50%;
-            background: rgba(212, 175, 55, .06);
-            border: 1px solid rgba(212, 175, 55, .15);
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 24px;
-        }
-        .icon-wrapper .icon { font-size: 1.5rem; color: var(--gold); }
-        .path-card h3 { font-size: 1.2rem; color: var(--white); margin-bottom: 10px; }
-        .path-card p { color: var(--gray); font-size: .94rem; }
-        .path-tag {
-            position: absolute; top: 16px; right: 20px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .6rem;
-            color: var(--gold-dim);
-            opacity: .3;
-        }
-        .path-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold-dim);
-            font-size: 1.2rem;
-            opacity: .4;
-        }
-        @media (max-width: 860px) {
-            .path-grid { grid-template-columns: 1fr; gap: 18px; }
-            .path-divider { transform: rotate(90deg); height: 20px; }
-        }
+.logo-mark{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 18px var(--gold);
+}
 
-        /* ---- УСЛУГИ ---- */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-        .service-card {
-            background: var(--green);
-            border: 1px solid rgba(212, 175, 55, .08);
-            border-radius: var(--radius);
-            padding: 42px 32px;
-            transform-style: preserve-3d;
-            perspective: 900px;
-            opacity: 0;
-            transform: translateX(80px);
-            transition: opacity .9s var(--ease), transform .9s var(--ease), box-shadow .5s var(--ease),
-                        border-color .5s var(--ease), transform .4s var(--ease);
-            position: relative;
-        }
-        .service-card::after {
-            content: "";
-            position: absolute; inset: -1px;
-            border-radius: var(--radius);
-            background: linear-gradient(135deg, rgba(212, 175, 55, .05), transparent 60%);
-            opacity: 0;
-            transition: opacity .5s var(--ease);
-            pointer-events: none;
-        }
-        .service-card:hover::after { opacity: 1; }
-        .service-card.visible { opacity: 1; transform: translateX(0); }
-        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px rgba(0,0,0,.6); border-color: rgba(212, 175, 55, .2); }
-        .tilt-inner {
-            transition: transform .12s ease-out;
-            transform: rotateX(var(--ry, 0)) rotateY(var(--rx, 0));
-            will-change: transform;
-            position: relative;
-            z-index: 1;
-        }
-        .card-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .7rem;
-            color: var(--gold-dim);
-            margin-bottom: 12px;
-            letter-spacing: .1em;
-        }
-        .card-icon { font-size: 1.8rem; color: var(--gold); margin-bottom: 16px; display: block; }
-        .service-card h3 { font-size: 1.35rem; color: var(--white); margin-bottom: 12px; }
-        .service-card p.desc { color: var(--gray); font-size: .94rem; margin-bottom: 20px; flex: 1; }
-        .feature-list { margin-bottom: 22px; }
-        .feature-list li {
-            color: var(--gray);
-            font-size: .88rem;
-            padding: 5px 0;
-            padding-left: 22px;
-            position: relative;
-        }
-        .feature-list li::before {
-            content: "—";
-            position: absolute; left: 0;
-            color: var(--gold-dim);
-        }
-        .service-card .go {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: .9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: gap .3s var(--ease);
-        }
-        .service-card:hover .go { gap: 14px; }
-        @media (max-width: 860px) { .service-grid { grid-template-columns: 1fr; } }
+.logo span:last-child{
+    color:var(--gold);
+}
 
-        /* ---- ПОРТФОЛИО ---- */
-        .folio-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-        }
-        .folio-card {
-            background: var(--green);
-            border: 1px solid rgba(212, 175, 55, .08);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 900px;
-            opacity: 0;
-            transform: translateX(80px);
-            transition: opacity .9s var(--ease), transform .9s var(--ease), box-shadow .5s var(--ease),
-                        transform .4s var(--ease);
-        }
-        .folio-card.visible { opacity: 1; transform: translateX(0); }
-        .folio-card:hover { box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); }
-        .tilt-inner {
-            transition: transform .12s ease-out;
-            transform: rotateX(var(--ry, 0)) rotateY(var(--rx, 0));
-            will-change: transform;
-        }
-        .folio-shot {
-            aspect-ratio: 16/10;
-            background: linear-gradient(135deg, var(--green-2), var(--deep-2));
-            overflow: hidden;
-            position: relative;
-        }
-        .folio-shot iframe {
-            width: 180%; height: 180%;
-            border: 0;
-            transform: scale(.56);
-            transform-origin: top left;
-            pointer-events: none;
-        }
-        .folio-overlay {
-            position: absolute; inset: 0;
-            background: rgba(10, 31, 26, .75);
-            backdrop-filter: blur(4px);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0;
-            transition: opacity .5s var(--ease);
-        }
-        .folio-card:hover .folio-overlay { opacity: 1; }
-        .folio-label {
-            font-family: 'Fraunces', serif;
-            font-size: 1rem;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 10px 28px;
-            border-radius: 100px;
-            transform: translateY(12px);
-            transition: transform .5s var(--ease), background .3s var(--ease);
-        }
-        .folio-card:hover .folio-label { transform: translateY(0); }
-        .folio-label:hover { background: rgba(212, 175, 55, .1); }
-        .folio-body { padding: 26px 28px 30px; }
-        .folio-body h3 { font-size: 1.25rem; color: var(--white); }
-        .folio-tags {
-            display: flex; gap: 8px; flex-wrap: wrap;
-            margin: 14px 0 16px;
-        }
-        .folio-tags span {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .65rem;
-            color: var(--gold-soft);
-            border: 1px solid rgba(212, 175, 55, .15);
-            border-radius: 100px;
-            padding: 4px 12px;
-        }
-        .folio-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--gold);
-            font-weight: 700;
-            font-size: .92rem;
-        }
-        .folio-next {
-            background: repeating-linear-gradient(135deg, var(--green) 0 12px, var(--deep-2) 12px 24px);
-        }
-        .folio-next h3 { color: var(--white); font-size: 1.4rem; margin-bottom: 10px; }
-        .folio-next p { color: var(--gray); font-size: .92rem; margin-bottom: 22px; }
-        @media (max-width: 860px) { .folio-grid { grid-template-columns: 1fr; } }
+nav{
+    display:flex;
+    gap:38px;
+}
 
-        /* ---- ТАЙМЛАЙН ---- */
-        .timeline-track {
-            position: relative;
-            height: 2px;
-            background: rgba(212, 175, 55, .08);
-            border-radius: 2px;
-        }
-        .timeline-progress {
-            position: absolute; top: 0; left: 0;
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--gold), var(--gold-soft));
-            border-radius: 2px;
-            transition: width 1.2s var(--ease-out);
-            box-shadow: 0 0 24px rgba(212, 175, 55, .4);
-        }
-        .timeline-milestones {
-            position: absolute; top: -5px; left: 0;
-            width: 100%; height: 12px;
-            pointer-events: none;
-        }
-        .milestone {
-            position: absolute;
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: var(--deep);
-            border: 2px solid var(--gold-dim);
-            transform: translateX(-50%);
-            transition: background .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
-        }
-        .milestone.active {
-            background: var(--gold);
-            border-color: var(--gold);
-            box-shadow: 0 0 16px rgba(212, 175, 55, .3);
-        }
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 14px;
-            margin-top: -1px;
-        }
-        .step {
-            padding-top: 28px;
-            position: relative;
-            cursor: pointer;
-        }
-        .step::before {
-            content: "";
-            position: absolute; top: -6px; left: 0;
-            width: 12px; height: 12px;
-            border-radius: 50%;
-            background: var(--deep);
-            border: 2px solid var(--gold-dim);
-            transition: background .5s var(--ease), border-color .5s var(--ease),
-                        box-shadow .5s var(--ease), transform .4s var(--ease-spring);
-            z-index: 2;
-        }
-        .step.active::before {
-            background: var(--gold);
-            border-color: var(--gold);
-            box-shadow: 0 0 0 6px rgba(212, 175, 55, .1);
-            transform: scale(1.15);
-        }
-        .step .step-num {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .7rem;
-            color: var(--gold-dim);
-        }
-        .step.active .step-num { color: var(--gold); }
-        .step h4 {
-            margin-top: 8px;
-            font-size: 1rem;
-            color: var(--white);
-            font-weight: 600;
-        }
-        .step p {
-            margin-top: 10px;
-            font-size: .86rem;
-            color: var(--gray);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .6s var(--ease-out), opacity .5s var(--ease-out),
-                        margin .4s var(--ease-out);
-            opacity: 0;
-        }
-        .step.active p { max-height: 140px; opacity: 1; }
-        @media (max-width: 860px) {
-            .steps { grid-template-columns: 1fr; gap: 0; }
-            .step { padding: 18px 0 18px 24px; border-left: 2px solid rgba(212, 175, 55, .08); }
-            .step::before { top: 22px; left: -7px; }
-            .timeline-track { display: none; }
-        }
+nav a{
+    color:#999;
+    font-size:14px;
+    position:relative;
+    transition:.3s;
+}
 
-        /* ---- ПОЧЕМУ Я ---- */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-bottom: 76px;
-        }
-        .why-card {
-            padding: 34px 28px;
-            background: rgba(18, 53, 42, .25);
-            border: 1px solid rgba(212, 175, 55, .06);
-            border-radius: var(--radius);
-            transition: border-color .4s var(--ease), transform .4s var(--ease), box-shadow .4s var(--ease);
-        }
-        .why-card:hover {
-            border-color: rgba(212, 175, 55, .15);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -20px rgba(0,0,0,.5);
-        }
-        .why-card .icon {
-            width: 44px; height: 44px;
-            border-radius: 50%;
-            border: 1px solid rgba(212, 175, 55, .15);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 18px;
-            transition: transform .6s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
-        }
-        .why-card:hover .icon {
-            transform: rotate(360deg);
-            color: var(--gold);
-            border-color: var(--gold);
-        }
-        .why-card h4 { font-size: 1rem; color: var(--white); font-weight: 600; margin-bottom: 4px; }
-        .why-card p { font-size: .85rem; color: var(--gray-dim); }
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:1px;
+    background:var(--gold);
+    transition:.4s var(--ease);
+}
 
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            border-top: 1px solid rgba(212, 175, 55, .06);
-            padding-top: 56px;
-        }
-        .stat { text-align: center; }
-        .stat .num {
-            font-family: 'Fraunces', serif;
-            font-size: 3rem;
-            color: var(--gold);
-            font-weight: 700;
-            display: inline-block;
-        }
-        .stat .num.pulse {
-            animation: statPulse .6s ease;
-        }
-        @keyframes statPulse {
-            0% { transform: scale(1); text-shadow: 0 0 0 rgba(212, 175, 55, 0); }
-            50% { transform: scale(1.15); text-shadow: 0 0 50px rgba(212, 175, 55, .4); }
-            100% { transform: scale(1); text-shadow: 0 0 0 rgba(212, 175, 55, 0); }
-        }
-        .stat .label {
-            margin-top: 8px;
-            font-size: .8rem;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: .1em;
-        }
-        @media (max-width: 860px) {
-            .why-grid { grid-template-columns: 1fr 1fr; }
-            .stats-row { grid-template-columns: 1fr; gap: 34px; }
-        }
+nav a:hover{
+    color:white;
+}
 
-        /* ---- КОНТАКТЫ ---- */
-        .contact-section {
-            background: radial-gradient(circle at 50% 0%, rgba(0, 107, 77, .18), transparent 60%), var(--deep-2);
-            text-align: center;
-        }
-        .contact-section .eyebrow { display: block; }
-        .contact-section h2 {
-            font-size: clamp(2rem, 4.2vw, 3.2rem);
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-        .contact-section p.lead {
-            color: var(--gray);
-            max-width: 500px;
-            margin: 0 auto 46px;
-        }
-        .pulse-btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 22px 50px;
-            background: var(--gold);
-            color: var(--deep-2);
-            border-radius: 100px;
-            font-weight: 800;
-            font-size: 1.05rem;
-            transition: transform .4s var(--ease-spring);
-        }
-        .pulse-btn:hover { transform: scale(1.04); }
-        .pulse-btn::before, .pulse-btn::after {
-            content: "";
-            position: absolute; inset: 0;
-            border-radius: 100px;
-            border: 1.5px solid var(--gold);
-            animation: pulseRing 2.6s var(--ease) infinite;
-        }
-        .pulse-btn::after { animation-delay: 1.3s; }
-        @keyframes pulseRing {
-            0% { transform: scale(1); opacity: .7; }
-            100% { transform: scale(1.6); opacity: 0; }
-        }
-        .contact-meta {
-            margin-top: 36px;
-            display: flex;
-            gap: 28px;
-            justify-content: center;
-            flex-wrap: wrap;
-            color: var(--gray-dim);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .8rem;
-        }
-        .contact-meta a { color: var(--gray); transition: color .3s; }
-        .contact-meta a:hover { color: var(--gold); }
+nav a:hover::after{
+    width:100%;
+}
 
-        /* ---- ПОДВАЛ ---- */
-        footer {
-            padding: 44px 0;
-            border-top: 1px solid rgba(212, 175, 55, .04);
-        }
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        footer .copy { color: var(--gray-dim); font-size: .82rem; }
-        footer .socials { display: flex; gap: 20px; }
-        footer .socials a { color: var(--gray-dim); font-size: .82rem; transition: color .3s; }
-        footer .socials a:hover { color: var(--gold); }
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    cursor:pointer;
+}
 
-        /* ---- МОБИЛЬНАЯ ШАПКА ---- */
-        @media (max-width: 900px) {
-            nav {
-                position: fixed; top: 0; right: 0;
-                height: 100vh;
-                width: min(78vw, 320px);
-                background: rgba(8, 22, 15, .96);
-                backdrop-filter: blur(24px);
-                -webkit-backdrop-filter: blur(24px);
-                border-left: 1px solid rgba(212, 175, 55, .08);
-                transform: translateX(100%);
-                transition: transform .5s var(--ease-out);
-                z-index: 1001;
-                padding: 100px 36px;
-            }
-            nav.open { transform: translateX(0); }
-            nav ul { flex-direction: column; gap: 28px; }
-            nav a { font-size: 1.1rem; }
-            .burger { display: flex; }
-            .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-            .burger.open span:nth-child(2) { opacity: 0; }
-            .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-            .logo-badge { display: none; }
-        }
-        @media (max-width: 640px) {
-            section { padding: 76px 0; }
-            .hero { padding-top: 110px; }
-            .hero-stats { gap: 20px; font-size: .7rem; flex-wrap: wrap; }
-        }
-    </style>
-</head>
-<body>
+.menu span{
+    display:block;
+    width:26px;
+    height:2px;
+    margin:5px;
+    background:var(--gold);
+    transition:.4s var(--ease);
+}
 
-    <div class="progress-bar" id="progressBar"></div>
-    <div class="custom-cursor" id="customCursor"></div>
+/* =========================
+   HERO
+========================= */
 
-    <header id="siteHeader">
-        <div class="container">
-            <a href="#home" class="logo">
-                <span class="dot"></span>
-                <span>1САЙТ</span>
-                <span class="logo-badge">✦ премиум</span>
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    pointer-events:none;
+}
+
+.orb1{
+    width:500px;
+    height:500px;
+    background:rgba(212,175,55,.08);
+    top:-220px;
+    right:-120px;
+}
+
+.orb2{
+    width:350px;
+    height:350px;
+    background:rgba(212,175,55,.045);
+    bottom:-150px;
+    left:-100px;
+}
+
+.hero-lines{
+    position:absolute;
+    inset:0;
+    opacity:.18;
+    background:
+        linear-gradient(115deg,transparent 40%,rgba(212,175,55,.08) 41%,transparent 42%),
+        linear-gradient(65deg,transparent 60%,rgba(212,175,55,.05) 61%,transparent 62%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid rgba(212,175,55,.25);
+    border-radius:100px;
+    padding:8px 15px;
+    color:#aaa;
+    font-size:12px;
+    margin-bottom:28px;
+    background:rgba(212,175,55,.03);
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#4caf50;
+    box-shadow:0 0 15px #4caf50;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(.55);opacity:.4}
+}
+
+.hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(48px,8vw,105px);
+    line-height:.95;
+    letter-spacing:-.065em;
+}
+
+.hero-word{
+    color:var(--gold);
+    text-shadow:
+        0 0 35px rgba(212,175,55,.2),
+        0 0 90px rgba(212,175,55,.08);
+}
+
+.hero h1 .line{
+    display:block;
+}
+
+.hero-description{
+    margin-top:32px;
+    max-width:650px;
+    font-size:18px;
+    line-height:1.7;
+    color:#999;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:42px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 27px;
+    border-radius:100px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:700;
+    transition:.45s var(--ease);
+}
+
+.btn-primary{
+    color:#080808;
+    background:var(--gold);
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 50px rgba(212,175,55,.22);
+}
+
+.btn-secondary{
+    border:1px solid rgba(212,175,55,.25);
+    color:#ddd;
+}
+
+.btn-secondary:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+    transform:translateY(-5px);
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom:35px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:space-between;
+    color:#555;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+}
+
+.scroll-line{
+    width:55px;
+    height:1px;
+    background:#444;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:10px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:140px 0;
+    position:relative;
+}
+
+.section-label{
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(38px,5vw,66px);
+    line-height:1;
+    letter-spacing:-.045em;
+}
+
+.section-description{
+    max-width:600px;
+    color:#777;
+    margin-top:20px;
+    line-height:1.7;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateX(110px);
+    transition:
+        opacity 1s var(--ease),
+        transform 1s var(--ease);
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* =========================
+   PROBLEM
+========================= */
+
+.problem-grid{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    position:relative;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.035),transparent 50%),
+        var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:24px;
+    padding:38px;
+    overflow:hidden;
+    transform-style:preserve-3d;
+    transition:
+        border-color .4s,
+        box-shadow .5s,
+        transform .15s ease-out;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:rgba(212,175,55,.08);
+    filter:blur(70px);
+    top:-130px;
+    right:-130px;
+    opacity:0;
+    transition:.5s;
+}
+
+.card:hover::before{
+    opacity:1;
+}
+
+.card:hover{
+    border-color:rgba(212,175,55,.3);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+}
+
+.card-number{
+    color:var(--gold);
+    font-family:"Space Grotesk";
+    font-size:13px;
+    margin-bottom:35px;
+}
+
+.card-icon{
+    width:54px;
+    height:54px;
+    border:1px solid rgba(212,175,55,.2);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.card h3{
+    font-family:"Space Grotesk";
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#777;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:#0d0d0d;
+}
+
+.services-grid{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service-card{
+    min-height:470px;
+    display:flex;
+    flex-direction:column;
+}
+
+.service-card h3{
+    font-size:28px;
+}
+
+.service-description{
+    margin-top:12px;
+    color:#777;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.features{
+    margin-top:28px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.features li{
+    color:#999;
+    font-size:13px;
+}
+
+.features li::before{
+    content:"✦";
+    color:var(--gold);
+    margin-right:10px;
+}
+
+.card-link{
+    margin-top:auto;
+    color:var(--gold);
+    font-weight:700;
+    font-size:14px;
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio-grid{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.project{
+    padding:0;
+    overflow:hidden;
+}
+
+.project-preview{
+    height:330px;
+    overflow:hidden;
+    position:relative;
+    background:#111;
+}
+
+.project-preview iframe{
+    width:180%;
+    height:180%;
+    border:0;
+    transform:scale(.56);
+    transform-origin:top left;
+    pointer-events:none;
+}
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.68);
+    opacity:0;
+    transition:.5s;
+}
+
+.project:hover .project-overlay{
+    opacity:1;
+}
+
+.project-open{
+    padding:14px 24px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    border-radius:100px;
+    transform:translateY(20px);
+    transition:.5s var(--ease);
+}
+
+.project:hover .project-open{
+    transform:translateY(0);
+}
+
+.project-info{
+    padding:28px;
+}
+
+.project-info h3{
+    font-family:"Space Grotesk";
+    font-size:23px;
+}
+
+.project-tags{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+
+.project-tags span{
+    font-size:10px;
+    color:var(--gold);
+    border:1px solid rgba(212,175,55,.2);
+    border-radius:100px;
+    padding:5px 10px;
+}
+
+.your-project{
+    grid-column:span 2;
+    min-height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    background:
+        linear-gradient(120deg,rgba(212,175,55,.08),transparent),
+        #111;
+}
+
+.your-project h3{
+    font-family:"Space Grotesk";
+    font-size:36px;
+}
+
+.your-project p{
+    color:#777;
+    max-width:450px;
+    margin-top:12px;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process{
+    background:#0d0d0d;
+}
+
+.timeline{
+    margin-top:80px;
+}
+
+.timeline-line{
+    height:2px;
+    background:#222;
+    position:relative;
+}
+
+.timeline-progress{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:0;
+    background:var(--gold);
+    box-shadow:0 0 20px rgba(212,175,55,.6);
+    transition:width 1s var(--ease);
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.step{
+    padding-top:30px;
+    cursor:pointer;
+    position:relative;
+}
+
+.step-dot{
+    width:13px;
+    height:13px;
+    border:2px solid #555;
+    border-radius:50%;
+    position:absolute;
+    top:-6px;
+    left:0;
+    background:#0d0d0d;
+    transition:.4s;
+}
+
+.step.active .step-dot{
+    background:var(--gold);
+    border-color:var(--gold);
+    box-shadow:0 0 0 8px rgba(212,175,55,.08);
+}
+
+.step-number{
+    color:#555;
+    font-size:11px;
+}
+
+.step.active .step-number{
+    color:var(--gold);
+}
+
+.step h3{
+    font-family:"Space Grotesk";
+    font-size:19px;
+    margin-top:9px;
+}
+
+.step p{
+    color:#666;
+    font-size:13px;
+    line-height:1.7;
+    margin-top:10px;
+}
+
+/* =========================
+   WHY
+========================= */
+
+.why-grid{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.why-card{
+    padding:30px;
+    border-top:1px solid #222;
+}
+
+.why-card h3{
+    font-family:"Space Grotesk";
+    margin-top:22px;
+}
+
+.why-card p{
+    color:#666;
+    font-size:13px;
+    margin-top:10px;
+    line-height:1.7;
+}
+
+.why-icon{
+    color:var(--gold);
+    font-size:22px;
+}
+
+.stats{
+    margin-top:80px;
+    padding-top:60px;
+    border-top:1px solid #1d1d1d;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    text-align:center;
+}
+
+.stat-number{
+    color:var(--gold);
+    font-family:"Space Grotesk";
+    font-size:60px;
+    font-weight:700;
+}
+
+.stat-label{
+    color:#666;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 0,rgba(212,175,55,.12),transparent 45%),
+        #080808;
+}
+
+.contact .section-description{
+    margin:25px auto 40px;
+}
+
+.contact-button{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px 40px;
+    background:var(--gold);
+    color:#080808;
+    border-radius:100px;
+    font-weight:800;
+    transition:.4s var(--ease);
+}
+
+.contact-button:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 70px rgba(212,175,55,.3);
+}
+
+.contact-button::before{
+    content:"";
+    position:absolute;
+    inset:-10px;
+    border:1px solid rgba(212,175,55,.4);
+    border-radius:100px;
+    animation:ring 2.4s infinite;
+}
+
+@keyframes ring{
+    0%{transform:scale(.9);opacity:1}
+    100%{transform:scale(1.25);opacity:0}
+}
+
+.contact-links{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    color:#666;
+    font-size:13px;
+}
+
+.contact-links a:hover{
+    color:var(--gold);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid #171717;
+    padding:35px 0;
+    color:#555;
+    font-size:12px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .container{
+        width:min(100% - 30px,700px);
+    }
+
+    nav{
+        position:fixed;
+        inset:0 0 0 auto;
+        width:min(85%,350px);
+        height:100vh;
+        background:#0d0d0d;
+        flex-direction:column;
+        justify-content:center;
+        padding:40px;
+        transform:translateX(100%);
+        transition:.6s var(--ease);
+        border-left:1px solid #222;
+    }
+
+    nav.open{
+        transform:translateX(0);
+    }
+
+    nav a{
+        font-size:24px;
+    }
+
+    .menu{
+        display:block;
+        position:relative;
+        z-index:6000;
+    }
+
+    .menu.open span:first-child{
+        transform:translateY(7px) rotate(45deg);
+    }
+
+    .menu.open span:nth-child(2){
+        opacity:0;
+    }
+
+    .menu.open span:last-child{
+        transform:translateY(-7px) rotate(-45deg);
+    }
+
+    .problem-grid,
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
+    }
+
+    .your-project{
+        grid-column:auto;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+        gap:0;
+        border-left:2px solid #222;
+    }
+
+    .timeline-line{
+        display:none;
+    }
+
+    .step{
+        padding:20px 0 25px 30px;
+    }
+
+    .step-dot{
+        left:-8px;
+        top:22px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .hero h1{
+        font-size:clamp(45px,13vw,80px);
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:90px 0;
+    }
+
+    .hero{
+        min-height:100svh;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .hero-bottom{
+        display:none;
+    }
+
+    .card{
+        padding:28px;
+    }
+
+    .project-preview{
+        height:230px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .your-project h3{
+        font-size:28px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+
+    .cursor{
+        display:none;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
+}
+</style></head><body><div class="progress"></div>
+<div class="grid-bg"></div>
+<div class="noise"></div>
+<div class="cursor"></div><header id="header">
+    <div class="container header-inner">    <a href="#home" class="logo">
+        <span class="logo-mark"></span>
+        <span>1</span>САЙТ
+    </a>
+
+    <nav id="nav">
+        <a href="#portfolio">Портфолио</a>
+        <a href="#services">Услуги</a>
+        <a href="#process">Процесс</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+    <button class="menu" id="menu" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</div>
+
+</header><!-- =========================
+     HERO
+========================= --><section class="hero" id="home"><div class="hero-orb orb1 parallax" data-speed="0.12"></div>
+<div class="hero-orb orb2 parallax" data-speed="-0.08"></div>
+<div class="hero-lines parallax" data-speed="0.04"></div>
+
+<div class="container">
+
+    <div class="hero-content">
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Доступен для новых проектов
+        </div>
+
+        <h1>
+            <span class="line">
+                <span id="typewriter" class="hero-word">Разрабатываю</span>
+            </span>
+            <span class="line">сайты, которые</span>
+            <span class="line">запоминаются.</span>
+        </h1>
+
+        <p class="hero-description">
+            Создаю современные сайты с сильной визуальной подачей,
+            интерактивными анимациями и адаптивом под любой экран.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#portfolio" class="btn btn-primary">
+                Смотреть работы →
             </a>
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#portfolio" data-text="Портфолио">Портфолио</a></li>
-                    <li><a href="#services" data-text="Услуги">Услуги</a></li>
-                    <li><a href="#process" data-text="Процесс">Процесс</a></li>
-                    <li><a href="#contact" data-text="Контакты">Контакты</a></li>
-                </ul>
-            </nav>
-            <button class="burger" id="burger" aria-label="Открыть меню">
-                <span></span><span></span><span></span>
-            </button>
+
+            <a href="#contact" class="btn btn-secondary">
+                Обсудить проект
+            </a>
+
         </div>
-    </header>
 
-    <section class="hero" id="home">
-        <canvas id="particles"></canvas>
-        <div class="hero-glows">
-            <div class="glow glow-1"></div>
-            <div class="glow glow-2"></div>
-            <div class="glow glow-3"></div>
-            <div class="glow glow-4"></div>
+    </div>
+
+</div>
+
+<div class="container hero-bottom">
+    <span>1САЙТ / WEB DEVELOPMENT</span>
+    <span>
+        SCROLL
+        <span class="scroll-line"></span>
+    </span>
+</div>
+
+</section><!-- =========================
+     ПРОБЛЕМА
+========================= --><section id="problem"><div class="container">
+
+    <div class="section-label">01 / Проблема</div>
+
+    <h2 class="section-title">
+        Сайт должен<br>
+        цеплять сразу.
+    </h2>
+
+    <p class="section-description">
+        Большинство сайтов выглядят одинаково.
+        Я использую интерактив, движение и визуальную систему,
+        чтобы сайт выделял бизнес среди конкурентов.
+    </p>
+
+
+    <div class="problem-grid">
+
+        <article class="card reveal" data-delay="0">
+
+            <div class="card-number">01</div>
+
+            <div class="card-icon">◇</div>
+
+            <h3>Сайт как у всех</h3>
+
+            <p>
+                Шаблонная страница не вызывает эмоций
+                и быстро забывается.
+            </p>
+
+        </article>
+
+
+        <article class="card reveal" data-delay="150">
+
+            <div class="card-number">02</div>
+
+            <div class="card-icon">✦</div>
+
+            <h3>Добавляем движение</h3>
+
+            <p>
+                Анимации направляют внимание пользователя
+                и делают интерфейс живым.
+            </p>
+
+        </article>
+
+
+        <article class="card reveal" data-delay="300">
+
+            <div class="card-number">03</div>
+
+            <div class="card-icon">✧</div>
+
+            <h3>Получаем впечатление</h3>
+
+            <p>
+                Клиент не просто смотрит сайт —
+                он взаимодействует с ним.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section><!-- =========================
+     УСЛУГИ
+========================= --><section class="services" id="services"><div class="container">
+
+    <div class="section-label">02 / Услуги</div>
+
+    <h2 class="section-title">
+        Не шаблон.<br>
+        Решение под задачу.
+    </h2>
+
+    <p class="section-description">
+        От простой страницы до полноценного продающего лендинга.
+        Каждый проект собирается под конкретный бизнес.
+    </p>
+
+
+    <div class="services-grid">
+
+        <article class="card service-card reveal" data-delay="0">
+
+            <div class="card-number">01 / START</div>
+
+            <div class="card-icon">◈</div>
+
+            <h3>Сайт-визитка</h3>
+
+            <p class="service-description">
+                Компактный сайт для специалиста,
+                компании или личного бренда.
+            </p>
+
+            <ul class="features">
+                <li>Адаптив под телефон</li>
+                <li>Современный дизайн</li>
+                <li>Плавные анимации</li>
+                <li>Форма связи</li>
+            </ul>
+
+            <a href="https://rasulovking2577.github.io/website/"
+               target="_blank"
+               class="card-link">
+                Смотреть пример →
+            </a>
+
+        </article>
+
+
+        <article class="card service-card reveal" data-delay="150">
+
+            <div class="card-number">02 / BUSINESS</div>
+
+            <div class="card-icon">↗</div>
+
+            <h3>Продающий лендинг</h3>
+
+            <p class="service-description">
+                Страница, построенная вокруг одной цели:
+                привести клиента к заявке.
+            </p>
+
+            <ul class="features">
+                <li>Интерактивные блоки</li>
+                <li>3D hover-эффекты</li>
+                <li>Анимированные элементы</li>
+                <li>Конверсионная структура</li>
+            </ul>
+
+            <a href="https://rasulovking2577.github.io/Aragvi/"
+               target="_blank"
+               class="card-link">
+                Смотреть пример →
+            </a>
+
+        </article>
+
+
+        <article class="card service-card reveal" data-delay="300">
+
+            <div class="card-number">03 / LOCAL</div>
+
+            <div class="card-icon">⌁</div>
+
+            <h3>Сайт для бизнеса</h3>
+
+            <p class="service-description">
+                Полноценная презентация локального бизнеса
+                с услугами, контактами и заявками.
+            </p>
+
+            <ul class="features">
+                <li>Услуги и цены</li>
+                <li>Контакты</li>
+                <li>Адаптив</li>
+                <li>Интерактив</li>
+            </ul>
+
+            <a href="#contact" class="card-link">
+                Обсудить проект →
+            </a>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section><!-- =========================
+     ПОРТФОЛИО
+========================= --><section id="portfolio"><div class="container">
+
+    <div class="section-label">03 / Портфолио</div>
+
+    <h2 class="section-title">
+        Не макеты.<br>
+        Рабочие проекты.
+    </h2>
+
+    <p class="section-description">
+        Открывай, нажимай, проверяй.
+        Это реальные сайты, которые можно посмотреть прямо сейчас.
+    </p>
+
+
+    <div class="portfolio-grid">
+
+        <article class="card project reveal" data-delay="0">
+
+            <div class="project-preview">
+
+                <iframe
+                    src="https://rasulovking2577.github.io/website/"
+                    loading="lazy"
+                    title="Сайт-визитка">
+                </iframe>
+
+                <div class="project-overlay">
+
+                    <a
+                        href="https://rasulovking2577.github.io/website/"
+                        target="_blank"
+                        class="project-open">
+                        Открыть проект ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Сайт-визитка</h3>
+
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="card project reveal" data-delay="150">
+
+            <div class="project-preview">
+
+                <iframe
+                    src="https://rasulovking2577.github.io/Aragvi/"
+                    loading="lazy"
+                    title="Aragvi">
+                </iframe>
+
+                <div class="project-overlay">
+
+                    <a
+                        href="https://rasulovking2577.github.io/Aragvi/"
+                        target="_blank"
+                        class="project-open">
+                        Открыть проект ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Aragvi — автосервис</h3>
+
+                <div class="project-tags">
+                    <span>Landing</span>
+                    <span>HTML/CSS/JS</span>
+                    <span>Animation</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="card your-project reveal" data-delay="300">
+
+            <div>
+
+                <div class="card-number">03 / NEXT PROJECT</div>
+
+                <h3>Следующий проект — ваш?</h3>
+
+                <p>
+                    Расскажите, какой сайт нужен.
+                    Я предложу структуру, дизайн и решение.
+                </p>
+
+            </div>
+
+            <a href="#contact" class="btn btn-primary">
+                Начать проект →
+            </a>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section><!-- =========================
+     PROCESS
+========================= --><section class="process" id="process"><div class="container">
+
+    <div class="section-label">04 / Процесс</div>
+
+    <h2 class="section-title">
+        От идеи<br>
+        до запуска.
+    </h2>
+
+    <p class="section-description">
+        Пять понятных этапов. Никакой магии —
+        просто нормальный процесс разработки.
+    </p>
+
+
+    <div class="timeline">
+
+        <div class="timeline-line">
+            <div class="timeline-progress" id="timelineProgress"></div>
         </div>
-        <div class="hero-grid-lines"></div>
-        <div class="container">
-            <div class="hero-inner">
-                <div class="hero-badge">
-                    <span>✦ доступен для заказов</span>
-                    <span class="hero-badge-dot"></span>
-                </div>
-                <h1 id="typewriter"></h1>
-                <p class="sub">Создаю сайты с душой: живые анимации, премиальный визуал, адаптив под любой экран. Махачкала / работаю удалённо.</p>
-                <div class="cta-row">
-                    <a href="#portfolio" class="btn btn-primary">Посмотреть работы</a>
-                    <a href="#contact" class="btn btn-ghost">Обсудить проект</a>
-                </div>
-                <div class="hero-stats">
-                    <span><span class="hero-stat-num" data-target="5">0</span>+ проектов</span>
-                    <span><span class="hero-stat-num" data-target="100">0</span>% адаптив</span>
-                    <span>24/7 на связи</span>
-                </div>
+
+        <div class="steps">
+
+            <div class="step active" data-step="1">
+                <span class="step-dot"></span>
+                <div class="step-number">01</div>
+                <h3>Обсуждаем</h3>
+                <p>Определяем задачу, аудиторию и цель сайта.</p>
             </div>
+
+            <div class="step" data-step="2">
+                <span class="step-dot"></span>
+                <div class="step-number">02</div>
+                <h3>Проектируем</h3>
+                <p>Создаём структуру и визуальную концепцию.</p>
+            </div>
+
+            <div class="step" data-step="3">
+                <span class="step-dot"></span>
+                <div class="step-number">03</div>
+                <h3>Разрабатываем</h3>
+                <p>Верстаем интерфейс и добавляем интерактив.</p>
+            </div>
+
+            <div class="step" data-step="4">
+                <span class="step-dot"></span>
+                <div class="step-number">04</div>
+                <h3>Тестируем</h3>
+                <p>Проверяем сайт на разных устройствах.</p>
+            </div>
+
+            <div class="step" data-step="5">
+                <span class="step-dot"></span>
+                <div class="step-number">05</div>
+                <h3>Запускаем</h3>
+                <p>Публикуем готовый сайт и передаём его вам.</p>
+            </div>
+
         </div>
-        <div class="scroll-hint">
-            <span>Листайте</span>
-            <span class="line"></span>
+
+    </div>
+
+</div>
+
+</section><!-- =========================
+     WHY
+========================= --><section id="why"><div class="container">
+
+    <div class="section-label">05 / Почему я</div>
+
+    <h2 class="section-title">
+        Небольшая команда.<br>
+        Один разработчик.
+    </h2>
+
+    <div class="why-grid">
+
+        <article class="why-card reveal">
+            <div class="why-icon">◆</div>
+            <h3>Напрямую</h3>
+            <p>Вы общаетесь непосредственно с разработчиком.</p>
+        </article>
+
+        <article class="why-card reveal">
+            <div class="why-icon">▣</div>
+            <h3>Адаптив</h3>
+            <p>Сайт нормально работает на телефоне и компьютере.</p>
+        </article>
+
+        <article class="why-card reveal">
+            <div class="why-icon">⚡</div>
+            <h3>Интерактив</h3>
+            <p>Анимации делают интерфейс живым, а не статичным.</p>
+        </article>
+
+        <article class="why-card reveal">
+            <div class="why-icon">●</div>
+            <h3>Результат</h3>
+            <p>Можно открыть реальные проекты и всё проверить.</p>
+        </article>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div>
+            <div class="stat-number counter" data-target="5">0</div>
+            <div class="stat-label">Проектов</div>
         </div>
-    </section>
 
-    <section id="problem">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Проблема</span>
-                <h2>Обычный сайт — забытый сайт</h2>
-                <p>Если сайт не удивляет в первые секунды, клиент уходит к конкурентам. Я меняю это.</p>
-            </div>
-            <div class="path-grid">
-                <div class="path-card" data-delay="0">
-                    <div class="icon-wrapper"><span class="icon">◈</span></div>
-                    <h3>Сайт как у всех</h3>
-                    <p>Шаблонная вёрстка без движения не выделяет вас среди сотен других.</p>
-                    <span class="path-tag">01</span>
-                </div>
-                <div class="path-divider">✦</div>
-                <div class="path-card" data-delay="150">
-                    <div class="icon-wrapper"><span class="icon">✧</span></div>
-                    <h3>Продумываю интерактив</h3>
-                    <p>Каждая анимация работает на смысл: ведёт взгляд, создаёт впечатление.</p>
-                    <span class="path-tag">02</span>
-                </div>
-                <div class="path-divider">✦</div>
-                <div class="path-card" data-delay="300">
-                    <div class="icon-wrapper"><span class="icon">✦</span></div>
-                    <h3>Сайт, который запоминают</h3>
-                    <p>Живые карточки, плавные переходы — то, что остаётся в памяти надолго.</p>
-                    <span class="path-tag">03</span>
-                </div>
-            </div>
+        <div>
+            <div class="stat-number counter" data-target="100">0</div>
+            <div class="stat-label">Адаптивность</div>
         </div>
-    </section>
 
-    <section id="services">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Услуги</span>
-                <h2>Формат под задачу — не шаблон</h2>
-                <p>Каждый сайт получает уникальный набор анимаций под цель бизнеса.</p>
-            </div>
-            <div class="service-grid">
-                <div class="service-card" data-delay="0">
-                    <div class="tilt-inner">
-                        <div class="card-number">01</div>
-                        <div class="card-icon">◈</div>
-                        <h3>Сайт-визитка</h3>
-                        <p class="desc">Компактный сайт с плавными появлениями блоков. Для тех, кому нужно профессионально представить себя.</p>
-                        <ul class="feature-list">
-                            <li>Адаптив под телефон</li>
-                            <li>Анимация появления</li>
-                            <li>Форма связи</li>
-                        </ul>
-                        <a href="https://rasulovking2577.github.io/website/" target="_blank" rel="noopener" class="go">Смотреть пример →</a>
-                    </div>
-                </div>
-                <div class="service-card" data-delay="100">
-                    <div class="tilt-inner">
-                        <div class="card-number">02</div>
-                        <div class="card-icon">↗</div>
-                        <h3>Продающий лендинг</h3>
-                        <p class="desc">Одностраничник с интерактивом на каждом блоке. Для тех, кому нужны заявки, а не просто красота.</p>
-                        <ul class="feature-list">
-                            <li>3D-карточки услуг</li>
-                            <li>Анимированные счётчики</li>
-                            <li>Кнопка с пульсацией</li>
-                        </ul>
-                        <a href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener" class="go">Смотреть пример →</a>
-                    </div>
-                </div>
-                <div class="service-card" data-delay="200">
-                    <div class="tilt-inner">
-                        <div class="card-number">03</div>
-                        <div class="card-icon">⌘</div>
-                        <h3>Сайт для локального бизнеса</h3>
-                        <p class="desc">Карта, часы работы, услуги с ценами — с анимациями, которые ускоряют путь к заявке.</p>
-                        <ul class="feature-list">
-                            <li>Анимированные карточки</li>
-                            <li>Быстрая связь</li>
-                            <li>Адаптив под телефон</li>
-                        </ul>
-                        <a href="#contact" class="go">Обсудить проект →</a>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <div class="stat-number counter" data-target="24">0</div>
+            <div class="stat-label">Часа на связи</div>
         </div>
-    </section>
 
-    <section id="portfolio">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Портфолио</span>
-                <h2>Реальные проекты, не макеты</h2>
-                <p>Каждый сайт — рабочий, с формой связи и адаптивом под телефон.</p>
-            </div>
-            <div class="folio-grid">
-                <div class="folio-card" data-delay="0">
-                    <div class="tilt-inner">
-                        <div class="folio-shot">
-                            <iframe src="https://rasulovking2577.github.io/website/" loading="lazy" title="Превью: сайт-визитка"></iframe>
-                            <div class="folio-overlay">
-                                <span class="folio-label">Смотреть проект</span>
-                            </div>
-                        </div>
-                        <div class="folio-body">
-                            <h3>Сайт-визитка</h3>
-                            <div class="folio-tags"><span>HTML/CSS/JS</span><span>Адаптив</span></div>
-                            <a href="https://rasulovking2577.github.io/website/" target="_blank" rel="noopener" class="folio-link">Открыть проект ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="folio-card" data-delay="100">
-                    <div class="tilt-inner">
-                        <div class="folio-shot">
-                            <iframe src="https://rasulovking2577.github.io/Aragvi/" loading="lazy" title="Превью: лендинг Aragvi"></iframe>
-                            <div class="folio-overlay">
-                                <span class="folio-label">Смотреть проект</span>
-                            </div>
-                        </div>
-                        <div class="folio-body">
-                            <h3>Лендинг для автосервиса</h3>
-                            <div class="folio-tags"><span>HTML/CSS/JS</span><span>Лендинг</span></div>
-                            <a href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener" class="folio-link">Открыть проект ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="folio-card folio-next" data-delay="200">
-                    <div class="tilt-inner" style="padding:40px 32px;">
-                        <h3>Следующий проект — ваш?</h3>
-                        <p>Расскажите о задаче — я предложу решение и цену за 1 день.</p>
-                        <a href="#contact" class="btn btn-primary">Заказать сайт →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <section id="process">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Процесс</span>
-                <h2>Пять шагов от идеи до запуска</h2>
-                <p>Таймлайн проходит сам — или нажмите на шаг, чтобы посмотреть детали.</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-track">
-                    <div class="timeline-progress" id="timelineProgress"></div>
-                    <div class="timeline-milestones">
-                        <span class="milestone" style="left:0%;"></span>
-                        <span class="milestone" style="left:25%;"></span>
-                        <span class="milestone" style="left:50%;"></span>
-                        <span class="milestone" style="left:75%;"></span>
-                        <span class="milestone" style="left:100%;"></span>
-                    </div>
-                </div>
-                <div class="steps" id="stepsList">
-                    <div class="step active" data-i="1">
-                        <div class="step-num">01</div>
-                        <h4>Обсуждаем</h4>
-                        <p>Разбираем задачу, целевых клиентов и то, какой результат должен дать сайт.</p>
-                    </div>
-                    <div class="step" data-i="2">
-                        <div class="step-num">02</div>
-                        <h4>Прототип</h4>
-                        <p>Собираю структуру блоков — вы видите логику сайта ещё до дизайна.</p>
-                    </div>
-                    <div class="step" data-i="3">
-                        <div class="step-num">03</div>
-                        <h4>Верстаю</h4>
-                        <p>Делаю адаптивную вёрстку с анимациями и формой связи.</p>
-                    </div>
-                    <div class="step" data-i="4">
-                        <div class="step-num">04</div>
-                        <h4>Тестирую</h4>
-                        <p>Проверяю на телефонах, планшетах и разных браузерах.</p>
-                    </div>
-                    <div class="step" data-i="5">
-                        <div class="step-num">05</div>
-                        <h4>Запускаю</h4>
-                        <p>Публикую сайт и передаю доступ — вы получаете готовый рабочий инструмент.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <section id="why">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Почему я</span>
-                <h2>Работаю напрямую, без агентства</h2>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="icon">◆</div>
-                    <h4>Без посредников</h4>
-                    <p>Вы общаетесь с разработчиком, а не с менеджером.</p>
-                </div>
-                <div class="why-card">
-                    <div class="icon">▣</div>
-                    <h4>Адаптив под телефон</h4>
-                    <p>Сайт работает там, где его открывает клиент.</p>
-                </div>
-                <div class="why-card">
-                    <div class="icon">⚡</div>
-                    <h4>Быстрая связь</h4>
-                    <p>Отвечаю в течение часа в рабочие часы.</p>
-                </div>
-                <div class="why-card">
-                    <div class="icon">●</div>
-                    <h4>Реальные проекты</h4>
-                    <p>Можно открыть и проверить каждую работу.</p>
-                </div>
-            </div>
-            <div class="stats-row">
-                <div class="stat">
-                    <div class="num" data-target="5" data-suffix="+">0</div>
-                    <div class="label">Проектов</div>
-                </div>
-                <div class="stat">
-                    <div class="num" data-target="100" data-suffix="%">0</div>
-                    <div class="label">Адаптив</div>
-                </div>
-                <div class="stat">
-                    <div class="num" data-target="24" data-suffix="/7">0</div>
-                    <div class="label">На связи</div>
-                </div>
-            </div>
-        </div>
-    </section>
+</section><!-- =========================
+     CONTACT
+========================= --><section class="contact" id="contact"><div class="container">
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <span class="eyebrow">Контакты</span>
-            <h2>Пришлите задачу — я предложу решение и цену за 1 день</h2>
-            <p class="lead">Опишите, что нужно: визитка, лендинг или сайт для локального бизнеса.</p>
-            <a href="https://wa.me/79696656414" target="_blank" rel="noopener" class="pulse-btn">Обсудить проект →</a>
-            <div class="contact-meta">
-                <a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a>
-                <a href="https://t.me/79696656414" target="_blank" rel="noopener">Telegram</a>
-                <span>+7 969 665-64-14</span>
-                <span>Махачкала / удалённо</span>
-            </div>
-        </div>
-    </section>
+    <div class="section-label">06 / Контакты</div>
 
-    <footer>
-        <div class="container">
-            <span class="copy">© 2026 1САЙТ. Махачкала — Россия.</span>
-            <div class="socials">
-                <a href="#" rel="noopener">Telegram</a>
-                <a href="#" rel="noopener">WhatsApp</a>
-                <a href="#" rel="noopener">GitHub</a>
-            </div>
-        </div>
-    </footer>
+    <h2 class="section-title">
+        Сделаем сайт,<br>
+        который заметят.
+    </h2>
 
-    <script>
-        (function() {
-            "use strict";
+    <p class="section-description">
+        Напишите мне, что вам нужно.
+        Обсудим задачу и я предложу решение.
+    </p>
 
-            const hasFinePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    <a
+        href="https://wa.me/79696656414"
+        target="_blank"
+        class="contact-button">
+        Обсудить проект →
+    </a>
 
-            // ===== PROGRESS BAR =====
-            const progressBar = document.getElementById('progressBar');
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-                progressBar.style.width = progress + '%';
-            }, { passive: true });
+    <div class="contact-links">
+        <a href="https://wa.me/79696656414" target="_blank">WhatsApp</a>
+        <a href="https://t.me/79696656414" target="_blank">Telegram</a>
+        <span>+7 969 665-64-14</span>
+        <span>Махачкала / удалённо</span>
+    </div>
 
-            // ===== ШАПКА =====
-            const header = document.getElementById('siteHeader');
-            window.addEventListener('scroll', () => {
-                header.classList.toggle('scrolled', window.scrollY > 40);
-            }, { passive: true });
+</div>
 
-            // ===== МОБИЛЬНОЕ МЕНЮ =====
-            const burger = document.getElementById('burger');
-            const nav = document.getElementById('mainNav');
-            burger.addEventListener('click', () => {
-                burger.classList.toggle('open');
-                nav.classList.toggle('open');
-                document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+</section><footer><div class="container footer-inner">
+
+    <span>
+        © 2026 1САЙТ
+    </span>
+
+    <span>
+        HTML / CSS / JavaScript
+    </span>
+
+</div>
+
+</footer><script>
+"use strict";
+
+/* =========================
+   HEADER
+========================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    header.classList.toggle(
+        "scrolled",
+        window.scrollY > 50
+    );
+
+});
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+const progressBar = document.querySelector(".progress");
+
+window.addEventListener("scroll", () => {
+
+    const max =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const percent =
+        max > 0
+        ? window.scrollY / max * 100
+        : 0;
+
+    progressBar.style.width = percent + "%";
+
+}, {passive:true});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+
+    menu.classList.toggle("open");
+    nav.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+
+});
+
+nav.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("open");
+        nav.classList.remove("open");
+        document.body.classList.remove("menu-open");
+
+    });
+
+});
+
+
+/* =========================
+   CUSTOM CURSOR
+========================= */
+
+const cursor = document.querySelector(".cursor");
+
+if(
+    window.matchMedia("(pointer:fine)").matches
+){
+
+    window.addEventListener("mousemove", e => {
+
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+
+    });
+
+    document
+        .querySelectorAll("a,button,.card,.step")
+        .forEach(el => {
+
+            el.addEventListener(
+                "mouseenter",
+                () => cursor.classList.add("active")
+            );
+
+            el.addEventListener(
+                "mouseleave",
+                () => cursor.classList.remove("active")
+            );
+
+        });
+
+}else{
+
+    cursor.style.display = "none";
+
+}
+
+
+/* =========================
+   TYPEWRITER
+========================= */
+
+const typewriter =
+    document.getElementById("typewriter");
+
+const words = [
+    "Разрабатываю",
+    "Создаю",
+    "Проектирую"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function type(){
+
+    const word = words[wordIndex];
+
+    if(!deleting){
+
+        charIndex++;
+
+        typewriter.textContent =
+            word.substring(0,charIndex);
+
+        if(charIndex === word.length){
+
+            deleting = true;
+
+            setTimeout(type,1700);
+
+            return;
+        }
+
+    }else{
+
+        charIndex--;
+
+        typewriter.textContent =
+            word.substring(0,charIndex);
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex =
+                (wordIndex + 1) % words.length;
+
+            setTimeout(type,350);
+
+            return;
+        }
+
+    }
+
+    setTimeout(
+        type,
+        deleting ? 45 : 90
+    );
+}
+
+setTimeout(type,500);
+
+
+/* =========================
+   REVEAL CARDS
+========================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(!entry.isIntersecting)
+                    return;
+
+                const el = entry.target;
+
+                const delay =
+                    Number(el.dataset.delay || 0);
+
+                setTimeout(() => {
+
+                    el.classList.add("visible");
+
+                },delay);
+
+                revealObserver.unobserve(el);
+
             });
-            nav.querySelectorAll('a').forEach(a => {
-                a.addEventListener('click', () => {
-                    burger.classList.remove('open');
-                    nav.classList.remove('open');
-                    document.body.style.overflow = '';
-                });
-            });
 
-            // ===== КУРСОР =====
-            const cursor = document.getElementById('customCursor');
-            if (hasFinePointer) {
-                window.addEventListener('mousemove', e => {
-                    cursor.style.left = e.clientX + 'px';
-                    cursor.style.top = e.clientY + 'px';
-                });
-                document.querySelectorAll('a, button, .service-card, .folio-card, .step').forEach(el => {
-                    el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-                    el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
-                });
-            } else {
-                cursor.style.display = 'none';
-            }
+        },
+        {
+            threshold:.15,
+            rootMargin:"0px 0px -60px 0px"
+        }
+    );
 
-            // ===== TYPEWRITER =====
-            const typewriterEl = document.getElementById('typewriter');
-            const words = ["Разрабатываю", "Создаю", "Проектирую"];
-            const fullEnd = " сайты, которые запоминаются.";
-            let wIndex = 0,
-                charIndex = 0,
-                isDeleting = false;
+revealElements.forEach(el =>
+    revealObserver.observe(el)
+);
 
-            function typeStep() {
-                const current = words[wIndex];
-                if (!isDeleting) {
-                    charIndex++;
-                    if (charIndex > current.length) {
-                        isDeleting = true;
-                        setTimeout(typeStep, 1800);
-                        return;
-                    }
-                } else {
-                    charIndex--;
-                    if (charIndex < 0) {
-                        isDeleting = false;
-                        wIndex = (wIndex + 1) % words.length;
-                        charIndex = 0;
-                        setTimeout(typeStep, 400);
-                        return;
-                    }
+
+/* =========================
+   3D CARD TILT
+========================= */
+
+if(
+    window.matchMedia("(pointer:fine)").matches
+){
+
+    document
+        .querySelectorAll(".card")
+        .forEach(card => {
+
+            card.addEventListener(
+                "mousemove",
+                e => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        (e.clientX - rect.left)
+                        / rect.width - .5;
+
+                    const y =
+                        (e.clientY - rect.top)
+                        / rect.height - .5;
+
+                    const rotateX =
+                        y * -7;
+
+                    const rotateY =
+                        x * 7;
+
+                    card.style.transform =
+                        `perspective(900px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)
+                         translateY(-5px)`;
+
                 }
-                const word = current.slice(0, charIndex);
-                typewriterEl.innerHTML = `<span class="cycle">${word}</span>${fullEnd}<span class="cursor-blink">&nbsp;</span>`;
-                setTimeout(typeStep, isDeleting ? 35 : 75);
-            }
+            );
 
-            if (reduceMotion) {
-                typewriterEl.innerHTML = `<span class="cycle">Разрабатываю</span>${fullEnd}<span class="cursor-blink">&nbsp;</span>`;
-            } else {
-                setTimeout(typeStep, 500);
-            }
+            card.addEventListener(
+                "mouseleave",
+                () => {
 
-            // ===== HERO STATS =====
-            const heroStats = document.querySelectorAll('.hero-stat-num');
-            const heroObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        heroStats.forEach(el => {
-                            const target = parseInt(el.dataset.target, 10);
-                            const duration = 1200;
-                            let startTime = null;
+                    card.style.transform = "";
 
-                            function step(ts) {
-                                if (!startTime) startTime = ts;
-                                const p = Math.min((ts - startTime) / duration, 1);
-                                const eased = 1 - Math.pow(1 - p, 3);
-                                el.textContent = Math.round(target * eased);
-                                if (p < 1) requestAnimationFrame(step);
-                            }
-                            requestAnimationFrame(step);
-                        });
-                        heroObserver.disconnect();
-                    }
-                });
-            }, { threshold: 0.3 });
-            heroObserver.observe(document.querySelector('.hero'));
+                }
+            );
 
-            // ===== SLIDE-RIGHT =====
-            const slideElements = document.querySelectorAll('.path-card, .service-card, .folio-card');
-            const slideObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const delay = parseInt(el.dataset.delay) || 0;
-                        setTimeout(() => el.classList.add('visible'), delay);
-                        slideObserver.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-            slideElements.forEach(el => slideObserver.observe(el));
+        });
 
-            // ===== 3D TILT =====
-            if (hasFinePointer && !reduceMotion) {
-                document.querySelectorAll('.service-card, .folio-card').forEach(card => {
-                    const inner = card.querySelector('.tilt-inner');
-                    if (!inner) return;
+}
 
-                    card.addEventListener('mousemove', e => {
-                        const rect = card.getBoundingClientRect();
-                        const px = (e.clientX - rect.left) / rect.width - 0.5;
-                        const py = (e.clientY - rect.top) / rect.height - 0.5;
-                        inner.style.setProperty('--rx', (px * 16) + 'deg');
-                        inner.style.setProperty('--ry', (py * -16) + 'deg');
-                        inner.style.transform = `rotateX(${py * -14}deg) rotateY(${px * 16}deg)`;
-                    });
 
-                    card.addEventListener('mouseleave', () => {
-                        inner.style.transform = 'rotateX(0) rotateY(0)';
-                    });
-                });
-            }
+/* =========================
+   PARALLAX
+========================= */
 
-            // ===== ТАЙМЛАЙН =====
-            const steps = document.querySelectorAll('.step');
-            const progress = document.getElementById('timelineProgress');
-            const milestones = document.querySelectorAll('.milestone');
-            let autoTimer = null;
+const parallax =
+    document.querySelectorAll(".parallax");
 
-            function activateStep(target) {
-                steps.forEach(s => s.classList.remove('active'));
-                target.classList.add('active');
-                const idx = parseInt(target.dataset.i, 10);
-                const pct = ((idx - 1) / (steps.length - 1)) * 100;
-                progress.style.width = pct + '%';
-                milestones.forEach((m, i) => {
-                    m.classList.toggle('active', i < idx);
-                });
-            }
+window.addEventListener(
+    "scroll",
+    () => {
 
-            function startAutoProgress() {
-                let current = 0;
-                activateStep(steps[0]);
-                clearInterval(autoTimer);
-                autoTimer = setInterval(() => {
-                    current++;
-                    if (current >= steps.length) {
-                        clearInterval(autoTimer);
-                        return;
-                    }
-                    activateStep(steps[current]);
-                }, 2000);
-            }
+        const scroll =
+            window.scrollY;
 
-            steps.forEach(step => {
-                step.addEventListener('click', () => {
-                    clearInterval(autoTimer);
-                    activateStep(step);
-                });
-            });
+        parallax.forEach(el => {
 
-            const processSection = document.getElementById('process');
-            const processObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startAutoProgress();
-                        processObserver.disconnect();
-                    }
-                });
-            }, { threshold: 0.3 });
-            processObserver.observe(processSection);
+            const speed =
+                Number(el.dataset.speed || 0);
 
-            // ===== СЧЁТЧИКИ =====
-            const counters = document.querySelectorAll('.stat .num');
-            let counted = false;
-            const whySection = document.getElementById('why');
-            const countObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !counted) {
-                        counted = true;
-                        counters.forEach(el => {
-                            const target = parseInt(el.dataset.target, 10);
-                            const suffix = el.dataset.suffix || '';
-                            const duration = 1400;
-                            let startTime = null;
+            el.style.transform =
+                `translate3d(0,${scroll * speed}px,0)`;
 
-                            function step(ts) {
-                                if (!startTime) startTime = ts;
-                                const p = Math.min((ts - startTime) / duration, 1);
-                                const eased = 1 - Math.pow(1 - p, 3);
-                                const val = Math.round(target * eased);
-                                el.textContent = val + suffix;
-                                if (p < 1) {
-                                    requestAnimationFrame(step);
-                                } else {
-                                    el.classList.add('pulse');
-                                    setTimeout(() => el.classList.remove('pulse'), 600);
+        });
+
+    },
+    {passive:true}
+);
+
+
+/* =========================
+   COUNTERS
+========================= */
+
+const counters =
+    document.querySelectorAll(".counter");
+
+let countersStarted = false;
+
+const counterObserver =
+    new IntersectionObserver(
+        entries => {
+
+            if(!entries[0].isIntersecting)
+                return;
+
+            if(countersStarted)
+                return;
+
+            countersStarted = true;
+
+            counters.forEach(counter => {
+
+                const target =
+                    Number(counter.dataset.target);
+
+                const duration = 1500;
+
+                const start =
+                    performance.now();
+
+                function animate(now){
+
+                    const progress =
+                        Math.min(
+                            (now - start) / duration,
+                            1
+                        );
+
+                    const eased =
+                        1 -
+                        Math.pow(
+                            1-progress,
+                            3
+                        );
+
+                    counter.textContent =
+                        Math.floor(
+                            target * eased
+                        );
+
+                    if(progress < 1){
+
+                        requestAnimationFrame(
+                            animate
+                        );
+
+                    }else{
+
+                        counter.textContent =
+                            target;
+
+                        counter.animate(
+                            [
+                                {
+                                    transform:"scale(1)"
+                                },
+                                {
+                                    transform:"scale(1.18)"
+                                },
+                                {
+                                    transform:"scale(1)"
                                 }
+                            ],
+                            {
+                                duration:600,
+                                easing:"ease-out"
                             }
-                            requestAnimationFrame(step);
-                        });
-                        countObserver.disconnect();
-                    }
-                });
-            }, { threshold: 0.4 });
-            countObserver.observe(whySection);
+                        );
 
-            // ===== TOUCH FALLBACK =====
-            document.querySelectorAll('.service-card, .folio-card').forEach(card => {
-                card.addEventListener('click', function(e) {
-                    if (!hasFinePointer) {
-                        const isLink = e.target.closest('a');
-                        if (!isLink) {
-                            const group = this.classList.contains('service-card') ? '.service-card' : '.folio-card';
-                            document.querySelectorAll(group).forEach(c => {
-                                if (c !== this) c.classList.remove('active');
-                            });
-                            this.classList.toggle('active');
-                        }
-                    }
-                });
-            });
-
-            // ===== PARTICLES =====
-            const canvas = document.getElementById('particles');
-            const ctx = canvas.getContext('2d');
-            const heroSection = document.querySelector('.hero');
-            let particles = [];
-            let mouseX = null,
-                mouseY = null;
-
-            function resizeCanvas() {
-                canvas.width = heroSection.offsetWidth;
-                canvas.height = heroSection.offsetHeight;
-            }
-
-            function initParticles() {
-                particles = [];
-                const count = Math.min(80, Math.floor(canvas.width / 16));
-                for (let i = 0; i < count; i++) {
-                    particles.push({
-                        x: Math.random() * canvas.width,
-                        y: Math.random() * canvas.height,
-                        r: Math.random() * 2.5 + 0.5,
-                        vx: (Math.random() - 0.5) * 0.3,
-                        vy: (Math.random() - 0.5) * 0.3,
-                        a: Math.random() * 0.4 + 0.08,
-                        baseX: Math.random() * canvas.width,
-                        baseY: Math.random() * canvas.height,
-                    });
-                }
-            }
-
-            if (hasFinePointer) {
-                window.addEventListener('mousemove', e => {
-                    mouseX = e.clientX;
-                    mouseY = e.clientY;
-                });
-            }
-
-            function drawParticles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                particles.forEach(p => {
-                    if (mouseX !== null && mouseY !== null) {
-                        const dx = mouseX - p.x;
-                        const dy = mouseY - p.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 250) {
-                            const force = (250 - dist) / 250 * 0.3;
-                            p.vx -= (dx / dist) * force * 0.02;
-                            p.vy -= (dy / dist) * force * 0.02;
-                        }
                     }
 
-                    p.vx *= 0.997;
-                    p.vy *= 0.997;
-                    p.x += p.vx;
-                    p.y += p.vy;
-
-                    if (p.x < 0 || p.x > canvas.width) p.vx *= -0.5;
-                    if (p.y < 0 || p.y > canvas.height) p.vy *= -0.5;
-
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(212,175,55,${p.a})`;
-                    ctx.fill();
-
-                    if (p.r > 1.5) {
-                        ctx.shadowColor = 'rgba(212,175,55,0.15)';
-                        ctx.shadowBlur = 12;
-                        ctx.fill();
-                        ctx.shadowBlur = 0;
-                    }
-                });
-
-                // Connect nearby particles
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 120) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(212,175,55,${0.06 * (1 - dist / 120)})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.stroke();
-                        }
-                    }
                 }
 
-                requestAnimationFrame(drawParticles);
-            }
+                requestAnimationFrame(animate);
 
-            resizeCanvas();
-            initParticles();
-            if (!reduceMotion) requestAnimationFrame(drawParticles);
-
-            window.addEventListener('resize', () => {
-                resizeCanvas();
-                initParticles();
             });
 
-        })();
-    </script>
-</body>
+        },
+        {threshold:.4}
+    );
+
+counterObserver.observe(
+    document.getElementById("why")
+);
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+const steps =
+    document.querySelectorAll(".step");
+
+const timelineProgress =
+    document.getElementById(
+        "timelineProgress"
+    );
+
+let currentStep = 0;
+let timelineTimer;
+
+function activateStep(index){
+
+    steps.forEach(
+        step => step.classList.remove("active")
+    );
+
+    steps[index].classList.add("active");
+
+    const percent =
+        (index / (steps.length - 1)) * 100;
+
+    timelineProgress.style.width =
+        percent + "%";
+
+    currentStep = index;
+
+}
+
+function startTimeline(){
+
+    activateStep(0);
+
+    clearInterval(timelineTimer);
+
+    timelineTimer =
+        setInterval(() => {
+
+            currentStep++;
+
+            if(currentStep >= steps.length){
+
+                clearInterval(timelineTimer);
+
+                return;
+
+            }
+
+            activateStep(currentStep);
+
+        },2000);
+
+}
+
+steps.forEach((step,index) => {
+
+    step.addEventListener(
+        "click",
+        () => {
+
+            clearInterval(timelineTimer);
+
+            activateStep(index);
+
+        }
+    );
+
+});
+
+
+const processObserver =
+    new IntersectionObserver(
+        entries => {
+
+            if(entries[0].isIntersecting){
+
+                startTimeline();
+
+                processObserver.disconnect();
+
+            }
+
+        },
+        {threshold:.3}
+    );
+
+processObserver.observe(
+    document.getElementById("process")
+);
+
+
+/* =========================
+   FADE THROUGH BLACK
+========================= */
+
+const sections =
+    document.querySelectorAll("section");
+
+const fadeObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.style
+                        .setProperty(
+                            "--section-opacity",
+                            "1"
+                        );
+
+                }
+
+            });
+
+        },
+        {threshold:.05}
+    );
+
+sections.forEach(section =>
+    fadeObserver.observe(section)
+);
+
+
+/* =========================
+   TOUCH CARD INTERACTION
+========================= */
+
+if(
+    !window.matchMedia("(pointer:fine)").matches
+){
+
+    document
+        .querySelectorAll(".card")
+        .forEach(card => {
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    card.animate(
+                        [
+                            {
+                                transform:"scale(1)"
+                            },
+                            {
+                                transform:"scale(.97)"
+                            },
+                            {
+                                transform:"scale(1)"
+                            }
+                        ],
+                        {
+                            duration:350,
+                            easing:"ease-out"
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================
+   FADE-THROUGH BLACK
+========================= */
+
+let lastScroll = window.scrollY;
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const current =
+            window.scrollY;
+
+        if(
+            Math.abs(current-lastScroll) > 80
+        ){
+
+            document.body.style
+                .setProperty(
+                    "--scroll-depth",
+                    current
+                );
+
+            lastScroll = current;
+
+        }
+
+    },
+    {passive:true}
+);
+
+</script></body>
 </html>
