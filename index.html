@@ -1,652 +1,853 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8">
 
-  <title>Rasulov — Web Developer</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <meta name="description"
-        content="Rasulov — начинающий Web Developer. Современные сайты, лендинги и цифровые решения.">
+    <title>1САЙТ — разработка современных сайтов</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta name="description"
+          content="1САЙТ — разработка современных сайтов для бизнеса. Лендинги, сайты-визитки, сайты для заведений и бизнеса.">
 
-  <link rel="stylesheet" href="style.css">
+    <meta name="keywords"
+          content="1САЙТ, разработка сайтов, создание сайтов, сайт для бизнеса, лендинг, сайт-визитка, сайты Махачкала">
+
+    <meta name="author" content="Rasulov">
+
+    <meta name="theme-color" content="#0a0a0a">
+
+    <meta property="og:title" content="1САЙТ — сайты, которые работают на бизнес">
+    <meta property="og:description"
+          content="Современные сайты с сильным дизайном, анимациями и адаптацией под телефон.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23090909'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='52' font-family='Arial' font-weight='900' fill='white'%3E1%3C/text%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- PRELOADER -->
-<div class="loader" id="loader">
-  <div class="loader-inner">
-    <span>R</span>
-    <div class="loader-line"></div>
-    <small>RASULOV / WEB</small>
-  </div>
-</div>
-
 <!-- CURSOR -->
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
-<!-- SCROLL PROGRESS -->
-<div class="scroll-progress">
-  <span id="progress"></span>
-</div>
+<!-- PROGRESS -->
+<div class="scroll-progress"></div>
 
 <!-- HEADER -->
 <header class="header">
-  <a href="#top" class="logo">
-    <span>R</span>
-    <strong>RASULOV</strong>
-  </a>
 
-  <nav>
-    <a href="#about">Обо мне</a>
-    <a href="#skills">Навыки</a>
-    <a href="#work">Проекты</a>
-    <a href="#contact">Контакты</a>
-  </nav>
+    <a href="#top" class="logo">
+        <span class="logo-number">1</span>
+        <span>САЙТ</span>
+    </a>
 
-  <a href="#contact" class="header-button magnetic">
-    Обсудить проект
-  </a>
+    <nav class="nav">
+        <a href="#about">Обо мне</a>
+        <a href="#work">Работы</a>
+        <a href="#prices">Цены</a>
+        <a href="#process">Процесс</a>
+    </nav>
 
-  <button class="menu-button" id="menuButton">
-    <span></span>
-    <span></span>
-  </button>
+    <a href="#contact" class="header-btn">
+        Обсудить проект
+        <span>↗</span>
+    </a>
+
+    <button class="menu-btn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+    </button>
+
 </header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about">Обо мне</a>
-  <a href="#skills">Навыки</a>
-  <a href="#work">Проекты</a>
-  <a href="#contact">Контакты</a>
-
-  <a href="#contact" class="mobile-contact">
-    Начать проект →
-  </a>
-</div>
 
 <main id="top">
 
 <!-- HERO -->
 <section class="hero">
 
-  <div class="hero-noise"></div>
+    <div class="hero-noise"></div>
 
-  <div class="hero-grid"></div>
+    <div class="hero-content">
 
-  <div class="hero-content">
+        <div class="eyebrow reveal">
+            <span class="status-dot"></span>
+            1САЙТ / WEB DEVELOPMENT
+        </div>
 
-    <div class="eyebrow reveal">
-      <span class="status-dot"></span>
-      AVAILABLE FOR PROJECTS
+        <h1 class="hero-title">
+            <span class="line reveal">Сайт, который</span>
+            <span class="line reveal delay-1">
+                <em>невозможно</em>
+            </span>
+            <span class="line reveal delay-2">игнорировать.</span>
+        </h1>
+
+        <div class="hero-bottom reveal delay-3">
+
+            <p class="hero-description">
+                Создаю современные сайты для бизнеса,
+                которые выглядят дорого, вызывают доверие
+                и превращают посетителей в клиентов.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#work" class="btn btn-primary magnetic">
+                    <span>Смотреть работы</span>
+                    <span class="btn-arrow">↓</span>
+                </a>
+
+                <a href="#contact" class="btn btn-secondary magnetic">
+                    <span>Создать сайт</span>
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <h1 class="hero-title">
-      <span class="line reveal">Сайты, которые</span>
-      <span class="line reveal delay-1">
-        <i>невозможно</i>
-      </span>
-      <span class="line reveal delay-2">забыть.</span>
-    </h1>
-
-    <div class="hero-bottom">
-
-      <p class="hero-description reveal delay-3">
-        Я Rasulov — начинающий Web Developer.
-        Создаю современные сайты с сильным визуалом,
-        понятной структурой и вниманием к каждой детали.
-      </p>
-
-      <div class="hero-actions reveal delay-4">
-
-        <a href="#work" class="primary-button magnetic">
-          <span>Смотреть проекты</span>
-          <b>↗</b>
-        </a>
-
-        <a href="#about" class="secondary-button magnetic">
-          Узнать обо мне
-        </a>
-
-      </div>
-
+    <div class="hero-scroll">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
     </div>
 
-  </div>
-
-  <div class="hero-scroll">
-    <span>SCROLL</span>
-    <div class="scroll-arrow">↓</div>
-  </div>
-
-  <div class="hero-orb"></div>
+    <div class="hero-number">01</div>
 
 </section>
 
 
-<!-- STATEMENT -->
-<section class="statement section">
+<!-- MARQUEE -->
+<section class="marquee-section">
 
-  <div class="section-label reveal">
-    <span>01</span>
-    ПОДХОД
-  </div>
+    <div class="marquee">
+        <div class="marquee-track">
 
-  <div class="statement-content">
+            <span>WEB DESIGN</span>
+            <i>✦</i>
+            <span>DEVELOPMENT</span>
+            <i>✦</i>
+            <span>BRANDING</span>
+            <i>✦</i>
+            <span>1САЙТ</span>
+            <i>✦</i>
 
-    <h2 class="big-text reveal">
-      Хороший сайт —
-      <span>это не просто код.</span>
-    </h2>
+            <span>WEB DESIGN</span>
+            <i>✦</i>
+            <span>DEVELOPMENT</span>
+            <i>✦</i>
+            <span>BRANDING</span>
+            <i>✦</i>
+            <span>1САЙТ</span>
+            <i>✦</i>
 
-    <p class="statement-text reveal">
-      Это первое впечатление о бизнесе.
-      Поэтому я думаю не только о том,
-      как сайт выглядит, но и о том,
-      что человек чувствует, когда его открывает.
-    </p>
-
-  </div>
+        </div>
+    </div>
 
 </section>
 
 
 <!-- ABOUT -->
-<section class="about section" id="about">
+<section class="section about" id="about">
 
-  <div class="section-label reveal">
-    <span>02</span>
-    ОБО МНЕ
-  </div>
-
-  <div class="about-grid">
-
-    <div class="about-title">
-      <h2 class="reveal">
-        Создаю.
-        <br>
-        Изучаю.
-        <br>
-        <em>Расту.</em>
-      </h2>
+    <div class="section-head reveal">
+        <span class="section-number">02</span>
+        <span class="section-label">ОБО МНЕ</span>
     </div>
 
-    <div class="about-copy">
+    <div class="about-grid">
 
-      <p class="large reveal">
-        Я изучаю Web Development и постепенно
-        превращаю знания в реальные проекты.
-      </p>
+        <div class="about-title reveal">
+            <h2>
+                Не просто<br>
+                <span>«сайт».</span>
+            </h2>
+        </div>
 
-      <p class="reveal">
-        Работаю с HTML, CSS и JavaScript.
-        Изучаю современные подходы к интерфейсам,
-        анимациям, адаптивности и пользовательскому опыту.
-      </p>
+        <div class="about-text reveal delay-1">
 
-      <p class="reveal">
-        Моя цель — делать сайты, которые выглядят
-        профессионально и помогают бизнесу получать
-        внимание клиентов.
-      </p>
+            <p class="big-text">
+                Я создаю цифровую подачу бизнеса,
+                которая должна работать с первого взгляда.
+            </p>
 
-      <div class="about-sign reveal">
-        <span>RASULOV</span>
-        <small>WEB DEVELOPER / 2026</small>
-      </div>
+            <p>
+                Дизайн, структура, тексты, анимации,
+                мобильная адаптация — всё собирается
+                в одну систему.
+            </p>
+
+            <p>
+                Моя задача — сделать так, чтобы человек
+                не просто открыл сайт, а захотел
+                узнать о вашем бизнесе больше.
+            </p>
+
+            <a href="#contact" class="text-link">
+                Рассказать о проекте
+                <span>↗</span>
+            </a>
+
+        </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- HORIZONTAL SKILLS -->
-<section class="skills-section" id="skills">
+<!-- NUMBERS -->
+<section class="numbers-section">
 
-  <div class="skills-heading section">
-
-    <div class="section-label reveal">
-      <span>03</span>
-      НАВЫКИ
+    <div class="number-card reveal">
+        <strong data-counter="3">0</strong>
+        <span>готовых проекта</span>
     </div>
 
-    <h2 class="reveal">
-      Инструменты,
-      <br>
-      которыми я <em>строю.</em>
-    </h2>
-
-  </div>
-
-  <div class="skills-track">
-
-    <div class="skill-card">
-      <div class="skill-number">01</div>
-      <div class="skill-icon">&lt;/&gt;</div>
-      <h3>HTML</h3>
-      <p>Структура современных веб-страниц.</p>
-      <span>SEMANTIC / STRUCTURE</span>
+    <div class="number-card reveal delay-1">
+        <strong data-counter="100">0</strong>
+        <span>% внимания к деталям</span>
     </div>
 
-    <div class="skill-card">
-      <div class="skill-number">02</div>
-      <div class="skill-icon">✦</div>
-      <h3>CSS</h3>
-      <p>Адаптивные интерфейсы, визуал и анимации.</p>
-      <span>DESIGN / MOTION</span>
+    <div class="number-card reveal delay-2">
+        <strong>24/7</strong>
+        <span>на связи по проекту</span>
     </div>
 
-    <div class="skill-card">
-      <div class="skill-number">03</div>
-      <div class="skill-icon">{ }</div>
-      <h3>JavaScript</h3>
-      <p>Интерактивность и логика интерфейса.</p>
-      <span>INTERACTION / LOGIC</span>
+    <div class="number-card reveal delay-3">
+        <strong>∞</strong>
+        <span>идей для развития</span>
     </div>
-
-    <div class="skill-card">
-      <div class="skill-number">04</div>
-      <div class="skill-icon">GH</div>
-      <h3>GitHub</h3>
-      <p>Хранение проектов и публикация сайтов.</p>
-      <span>VERSION / DEPLOY</span>
-    </div>
-
-  </div>
 
 </section>
 
 
 <!-- WORK -->
-<section class="work section" id="work">
+<section class="section work" id="work">
 
-  <div class="work-top">
-
-    <div class="section-label reveal">
-      <span>04</span>
-      ИЗБРАННЫЕ РАБОТЫ
+    <div class="section-head reveal">
+        <span class="section-number">03</span>
+        <span class="section-label">ИЗБРАННЫЕ РАБОТЫ</span>
     </div>
 
     <div class="work-intro reveal">
-      <h2>
-        Мои
-        <em>проекты.</em>
-      </h2>
+        <h2>
+            Проекты,<br>
+            которые <span>говорят сами.</span>
+        </h2>
 
-      <p>
-        Листай вправо — здесь находятся
-        мои реальные работы.
-      </p>
+        <p>
+            Листай горизонтально → чтобы посмотреть
+            мои работы.
+        </p>
     </div>
 
-  </div>
+    <div class="projects-wrapper">
+
+        <div class="projects">
+
+            <!-- PROJECT 1 -->
+            <article class="project-card">
+
+                <div class="project-image project-one">
+
+                    <div class="project-overlay"></div>
+
+                    <span class="project-index">01</span>
+
+                    <span class="project-type">
+                        BARBERSHOP
+                    </span>
+
+                    <div class="fake-browser">
+                        <div class="browser-top">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <div class="browser-content">
+                            <div class="browser-title">
+                                BARBERSHOP
+                            </div>
+
+                            <div class="browser-button">
+                                BOOK NOW
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div>
+                        <h3>BARBERSHOP</h3>
+
+                        <p>
+                            Современный сайт для барбершопа
+                            с акцентом на визуальную подачу
+                            и запись клиента.
+                        </p>
+                    </div>
+
+                    <a href="https://rasulovking2577.github.io/BARBERSHOP/"
+                       target="_blank"
+                       class="project-link">
+                        Открыть ↗
+                    </a>
+
+                </div>
+
+            </article>
 
 
-  <!-- HORIZONTAL PROJECTS -->
-  <div class="projects-wrapper">
+            <!-- PROJECT 2 -->
+            <article class="project-card">
 
-    <div class="projects-track" id="projectsTrack">
+                <div class="project-image project-two">
 
-      <!-- PROJECT 1 -->
-      <article class="project-card project-dark">
+                    <div class="project-overlay"></div>
 
-        <div class="project-top">
-          <span>01 / 04</span>
-          <span>WEB DESIGN</span>
+                    <span class="project-index">02</span>
+
+                    <span class="project-type">
+                        PORTFOLIO
+                    </span>
+
+                    <div class="fake-browser">
+
+                        <div class="browser-top">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <div class="browser-content">
+                            <div class="browser-title">
+                                1САЙТ
+                            </div>
+
+                            <div class="browser-button">
+                                EXPLORE
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div>
+                        <h3>PERSONAL WEBSITE</h3>
+
+                        <p>
+                            Персональный сайт и портфолио
+                            разработчика.
+                        </p>
+                    </div>
+
+                    <a href="https://rasulovking2577.github.io/website/"
+                       target="_blank"
+                       class="project-link">
+                        Открыть ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 3 -->
+            <article class="project-card">
+
+                <div class="project-image project-three">
+
+                    <div class="project-overlay"></div>
+
+                    <span class="project-index">03</span>
+
+                    <span class="project-type">
+                        RESTAURANT
+                    </span>
+
+                    <div class="fake-browser">
+
+                        <div class="browser-top">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <div class="browser-content">
+                            <div class="browser-title">
+                                ARAGVI
+                            </div>
+
+                            <div class="browser-button">
+                                DISCOVER
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div>
+                        <h3>ARAGVI</h3>
+
+                        <p>
+                            Концепт сайта заведения
+                            с атмосферной визуальной подачей.
+                        </p>
+                    </div>
+
+                    <a href="https://rasulovking2577.github.io/Aragvi/#process"
+                       target="_blank"
+                       class="project-link">
+                        Открыть ↗
+                    </a>
+
+                </div>
+
+            </article>
+
         </div>
 
-        <div class="project-visual">
-          <div class="browser">
-            <div class="browser-bar">
-              <i></i>
-              <i></i>
-              <i></i>
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="section services">
+
+    <div class="section-head reveal">
+        <span class="section-number">04</span>
+        <span class="section-label">ЧТО Я ДЕЛАЮ</span>
+    </div>
+
+    <div class="services-list">
+
+        <div class="service reveal">
+
+            <span class="service-number">01</span>
+
+            <div>
+                <h3>Сайт для бизнеса</h3>
+                <p>
+                    Современный сайт, который представляет
+                    компанию и приводит клиентов.
+                </p>
             </div>
 
-            <div class="fake-site">
-              <div class="fake-logo">RASULOV</div>
+            <span class="service-arrow">↗</span>
 
-              <div class="fake-title">
-                DIGITAL
-                <br>
-                EXPERIENCE
-              </div>
-
-              <div class="fake-button">
-                EXPLORE →
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="project-info">
-          <div>
-            <h3>Rasulov Portfolio</h3>
-            <p>Персональный сайт разработчика</p>
-          </div>
 
-          <a href="https://rasulovking2577.github.io/website/"
-             target="_blank"
-             class="project-link magnetic">
-            Открыть ↗
-          </a>
-        </div>
+        <div class="service reveal">
 
-      </article>
+            <span class="service-number">02</span>
 
-
-      <!-- PROJECT 2 -->
-      <article class="project-card project-light">
-
-        <div class="project-top">
-          <span>02 / 04</span>
-          <span>BUSINESS</span>
-        </div>
-
-        <div class="project-visual">
-
-          <div class="barber-preview">
-
-            <div class="barber-logo">
-              BARBER
+            <div>
+                <h3>Landing Page</h3>
+                <p>
+                    Страница под конкретную услугу,
+                    продукт или рекламную кампанию.
+                </p>
             </div>
 
-            <div class="barber-main">
-              YOUR STYLE.
-              <br>
-              YOUR RULES.
+            <span class="service-arrow">↗</span>
+
+        </div>
+
+
+        <div class="service reveal">
+
+            <span class="service-number">03</span>
+
+            <div>
+                <h3>Сайт-визитка</h3>
+                <p>
+                    Небольшой, быстрый и стильный сайт
+                    для специалиста или компании.
+                </p>
             </div>
 
-            <div class="barber-line"></div>
-
-            <span>BARBERSHOP</span>
-
-          </div>
+            <span class="service-arrow">↗</span>
 
         </div>
 
-        <div class="project-info">
-          <div>
-            <h3>BARBERSHOP</h3>
-            <p>Сайт для барбершопа</p>
-          </div>
 
-          <a href="https://rasulovking2577.github.io/BARBERSHOP/"
-             target="_blank"
-             class="project-link magnetic">
-            Открыть ↗
-          </a>
+        <div class="service reveal">
+
+            <span class="service-number">04</span>
+
+            <div>
+                <h3>Редизайн</h3>
+                <p>
+                    Переработка старого сайта,
+                    чтобы он выглядел современно.
+                </p>
+            </div>
+
+            <span class="service-arrow">↗</span>
+
         </div>
 
-      </article>
+    </div>
+
+</section>
 
 
-      <!-- PROJECT 3 -->
-      <article class="project-card project-red">
+<!-- PRICES -->
+<section class="section prices" id="prices">
 
-        <div class="project-top">
-          <span>03 / 04</span>
-          <span>RESTAURANT</span>
-        </div>
+    <div class="section-head reveal">
+        <span class="section-number">05</span>
+        <span class="section-label">СТОИМОСТЬ</span>
+    </div>
 
-        <div class="project-visual">
+    <div class="prices-heading reveal">
 
-          <div class="restaurant-preview">
+        <h2>
+            Выбери<br>
+            <span>свой уровень.</span>
+        </h2>
 
-            <small>GEORGIAN CUISINE</small>
+        <p>
+            Финальная стоимость зависит от задачи,
+            количества страниц и сложности проекта.
+        </p>
 
-            <h3>
-              ARAGVI
-            </h3>
+    </div>
+
+
+    <div class="price-grid">
+
+        <article class="price-card reveal">
+
+            <span class="price-tag">START</span>
+
+            <h3>Сайт-визитка</h3>
+
+            <div class="price">
+                от <strong>10 000₽</strong>
+            </div>
 
             <p>
-              TRADITION
-              <br>
-              & TASTE
+                Для специалиста, мастера
+                или небольшого бизнеса.
             </p>
 
-            <div class="restaurant-circle">
-              →
+            <ul>
+                <li>✓ 1 страница</li>
+                <li>✓ Адаптация под телефон</li>
+                <li>✓ Современный дизайн</li>
+                <li>✓ Контакты</li>
+            </ul>
+
+            <a href="#contact" class="price-btn">
+                Обсудить
+                <span>↗</span>
+            </a>
+
+        </article>
+
+
+        <article class="price-card featured reveal delay-1">
+
+            <div class="popular">
+                ПОПУЛЯРНЫЙ
             </div>
 
-          </div>
+            <span class="price-tag">BUSINESS</span>
 
-        </div>
+            <h3>Сайт для бизнеса</h3>
 
-        <div class="project-info">
-          <div>
-            <h3>Aragvi</h3>
-            <p>Концептуальный сайт ресторана</p>
-          </div>
+            <div class="price">
+                от <strong>20 000₽</strong>
+            </div>
 
-          <a href="https://rasulovking2577.github.io/Aragvi/#process"
-             target="_blank"
-             class="project-link magnetic">
-            Открыть ↗
-          </a>
-        </div>
+            <p>
+                Полноценная презентация
+                вашего бизнеса.
+            </p>
 
-      </article>
+            <ul>
+                <li>✓ Продуманная структура</li>
+                <li>✓ Анимации</li>
+                <li>✓ Адаптация</li>
+                <li>✓ Формы заявок</li>
+                <li>✓ SEO-база</li>
+            </ul>
+
+            <a href="#contact" class="price-btn">
+                Обсудить
+                <span>↗</span>
+            </a>
+
+        </article>
 
 
-      <!-- PROJECT 4 -->
-      <article class="project-card project-gradient">
+        <article class="price-card reveal delay-2">
 
-        <div class="project-top">
-          <span>04 / 04</span>
-          <span>EXPERIMENTAL</span>
-        </div>
+            <span class="price-tag">PREMIUM</span>
 
-        <div class="project-visual">
+            <h3>Имиджевый сайт</h3>
 
-          <div class="experimental-preview">
+            <div class="price">
+                от <strong>35 000₽</strong>
+            </div>
 
-            <span>NEW</span>
+            <p>
+                Максимальная визуальная подача
+                и индивидуальная разработка.
+            </p>
 
-            <h3>
-              NEXT
-              <br>
-              PROJECT
-            </h3>
+            <ul>
+                <li>✓ Уникальный дизайн</li>
+                <li>✓ Cinematic-анимации</li>
+                <li>✓ Сложные эффекты</li>
+                <li>✓ Продвинутая структура</li>
+                <li>✓ Максимум внимания к деталям</li>
+            </ul>
 
-            <div class="experimental-circle"></div>
+            <a href="#contact" class="price-btn">
+                Обсудить
+                <span>↗</span>
+            </a>
 
-          </div>
-
-        </div>
-
-        <div class="project-info">
-          <div>
-            <h3>Coming Soon</h3>
-            <p>Следующий проект находится в разработке</p>
-          </div>
-
-          <span class="project-link disabled">
-            SOON
-          </span>
-        </div>
-
-      </article>
+        </article>
 
     </div>
-
-  </div>
-
-  <div class="projects-hint">
-    <span>←</span>
-    ЛИСТАЙ ПРОЕКТЫ
-    <span>→</span>
-  </div>
 
 </section>
 
 
 <!-- PROCESS -->
-<section class="process section">
+<section class="section process" id="process">
 
-  <div class="section-label reveal">
-    <span>05</span>
-    ПРОЦЕСС
-  </div>
-
-  <h2 class="process-title reveal">
-    От идеи
-    <span>до сайта.</span>
-  </h2>
-
-  <div class="process-list">
-
-    <div class="process-item reveal">
-      <span>01</span>
-      <div>
-        <h3>Знакомство</h3>
-        <p>Разбираемся с задачей и целью проекта.</p>
-      </div>
-      <b>↗</b>
+    <div class="section-head reveal">
+        <span class="section-number">06</span>
+        <span class="section-label">КАК МЫ РАБОТАЕМ</span>
     </div>
 
-    <div class="process-item reveal">
-      <span>02</span>
-      <div>
-        <h3>Концепция</h3>
-        <p>Продумываем структуру, стиль и впечатление.</p>
-      </div>
-      <b>↗</b>
+    <div class="process-heading reveal">
+
+        <h2>
+            От идеи<br>
+            до <span>готового сайта.</span>
+        </h2>
+
     </div>
 
-    <div class="process-item reveal">
-      <span>03</span>
-      <div>
-        <h3>Разработка</h3>
-        <p>Создаю адаптивный сайт и добавляю интерактив.</p>
-      </div>
-      <b>↗</b>
-    </div>
 
-    <div class="process-item reveal">
-      <span>04</span>
-      <div>
-        <h3>Запуск</h3>
-        <p>Проверяем всё и публикуем проект.</p>
-      </div>
-      <b>↗</b>
-    </div>
+    <div class="process-list">
 
-  </div>
+        <div class="process-item reveal">
+
+            <span>01</span>
+
+            <div>
+                <h3>Знакомство</h3>
+                <p>
+                    Узнаю о вашем бизнесе, клиентах
+                    и главной цели сайта.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="process-item reveal">
+
+            <span>02</span>
+
+            <div>
+                <h3>Концепция</h3>
+                <p>
+                    Продумываю структуру,
+                    визуальный стиль и пользовательский путь.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="process-item reveal">
+
+            <span>03</span>
+
+            <div>
+                <h3>Разработка</h3>
+                <p>
+                    Собираю сайт, добавляю адаптацию,
+                    интерактив и анимации.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="process-item reveal">
+
+            <span>04</span>
+
+            <div>
+                <h3>Запуск</h3>
+                <p>
+                    Проверяем всё на телефоне и компьютере
+                    и публикуем сайт.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- BIG CTA -->
-<section class="cta">
+<!-- FAQ -->
+<section class="section faq">
 
-  <div class="cta-glow"></div>
+    <div class="section-head reveal">
+        <span class="section-number">07</span>
+        <span class="section-label">FAQ</span>
+    </div>
 
-  <div class="cta-content">
+    <div class="faq-list">
 
-    <span class="cta-label reveal">
-      HAVE A PROJECT?
-    </span>
+        <div class="faq-item reveal">
 
-    <h2 class="reveal">
-      Давай создадим
-      <br>
-      что-то <em>сильное.</em>
-    </h2>
+            <button class="faq-question">
+                <span>Сколько занимает создание сайта?</span>
+                <span class="faq-icon">+</span>
+            </button>
 
-    <a href="#contact" class="cta-button magnetic reveal">
-      <span>Начать разговор</span>
-      <b>↗</b>
-    </a>
+            <div class="faq-answer">
+                <p>
+                    Обычно небольшой сайт можно сделать
+                    за несколько дней. Сложные проекты
+                    требуют больше времени.
+                </p>
+            </div>
 
-  </div>
+        </div>
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+                <span>Сайт будет работать на телефоне?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Да. Мобильная версия является обязательной
+                    частью разработки.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+                <span>Можно ли изменить сайт после запуска?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Да. Сайт можно развивать, добавлять новые
+                    страницы, функции и контент.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+                <span>Как начать?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Напишите мне в Telegram или WhatsApp
+                    и расскажите, какой сайт вам нужен.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- CONTACT -->
-<section class="contact section" id="contact">
+<!-- CTA -->
+<section class="cta" id="contact">
 
-  <div class="section-label reveal">
-    <span>06</span>
-    КОНТАКТЫ
-  </div>
+    <div class="cta-glow"></div>
 
-  <div class="contact-grid">
+    <div class="cta-content">
 
-    <div class="contact-heading">
+        <span class="cta-label reveal">
+            08 / LET'S TALK
+        </span>
 
-      <h2 class="reveal">
-        Есть идея?
-        <br>
-        <em>Пиши.</em>
-      </h2>
+        <h2 class="reveal">
+            Есть идея?
+            <br>
+            <span>Давайте сделаем.</span>
+        </h2>
 
-      <p class="reveal">
-        Расскажи, что нужно сделать.
-        Обсудим идею и придумаем,
-        как превратить её в хороший сайт.
-      </p>
+        <p class="reveal">
+            Расскажите мне о вашем бизнесе —
+            обсудим идею и найдём лучшее решение.
+        </p>
 
-    </div>
+        <div class="cta-buttons reveal">
 
-    <div class="contact-links">
+            <a href="https://t.me/rasulov1site"
+               target="_blank"
+               class="contact-btn telegram">
+                <span>Telegram</span>
+                <span>↗</span>
+            </a>
 
-      <a href="mailto:rasulov2588@gmail.com"
-         class="contact-link reveal magnetic">
+            <a href="https://wa.me/89696656414"
+               target="_blank"
+               class="contact-btn whatsapp">
+                <span>WhatsApp</span>
+                <span>↗</span>
+            </a>
 
-        <span>EMAIL</span>
+        </div>
 
-        <strong>
-          rasulov2588@gmail.com
-        </strong>
-
-        <b>↗</b>
-
-      </a>
-
-
-      <a href="https://t.me/rasulov1site"
-         target="_blank"
-         class="contact-link reveal magnetic">
-
-        <span>TELEGRAM</span>
-
-        <strong>
-          @rasulov1site
-        </strong>
-
-        <b>↗</b>
-
-      </a>
-
-
-      <a href="https://wa.me/79696656414"
-         target="_blank"
-         class="contact-link reveal magnetic">
-
-        <span>WHATSAPP</span>
-
-        <strong>
-          +7 969 665-64-14
-        </strong>
-
-        <b>↗</b>
-
-      </a>
+        <a href="mailto:rasulov2588@gmail.com"
+           class="email-link reveal">
+            rasulov2588@gmail.com
+        </a>
 
     </div>
-
-  </div>
 
 </section>
 
@@ -654,36 +855,43 @@
 
 
 <!-- FOOTER -->
-<footer>
+<footer class="footer">
 
-  <div class="footer-top">
+    <div class="footer-top">
 
-    <div class="footer-logo">
-      RASULOV<span>.</span>
+        <a href="#top" class="footer-logo">
+            1САЙТ
+        </a>
+
+        <div class="footer-socials">
+
+            <a href="https://t.me/rasulov1site"
+               target="_blank">
+                TG
+            </a>
+
+            <a href="https://wa.me/89696656414"
+               target="_blank">
+                WA
+            </a>
+
+            <a href="mailto:rasulov2588@gmail.com">
+                MAIL
+            </a>
+
+        </div>
+
     </div>
 
-    <p>
-      Web Developer<br>
-      Creating digital experiences.
-    </p>
+    <div class="footer-bottom">
 
-  </div>
+        <span>© 2026 1САЙТ</span>
 
-  <div class="footer-bottom">
+        <span>
+            DESIGNED & DEVELOPED BY RASULOV
+        </span>
 
-    <span>
-      © 2026 RASULOV
-    </span>
-
-    <span>
-      MADE WITH CODE & CURIOSITY
-    </span>
-
-    <a href="#top">
-      BACK TO TOP ↑
-    </a>
-
-  </div>
+    </div>
 
 </footer>
 
