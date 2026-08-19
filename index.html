@@ -1,393 +1,497 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>1САЙТ — Сайты, которые работают на ваш бизнес</title>
-  <meta name="description" content="Создаём сайты для бизнеса: визитки, лендинги, редизайн. Понятно, мобильно, с WhatsApp. От 15 000 ₽.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://rasulovking2577.github.io/1site/">
-  <meta property="og:title" content="1САЙТ — Сайты, которые работают на ваш бизнес">
-  <meta property="og:description" content="Понятное представление услуг, мобильная версия, WhatsApp. От 15 000 ₽.">
-  <meta property="og:url" content="https://rasulovking2577.github.io/1site/">
-  <meta name="theme-color" content="#050807">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"1САЙТ","url":"https://rasulovking2577.github.io/1site/","telephone":"+79696656414","email":"rasulov2588@gmail.com","areaServed":["Махачкала","Дагестан","Россия"],"priceRange":"от 15000 RUB"}
-  </script>
-  <style>
-    :root{--bg:#050807;--panel:#0a100e;--glass:rgba(12,20,16,.65);--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);--text:#f2f5f1;--muted:#8b968f;--dim:#5c675f;--green:#b9ff3d;--green-dim:rgba(185,255,61,.14);--green-glow:rgba(185,255,61,.35);--gold:#d4b45a;--sans:"Manrope",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;--ease:cubic-bezier(.22,1,.36,1)}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:9999}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
-    .wrap{width:min(1200px,calc(100% - 40px));margin-inline:auto}
-    @media(max-width:480px){.wrap{width:calc(100% - 28px)}}
-    .nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:100;width:min(1100px,calc(100% - 24px));height:58px;padding:0 10px 0 20px;display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:100px;background:rgba(5,8,7,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-    .logo{font-weight:800;letter-spacing:.04em;font-size:.95rem}.logo span{color:var(--green)}
-    .nav-links{display:flex;gap:26px;font-size:.78rem;color:var(--muted)}.nav-links a:hover{color:var(--green)}
-    .nav-cta{background:var(--green);color:#071008;font-weight:700;font-size:.78rem;padding:11px 18px;border-radius:100px;transition:box-shadow .25s,transform .25s}
-    .nav-cta:hover{box-shadow:0 0 28px var(--green-glow);transform:translateY(-1px)}
-    .burger{display:none;width:42px;height:42px;place-items:center;border:1px solid var(--line);border-radius:50%}
-    .burger span,.burger span::before,.burger span::after{display:block;width:16px;height:1.5px;background:var(--text);position:relative}
-    .burger span::before{content:"";position:absolute;top:-5px;left:0;width:16px;height:1.5px;background:var(--text)}
-    .burger span::after{content:"";position:absolute;top:5px;left:0;width:16px;height:1.5px;background:var(--text)}
-    @media(max-width:780px){.nav-links,.nav-cta{display:none}.burger{display:grid}}
-    .mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(5,8,7,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .3s}
-    .mobile-menu.open{opacity:1;pointer-events:auto}.mobile-menu a{font-size:1.4rem;font-weight:600}.mobile-menu .nav-cta{display:inline-flex;margin-top:8px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:100px;font-weight:700;font-size:.88rem;transition:transform .25s var(--ease),box-shadow .25s,background .25s}
-    .btn-primary{background:var(--green);color:#071008}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 36px var(--green-glow)}
-    .btn-ghost{border:1px solid var(--line2);color:var(--text)}.btn-ghost:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.28)}
-    .hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:32px;padding:120px 0 70px;position:relative}
-    .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 80% 20%,rgba(185,255,61,.09),transparent 50%),radial-gradient(ellipse 50% 40% at 10% 70%,rgba(30,70,45,.25),transparent 50%)}
-    .eyebrow{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:10px}
-    .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
-    .hero h1{font-family:var(--serif);font-size:clamp(3rem,7.5vw,5.4rem);font-weight:400;line-height:.95;letter-spacing:-.03em;margin-bottom:22px}
-    .hero h1 em{font-style:italic;color:var(--green)}
-    .hero-lead{font-size:1.05rem;color:var(--muted);max-width:400px;margin-bottom:32px;line-height:1.65}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
-    .hero-meta{display:flex;flex-wrap:wrap;gap:18px;font-size:.8rem;color:var(--dim)}
-    .hero-meta span{display:flex;align-items:center;gap:6px}.hero-meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--green);opacity:.7}
-    .hero-art{position:relative;height:min(560px,70vw);border-radius:28px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%,rgba(185,255,61,.07),transparent 45%),#060a08;box-shadow:0 40px 80px rgba(0,0,0,.45),inset 0 0 60px rgba(185,255,61,.03)}
-    #canvas3d{width:100%;height:100%;display:block;touch-action:none}
-    .art-hint{position:absolute;left:18px;top:16px;font-size:.65rem;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;pointer-events:none}
-    .art-badge{position:absolute;right:16px;bottom:16px;padding:12px 16px;border-radius:14px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--line2);font-size:.78rem;display:flex;align-items:center;gap:10px}
-    .art-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-    @keyframes pulse{50%{opacity:.35}}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:110px;gap:40px}.hero-art{height:380px;order:-1}}
-    @media(max-width:480px){.hero h1{font-size:clamp(2.6rem,12vw,3.4rem)}.hero-art{height:320px}}
-    section{padding:100px 0;position:relative}
-    .kicker{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-    .section-title{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:14px}
-    .section-title em{font-style:italic;color:var(--green)}
-    .section-lead{font-size:1rem;color:var(--muted);max-width:460px;margin-bottom:40px}
-    .hook{background:linear-gradient(180deg,transparent,rgba(10,18,14,.8),transparent);border-block:1px solid var(--line)}
-    .hook-quote{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.5rem);line-height:1.2;max-width:680px;margin-bottom:40px}
-    .pain-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-    @media(max-width:900px){.pain-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:480px){.pain-grid{grid-template-columns:1fr}}
-    .pain{padding:20px 16px;border-radius:16px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);transition:border-color .25s,transform .25s}
-    .pain:hover{border-color:var(--line2);transform:translateY(-2px)}
-    .pain-n{font-size:.65rem;color:var(--dim);margin-bottom:8px;letter-spacing:.1em}
-    .pain p{font-size:.88rem;color:var(--muted);line-height:1.4}
-    .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media(max-width:768px){.value-grid{grid-template-columns:1fr}}
-    .value-card{padding:28px 24px;border-radius:20px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);transition:border-color .25s,transform .25s var(--ease)}
-    .value-card:hover{border-color:rgba(185,255,61,.25);transform:translateY(-3px)}
-    .value-icon{width:42px;height:42px;border-radius:12px;background:var(--green-dim);color:var(--green);display:grid;place-items:center;font-size:1.1rem;margin-bottom:16px}
-    .value-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}.value-card p{font-size:.9rem;color:var(--muted)}
-    .service{display:grid;grid-template-columns:70px 1fr auto;gap:20px;padding:28px;border-radius:20px;margin-bottom:12px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);transition:border-color .25s}
-    .service:hover{border-color:var(--line2)}
-    @media(max-width:720px){.service{grid-template-columns:1fr;gap:10px;padding:22px 18px}}
-    .service-n{font-family:var(--serif);font-size:1.8rem;color:var(--dim);line-height:1}
-    .service h3{font-size:1.2rem;font-weight:700;margin-bottom:4px}
-    .service-meta{font-size:.8rem;color:var(--dim);margin-bottom:10px}
-    .service-desc{font-size:.92rem;color:var(--muted);margin-bottom:12px;max-width:500px}
-    .tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:.7rem;padding:4px 10px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted)}
-    .service-price{text-align:right;white-space:nowrap}@media(max-width:720px){.service-price{text-align:left}}
-    .service-price strong{display:block;font-size:1.25rem;margin-bottom:8px}.service-price .btn{min-height:40px;padding:0 16px;font-size:.8rem}
-    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media(max-width:860px){.price-grid{grid-template-columns:1fr;max-width:400px;margin-inline:auto}}
-    .price-card{padding:32px 26px;border-radius:22px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);display:flex;flex-direction:column;position:relative;transition:transform .25s var(--ease),border-color .25s}
-    .price-card:hover{transform:translateY(-4px);border-color:var(--line2)}
-    .price-card.hot{border-color:rgba(185,255,61,.35);background:linear-gradient(165deg,rgba(185,255,61,.07),transparent 55%),var(--glass);box-shadow:0 0 40px rgba(185,255,61,.08)}
-    .price-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--green);color:#071008;font-size:.68rem;font-weight:700;padding:4px 12px;border-radius:100px;white-space:nowrap}
-    .price-name{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-    .price-amount{font-size:2rem;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}.price-amount span{font-size:.95rem;font-weight:400;color:var(--muted)}
-    .price-for{font-size:.88rem;color:var(--dim);margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
-    .price-list{flex:1;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
-    .price-list li{font-size:.88rem;color:var(--muted);display:flex;gap:8px}.price-list li::before{content:"→";color:var(--green)}
-    .price-card .btn{width:100%}
-    .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    @media(max-width:680px){.work-grid{grid-template-columns:1fr}}
-    .work{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--panel);transition:transform .3s var(--ease),border-color .25s;display:flex;flex-direction:column}
-    .work:hover{transform:translateY(-4px);border-color:var(--line2)}
-    .work-preview{aspect-ratio:16/10;background:linear-gradient(145deg,#0f1814,#070c0a);display:grid;place-items:center;position:relative;overflow:hidden}
-    .work-preview::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(185,255,61,.08),transparent 50%)}
-    .work-preview span{font-family:var(--serif);font-size:1.8rem;color:rgba(255,255,255,.12);letter-spacing:-.02em;position:relative;z-index:1}
-    .work-body{padding:22px;flex:1;display:flex;flex-direction:column}
-    .work-type{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
-    .work h3{font-size:1.15rem;font-weight:700;margin-bottom:6px}.work p{font-size:.88rem;color:var(--muted);margin-bottom:14px;flex:1}
-    .work-link{font-size:.88rem;font-weight:600;color:var(--text);transition:color .2s}.work-link:hover{color:var(--green)}
-    .work-next{border-style:dashed;background:transparent;align-items:center;justify-content:center;text-align:center;padding:48px 24px;min-height:280px}
-    .trust{max-width:640px;padding:36px 32px;border-radius:22px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px)}
-    .trust h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:12px}.trust p{color:var(--muted);margin-bottom:10px}.trust p:last-child{margin-bottom:0}
-    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media(max-width:640px){.why-grid{grid-template-columns:1fr}}
-    .why-item{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:22px;border-radius:18px;background:var(--glass);border:1px solid var(--line)}
-    .why-n{font-family:var(--serif);font-size:1.3rem;color:var(--green)}.why-item h3{font-size:1rem;font-weight:700;margin-bottom:4px}.why-item p{font-size:.88rem;color:var(--muted)}
-    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:s}
-    @media(max-width:720px){.process-grid{grid-template-columns:1fr}}
-    .step{padding:22px;border-radius:18px;background:var(--glass);border:1px solid var(--line)}
-    .step::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.4rem;color:var(--dim);display:block;margin-bottom:10px}
-    .step h3{font-size:1rem;font-weight:700;margin-bottom:4px}.step p{font-size:.88rem;color:var(--muted)}
-    .process-note{margin-top:24px;padding:16px 20px;border-radius:14px;background:var(--green-dim);border-left:3px solid var(--green);font-size:.92rem;color:var(--muted)}
-    .risk-list{max-width:520px}
-    .risk-item{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}.risk-item:last-child{border-bottom:none}
-    .risk-n{width:32px;height:32px;border-radius:50%;background:var(--green-dim);color:var(--green);display:grid;place-items:center;font-size:.8rem;font-weight:700}
-    .risk-item p{font-size:.95rem;color:var(--muted);padding-top:4px}
-    .faq-list{max-width:640px;display:flex;flex-direction:column;gap:8px}
-    .faq-item{border-radius:14px;border:1px solid var(--line);background:var(--glass);overflow:hidden}
-    .faq-q{width:100%;text-align:left;padding:16px 18px;font-size:.95rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px}
-    .faq-q:hover{color:var(--green)}.faq-q svg{flex-shrink:0;transition:transform .25s}.faq-item.open .faq-q svg{transform:rotate(45deg)}
-    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}.faq-item.open .faq-a{max-height:180px}
-    .faq-a-inner{padding:0 18px 16px;font-size:.9rem;color:var(--muted)}
-    .final{text-align:center;padding:110px 0 90px;position:relative}
-    .final-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(185,255,61,.08),transparent)}
-    .final h2{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:1.08;letter-spacing:-.025em;margin-bottom:14px}
-    .final p{color:var(--muted);max-width:400px;margin:0 auto 28px}
-    .final-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;margin-top:28px;font-size:.88rem;color:var(--dim)}.final-links a:hover{color:var(--green)}
-    .footer{padding:28px 0 100px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8rem;color:var(--dim)}.footer a:hover{color:var(--muted)}
-    .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,8,7,.92);backdrop-filter:blur(16px);border-top:1px solid var(--line)}.sticky .btn{width:100%}
-    @media(max-width:780px){.sticky{display:block}.footer{padding-bottom:90px}}
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.on{opacity:1;transform:none}
-    :focus-visible{outline:2px solid var(--green);outline-offset:3px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>1САЙТ — Сайты, которые работают на ваш бизнес</title>
+<meta name="description" content="Создаём сайты для бизнеса: визитки, лендинги, редизайн. Понятно, мобильно, с WhatsApp. От 15 000 ₽.">
+<meta name="theme-color" content="#030605">
+<link rel="canonical" href="https://rasulovking2577.github.io/1site/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{
+  --bg:#030605;--panel:#07100c;--text:#f3f6f2;--muted:#8a968c;--dim:#556058;
+  --green:#c6ff4d;--green2:#8fd92a;--gold:#e0c46a;
+  --glass:rgba(255,255,255,0.04);--glass2:rgba(255,255,255,0.07);
+  --line:rgba(255,255,255,0.08);--line2:rgba(255,255,255,0.15);
+  --sans:"Manrope",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:9998;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{width:min(1180px,calc(100% - 36px));margin-inline:auto}
+@media(max-width:480px){.wrap{width:calc(100% - 24px)}}
+
+/* liquid glass utility */
+.glass{
+  background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  backdrop-filter:blur(24px) saturate(1.4);
+  -webkit-backdrop-filter:blur(24px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 20px 50px rgba(0,0,0,.35);
+}
+.glass-strong{
+  background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
+  backdrop-filter:blur(32px) saturate(1.6);
+  -webkit-backdrop-filter:blur(32px) saturate(1.6);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.15),0 25px 60px rgba(0,0,0,.4);
+}
+
+/* floating orbs background */
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;animation:floatOrb 18s ease-in-out infinite}
+.orb-1{width:420px;height:420px;background:radial-gradient(circle,#7ab82a,transparent 70%);top:-10%;left:-5%;animation-delay:0s}
+.orb-2{width:360px;height:360px;background:radial-gradient(circle,#3d6b2a,transparent 70%);bottom:10%;right:-8%;animation-delay:-6s}
+.orb-3{width:280px;height:280px;background:radial-gradient(circle,#c6ff4d33,transparent 70%);top:40%;left:50%;animation-delay:-12s}
+@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+
+/* NAV */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:100;width:min(1080px,calc(100% - 20px));height:56px;padding:0 8px 0 18px;display:flex;align-items:center;justify-content:space-between;border-radius:100px}
+.logo{font-weight:800;letter-spacing:.04em;font-size:.92rem}.logo i{font-style:normal;color:var(--green)}
+.nav-links{display:flex;gap:22px;font-size:.75rem;color:var(--muted)}.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:#061008;font-weight:700;font-size:.75rem;padding:10px 16px;border-radius:100px;transition:box-shadow .3s,transform .25s}
+.nav-cta:hover{box-shadow:0 0 32px rgba(198,255,77,.45);transform:translateY(-1px)}
+.burger{display:none;width:40px;height:40px;place-items:center;border-radius:50%;border:1px solid var(--line)}
+.burger span{display:block;width:15px;height:1.5px;background:var(--text);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:15px;height:1.5px;background:var(--text)}
+.burger span::before{top:-5px}.burger span::after{top:5px}
+@media(max-width:780px){.nav-links,.nav-cta{display:none}.burger{display:grid}}
+.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(3,6,5,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-menu.open{opacity:1;pointer-events:auto}.mobile-menu a{font-size:1.35rem;font-weight:600}.mobile-menu .nav-cta{display:inline-flex}
+
+/* BTN */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:100px;font-weight:700;font-size:.88rem;transition:transform .3s var(--ease),box-shadow .3s}
+.btn-primary{background:var(--green);color:#061008}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(198,255,77,.35)}
+.btn-ghost{border:1px solid var(--line2)}.btn-ghost:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.25)}
+
+/* HERO */
+.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:28px;padding:120px 0 60px;position:relative;z-index:1}
+.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 16px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.4;transform:scale(.8)}}
+.hero h1{font-family:var(--serif);font-size:clamp(2.9rem,7vw,5.2rem);font-weight:400;line-height:.94;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--green);display:inline-block;animation:glowText 4s ease-in-out infinite}
+@keyframes glowText{0%,100%{text-shadow:0 0 20px rgba(198,255,77,.2)}50%{text-shadow:0 0 40px rgba(198,255,77,.45)}}
+.hero-lead{font-size:1.02rem;color:var(--muted);max-width:380px;margin-bottom:28px;line-height:1.65}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:.78rem;color:var(--dim)}
+.hero-meta span::before{content:"✦ ";color:var(--green);opacity:.7}
+
+.hero-art{position:relative;height:min(540px,68vw);border-radius:28px;overflow:hidden}
+.hero-art::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:28px;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 1px rgba(255,255,255,.12)}
+#canvas3d{width:100%;height:100%;display:block;touch-action:none}
+.art-label{position:absolute;left:16px;top:14px;z-index:3;font-size:.62rem;letter-spacing:.16em;color:rgba(255,255,255,.35);text-transform:uppercase}
+.art-glass{position:absolute;right:14px;bottom:14px;z-index:3;padding:12px 16px;border-radius:16px;font-size:.78rem;display:flex;align-items:center;gap:10px}
+.art-glass .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:105px;gap:36px}.hero-art{height:360px;order:-1}}
+@media(max-width:480px){.hero h1{font-size:clamp(2.5rem,11vw,3.2rem)}.hero-art{height:300px}}
+
+/* sections */
+section{padding:90px 0;position:relative;z-index:1}
+.kicker{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4.8vw,3.4rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:12px}
+.section-title em{font-style:italic;color:var(--green)}
+.section-lead{font-size:.98rem;color:var(--muted);max-width:440px;margin-bottom:36px}
+
+/* HOOK liquid cards */
+.hook-quote{font-family:var(--serif);font-size:clamp(1.5rem,3.8vw,2.4rem);line-height:1.2;max-width:660px;margin-bottom:36px}
+.pain-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:900px){.pain-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pain-grid{grid-template-columns:1fr}}
+.pain{padding:18px 14px;border-radius:18px;transition:transform .35s var(--ease),border-color .3s}
+.pain:hover{transform:translateY(-4px) scale(1.02)}
+.pain-n{font-size:.62rem;color:var(--dim);margin-bottom:6px;letter-spacing:.1em}
+.pain p{font-size:.85rem;color:var(--muted);line-height:1.4}
+
+/* value */
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:768px){.value-grid{grid-template-columns:1fr}}
+.value-card{padding:26px 22px;border-radius:22px;transition:transform .35s var(--ease)}
+.value-card:hover{transform:translateY(-5px)}
+.value-icon{width:40px;height:40px;border-radius:12px;background:rgba(198,255,77,.12);color:var(--green);display:grid;place-items:center;margin-bottom:14px;font-size:1.05rem}
+.value-card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}.value-card p{font-size:.88rem;color:var(--muted)}
+
+/* services */
+.service{display:grid;grid-template-columns:64px 1fr auto;gap:18px;padding:24px;border-radius:22px;margin-bottom:10px;transition:transform .3s,border-color .3s}
+.service:hover{transform:translateY(-3px)}
+@media(max-width:720px){.service{grid-template-columns:1fr;gap:8px;padding:20px 16px}}
+.service-n{font-family:var(--serif);font-size:1.7rem;color:var(--dim);line-height:1}
+.service h3{font-size:1.15rem;font-weight:700;margin-bottom:3px}
+.service-meta{font-size:.78rem;color:var(--dim);margin-bottom:8px}
+.service-desc{font-size:.9rem;color:var(--muted);margin-bottom:10px;max-width:480px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}.tags span{font-size:.68rem;padding:3px 9px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted)}
+.service-price{text-align:right;white-space:nowrap}@media(max-width:720px){.service-price{text-align:left}}
+.service-price strong{display:block;font-size:1.2rem;margin-bottom:8px}.service-price .btn{min-height:38px;padding:0 14px;font-size:.78rem}
+
+/* pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.price-grid{grid-template-columns:1fr;max-width:380px;margin-inline:auto}}
+.price-card{padding:30px 24px;border-radius:24px;display:flex;flex-direction:column;position:relative;transition:transform .35s var(--ease)}
+.price-card:hover{transform:translateY(-6px)}
+.price-card.hot{border-color:rgba(198,255,77,.4);box-shadow:0 0 50px rgba(198,255,77,.1),inset 0 1px 1px rgba(255,255,255,.12)}
+.price-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--green);color:#061008;font-size:.65rem;font-weight:700;padding:4px 12px;border-radius:100px}
+.price-name{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.price-amount{font-size:1.9rem;font-weight:700;letter-spacing:-.02em;margin-bottom:3px}.price-amount span{font-size:.9rem;font-weight:400;color:var(--muted)}
+.price-for{font-size:.85rem;color:var(--dim);margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.price-list{flex:1;display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.price-list li{font-size:.85rem;color:var(--muted);display:flex;gap:7px}.price-list li::before{content:"→";color:var(--green)}
+.price-card .btn{width:100%}
+
+/* work */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:680px){.work-grid{grid-template-columns:1fr}}
+.work{border-radius:22px;overflow:hidden;transition:transform .35s var(--ease);display:flex;flex-direction:column}
+.work:hover{transform:translateY(-5px)}
+.work-preview{aspect-ratio:16/10;background:linear-gradient(145deg,#0c1611,#050a08);display:grid;place-items:center;position:relative}
+.work-preview::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(198,255,77,.1),transparent 55%)}
+.work-preview span{font-family:var(--serif);font-size:1.7rem;color:rgba(255,255,255,.1);position:relative;z-index:1}
+.work-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.work-type{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:5px}
+.work h3{font-size:1.1rem;font-weight:700;margin-bottom:5px}.work p{font-size:.85rem;color:var(--muted);margin-bottom:12px;flex:1}
+.work-link{font-size:.85rem;font-weight:600;transition:color .2s}.work-link:hover{color:var(--green)}
+.work-next{border-style:dashed;background:transparent;align-items:center;justify-content:center;text-align:center;padding:44px 20px;min-height:260px}
+
+/* trust why process risk faq final */
+.trust{max-width:600px;padding:32px 28px;border-radius:22px}
+.trust h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:10px}.trust p{color:var(--muted);margin-bottom:8px}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+.why-item{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:20px;border-radius:18px}
+.why-n{font-family:var(--serif);font-size:1.2rem;color:var(--green)}.why-item h3{font-size:.95rem;font-weight:700;margin-bottom:3px}.why-item p{font-size:.85rem;color:var(--muted)}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:s}
+@media(max-width:720px){.process-grid{grid-template-columns:1fr}}
+.step{padding:20px;border-radius:18px}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.3rem;color:var(--dim);display:block;margin-bottom:8px}
+.step h3{font-size:.95rem;font-weight:700;margin-bottom:3px}.step p{font-size:.85rem;color:var(--muted)}
+.process-note{margin-top:20px;padding:14px 18px;border-radius:14px;background:rgba(198,255,77,.1);border-left:3px solid var(--green);font-size:.9rem;color:var(--muted)}
+.risk-list{max-width:500px}
+.risk-item{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.risk-item:last-child{border-bottom:none}
+.risk-n{width:30px;height:30px;border-radius:50%;background:rgba(198,255,77,.12);color:var(--green);display:grid;place-items:center;font-size:.75rem;font-weight:700}
+.risk-item p{font-size:.92rem;color:var(--muted);padding-top:3px}
+.faq-list{max-width:620px;display:flex;flex-direction:column;gap:7px}
+.faq-item{border-radius:14px;overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:15px 16px;font-size:.92rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:50px}
+.faq-q:hover{color:var(--green)}.faq-q svg{flex-shrink:0;transition:transform .25s}.faq-item.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}.faq-item.open .faq-a{max-height:160px}
+.faq-a-inner{padding:0 16px 14px;font-size:.88rem;color:var(--muted)}
+.final{text-align:center;padding:100px 0 80px;position:relative}
+.final-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 50% 50%,rgba(198,255,77,.08),transparent)}
+.final h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);line-height:1.08;letter-spacing:-.025em;margin-bottom:12px}
+.final p{color:var(--muted);max-width:380px;margin:0 auto 26px}
+.final-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 20px;margin-top:24px;font-size:.85rem;color:var(--dim)}.final-links a:hover{color:var(--green)}
+.footer{padding:24px 0 95px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--dim);position:relative;z-index:1}
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(3,6,5,.92);backdrop-filter:blur(20px);border-top:1px solid var(--line)}.sticky .btn{width:100%}
+@media(max-width:780px){.sticky{display:block}.footer{padding-bottom:85px}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .75s var(--ease),transform .75s var(--ease)}.reveal.on{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <a href="#" class="logo">1<span>САЙТ</span></a>
-    <div class="nav-links">
-      <a href="#services">Услуги</a><a href="#pricing">Цены</a><a href="#work">Работы</a><a href="#process">Процесс</a><a href="#faq">Вопросы</a>
+<div class="orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+
+<nav class="nav glass-strong">
+  <a href="#" class="logo">1<i>САЙТ</i></a>
+  <div class="nav-links"><a href="#services">Услуги</a><a href="#pricing">Цены</a><a href="#work">Работы</a><a href="#process">Процесс</a><a href="#faq">Вопросы</a></div>
+  <a href="https://wa.me/79696656414" class="nav-cta" target="_blank" rel="noopener">Заказать сайт ↗</a>
+  <button class="burger" id="burger" aria-label="Меню"><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" data-close>Услуги</a><a href="#pricing" data-close>Цены</a><a href="#work" data-close>Работы</a><a href="#process" data-close>Процесс</a><a href="#faq" data-close>Вопросы</a>
+  <a href="https://wa.me/79696656414" class="nav-cta" target="_blank" rel="noopener">Заказать сайт ↗</a>
+</div>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <div class="eyebrow">Махачкала · Дагестан · remote</div>
+    <h1>Сайт, который<br><em>работает</em><br>на ваш бизнес.</h1>
+    <p class="hero-lead">Собираем понятные сайты для кафе, салонов, барбершопов. Клиент сразу видит услуги, цены и пишет в WhatsApp.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/79696656414" class="btn btn-primary" target="_blank" rel="noopener">Заказать сайт ↗</a>
+      <a href="#work" class="btn btn-ghost">Смотреть работы ↓</a>
     </div>
-    <a href="https://wa.me/79696656414" class="nav-cta" target="_blank" rel="noopener">Заказать сайт ↗</a>
-    <button class="burger" id="burger" aria-label="Меню"><span></span></button>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#services" data-close>Услуги</a><a href="#pricing" data-close>Цены</a><a href="#work" data-close>Работы</a><a href="#process" data-close>Процесс</a><a href="#faq" data-close>Вопросы</a>
-    <a href="https://wa.me/79696656414" class="nav-cta" target="_blank" rel="noopener">Заказать сайт ↗</a>
+    <div class="hero-meta"><span>Цены открыты</span><span>Без шаблонов</span><span>Mobile-first</span></div>
   </div>
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div>
-        <div class="eyebrow">Махачкала · Дагестан · remote</div>
-        <h1>Сайт, который<br><em>работает</em><br>на ваш бизнес.</h1>
-        <p class="hero-lead">Собираем понятные сайты для кафе, салонов, барбершопов и локального бизнеса. Клиент сразу видит услуги, цены и пишет в WhatsApp.</p>
-        <div class="hero-actions">
-          <a href="https://wa.me/79696656414" class="btn btn-primary" target="_blank" rel="noopener">Заказать сайт ↗</a>
-          <a href="#work" class="btn btn-ghost">Смотреть работы ↓</a>
-        </div>
-        <div class="hero-meta"><span>Цены открыты</span><span>Без шаблонов</span><span>Mobile-first</span></div>
-      </div>
-      <div class="hero-art" id="heroArt">
-        <canvas id="canvas3d"></canvas>
-        <div class="art-hint">DRAG · MOVE</div>
-        <div class="art-badge"><span class="art-badge-dot"></span>Живой 3D · не картинка</div>
-      </div>
-    </section>
-    <section class="hook">
-      <p class="hook-quote reveal">Ваш клиент уже ищет вас.<br>Вопрос только в том, <em style="font-style:italic;color:var(--green)">что он увидит</em>.</p>
-      <div class="pain-grid reveal">
-        <div class="pain"><div class="pain-n">01</div><p>Нет сайта — клиент уходит к конкуренту</p></div>
-        <div class="pain"><div class="pain-n">02</div><p>Старый сайт выглядит дешевле бизнеса</p></div>
-        <div class="pain"><div class="pain-n">03</div><p>С телефона всё ломается</p></div>
-        <div class="pain"><div class="pain-n">04</div><p>Услуги и цены спрятаны</p></div>
-        <div class="pain"><div class="pain-n">05</div><p>Нет быстрого контакта</p></div>
-      </div>
-    </section>
-    <section>
-      <div class="kicker reveal">Что вы получаете</div>
-      <h2 class="section-title reveal">Не код.<br><em>Инструмент</em> для бизнеса.</h2>
-      <p class="section-lead reveal">Клиент за 10 секунд понимает, чем вы занимаетесь, сколько стоит и как связаться.</p>
-      <div class="value-grid">
-        <div class="value-card reveal"><div class="value-icon">①</div><h3>Понятное представление</h3><p>Услуги, цены, фото и преимущества — без воды.</p></div>
-        <div class="value-card reveal"><div class="value-icon">②</div><h3>Быстрый контакт</h3><p>WhatsApp, Telegram, телефон. Один клик — клиент пишет.</p></div>
-        <div class="value-card reveal"><div class="value-icon">③</div><h3>Mobile-first</h3><p>Проектируем сначала под телефон — там ваши клиенты.</p></div>
-      </div>
-    </section>
-    <section id="services">
-      <div class="kicker reveal">Услуги</div>
-      <h2 class="section-title reveal">Формат под задачу,<br>а не «сайт вообще».</h2>
-      <p class="section-lead reveal">Выбираем то, что реально нужно бизнесу сейчас.</p>
-      <article class="service reveal">
-        <div class="service-n">01</div>
-        <div><h3>Сайт-визитка</h3><div class="service-meta">Кафе, салоны, специалисты</div>
-        <p class="service-desc"><strong>Проблема:</strong> клиент ищет вас, а видит пустоту.<br><strong>Решение:</strong> одна сильная страница с услугами, ценами и WhatsApp.</p>
-        <div class="tags"><span>Адаптив</span><span>Цены</span><span>WhatsApp</span><span>SEO</span></div></div>
-        <div class="service-price"><strong>от 15 000 ₽</strong><a href="https://wa.me/79696656414?text=Интересует сайт-визитка" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
-      </article>
-      <article class="service reveal">
-        <div class="service-n">02</div>
-        <div><h3>Лендинг</h3><div class="service-meta">Одно действие — заявка, запись</div>
-        <p class="service-desc"><strong>Проблема:</strong> размытое предложение.<br><strong>Решение:</strong> страница вокруг одной цели.</p>
-        <div class="tags"><span>Hero</span><span>УТП</span><span>Форма</span><span>Mobile</span></div></div>
-        <div class="service-price"><strong>от 25 000 ₽</strong><a href="https://wa.me/79696656414?text=Интересует лендинг" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
-      </article>
-      <article class="service reveal">
-        <div class="service-n">03</div>
-        <div><h3>Сайт для бизнеса</h3><div class="service-meta">Несколько страниц</div>
-        <p class="service-desc"><strong>Проблема:</strong> одной страницы мало.<br><strong>Решение:</strong> структура с навигацией.</p>
-        <div class="tags"><span>Страницы</span><span>Галерея</span><span>Формы</span><span>SEO</span></div></div>
-        <div class="service-price"><strong>от 30 000 ₽</strong><a href="https://wa.me/79696656414?text=Интересует сайт для бизнеса" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
-      </article>
-      <article class="service reveal">
-        <div class="service-n">04</div>
-        <div><h3>Редизайн</h3><div class="service-meta">Сайт устарел или плохо работает с телефона</div>
-        <p class="service-desc"><strong>Проблема:</strong> старый дизайн отпугивает.<br><strong>Решение:</strong> новый визуал и мобильный опыт.</p>
-        <div class="tags"><span>Новый дизайн</span><span>Mobile</span><span>Скорость</span></div></div>
-        <div class="service-price"><strong>от 20 000 ₽</strong><a href="https://wa.me/79696656414?text=Интересует редизайн" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
-      </article>
-    </section>
-    <section id="pricing">
-      <div class="kicker reveal">Цены</div>
-      <h2 class="section-title reveal">Прозрачно.<br>Без тумана.</h2>
-      <p class="section-lead reveal">Точная сумма — после короткого обсуждения.</p>
-      <div class="price-grid">
-        <div class="price-card reveal">
-          <div class="price-name">Start</div><div class="price-amount">от 15 000 <span>₽</span></div>
-          <div class="price-for">Простое представительство</div>
-          <ul class="price-list"><li>Одна страница</li><li>Услуги, цены, контакты</li><li>Мобильная версия</li><li>WhatsApp / Telegram</li><li>Базовая SEO</li></ul>
-          <a href="https://wa.me/79696656414?text=Тариф START" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить START</a>
-        </div>
-        <div class="price-card hot reveal">
-          <div class="price-badge">Чаще берут</div>
-          <div class="price-name">Business</div><div class="price-amount">от 30 000 <span>₽</span></div>
-          <div class="price-for">Полноценный бизнес</div>
-          <ul class="price-list"><li>Несколько страниц / лендинг</li><li>Проработанная структура</li><li>Галерея</li><li>Формы заявок</li><li>Адаптив + SEO</li></ul>
-          <a href="https://wa.me/79696656414?text=Тариф BUSINESS" class="btn btn-primary" target="_blank" rel="noopener">Обсудить BUSINESS</a>
-        </div>
-        <div class="price-card reveal">
-          <div class="price-name">Premium</div><div class="price-amount">от 50 000 <span>₽</span></div>
-          <div class="price-for">Сложные визуальные проекты</div>
-          <ul class="price-list"><li>Индивидуальный визуал</li><li>Анимации и 3D</li><li>Сложные сценарии</li><li>Приоритетная поддержка</li><li>Расширенная проработка</li></ul>
-          <a href="https://wa.me/79696656414?text=Тариф PREMIUM" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить PREMIUM</a>
-        </div>
-      </div>
-    </section>
-    <section id="work">
-      <div class="kicker reveal">Работы</div>
-      <h2 class="section-title reveal">Реальные проекты.<br>Без выдуманных кейсов.</h2>
-      <p class="section-lead reveal">Небольшое портфолио — зато каждый сайт под конкретный бизнес.</p>
-      <div class="work-grid">
-        <article class="work reveal">
-          <div class="work-preview"><span>BARBERSHOP</span></div>
-          <div class="work-body"><div class="work-type">Лендинг · Барбершоп</div><h3>ЦЕХЪ — Барбершоп</h3><p>Услуги, мастера, галерея и запись.</p>
-          <a href="https://rasulovking2577.github.io/BARBERSHOP/" class="work-link" target="_blank" rel="noopener">Открыть проект ↗</a></div>
-        </article>
-        <article class="work reveal">
-          <div class="work-preview"><span>ARAGVI</span></div>
-          <div class="work-body"><div class="work-type">Лендинг</div><h3>ARAGVI</h3><p>Посадочная с фокусом на процесс и доверие.</p>
-          <a href="https://rasulovking2577.github.io/Aragvi/" class="work-link" target="_blank" rel="noopener">Открыть проект ↗</a></div>
-        </article>
-        <article class="work reveal">
-          <div class="work-preview"><span>1САЙТ</span></div>
-          <div class="work-body"><div class="work-type">Портфолио</div><h3>Предыдущая версия</h3><p>Личный сайт студии.</p>
-          <a href="https://rasulovking2577.github.io/website/" class="work-link" target="_blank" rel="noopener">Открыть проект ↗</a></div>
-        </article>
-        <article class="work work-next reveal">
-          <div><h3>Следующий проект<br>может быть вашим.</h3>
-          <p style="color:var(--muted);margin:10px 0 20px">Расскажите о бизнесе — предложим формат и цену.</p>
-          <a href="https://wa.me/79696656414" class="btn btn-primary" target="_blank" rel="noopener">Заказать сайт ↗</a></div>
-        </article>
-      </div>
-    </section>
-    <section>
-      <div class="trust reveal">
-        <h3>Не обещаем магию.</h3>
-        <p>Не гарантируем первые места в Google. Не обещаем продажи от одного сайта.</p>
-        <p>Делаем качественный инструмент: показать услуги, цены, фото и дать клиенту быстрый способ связаться. Честно.</p>
-      </div>
-    </section>
-    <section>
-      <div class="kicker reveal">Почему 1САЙТ</div>
-      <h2 class="section-title reveal">Маленькая студия.<br><em>Прямой</em> разговор.</h2>
-      <div class="why-grid">
-        <div class="why-item reveal"><div class="why-n">01</div><div><h3>Без шаблонов</h3><p>Структура и визуал под ваш бизнес.</p></div></div>
-        <div class="why-item reveal"><div class="why-n">02</div><div><h3>Mobile-first</h3><p>Сначала думаю о телефоне.</p></div></div>
-        <div class="why-item reveal"><div class="why-n">03</div><div><h3>Понятная структура</h3><p>Всё видно сразу.</p></div></div>
-        <div class="why-item reveal"><div class="why-n">04</div><div><h3>Прозрачная цена</h3><p>Ориентиры открыты.</p></div></div>
-        <div class="why-item reveal"><div class="why-n">05</div><div><h3>Прямое общение</h3><p>Без менеджеров.</p></div></div>
-      </div>
-    </section>
-    <section id="process">
-      <div class="kicker reveal">Процесс</div>
-      <h2 class="section-title reveal">От сообщения<br>до рабочей ссылки.</h2>
-      <div class="process-grid">
-        <div class="step reveal"><h3>Бриф</h3><p>Вы рассказываете о бизнесе.</p></div>
-        <div class="step reveal"><h3>Структура</h3><p>Предлагаю понятную структуру.</p></div>
-        <div class="step reveal"><h3>Дизайн</h3><p>Визуальный язык и экраны.</p></div>
-        <div class="step reveal"><h3>Разработка</h3><p>Код, адаптив, WhatsApp.</p></div>
-        <div class="step reveal"><h3>Тестирование</h3><p>Проверяю на телефонах.</p></div>
-        <div class="step reveal"><h3>Запуск</h3><p>Готовая ссылка.</p></div>
-      </div>
-      <p class="process-note reveal">От вас не требуется разбираться в коде.</p>
-    </section>
-    <section>
-      <div class="kicker reveal">Первый шаг</div>
-      <h2 class="section-title reveal">Что будет после<br>первого сообщения?</h2>
-      <p class="section-lead reveal">Никакого давления.</p>
-      <div class="risk-list reveal">
-        <div class="risk-item"><div class="risk-n">1</div><p>Вы рассказываете о бизнесе.</p></div>
-        <div class="risk-item"><div class="risk-n">2</div><p>Я задаю вопросы.</p></div>
-        <div class="risk-item"><div class="risk-n">3</div><p>Предлагаю структуру.</p></div>
-        <div class="risk-item"><div class="risk-n">4</div><p>Называю стоимость.</p></div>
-        <div class="risk-item"><div class="risk-n">5</div><p>Вы решаете. Без обязательств.</p></div>
-      </div>
-    </section>
-    <section id="faq">
-      <div class="kicker reveal">Вопросы</div>
-      <h2 class="section-title reveal">Короткие и честные<br>ответы.</h2>
-      <div class="faq-list">
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Сколько стоит сайт?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">От 15 000 ₽. Точная сумма — после обсуждения.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Сколько времени?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Простой сайт — от нескольких дней.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Можно одну страницу?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Для многих бизнесов хватает.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Работает на телефоне?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Мобильная версия обязательна.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Кто покупает домен?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Вы. Это ваша собственность.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Нет хороших фото?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Можно стартовать с того, что есть.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Можно потом изменить?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Тексты, фото, цены — можно.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">WhatsApp и Telegram?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Это стандарт.</div></div></div>
-        <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Делаете SEO?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Базовая подготовка входит.</div></div></div>
-      </div>
-    </section>
-    <section class="final" id="contacts">
-      <div class="final-bg"></div>
-      <h2 class="reveal">Расскажите,<br>что нужно<br>вашему бизнесу.</h2>
-      <p class="reveal">Напишите, чем занимаетесь и какой сайт нужен.</p>
-      <a href="https://wa.me/79696656414" class="btn btn-primary reveal" target="_blank" rel="noopener">Заказать сайт ↗</a>
-      <div class="final-links reveal">
-        <a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a>
-        <a href="tel:+79696656414">+7 969 665 64 14</a>
-        <a href="mailto:rasulov2588@gmail.com">rasulov2588@gmail.com</a>
-      </div>
-    </section>
-    <footer class="footer">
-      <div>© 1САЙТ · Сайты для бизнеса</div>
-      <div><a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a></div>
-    </footer>
-  </main>
-  <div class="sticky"><a href="https://wa.me/79696656414" class="btn btn-primary" target="_blank" rel="noopener">Заказать сайт ↗</a></div>
-  <script>
-    const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
-    burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');document.body.style.overflow=o?'hidden':''});
-    menu.querySelectorAll('[data-close]').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');document.body.style.overflow=''}));
-    document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true')}})});
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -30px 0px'});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-    (function(){if(!window.THREE)return;const canvas=document.getElementById('canvas3d'),box=document.getElementById('heroArt');if(!canvas||!box)return;
-    const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-    const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,100);camera.position.set(0,0,5.4);
-    const group=new THREE.Group();scene.add(group);
-    const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1.35,1),new THREE.MeshPhysicalMaterial({color:0xb9ff3d,roughness:.28,metalness:.55,emissive:0x1a3d12,emissiveIntensity:.55,transparent:true,opacity:.92}));group.add(mesh);
-    const wire=new THREE.Mesh(new THREE.IcosahedronGeometry(1.48,1),new THREE.MeshBasicMaterial({color:0xd4b45a,wireframe:true,transparent:true,opacity:.22}));group.add(wire);
-    const ring1=new THREE.Mesh(new THREE.TorusGeometry(1.85,.012,8,120),new THREE.MeshBasicMaterial({color:0xb9ff3d,transparent:true,opacity:.4}));ring1.rotation.x=Math.PI/2.4;group.add(ring1);
-    const ring2=new THREE.Mesh(new THREE.TorusGeometry(2.15,.008,8,120),new THREE.MeshBasicMaterial({color:0xd4b45a,transparent:true,opacity:.18}));ring2.rotation.x=Math.PI/2.8;ring2.rotation.y=.6;group.add(ring2);
-    const particles=new THREE.Group();scene.add(particles);
-    for(let i=0;i<60;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.015,6,6),new THREE.MeshBasicMaterial({color:i%3?0x86b72e:0xd4b45a}));p.position.set((Math.random()-.5)*5.5,(Math.random()-.5)*4.5,(Math.random()-.5)*3);particles.add(p)}
-    const light=new THREE.PointLight(0xb9ff3d,4.5,14);light.position.set(2.2,2,3.5);scene.add(light);scene.add(new THREE.AmbientLight(0x5a7a60,1.1));
-    let mx=0,my=0,tx=0,ty=0;
-    function resize(){const r=box.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()}
-    resize();addEventListener('resize',resize);
-    function pointer(x,y){const r=box.getBoundingClientRect();tx=((x-r.left)/r.width-.5)*1.6;ty=((y-r.top)/r.height-.5)*1.2}
-    box.addEventListener('pointermove',e=>pointer(e.clientX,e.clientY));box.addEventListener('pointerleave',()=>{tx=0;ty=0});
-    function tick(){requestAnimationFrame(tick);mx+=(tx-mx)*.05;my+=(ty-my)*.05;group.rotation.y+=.004;group.rotation.x+=(-my*.4-group.rotation.x)*.04;group.rotation.z+=(-mx*.15-group.rotation.z)*.04;ring1.rotation.z+=.008;ring2.rotation.z-=.011;particles.rotation.y+=.0012;mesh.material.emissiveIntensity=.5+Math.sin(Date.now()*.0015)*.15;renderer.render(scene,camera)}tick()})();
-  </script>
+  <div class="hero-art glass" id="heroArt">
+    <canvas id="canvas3d"></canvas>
+    <div class="art-label">DRAG · MOVE</div>
+    <div class="art-glass glass-strong"><span class="dot"></span>Живой 3D · liquid glass</div>
+  </div>
+</section>
+
+<section>
+  <p class="hook-quote reveal">Ваш клиент уже ищет вас.<br>Вопрос только в том, <em style="font-style:italic;color:var(--green)">что он увидит</em>.</p>
+  <div class="pain-grid reveal">
+    <div class="pain glass"><div class="pain-n">01</div><p>Нет сайта — клиент уходит</p></div>
+    <div class="pain glass"><div class="pain-n">02</div><p>Старый сайт выглядит дешевле</p></div>
+    <div class="pain glass"><div class="pain-n">03</div><p>С телефона всё ломается</p></div>
+    <div class="pain glass"><div class="pain-n">04</div><p>Услуги и цены спрятаны</p></div>
+    <div class="pain glass"><div class="pain-n">05</div><p>Нет быстрого контакта</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker reveal">Что вы получаете</div>
+  <h2 class="section-title reveal">Не код.<br><em>Инструмент</em> для бизнеса.</h2>
+  <p class="section-lead reveal">Клиент за 10 секунд понимает, чем вы занимаетесь и как связаться.</p>
+  <div class="value-grid">
+    <div class="value-card glass reveal"><div class="value-icon">①</div><h3>Понятное представление</h3><p>Услуги, цены, фото — без воды.</p></div>
+    <div class="value-card glass reveal"><div class="value-icon">②</div><h3>Быстрый контакт</h3><p>WhatsApp, Telegram. Один клик.</p></div>
+    <div class="value-card glass reveal"><div class="value-icon">③</div><h3>Mobile-first</h3><p>Сначала телефон — там клиенты.</p></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="kicker reveal">Услуги</div>
+  <h2 class="section-title reveal">Формат под задачу.</h2>
+  <p class="section-lead reveal">То, что реально нужно бизнесу.</p>
+  <article class="service glass reveal">
+    <div class="service-n">01</div>
+    <div><h3>Сайт-визитка</h3><div class="service-meta">Кафе, салоны, специалисты</div>
+    <p class="service-desc"><strong>Проблема:</strong> клиент видит пустоту.<br><strong>Решение:</strong> одна сильная страница с WhatsApp.</p>
+    <div class="tags"><span>Адаптив</span><span>Цены</span><span>WhatsApp</span></div></div>
+    <div class="service-price"><strong>от 15 000 ₽</strong><a href="https://wa.me/79696656414?text=Сайт-визитка" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
+  </article>
+  <article class="service glass reveal">
+    <div class="service-n">02</div>
+    <div><h3>Лендинг</h3><div class="service-meta">Одно действие — заявка</div>
+    <p class="service-desc"><strong>Проблема:</strong> слабый призыв.<br><strong>Решение:</strong> страница вокруг одной цели.</p>
+    <div class="tags"><span>Hero</span><span>УТП</span><span>Форма</span></div></div>
+    <div class="service-price"><strong>от 25 000 ₽</strong><a href="https://wa.me/79696656414?text=Лендинг" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
+  </article>
+  <article class="service glass reveal">
+    <div class="service-n">03</div>
+    <div><h3>Сайт для бизнеса</h3><div class="service-meta">Несколько страниц</div>
+    <p class="service-desc"><strong>Проблема:</strong> одной страницы мало.<br><strong>Решение:</strong> структура с навигацией.</p>
+    <div class="tags"><span>Страницы</span><span>Галерея</span><span>SEO</span></div></div>
+    <div class="service-price"><strong>от 30 000 ₽</strong><a href="https://wa.me/79696656414?text=Сайт для бизнеса" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
+  </article>
+  <article class="service glass reveal">
+    <div class="service-n">04</div>
+    <div><h3>Редизайн</h3><div class="service-meta">Сайт устарел</div>
+    <p class="service-desc"><strong>Проблема:</strong> дизайн отпугивает.<br><strong>Решение:</strong> новый визуал и mobile.</p>
+    <div class="tags"><span>Новый дизайн</span><span>Mobile</span></div></div>
+    <div class="service-price"><strong>от 20 000 ₽</strong><a href="https://wa.me/79696656414?text=Редизайн" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить</a></div>
+  </article>
+</section>
+
+<section id="pricing">
+  <div class="kicker reveal">Цены</div>
+  <h2 class="section-title reveal">Прозрачно.</h2>
+  <p class="section-lead reveal">Точная сумма — после обсуждения.</p>
+  <div class="price-grid">
+    <div class="price-card glass reveal">
+      <div class="price-name">Start</div><div class="price-amount">от 15 000 <span>₽</span></div>
+      <div class="price-for">Простое представительство</div>
+      <ul class="price-list"><li>Одна страница</li><li>Услуги, цены, контакты</li><li>Мобильная версия</li><li>WhatsApp</li><li>Базовая SEO</li></ul>
+      <a href="https://wa.me/79696656414?text=START" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить START</a>
+    </div>
+    <div class="price-card glass hot reveal">
+      <div class="price-badge">Чаще берут</div>
+      <div class="price-name">Business</div><div class="price-amount">от 30 000 <span>₽</span></div>
+      <div class="price-for">Полноценный бизнес</div>
+      <ul class="price-list"><li>Несколько страниц / лендинг</li><li>Структура</li><li>Галерея</li><li>Формы</li><li>Адаптив + SEO</li></ul>
+      <a href="https://wa.me/79696656414?text=BUSINESS" class="btn btn-primary" target="_blank" rel="noopener">Обсудить BUSINESS</a>
+    </div>
+    <div class="price-card glass reveal">
+      <div class="price-name">Premium</div><div class="price-amount">от 50 000 <span>₽</span></div>
+      <div class="price-for">Сложные визуальные проекты</div>
+      <ul class="price-list"><li>Индивидуальный визуал</li><li>Анимации и 3D</li><li>Сложные сценарии</li><li>Приоритет</li><li>Расширенная проработка</li></ul>
+      <a href="https://wa.me/79696656414?text=PREMIUM" class="btn btn-ghost" target="_blank" rel="noopener">Обсудить PREMIUM</a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="kicker reveal">Работы</div>
+  <h2 class="section-title reveal">Реальные проекты.</h2>
+  <p class="section-lead reveal">Без выдуманных кейсов.</p>
+  <div class="work-grid">
+    <article class="work glass reveal">
+      <div class="work-preview"><span>BARBERSHOP</span></div>
+      <div class="work-body"><div class="work-type">Лендинг · Барбершоп</div><h3>ЦЕХЪ</h3><p>Услуги, мастера, запись.</p>
+      <a href="https://rasulovking2577.github.io/BARBERSHOP/" class="work-link" target="_blank" rel="noopener">Открыть ↗</a></div>
+    </article>
+    <article class="work glass reveal">
+      <div class="work-preview"><span>ARAGVI</span></div>
+      <div class="work-body"><div class="work-type">Лендинг</div><h3>ARAGVI</h3><p>Процесс и доверие.</p>
+      <a href="https://rasulovking2577.github.io/Aragvi/" class="work-link" target="_blank" rel="noopener">Открыть ↗</a></div>
+    </article>
+    <article class="work glass reveal">
+      <div class="work-preview"><span>1САЙТ</span></div>
+      <div class="work-body"><div class="work-type">Портфолио</div><h3>Предыдущая версия</h3><p>Сайт студии.</p>
+      <a href="https://rasulovking2577.github.io/website/" class="work-link" target="_blank" rel="noopener">Открыть ↗</a></div>
+    </article>
+    <article class="work work-next glass reveal">
+      <div><h3>Следующий — ваш.</h3>
+      <p style="color:var(--muted);margin:8px 0 18px;font-size:.9rem">Расскажите о бизнесе.</p>
+      <a href="https://wa.me/79696656414" class="btn btn-primary" target="_blank" rel="noopener">Заказать ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="trust glass reveal">
+    <h3>Не обещаем магию.</h3>
+    <p>Не гарантируем топ в Google. Не обещаем продажи от сайта.</p>
+    <p>Делаем инструмент: услуги, цены, фото и быстрый контакт. Честно.</p>
+  </div>
+</section>
+
+<section>
+  <div class="kicker reveal">Почему 1САЙТ</div>
+  <h2 class="section-title reveal">Маленькая студия.<br><em>Прямой</em> разговор.</h2>
+  <div class="why-grid">
+    <div class="why-item glass reveal"><div class="why-n">01</div><div><h3>Без шаблонов</h3><p>Под ваш бизнес.</p></div></div>
+    <div class="why-item glass reveal"><div class="why-n">02</div><div><h3>Mobile-first</h3><p>Сначала телефон.</p></div></div>
+    <div class="why-item glass reveal"><div class="why-n">03</div><div><h3>Понятная структура</h3><p>Всё видно сразу.</p></div></div>
+    <div class="why-item glass reveal"><div class="why-n">04</div><div><h3>Прозрачная цена</h3><p>Ориентиры открыты.</p></div></div>
+    <div class="why-item glass reveal"><div class="why-n">05</div><div><h3>Прямое общение</h3><p>Без менеджеров.</p></div></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="kicker reveal">Процесс</div>
+  <h2 class="section-title reveal">От сообщения до ссылки.</h2>
+  <div class="process-grid">
+    <div class="step glass reveal"><h3>Бриф</h3><p>Вы рассказываете о бизнесе.</p></div>
+    <div class="step glass reveal"><h3>Структура</h3><p>Предлагаю структуру.</p></div>
+    <div class="step glass reveal"><h3>Дизайн</h3><p>Визуал и экраны.</p></div>
+    <div class="step glass reveal"><h3>Разработка</h3><p>Код, адаптив, WhatsApp.</p></div>
+    <div class="step glass reveal"><h3>Тест</h3><p>Проверка на телефонах.</p></div>
+    <div class="step glass reveal"><h3>Запуск</h3><p>Готовая ссылка.</p></div>
+  </div>
+  <p class="process-note reveal">От вас не нужно разбираться в коде.</p>
+</section>
+
+<section>
+  <div class="kicker reveal">Первый шаг</div>
+  <h2 class="section-title reveal">После первого сообщения?</h2>
+  <p class="section-lead reveal">Без давления.</p>
+  <div class="risk-list reveal">
+    <div class="risk-item"><div class="risk-n">1</div><p>Вы рассказываете о бизнесе.</p></div>
+    <div class="risk-item"><div class="risk-n">2</div><p>Я задаю вопросы.</p></div>
+    <div class="risk-item"><div class="risk-n">3</div><p>Предлагаю структуру.</p></div>
+    <div class="risk-item"><div class="risk-n">4</div><p>Называю стоимость.</p></div>
+    <div class="risk-item"><div class="risk-n">5</div><p>Вы решаете. Без обязательств.</p></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="kicker reveal">Вопросы</div>
+  <h2 class="section-title reveal">Короткие ответы.</h2>
+  <div class="faq-list">
+    <div class="faq-item glass reveal"><button class="faq-q">Сколько стоит?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">От 15 000 ₽. Точная сумма после обсуждения.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">Сколько времени?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Простой сайт — от нескольких дней.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">Одна страница?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Часто хватает.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">На телефоне?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Mobile обязателен.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">Домен и хостинг?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Покупаете вы. Это ваше.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">Нет фото?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Можно стартовать с того, что есть.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">Потом изменить?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Тексты, фото, цены.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">WhatsApp?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Да. Стандарт.</div></div></div>
+    <div class="faq-item glass reveal"><button class="faq-q">SEO?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-inner">Базовая подготовка входит.</div></div></div>
+  </div>
+</section>
+
+<section class="final" id="contacts">
+  <div class="final-bg"></div>
+  <h2 class="reveal">Расскажите,<br>что нужно<br>вашему бизнесу.</h2>
+  <p class="reveal">Напишите, чем занимаетесь и какой сайт нужен.</p>
+  <a href="https://wa.me/79696656414" class="btn btn-primary reveal" target="_blank" rel="noopener">Заказать сайт ↗</a>
+  <div class="final-links reveal">
+    <a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a>
+    <a href="tel:+79696656414">+7 969 665 64 14</a>
+    <a href="mailto:rasulov2588@gmail.com">Email</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>© 1САЙТ</div>
+  <div><a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a></div>
+</footer>
+</main>
+
+<div class="sticky"><a href="https://wa.me/79696656414" class="btn btn-primary" target="_blank" rel="noopener">Заказать сайт ↗</a></div>
+
+<script>
+const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');document.body.style.overflow=o?'hidden':''});
+menu.querySelectorAll('[data-close]').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');document.body.style.overflow=''}));
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open')});if(!open)item.classList.add('open')})});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+(function(){
+  if(!window.THREE)return;
+  const canvas=document.getElementById('canvas3d'),box=document.getElementById('heroArt');
+  if(!canvas||!box)return;
+  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(38,1,.1,100);
+  camera.position.set(0,0,5.2);
+  const group=new THREE.Group();scene.add(group);
+
+  // liquid-ish blob via high-seg sphere + displacement feel
+  const geo=new THREE.IcosahedronGeometry(1.4,4);
+  const mat=new THREE.MeshPhysicalMaterial({
+    color:0xc6ff4d,roughness:.15,metalness:.35,
+    emissive:0x1a3d10,emissiveIntensity:.6,
+    transparent:true,opacity:.88,
+    clearcoat:1,clearcoatRoughness:.1
+  });
+  const mesh=new THREE.Mesh(geo,mat);group.add(mesh);
+
+  const wire=new THREE.Mesh(new THREE.IcosahedronGeometry(1.55,2),new THREE.MeshBasicMaterial({color:0xe0c46a,wireframe:true,transparent:true,opacity:.18}));
+  group.add(wire);
+
+  const ring1=new THREE.Mesh(new THREE.TorusGeometry(1.9,.015,12,100),new THREE.MeshBasicMaterial({color:0xc6ff4d,transparent:true,opacity:.45}));
+  ring1.rotation.x=Math.PI/2.3;group.add(ring1);
+  const ring2=new THREE.Mesh(new THREE.TorusGeometry(2.25,.01,12,100),new THREE.MeshBasicMaterial({color:0xe0c46a,transparent:true,opacity:.2}));
+  ring2.rotation.x=Math.PI/2.7;ring2.rotation.y=.5;group.add(ring2);
+
+  const particles=new THREE.Group();scene.add(particles);
+  for(let i=0;i<70;i++){
+    const p=new THREE.Mesh(new THREE.SphereGeometry(.012+Math.random()*.01,6,6),new THREE.MeshBasicMaterial({color:i%3?0x8fd92a:0xe0c46a,transparent:true,opacity:.7}));
+    p.position.set((Math.random()-.5)*6,(Math.random()-.5)*5,(Math.random()-.5)*3.5);
+    particles.add(p);
+  }
+
+  scene.add(new THREE.PointLight(0xc6ff4d,5,12).translateX(2).translateY(2).translateZ(3));
+  scene.add(new THREE.AmbientLight(0x4a6a50,1.2));
+
+  let mx=0,my=0,tx=0,ty=0,t=0;
+  function resize(){const r=box.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()}
+  resize();addEventListener('resize',resize);
+  box.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*1.8;ty=((e.clientY-r.top)/r.height-.5)*1.3});
+  box.addEventListener('pointerleave',()=>{tx=0;ty=0});
+
+  function tick(){
+    requestAnimationFrame(tick);t+=.008;
+    mx+=(tx-mx)*.06;my+=(ty-my)*.06;
+    // organic morph-like scale pulse
+    const s=1+Math.sin(t*1.2)*.04+Math.sin(t*2.1)*.02;
+    mesh.scale.set(s,s*(1+Math.sin(t*1.5)*.03),s);
+    group.rotation.y+=.005;group.rotation.x+=(-my*.45-group.rotation.x)*.05;
+    group.rotation.z+=(-mx*.18-group.rotation.z)*.05;
+    ring1.rotation.z+=.01;ring2.rotation.z-=.013;
+    particles.rotation.y+=.0015;
+    mat.emissiveIntensity=.5+Math.sin(t*2)*.2;
+    renderer.render(scene,camera);
+  }
+  tick();
+})();
+</script>
 </body>
 </html>
