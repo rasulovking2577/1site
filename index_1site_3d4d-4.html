@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050807">
+<meta name="description" content="1САЙТ — современные сайты для бизнеса в Махачкале и Дагестане.">
+<title>1САЙТ — Digital studio</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#050807;--panel:#0b1210;--panel2:#0f1915;--text:#f3f4ee;--muted:#89938e;
+--line:rgba(255,255,255,.105);--green:#b9ff3d;--gold:#d5b24d;--soft:#173126;
+--sans:"Manrope","DM Sans",Arial,sans-serif;--serif:"Playfair Display",Georgia,serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:
+radial-gradient(circle at 78% 12%,rgba(185,255,61,.11),transparent 28rem),
+radial-gradient(circle at 8% 42%,rgba(38,100,68,.16),transparent 32rem),var(--bg);
+color:var(--text);font-family:var(--sans);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1380px,calc(100% - 42px));margin:auto}
+.nav{position:fixed;z-index:50;top:16px;left:50%;transform:translateX(-50%);width:min(1320px,calc(100% - 26px));height:64px;padding:0 18px 0 23px;border:1px solid var(--line);border-radius:100px;background:rgba(5,8,7,.66);backdrop-filter:blur(22px);display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.06em}.logo i{font-style:normal;color:var(--green)}
+.navlinks{display:flex;gap:30px;color:#9ba59f;font-size:11px}.navlinks a:hover{color:var(--green)}
+.navbtn{border:1px solid rgba(185,255,61,.4);color:var(--green);padding:11px 17px;border-radius:100px;font-size:11px;font-weight:700}
+.hero{min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;padding:130px 0 80px;position:relative}
+.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:27px}
+.hero h1{font-size:clamp(58px,8.7vw,132px);line-height:.86;letter-spacing:-.085em;margin:0;font-weight:700;max-width:900px}
+.hero h1 em{font-family:var(--serif);font-weight:500;color:var(--green);letter-spacing:-.065em}
+.hero p{max-width:480px;color:var(--muted);line-height:1.75;font-size:15px;margin:38px 0 26px}
+.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{min-height:51px;padding:0 22px;border-radius:100px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:.35s}
+.btn:hover{transform:translateY(-3px)}.btn.primary{background:var(--green);color:#071008;border-color:var(--green)}
+.hero-art{height:570px;position:relative;perspective:1100px}
+.orb{position:absolute;width:300px;height:300px;right:14%;top:18%;border-radius:50%;
+background:radial-gradient(circle at 31% 27%,#efffc8 0 3%,#c7ff4a 10%,#628f1f 32%,#142516 68%,#020403 100%);
+box-shadow:0 0 90px rgba(185,255,61,.22),inset -35px -30px 60px #000;
+animation:float 6s ease-in-out infinite;transform-style:preserve-3d}
+.orb:before{content:"";position:absolute;inset:12%;border:1px solid rgba(255,255,255,.2);border-radius:50%;transform:rotateX(65deg) rotateZ(25deg)}
+.orb:after{content:"";position:absolute;width:40%;height:40%;left:20%;top:18%;background:rgba(255,255,255,.22);filter:blur(30px);border-radius:50%}
+.ring{position:absolute;inset:8%;border:1px solid rgba(185,255,61,.25);border-radius:50%;transform:rotateX(70deg) rotateY(15deg);animation:spin 11s linear infinite}
+.float-card{position:absolute;z-index:3;left:2%;bottom:10%;width:270px;padding:20px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(9,17,13,.7);backdrop-filter:blur(20px);box-shadow:0 30px 70px #0008;transform:rotate(-7deg);animation:float2 7s ease-in-out infinite}
+.float-card small{color:var(--gold);letter-spacing:.16em}.float-card b{display:block;font-size:30px;margin-top:12px}.float-card span{color:var(--muted);font-size:12px}
+@keyframes float{50%{transform:translateY(-22px) rotateY(10deg)}}@keyframes float2{50%{transform:rotate(-3deg) translateY(-16px)}}@keyframes spin{to{transform:rotateX(70deg) rotateY(15deg) rotateZ(360deg)}}
+.section{padding:135px 0}.head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:50px}.kicker{font-size:10px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}.head h2{font-size:clamp(44px,6.4vw,88px);letter-spacing:-.07em;line-height:.88;margin:12px 0 0}.head h2 em{font-family:var(--serif);font-weight:500}.intro{max-width:350px;color:var(--muted);font-size:13px;line-height:1.75}
+.carousel{position:relative}.track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:10px 2px 25px;cursor:grab}.track::-webkit-scrollbar{display:none}.track.dragging{cursor:grabbing;scroll-snap-type:none}
+.case{flex:0 0 min(76vw,820px);height:610px;scroll-snap-align:start;border:1px solid var(--line);border-radius:30px;overflow:hidden;position:relative;background:#09110d}
+.case.small{flex-basis:min(54vw,570px)}.case iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#111;transform:scale(1.01)}
+.case-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.84))}
+.case-label{position:absolute;z-index:3;left:27px;right:27px;bottom:25px;display:flex;justify-content:space-between;align-items:end;gap:20px}
+.case-title{font-size:clamp(35px,4vw,60px);letter-spacing:-.06em;font-weight:700}.case-meta{font-size:11px;color:#aeb8b2;margin-top:5px}
+.case-link{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);color:var(--green);flex:none}
+.carousel-note{display:flex;justify-content:space-between;color:#65716b;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-top:8px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}.service{padding:38px 30px 42px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:65px 1fr;gap:15px}.service:nth-child(even){padding-left:30px;border-left:1px solid var(--line)}.service .n{color:var(--gold);font-size:10px}.service h3{font-size:31px;letter-spacing:-.05em;margin:0 0 8px}.service p{color:var(--muted);font-size:13px;line-height:1.7;margin:0;max-width:520px}
+.laptop-stage{min-height:700px;position:relative;display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:35px;background:radial-gradient(circle at 50% 40%,#183526,transparent 40%),#07100c}
+.laptop{width:min(850px,78vw);transform:perspective(1300px) rotateX(3deg) rotateY(-8deg);filter:drop-shadow(0 45px 45px rgba(0,0,0,.5))}
+.screen{background:#080b0a;border:9px solid #151917;border-radius:22px 22px 8px 8px;padding:10px;box-shadow:inset 0 0 0 1px #ffffff18,0 0 0 1px #ffffff14}
+.screen iframe{display:block;width:100%;height:420px;border:0;border-radius:10px;background:#111}
+.base{height:24px;margin:0 -7%;background:linear-gradient(#555a56,#1b201e);border-radius:0 0 30px 30px;position:relative}.base:after{content:"";position:absolute;left:37%;right:37%;top:3px;height:3px;border-radius:5px;background:#777}
+.laptop-caption{position:absolute;left:30px;bottom:28px;color:#76837c;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.reasons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.reason{min-height:235px;border:1px solid var(--line);border-radius:22px;padding:25px;background:rgba(255,255,255,.018)}.reason b{font-size:48px;letter-spacing:-.07em;color:var(--green);display:block;margin-bottom:55px}.reason h3{margin:0 0 7px}.reason p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
+.process{border-top:1px solid var(--line)}.step{display:grid;grid-template-columns:80px 1fr 30px;align-items:center;gap:20px;padding:28px 0;border-bottom:1px solid var(--line)}.step .n{color:var(--gold);font-size:10px}.step h3{margin:0;font-size:clamp(25px,3.5vw,44px);letter-spacing:-.05em}.step p{margin:5px 0 0;color:var(--muted);font-size:12px}.step .arrow{color:var(--green)}
+.final{padding:75px 55px;border:1px solid rgba(185,255,61,.2);border-radius:35px;background:radial-gradient(circle at 80% 20%,rgba(185,255,61,.13),transparent 25rem),#0b1712}.final h2{font-size:clamp(46px,7.2vw,100px);line-height:.88;letter-spacing:-.075em;max-width:950px;margin:10px 0 45px}.final h2 em{font-family:var(--serif);color:var(--green);font-weight:500}.footer{display:flex;justify-content:space-between;padding:32px 0 45px;color:#66716c;font-size:10px}
+.reveal{opacity:0;transform:translateY(30px);transition:.8s ease}.reveal.on{opacity:1;transform:none}
+@media(max-width:850px){
+.wrap{width:calc(100% - 28px)}.nav{height:57px;top:10px}.navlinks{display:none}.navbtn{padding:9px 13px}
+.hero{grid-template-columns:1fr;padding-top:110px}.hero h1{font-size:clamp(56px,15.5vw,86px)}.hero-art{height:390px;margin-top:10px}.orb{width:210px;height:210px;right:10%;top:15%}.float-card{width:210px;bottom:5%;left:2%}.float-card b{font-size:23px}
+.section{padding:90px 0}.head{display:block;margin-bottom:34px}.intro{margin-top:18px}.case{flex-basis:88vw;height:510px}.case.small{flex-basis:76vw}
+.services{grid-template-columns:1fr}.service,.service:nth-child(even){padding:28px 0;border-left:0}.reasons{grid-template-columns:1fr 1fr}.reason{min-height:200px;padding:19px}.reason b{font-size:38px;margin-bottom:45px}
+.laptop-stage{min-height:480px}.screen iframe{height:270px}.laptop{width:94vw}.final{padding:48px 25px}.footer{display:block}.footer div+div{margin-top:12px}
+}
+@media(max-width:470px){.reasons{grid-template-columns:1fr}.hero-art{height:350px}.orb{width:185px;height:185px}.case{height:470px}.screen iframe{height:235px}}
+
+/* INTERACTIVE 3D / 4D */
+.interactive-art{height:570px;position:relative}
+.webgl-box{position:absolute;inset:0;border:1px solid rgba(185,255,61,.15);border-radius:34px;overflow:hidden;background:
+radial-gradient(circle at 50% 45%,rgba(185,255,61,.08),transparent 32%),#050907;box-shadow:inset 0 0 80px rgba(185,255,61,.04)}
+#space3d{width:100%;height:100%;display:block;touch-action:none}
+.webgl-hint{position:absolute;left:22px;top:20px;color:#647169;font-size:9px;letter-spacing:.2em}
+.dimension-controls{position:absolute;right:18px;top:17px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.dim{border:1px solid rgba(255,255,255,.14);background:rgba(5,8,7,.55);color:#8e9992;border-radius:999px;padding:9px 11px;font-size:9px;cursor:pointer;backdrop-filter:blur(12px);transition:.25s}
+.dim:hover,.dim.active{color:#071008;background:var(--green);border-color:var(--green)}
+.interactive-art .float-card{bottom:4%;z-index:5}
+.playground{display:grid;grid-template-columns:1.55fr .85fr;gap:18px}
+.play-card{border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,#0d1914,#07100c);overflow:hidden;min-height:500px}
+.play-canvas-wrap{height:390px;position:relative;background:radial-gradient(circle at center,rgba(185,255,61,.08),transparent 40%)}
+#tesseract{width:100%;height:100%;display:block;touch-action:none}
+.play-info{padding:25px;display:flex;justify-content:space-between;gap:25px;align-items:end;border-top:1px solid var(--line)}
+.play-info h3{font-size:34px;letter-spacing:-.06em;margin:8px 0}
+.play-info p{color:var(--muted);font-size:12px;line-height:1.65;margin:0;max-width:450px}
+.mini-play{min-height:500px;display:flex;flex-direction:column}
+.mini-orb{height:390px;display:grid;place-items:center;position:relative;cursor:pointer;overflow:hidden;background:radial-gradient(circle,rgba(185,255,61,.12),transparent 45%)}
+.mini-orb:before,.mini-orb:after,.mini-orb span,.mini-orb i{content:"";position:absolute;border-radius:50%;border:1px solid rgba(185,255,61,.32);transition:.5s}
+.mini-orb:before{width:220px;height:220px;transform:rotateX(70deg) rotateZ(15deg)}
+.mini-orb:after{width:170px;height:170px;transform:rotateY(70deg) rotateZ(-20deg)}
+.mini-orb span{width:105px;height:105px;background:radial-gradient(circle at 30% 25%,#efffc8,#b9ff3d 18%,#1c351f 63%,#020403);box-shadow:0 0 80px rgba(185,255,61,.25),inset -18px -20px 30px #000;animation:miniFloat 4s ease-in-out infinite}
+.mini-orb i{width:280px;height:280px;border-color:rgba(213,178,77,.16);transform:rotateX(70deg);animation:miniSpin 9s linear infinite}
+.mini-orb.active span{transform:scale(1.45) rotate(45deg);box-shadow:0 0 150px rgba(185,255,61,.45)}
+.mini-orb.active:before{transform:rotateX(25deg) rotateZ(70deg) scale(1.25)}
+.mini-orb.active:after{transform:rotateY(25deg) rotateZ(-50deg) scale(.7)}
+@keyframes miniFloat{50%{transform:translateY(-14px)}}@keyframes miniSpin{to{transform:rotateX(70deg) rotateZ(360deg)}}
+@media(max-width:850px){
+ .interactive-art{height:410px}
+ .webgl-box{inset:0 0 20px}
+ .playground{grid-template-columns:1fr}
+ .play-card{min-height:460px}
+ .play-canvas-wrap,.mini-orb{height:330px}
+ .play-info{display:block}
+ .play-info .btn{margin-top:18px}
+}
+
+</style>
+</head>
+<body>
+<nav class="nav">
+<a class="logo" href="#">1<i>САЙТ</i></a>
+<div class="navlinks"><a href="#work">Работы</a><a href="#playground">3D / 4D</a><a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#contact">Контакт</a></div>
+<a class="navbtn" href="https://wa.me/79285182595">Обсудить проект ↗</a>
+</nav>
+
+<main class="wrap">
+<section class="hero reveal">
+<div>
+<div class="eyebrow">Махачкала · Дагестан · remote</div>
+<h1>Делаю сайты,<br>которые <em>хочется</em><br>открыть.</h1>
+<p>Не очередной шаблон. Создаю визуально сильные сайты для кафе, салонов, барбершопов, отелей и малого бизнеса — с нормальной мобильной версией и понятным путём клиента до заявки.</p>
+<div class="buttons"><a class="btn primary" href="#work">Смотреть работы</a><a class="btn" href="https://wa.me/79285182595">Обсудить проект →</a></div>
+</div>
+<div class="hero-art interactive-art">
+  <div class="webgl-box" id="webglBox">
+    <canvas id="space3d"></canvas>
+    <div class="webgl-hint">DRAG · MOVE · CLICK</div>
+    <div class="dimension-controls">
+      <button class="dim active" data-mode="3d">3D</button>
+      <button class="dim" data-mode="4d">4D</button>
+      <button class="dim" id="explode">EXPLODE</button>
+    </div>
+  </div>
+  <div class="float-card" id="floatCard">
+    <small>1САЙТ / DIGITAL</small><b>Design<br>that moves.</b><span>HTML · CSS · JavaScript</span>
+  </div>
+</div>
+</section>
+
+<section class="section reveal" id="work">
+<div class="head"><div><div class="kicker">01 / selected work</div><h2>Показываю<br><em>реальные сайты.</em></h2></div><div class="intro">Карточки можно листать пальцем справа налево. Внутри — живые превью твоих проектов.</div></div>
+<div class="carousel">
+<div class="track" id="track">
+<a class="case" href="https://rasulovking2577.github.io/SAKLYA/" target="_blank">
+<iframe src="https://rasulovking2577.github.io/SAKLYA/" loading="lazy" title="Сакля"></iframe><div class="case-shade"></div>
+<div class="case-label"><div><div class="case-title">САКЛЯ</div><div class="case-meta">Кафе · Махачкала · меню · заказ</div></div><div class="case-link">↗</div></div>
+</a>
+<a class="case small" href="https://rasulovking2577.github.io/Aragvi/" target="_blank">
+<iframe src="https://rasulovking2577.github.io/Aragvi/" loading="lazy" title="Aragvi"></iframe><div class="case-shade"></div>
+<div class="case-label"><div><div class="case-title">ARAGVI</div><div class="case-meta">Ресторан · landing</div></div><div class="case-link">↗</div></div>
+</a>
+<a class="case" href="https://rasulovking2577.github.io/BARBERSHOP/" target="_blank">
+<iframe src="https://rasulovking2577.github.io/BARBERSHOP/" loading="lazy" title="Barbershop"></iframe><div class="case-shade"></div>
+<div class="case-label"><div><div class="case-title">BARBERSHOP</div><div class="case-meta">Барбершоп · landing</div></div><div class="case-link">↗</div></div>
+</a>
+<a class="case small" href="https://rasulovking2577.github.io/1site/" target="_blank">
+<iframe src="https://rasulovking2577.github.io/1site/" loading="lazy" title="1site"></iframe><div class="case-shade"></div>
+<div class="case-label"><div><div class="case-title">1SITE</div><div class="case-meta">Portfolio · web</div></div><div class="case-link">↗</div></div>
+</a>
+</div>
+<div class="carousel-note"><span>← свайп →</span><span>открыть проект ↗</span></div>
+</div>
+</section>
+
+<section class="section reveal" id="playground">
+<div class="head">
+  <div><div class="kicker">02 / interactive playground</div><h2>Не просто<br><em>смотри.</em> Нажми.</h2></div>
+  <div class="intro">Здесь можно крутить 3D, включать 4D-режим, менять глубину сцены и запускать эффект распада.</div>
+</div>
+<div class="playground">
+  <div class="play-card">
+    <div class="play-canvas-wrap"><canvas id="tesseract"></canvas></div>
+    <div class="play-info">
+      <div><span class="kicker">4D OBJECT</span><h3>Тессеракт</h3><p>Четырёхмерный куб, спроецированный в 3D. Тащи пальцем по объекту.</p></div>
+      <button class="btn primary" id="pulse4d">Запустить</button>
+    </div>
+  </div>
+  <div class="play-card mini-play">
+    <div class="mini-orb" id="miniOrb"><span></span><i></i></div>
+    <div class="play-info">
+      <div><span class="kicker">3D OBJECT</span><h3>Живой объект</h3><p>Нажми на сферу — она меняет состояние.</p></div>
+      <button class="btn" id="orbButton">Нажать</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section reveal">
+<div class="head"><div><div class="kicker">03 / device preview</div><h2>Сайт должен<br>хорошо выглядеть <em>везде.</em></h2></div><div class="intro">Добавил ноутбук прямо в композицию. На экране — один из твоих реальных проектов.</div></div><h2>Сайт должен<br>хорошо выглядеть <em>везде.</em></h2></div><div class="intro">Добавил ноутбук прямо в композицию. На экране — один из твоих реальных проектов.</div></div>
+<div class="laptop-stage">
+<div class="laptop">
+<div class="screen"><iframe src="https://rasulovking2577.github.io/SAKLYA/" loading="lazy" title="Сакля на ноутбуке"></iframe></div>
+<div class="base"></div>
+</div>
+<div class="laptop-caption">LIVE PROJECT / САКЛЯ</div>
+</div>
+</section>
+
+<section class="section reveal" id="services">
+<div class="head"><div><div class="kicker">04 / what I do</div><h2>Не просто<br><em>картинка.</em></h2></div></div>
+<div class="services">
+<div class="service"><div class="n">01</div><div><h3>Сайт-визитка</h3><p>Сильная первая страница, услуги, контакты, преимущества и понятный путь до обращения.</p></div></div>
+<div class="service"><div class="n">02</div><div><h3>Лендинг</h3><p>Одна конкретная задача: продать услугу, собрать заявку или привести человека в WhatsApp.</p></div></div>
+<div class="service"><div class="n">03</div><div><h3>Редизайн</h3><p>Перестраиваю устаревший сайт, если бизнес уже есть, а его онлайн-подача выглядит слабее самого бизнеса.</p></div></div>
+<div class="service"><div class="n">04</div><div><h3>Сайт для заведения</h3><p>Меню, фото, адрес, часы работы, звонок, заказ и мобильная версия — всё на месте.</p></div></div>
+</div>
+</section>
+
+<section class="section reveal">
+<div class="head"><div><div class="kicker">05 / why 1site</div><h2>Визуал —<br>не <em>самоцель.</em></h2></div></div>
+<div class="reasons">
+<div class="reason"><b>01</b><h3>Индивидуально</h3><p>Визуальное направление строится под конкретный бизнес, а не под случайный шаблон.</p></div>
+<div class="reason"><b>02</b><h3>Mobile first</h3><p>Сначала думаю о том, как сайт воспринимается с телефона — там находится твой клиент.</p></div>
+<div class="reason"><b>03</b><h3>Быстрый запуск</h3><p>Без бессмысленной бюрократии. Обсудили → сделали → проверили → запустили.</p></div>
+<div class="reason"><b>04</b><h3>Честно</h3><p>Не продаю сказки про гарантированные миллионы. Делаю инструмент, который бизнесу реально нужен.</p></div>
+</div>
+</section>
+
+<section class="section reveal" id="process">
+<div class="head"><div><div class="kicker">06 / process</div><h2>От идеи<br>до <em>запуска.</em></h2></div></div>
+<div class="process">
+<div class="step"><div class="n">01</div><div><h3>Обсуждаем</h3><p>Цель, бизнес, аудитория и что должен сделать посетитель.</p></div><div class="arrow">↗</div></div>
+<div class="step"><div class="n">02</div><div><h3>Проектируем</h3><p>Структура, визуальный язык, контент и сценарий.</p></div><div class="arrow">↗</div></div>
+<div class="step"><div class="n">03</div><div><h3>Разрабатываю</h3><p>HTML, CSS, JavaScript, адаптив и интерактив.</p></div><div class="arrow">↗</div></div>
+<div class="step"><div class="n">04</div><div><h3>Запускаем</h3><p>Проверяем всё на телефоне и компьютере и публикуем.</p></div><div class="arrow">↗</div></div>
+</div>
+</section>
+
+<section class="final reveal" id="contact">
+<div class="kicker">07 / start a project</div>
+<h2>Есть бизнес?<br>Давайте сделаем ему<br><em>сайт, который цепляет.</em></h2>
+<a class="btn primary" href="https://wa.me/79285182595">Заказать сайт → WhatsApp</a>
+</section>
+
+<footer class="footer"><div>© 1САЙТ · Махачкала / Дагестан</div><div>HTML · CSS · JavaScript · 2026</div></footer>
+</main>
+
+<script>
+const els=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}}),{threshold:.1});
+els.forEach(e=>obs.observe(e));
+
+const track=document.getElementById('track');
+let down=false,startX=0,scroll=0;
+track.addEventListener('pointerdown',e=>{down=true;startX=e.clientX;scroll=track.scrollLeft;track.classList.add('dragging')});
+window.addEventListener('pointerup',()=>{down=false;track.classList.remove('dragging')});
+window.addEventListener('pointermove',e=>{if(!down)return;track.scrollLeft=scroll-(e.clientX-startX)*1.2});
+
+/* ===== INTERACTIVE 3D / 4D ENGINE ===== */
+(function(){
+  if(!window.THREE) return;
+
+  // HERO 3D scene
+  const canvas=document.getElementById('space3d'), box=document.getElementById('webglBox');
+  if(canvas && box){
+    const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    const scene=new THREE.Scene();
+    const camera=new THREE.PerspectiveCamera(42,1,.1,100);
+    camera.position.set(0,0,5.8);
+    const group=new THREE.Group(); scene.add(group);
+    const geo=new THREE.IcosahedronGeometry(1.25,4);
+    const mat=new THREE.MeshPhysicalMaterial({color:0xb9ff3d,roughness:.24,metalness:.42,emissive:0x173d10,emissiveIntensity:.7,wireframe:false});
+    const mesh=new THREE.Mesh(geo,mat); group.add(mesh);
+    const wire=new THREE.Mesh(new THREE.IcosahedronGeometry(1.32,2),new THREE.MeshBasicMaterial({color:0xd5b24d,wireframe:true,transparent:true,opacity:.18}));
+    group.add(wire);
+    const ring1=new THREE.Mesh(new THREE.TorusGeometry(1.65,.008,8,180),new THREE.MeshBasicMaterial({color:0xb9ff3d,transparent:true,opacity:.55}));
+    ring1.rotation.x=Math.PI/2.7; group.add(ring1);
+    const ring2=ring1.clone(); ring2.material=ring1.material.clone(); ring2.material.opacity=.25; ring2.scale.set(.8,1.25,1); ring2.rotation.y=.8; group.add(ring2);
+    const particles=new THREE.Group(); scene.add(particles);
+    for(let i=0;i<80;i++){
+      const p=new THREE.Mesh(new THREE.SphereGeometry(.012,5,5),new THREE.MeshBasicMaterial({color:i%4?0x86b72e:0xd5b24d}));
+      p.position.set((Math.random()-.5)*5,(Math.random()-.5)*4,(Math.random()-.5)*3); particles.add(p);
+    }
+    const light=new THREE.PointLight(0xb9ff3d,5,12); light.position.set(2,2,4); scene.add(light);
+    scene.add(new THREE.AmbientLight(0x6d8c72,1.2));
+    let mx=0,my=0,tx=0,ty=0,mode='3d',explode=0;
+    function resize(){const r=box.getBoundingClientRect(); renderer.setSize(r.width,r.height,false); camera.aspect=r.width/r.height; camera.updateProjectionMatrix();}
+    resize(); addEventListener('resize',resize);
+    function pointer(x,y){const r=box.getBoundingClientRect(); tx=(x-r.left-r.width/2)/r.width*1.8; ty=(y-r.top-r.height/2)/r.height*1.3}
+    box.addEventListener('pointermove',e=>pointer(e.clientX,e.clientY));
+    box.addEventListener('pointerdown',()=>{explode=explode?0:1});
+    document.querySelectorAll('.dim').forEach(b=>b.addEventListener('click',e=>{
+      document.querySelectorAll('.dim').forEach(x=>x.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      if(e.currentTarget.dataset.mode) mode=e.currentTarget.dataset.mode;
+      if(e.currentTarget.id==='explode') explode=explode?0:1;
+    }));
+    function tick(){
+      requestAnimationFrame(tick); mx+=(tx-mx)*.055; my+=(ty-my)*.055;
+      group.rotation.y+=.004; group.rotation.x+=(-my*.45-group.rotation.x)*.035;
+      group.rotation.z+=(-mx*.18-group.rotation.z)*.035;
+      ring1.rotation.z+=.009; ring2.rotation.z-=.013;
+      particles.rotation.y+=.0015;
+      const pulse=explode?1.55:1;
+      group.scale.lerp(new THREE.Vector3(pulse,pulse,pulse),.06);
+      if(mode==='4d'){
+        wire.rotation.x+=.012; wire.rotation.y-=.017; wire.scale.x=1+Math.sin(Date.now()*.002)*.22;
+        mesh.material.emissiveIntensity=.8+Math.sin(Date.now()*.004)*.45;
+      }else{
+        wire.scale.x+=(1-wire.scale.x)*.05; mesh.material.emissiveIntensity=.7;
+      }
+      renderer.render(scene,camera);
+    } tick();
+  }
+
+  // 4D tesseract projected to 2D canvas
+  const tc=document.getElementById('tesseract'), wrap=tc?.parentElement;
+  if(tc && wrap){
+    const c=tc.getContext('2d'); let W=1,H=1, rx=.2, ry=-.3, rz=.1, rw=.2, drag=false,px=0,py=0,auto=true,boost=0;
+    const verts=[];
+    for(let i=0;i<16;i++) verts.push([i&1?1:-1,i&2?1:-1,i&4?1:-1,i&8?1:-1]);
+    const edges=[];
+    for(let i=0;i<16;i++) for(let b=0;b<4;b++){let j=i^(1<<b);if(i<j)edges.push([i,j])}
+    function resize(){const r=wrap.getBoundingClientRect();W=tc.width=r.width*devicePixelRatio;H=tc.height=r.height*devicePixelRatio;c.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);W=r.width;H=r.height}
+    resize(); addEventListener('resize',resize);
+    function rot4(v){
+      let [x,y,z,w]=v, a,b;
+      a=x*Math.cos(rx)-w*Math.sin(rx); b=x*Math.sin(rx)+w*Math.cos(rx); x=a;w=b;
+      a=y*Math.cos(ry)-w*Math.sin(ry); b=y*Math.sin(ry)+w*Math.cos(ry); y=a;w=b;
+      a=z*Math.cos(rz)-w*Math.sin(rz); b=z*Math.sin(rz)+w*Math.cos(rz); z=a;w=b;
+      a=x*Math.cos(rw)-y*Math.sin(rw); b=x*Math.sin(rw)+y*Math.cos(rw); x=a;y=b;
+      return [x,y,z,w];
+    }
+    function project(v){
+      const wdist=4.5/(4.5-v[3]);
+      const z2=v[2]*wdist, x=v[0]*wdist, y=v[1]*wdist;
+      const depth=3.8/(5.2-z2);
+      return [W/2+x*95*depth,H/2+y*95*depth,z2,wDistSafe(v[3])];
+    }
+    function wDistSafe(w){return Math.max(.18,Math.min(3,w+2.2))}
+    function draw(){
+      c.clearRect(0,0,W,H);
+      const pts=verts.map(v=>project(rot4(v)));
+      c.lineWidth=1;
+      edges.forEach(([a,b])=>{
+        const p=pts[a],q=pts[b]; const glow=(p[2]+q[2]+4)/8;
+        c.strokeStyle=`rgba(${Math.round(150+glow*100)},255,${Math.round(80+glow*120)},${.18+glow*.55})`;
+        c.beginPath();c.moveTo(p[0],p[1]);c.lineTo(q[0],q[1]);c.stroke();
+      });
+      pts.forEach((p,i)=>{
+        c.fillStyle=i%3?'#b9ff3d':'#d5b24d';c.beginPath();c.arc(p[0],p[1],2.5+(i%2),0,Math.PI*2);c.fill();
+      });
+      c.fillStyle='rgba(185,255,61,.55)';c.font='10px Manrope';c.fillText('4D / TESSERACT',18,28);
+      if(auto){rx+=.003;ry-=.004;rz+=.002;rw+=.008}
+      if(boost>0) boost-=.02;
+      requestAnimationFrame(draw);
+    }
+    function down(x,y){drag=true;px=x;py=y}
+    function move(x,y){if(!drag)return;rx+=(y-py)*.008;ry+=(x-px)*.008;rz+=(x-px)*.003;px=x;py=y}
+    tc.addEventListener('pointerdown',e=>down(e.clientX,e.clientY));
+    addEventListener('pointerup',()=>drag=false);
+    addEventListener('pointermove',e=>move(e.clientX,e.clientY));
+    document.getElementById('pulse4d')?.addEventListener('click',()=>{boost=1;auto=!auto;rw+=.8});
+    draw();
+  }
+
+  const orb=document.getElementById('miniOrb'), ob=document.getElementById('orbButton');
+  ob?.addEventListener('click',()=>orb.classList.toggle('active'));
+})();
+
+</script>
+</body>
+</html>
