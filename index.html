@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>1САЙТ — Сайты, которые работают на ваш бизнес</title>
-<meta name="description" content="Создаём сайты для бизнеса: визитки, лендинги, редизайн. Понятно, мобильно, с WhatsApp. От 15 000 ₽.">
+<title>1САЙТ — Сайт, на котором клиент пишет вам в WhatsApp</title>
+<meta name="description" content="Через 7–14 дней — рабочая ссылка: услуги, цены, WhatsApp. Для кафе, салонов, барбершопов. От 15 000 ₽.">
 <meta name="theme-color" content="#020504">
 <link rel="canonical" href="https://rasulovking2577.github.io/1site/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1</text></svg>">
@@ -13,13 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
-:root{
-  --bg:#020504;--text:#f4f7f3;--muted:#8b978e;--dim:#4e5a52;
-  --g:#c8ff52;--g2:#9ae02e;--gold:#e2c56e;
-  --glass:rgba(255,255,255,.05);--line:rgba(255,255,255,.1);
-  --sans:"Manrope",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;
-  --ease:cubic-bezier(.22,1,.36,1);
-}
+:root{--bg:#020504;--text:#f4f7f3;--muted:#8b978e;--dim:#4e5a52;--g:#c8ff52;--g2:#9ae02e;--gold:#e2c56e;--line:rgba(255,255,255,.1);--sans:"Manrope",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;--ease:cubic-bezier(.22,1,.36,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -28,27 +22,20 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.03;z-
 a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .wrap{width:min(1160px,calc(100% - 32px));margin-inline:auto}
 @media(max-width:480px){.wrap{width:calc(100% - 22px)}}
-
 .glass{background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);border:1px solid rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 24px 50px rgba(0,0,0,.4)}
-.glass-lite{background:rgba(255,255,255,.04);backdrop-filter:blur(16px);border:1px solid var(--line)}
-
-/* light rays */
 .lights{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.ray{position:absolute;width:2px;height:120%;background:linear-gradient(180deg,transparent,rgba(200,255,82,.15),transparent);animation:rayMove 12s linear infinite;opacity:.4}
-.ray:nth-child(1){left:15%;animation-delay:0s;transform:rotate(8deg)}
-.ray:nth-child(2){left:45%;animation-delay:-4s;transform:rotate(-5deg);opacity:.25}
-.ray:nth-child(3){left:75%;animation-delay:-8s;transform:rotate(3deg);opacity:.3}
-@keyframes rayMove{0%{transform:translateY(-20%) rotate(var(--r,5deg))}100%{transform:translateY(20%) rotate(var(--r,5deg))}}
 .blob{position:absolute;border-radius:50%;filter:blur(90px);animation:blob 20s ease-in-out infinite}
 .blob-1{width:500px;height:500px;background:radial-gradient(circle,#6a9a28,transparent 70%);top:-15%;left:-10%;opacity:.3}
 .blob-2{width:400px;height:400px;background:radial-gradient(circle,#2a4a20,transparent 70%);bottom:5%;right:-10%;opacity:.35;animation-delay:-7s}
 .blob-3{width:300px;height:300px;background:radial-gradient(circle,rgba(200,255,82,.2),transparent 70%);top:45%;left:40%;opacity:.25;animation-delay:-14s}
 @keyframes blob{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.1)}}
+.ray{position:absolute;width:2px;height:120%;background:linear-gradient(180deg,transparent,rgba(200,255,82,.12),transparent);animation:ray 14s linear infinite;opacity:.35}
+.ray:nth-child(4){left:18%;transform:rotate(8deg)}.ray:nth-child(5){left:48%;transform:rotate(-5deg);animation-delay:-5s}.ray:nth-child(6){left:78%;transform:rotate(3deg);animation-delay:-9s}
+@keyframes ray{0%{transform:translateY(-15%) rotate(var(--r,5deg))}100%{transform:translateY(15%) rotate(var(--r,5deg))}}
 
-/* NAV */
 .nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:100;width:min(1060px,calc(100% - 18px));height:54px;padding:0 8px 0 16px;display:flex;align-items:center;justify-content:space-between;border-radius:100px}
 .logo{font-weight:800;font-size:.9rem;letter-spacing:.03em}.logo i{font-style:normal;color:var(--g)}
-.nav-links{display:flex;gap:20px;font-size:.72rem;color:var(--muted)}.nav-links a:hover{color:var(--g)}
+.nav-links{display:flex;gap:18px;font-size:.72rem;color:var(--muted)}.nav-links a:hover{color:var(--g)}
 .nav-cta{background:var(--g);color:#041006;font-weight:700;font-size:.72rem;padding:9px 15px;border-radius:100px;transition:.3s}
 .nav-cta:hover{box-shadow:0 0 30px rgba(200,255,82,.5);transform:translateY(-1px)}
 .burger{display:none;width:38px;height:38px;place-items:center;border-radius:50%;border:1px solid var(--line)}
@@ -62,147 +49,158 @@ a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:n
 .btn-p{background:var(--g);color:#041006}.btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(200,255,82,.35)}
 .btn-g{border:1px solid rgba(255,255,255,.18)}.btn-g:hover{background:rgba(255,255,255,.05)}
 
-/* HERO */
 .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;padding:115px 0 50px;position:relative;z-index:1}
-.eyebrow{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.eyebrow{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 18px var(--g);animation:blink 2s infinite}
 @keyframes blink{50%{opacity:.35}}
-.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6.8vw,5rem);font-weight:400;line-height:.94;letter-spacing:-.03em;margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:400;line-height:.96;letter-spacing:-.03em;margin-bottom:14px}
 .hero h1 em{font-style:italic;color:var(--g);text-shadow:0 0 40px rgba(200,255,82,.35)}
-.hero-lead{font-size:1rem;color:var(--muted);max-width:360px;margin-bottom:26px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
-.hero-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:.75rem;color:var(--dim)}
+.hero-result{font-size:1.05rem;color:var(--text);max-width:400px;margin-bottom:10px;font-weight:500}
+.hero-lead{font-size:.95rem;color:var(--muted);max-width:380px;margin-bottom:24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:.74rem;color:var(--dim)}
 .hero-meta span::before{content:"✦ ";color:var(--g)}
-
-.hero-stage{position:relative;height:min(520px,70vw)}
+.hero-stage{position:relative;height:min(500px,68vw)}
 .canvas-wrap{position:absolute;inset:0;border-radius:26px;overflow:hidden}
 #c3d{width:100%;height:100%;display:block;touch-action:none}
 .canvas-wrap::after{content:"";position:absolute;inset:0;border-radius:26px;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 1px rgba(255,255,255,.1);pointer-events:none;z-index:2}
 .stage-label{position:absolute;left:14px;top:12px;z-index:3;font-size:.6rem;letter-spacing:.14em;color:rgba(255,255,255,.3);text-transform:uppercase}
 .stage-badge{position:absolute;right:12px;bottom:12px;z-index:3;padding:10px 14px;border-radius:14px;font-size:.75rem;display:flex;align-items:center;gap:8px}
 .stage-badge i{width:7px;height:7px;border-radius:50%;background:var(--g);display:block;animation:blink 2s infinite}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:100px;gap:28px}.hero-stage{height:320px;order:-1}}
+@media(max-width:480px){.hero h1{font-size:clamp(2.3rem,10vw,2.9rem)}.hero-stage{height:260px}}
 
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:100px;gap:32px}.hero-stage{height:340px;order:-1}}
-@media(max-width:480px){.hero h1{font-size:clamp(2.4rem,11vw,3rem)}.hero-stage{height:280px}}
-
-/* LAPTOP SECTION */
-.laptop-sec{padding:80px 0;position:relative;z-index:1}
-.laptop-stage{position:relative;min-height:480px;display:grid;place-items:center;border-radius:28px;overflow:hidden;padding:40px 20px}
-.laptop{width:min(720px,90%);transform:perspective(1200px) rotateX(6deg) rotateY(-6deg);filter:drop-shadow(0 40px 50px rgba(0,0,0,.5));transition:transform .6s var(--ease)}
-.laptop:hover{transform:perspective(1200px) rotateX(2deg) rotateY(-2deg)}
-.laptop-screen{background:#0a0e0c;border:8px solid #1a1f1c;border-radius:16px 16px 6px 6px;padding:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
-.laptop-screen iframe,.laptop-screen .screen-inner{display:block;width:100%;height:min(340px,42vw);border:0;border-radius:8px;background:#0d1210}
-.screen-inner{padding:16px;display:flex;flex-direction:column;gap:10px}
-.si-nav{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:var(--muted)}
-.si-btn{background:var(--g);color:#041006;padding:4px 10px;border-radius:100px;font-weight:700;font-size:.65rem}
-.si-title{font-family:var(--serif);font-size:1.3rem;line-height:1.15;max-width:200px}
-.si-title em{color:var(--g);font-style:italic}
-.si-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:auto}
-.si-card{height:40px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
-.laptop-base{height:18px;margin:0 -6%;background:linear-gradient(#3a403c,#151a17);border-radius:0 0 24px 24px;position:relative}
-.laptop-base::after{content:"";position:absolute;left:38%;right:38%;top:3px;height:3px;border-radius:4px;background:#555}
-.laptop-cap{position:absolute;left:20px;bottom:16px;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-@media(max-width:600px){.laptop-stage{min-height:360px}.laptop-screen .screen-inner,.laptop-screen iframe{height:220px}}
-
-section{padding:80px 0;position:relative;z-index:1}
+section{padding:72px 0;position:relative;z-index:1}
 .kicker{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.st{font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:10px}
+.st{font-family:var(--serif);font-size:clamp(1.85rem,4.4vw,3rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:10px}
 .st em{font-style:italic;color:var(--g)}
-.sl{font-size:.95rem;color:var(--muted);max-width:420px;margin-bottom:32px}
+.sl{font-size:.95rem;color:var(--muted);max-width:420px;margin-bottom:28px}
 
-.hq{font-family:var(--serif);font-size:clamp(1.4rem,3.5vw,2.2rem);line-height:1.2;max-width:640px;margin-bottom:32px}
+/* laptop */
+.laptop-stage{position:relative;min-height:420px;display:grid;place-items:center;border-radius:24px;overflow:hidden;padding:36px 16px}
+.laptop{width:min(680px,92%);transform:perspective(1200px) rotateX(6deg) rotateY(-6deg);filter:drop-shadow(0 36px 48px rgba(0,0,0,.5));transition:transform .6s var(--ease)}
+.laptop:hover{transform:perspective(1200px) rotateX(2deg) rotateY(-2deg)}
+.laptop-screen{background:#0a0e0c;border:7px solid #1a1f1c;border-radius:14px 14px 5px 5px;padding:7px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.screen-inner{display:block;width:100%;height:min(300px,38vw);border-radius:7px;background:#0d1210;padding:14px;display:flex;flex-direction:column;gap:8px}
+.si-nav{display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:var(--muted)}
+.si-btn{background:var(--g);color:#041006;padding:3px 9px;border-radius:100px;font-weight:700;font-size:.62rem}
+.si-title{font-family:var(--serif);font-size:1.15rem;line-height:1.15;max-width:180px}
+.si-title em{color:var(--g);font-style:italic}
+.si-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:auto}
+.si-card{height:36px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.laptop-base{height:16px;margin:0 -5%;background:linear-gradient(#3a403c,#151a17);border-radius:0 0 20px 20px;position:relative}
+.laptop-base::after{content:"";position:absolute;left:38%;right:38%;top:3px;height:3px;border-radius:4px;background:#555}
+.laptop-cap{position:absolute;left:16px;bottom:14px;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+@media(max-width:600px){.laptop-stage{min-height:320px}.screen-inner{height:200px}}
+
+.hq{font-family:var(--serif);font-size:clamp(1.35rem,3.4vw,2.1rem);line-height:1.2;max-width:620px;margin-bottom:28px}
 .pg{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 @media(max-width:900px){.pg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.pg{grid-template-columns:1fr}}
-.pc{padding:16px 12px;border-radius:16px;transition:transform .35s var(--ease)}.pc:hover{transform:translateY(-4px)}
-.pc n{display:block;font-size:.6rem;color:var(--dim);margin-bottom:5px;letter-spacing:.08em}
-.pc p{font-size:.82rem;color:var(--muted);line-height:1.35}
+.pc{padding:14px 12px;border-radius:14px;transition:transform .35s}.pc:hover{transform:translateY(-3px)}
+.pc n{display:block;font-size:.58rem;color:var(--dim);margin-bottom:4px;letter-spacing:.08em}
+.pc p{font-size:.8rem;color:var(--muted);line-height:1.35}
+
+/* questions */
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:700px){.q-grid{grid-template-columns:1fr}}
+.q-card{padding:20px 16px;border-radius:16px;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;text-align:left;display:block}
+.q-card:hover{transform:translateY(-3px);border-color:rgba(200,255,82,.35);box-shadow:0 0 32px rgba(200,255,82,.08)}
+.q-card h3{font-size:.98rem;font-weight:700;margin-bottom:5px}
+.q-card p{font-size:.84rem;color:var(--muted);margin-bottom:10px}
+.q-card .go{font-size:.78rem;font-weight:600;color:var(--g)}
+
+/* for whom */
+.whom{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.whom{grid-template-columns:1fr}}
+.whom-box{padding:22px 18px;border-radius:16px}
+.whom-box h3{font-size:1rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.whom-box.yes h3{color:var(--g)}.whom-box.no h3{color:var(--muted)}
+.whom-box ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.whom-box li{font-size:.88rem;color:var(--muted);padding-left:18px;position:relative}
+.whom-box.yes li::before{content:"✓";position:absolute;left:0;color:var(--g)}
+.whom-box.no li::before{content:"—";position:absolute;left:0;color:var(--dim)}
+
+/* guarantee */
+.guar{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:640px){.guar{grid-template-columns:1fr}}
+.guar-item{padding:18px 16px;border-radius:14px;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.guar-n{width:32px;height:32px;border-radius:50%;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.guar-item h3{font-size:.92rem;font-weight:700;margin-bottom:3px}
+.guar-item p{font-size:.82rem;color:var(--muted)}
 
 .vg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 @media(max-width:768px){.vg{grid-template-columns:1fr}}
-.vc{padding:22px 18px;border-radius:18px;transition:transform .35s}.vc:hover{transform:translateY(-4px)}
-.vi{width:36px;height:36px;border-radius:10px;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;margin-bottom:12px;font-size:1rem}
-.vc h3{font-size:1rem;font-weight:700;margin-bottom:5px}.vc p{font-size:.85rem;color:var(--muted)}
+.vc{padding:20px 16px;border-radius:16px;transition:transform .35s}.vc:hover{transform:translateY(-3px)}
+.vi{width:34px;height:34px;border-radius:10px;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;margin-bottom:10px;font-size:.95rem}
+.vc h3{font-size:.98rem;font-weight:700;margin-bottom:4px}.vc p{font-size:.84rem;color:var(--muted)}
 
-/* QUESTIONS - engagement */
-.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:700px){.q-grid{grid-template-columns:1fr}}
-.q-card{padding:22px 18px;border-radius:18px;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;text-align:left}
-.q-card:hover{transform:translateY(-3px);border-color:rgba(200,255,82,.3);box-shadow:0 0 30px rgba(200,255,82,.08)}
-.q-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
-.q-card p{font-size:.85rem;color:var(--muted);margin-bottom:12px}
-.q-card .go{font-size:.8rem;font-weight:600;color:var(--g)}
-
-.svc{display:grid;grid-template-columns:56px 1fr auto;gap:14px;padding:20px;border-radius:18px;margin-bottom:8px;transition:transform .3s}
+.svc{display:grid;grid-template-columns:52px 1fr auto;gap:12px;padding:18px;border-radius:16px;margin-bottom:8px;transition:transform .3s}
 .svc:hover{transform:translateY(-2px)}
 @media(max-width:700px){.svc{grid-template-columns:1fr;gap:6px}}
-.sn{font-family:var(--serif);font-size:1.5rem;color:var(--dim)}
-.svc h3{font-size:1.1rem;font-weight:700}.sm{font-size:.75rem;color:var(--dim);margin-bottom:6px}
-.sd{font-size:.88rem;color:var(--muted);margin-bottom:8px}
-.tags{display:flex;flex-wrap:wrap;gap:4px}.tags span{font-size:.65rem;padding:2px 8px;border-radius:100px;border:1px solid var(--line);color:var(--muted)}
+.sn{font-family:var(--serif);font-size:1.4rem;color:var(--dim)}
+.svc h3{font-size:1.05rem;font-weight:700}.sm{font-size:.72rem;color:var(--dim);margin-bottom:5px}
+.sd{font-size:.86rem;color:var(--muted);margin-bottom:7px}
+.tags{display:flex;flex-wrap:wrap;gap:4px}.tags span{font-size:.64rem;padding:2px 7px;border-radius:100px;border:1px solid var(--line);color:var(--muted)}
 .sp{text-align:right;white-space:nowrap}@media(max-width:700px){.sp{text-align:left}}
-.sp strong{display:block;font-size:1.15rem;margin-bottom:6px}.sp .btn{min-height:36px;padding:0 12px;font-size:.75rem}
+.sp strong{display:block;font-size:1.1rem;margin-bottom:6px}.sp .btn{min-height:34px;padding:0 12px;font-size:.74rem}
 
 .prg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 @media(max-width:860px){.prg{grid-template-columns:1fr;max-width:360px;margin-inline:auto}}
-.pr{padding:26px 20px;border-radius:20px;display:flex;flex-direction:column;position:relative;transition:transform .35s}.pr:hover{transform:translateY(-5px)}
+.pr{padding:24px 18px;border-radius:18px;display:flex;flex-direction:column;position:relative;transition:transform .35s}.pr:hover{transform:translateY(-4px)}
 .pr.hot{border-color:rgba(200,255,82,.4);box-shadow:0 0 40px rgba(200,255,82,.1)}
-.pb{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--g);color:#041006;font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:100px}
-.pn{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.pa{font-size:1.8rem;font-weight:700}.pa span{font-size:.85rem;font-weight:400;color:var(--muted)}
-.pf{font-size:.82rem;color:var(--dim);margin:6px 0 14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.pl{flex:1;display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
-.pl li{font-size:.82rem;color:var(--muted);display:flex;gap:6px}.pl li::before{content:"→";color:var(--g)}
+.pb{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--g);color:#041006;font-size:.6rem;font-weight:700;padding:3px 10px;border-radius:100px}
+.pn{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.pa{font-size:1.7rem;font-weight:700}.pa span{font-size:.82rem;font-weight:400;color:var(--muted)}
+.pf{font-size:.8rem;color:var(--dim);margin:5px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.pl{flex:1;display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.pl li{font-size:.8rem;color:var(--muted);display:flex;gap:5px}.pl li::before{content:"→";color:var(--g)}
 .pr .btn{width:100%}
 
-.wg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.wg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media(max-width:680px){.wg{grid-template-columns:1fr}}
-.wk{border-radius:18px;overflow:hidden;transition:transform .35s;display:flex;flex-direction:column}.wk:hover{transform:translateY(-4px)}
+.wk{border-radius:16px;overflow:hidden;transition:transform .35s;display:flex;flex-direction:column}.wk:hover{transform:translateY(-3px)}
 .wp{aspect-ratio:16/10;background:linear-gradient(145deg,#0c1510,#050a08);display:grid;place-items:center;position:relative}
 .wp::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(200,255,82,.08),transparent 50%)}
-.wp span{font-family:var(--serif);font-size:1.5rem;color:rgba(255,255,255,.1);position:relative;z-index:1}
-.wb{padding:16px;flex:1;display:flex;flex-direction:column}
-.wt{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
-.wk h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}.wk p{font-size:.82rem;color:var(--muted);margin-bottom:10px;flex:1}
-.wl{font-size:.82rem;font-weight:600}.wl:hover{color:var(--g)}
-.wn{border-style:dashed;background:transparent;align-items:center;justify-content:center;text-align:center;padding:36px 16px;min-height:240px}
+.wp span{font-family:var(--serif);font-size:1.4rem;color:rgba(255,255,255,.1);position:relative;z-index:1}
+.wb{padding:14px;flex:1;display:flex;flex-direction:column}
+.wt{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g);margin-bottom:3px}
+.wk h3{font-size:1rem;font-weight:700;margin-bottom:3px}.wk p{font-size:.8rem;color:var(--muted);margin-bottom:8px;flex:1}
+.wl{font-size:.8rem;font-weight:600}.wl:hover{color:var(--g)}
+.wn{border-style:dashed;background:transparent;align-items:center;justify-content:center;text-align:center;padding:32px 14px;min-height:220px}
 
-.trust{max-width:560px;padding:28px 24px;border-radius:18px}
-.trust h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:8px}.trust p{color:var(--muted);margin-bottom:6px;font-size:.9rem}
+.trust{max-width:540px;padding:24px 20px;border-radius:16px}
+.trust h3{font-family:var(--serif);font-size:1.25rem;margin-bottom:8px}.trust p{color:var(--muted);margin-bottom:5px;font-size:.88rem}
 
-.yg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-@media(max-width:640px){.yg{grid-template-columns:1fr}}
-.yi{display:grid;grid-template-columns:36px 1fr;gap:10px;padding:16px;border-radius:14px}
-.yn{font-family:var(--serif);font-size:1.1rem;color:var(--g)}.yi h3{font-size:.9rem;font-weight:700;margin-bottom:2px}.yi p{font-size:.8rem;color:var(--muted)}
-
-.psg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;counter-reset:s}
-@media(max-width:700px){.psg{grid-template-columns:1fr}}
+.psg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;counter-reset:s}
+@media(max-width:800px){.psg{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.psg{grid-template-columns:1fr}}
 .stp{padding:16px;border-radius:14px}
-.stp::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.2rem;color:var(--dim);display:block;margin-bottom:6px}
-.stp h3{font-size:.9rem;font-weight:700;margin-bottom:2px}.stp p{font-size:.8rem;color:var(--muted)}
-.pnote{margin-top:16px;padding:12px 16px;border-radius:12px;background:rgba(200,255,82,.1);border-left:3px solid var(--g);font-size:.85rem;color:var(--muted)}
+.stp::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.15rem;color:var(--dim);display:block;margin-bottom:6px}
+.stp h3{font-size:.88rem;font-weight:700;margin-bottom:2px}.stp p{font-size:.78rem;color:var(--muted)}.stp .t{font-size:.7rem;color:var(--g);margin-top:4px}
+.pnote{margin-top:14px;padding:12px 14px;border-radius:12px;background:rgba(200,255,82,.1);border-left:3px solid var(--g);font-size:.84rem;color:var(--muted)}
 
-.rl{max-width:480px}
-.ri{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.ri:last-child{border-bottom:none}
-.rn{width:28px;height:28px;border-radius:50%;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;font-size:.7rem;font-weight:700}
-.ri p{font-size:.88rem;color:var(--muted);padding-top:2px}
+.rl{max-width:460px}
+.ri{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.ri:last-child{border-bottom:none}
+.rn{width:26px;height:26px;border-radius:50%;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;font-size:.68rem;font-weight:700}
+.ri p{font-size:.86rem;color:var(--muted);padding-top:2px}
 
-.fl{max-width:600px;display:flex;flex-direction:column;gap:6px}
+.fl{max-width:580px;display:flex;flex-direction:column;gap:6px}
 .fi{border-radius:12px;overflow:hidden}
-.fq{width:100%;text-align:left;padding:13px 14px;font-size:.88rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:46px}
+.fq{width:100%;text-align:left;padding:12px 14px;font-size:.86rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:44px}
 .fq:hover{color:var(--g)}.fq svg{transition:transform .25s;flex-shrink:0}.fi.open .fq svg{transform:rotate(45deg)}
 .fa{max-height:0;overflow:hidden;transition:max-height .3s}.fi.open .fa{max-height:140px}
-.fai{padding:0 14px 12px;font-size:.84rem;color:var(--muted)}
+.fai{padding:0 14px 12px;font-size:.82rem;color:var(--muted)}
 
-.final{text-align:center;padding:90px 0 70px;position:relative}
+.final{text-align:center;padding:80px 0 60px;position:relative}
 .final-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 50% 50%,rgba(200,255,82,.08),transparent)}
-.final h2{font-family:var(--serif);font-size:clamp(1.9rem,4.8vw,3.3rem);line-height:1.08;margin-bottom:10px}
-.final p{color:var(--muted);max-width:360px;margin:0 auto 22px;font-size:.95rem}
-.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:20px;font-size:.82rem;color:var(--dim)}.flinks a:hover{color:var(--g)}
-.footer{padding:20px 0 90px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.75rem;color:var(--dim);position:relative;z-index:1}
+.final h2{font-family:var(--serif);font-size:clamp(1.8rem,4.6vw,3.1rem);line-height:1.08;margin-bottom:10px}
+.final p{color:var(--muted);max-width:360px;margin:0 auto 20px;font-size:.92rem}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:18px;font-size:.8rem;color:var(--dim)}.flinks a:hover{color:var(--g)}
+.footer{padding:18px 0 85px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.74rem;color:var(--dim);position:relative;z-index:1}
 .sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(2,5,4,.93);backdrop-filter:blur(20px);border-top:1px solid var(--line)}.sticky .btn{width:100%}
-@media(max-width:780px){.sticky{display:block}.footer{padding-bottom:80px}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.on{opacity:1;transform:none}
+@media(max-width:780px){.sticky{display:block}.footer{padding-bottom:78px}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.on{opacity:1;transform:none}
 :focus-visible{outline:2px solid var(--g);outline-offset:3px}
 </style>
 </head>
@@ -214,26 +212,34 @@ section{padding:80px 0;position:relative;z-index:1}
 
 <nav class="nav glass">
   <a href="#" class="logo">1<i>САЙТ</i></a>
-  <div class="nav-links"><a href="#q">Вопросы</a><a href="#services">Услуги</a><a href="#pricing">Цены</a><a href="#work">Работы</a><a href="#faq">FAQ</a></div>
+  <div class="nav-links">
+    <a href="#q">Вопросы</a>
+    <a href="#whom">Для кого</a>
+    <a href="#pricing">Цены</a>
+    <a href="#work">Работы</a>
+    <a href="#faq">FAQ</a>
+  </div>
   <a href="https://wa.me/79696656414" class="nav-cta" target="_blank" rel="noopener">Заказать ↗</a>
   <button class="burger" id="burger" aria-label="Меню"><span></span></button>
 </nav>
 <div class="mmenu" id="mmenu">
-  <a href="#q" data-c>Вопросы</a><a href="#services" data-c>Услуги</a><a href="#pricing" data-c>Цены</a><a href="#work" data-c>Работы</a><a href="#faq" data-c>FAQ</a>
+  <a href="#q" data-c>Вопросы</a><a href="#whom" data-c>Для кого</a><a href="#pricing" data-c>Цены</a><a href="#work" data-c>Работы</a><a href="#faq" data-c>FAQ</a>
   <a href="https://wa.me/79696656414" class="nav-cta" target="_blank" rel="noopener">Заказать ↗</a>
 </div>
 
 <main class="wrap">
+<!-- HERO -->
 <section class="hero">
   <div>
     <div class="eyebrow">Махачкала · Дагестан · remote</div>
-    <h1>Сайт, который<br><em>работает</em><br>на ваш бизнес.</h1>
-    <p class="hero-lead">Понятные сайты для кафе, салонов, барбершопов. Клиент сразу видит услуги, цены и пишет в WhatsApp.</p>
+    <h1>Сайт, на котором<br>клиент <em>пишет вам</em><br>в WhatsApp.</h1>
+    <p class="hero-result">Через 7–14 дней — рабочая ссылка: услуги, цены, кнопка WhatsApp.</p>
+    <p class="hero-lead">Для кафе, салонов, барбершопов и локального бизнеса. Без шаблонов и воды.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Заказать сайт ↗</a>
-      <a href="#work" class="btn btn-g">Смотреть работы ↓</a>
+      <a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Получить расчёт ↗</a>
+      <a href="#q" class="btn btn-g">Узнать свой формат ↓</a>
     </div>
-    <div class="hero-meta"><span>Цены открыты</span><span>Без шаблонов</span><span>Mobile-first</span></div>
+    <div class="hero-meta"><span>Цена до старта</span><span>Ответ в течение дня</span><span>Mobile-first</span></div>
   </div>
   <div class="hero-stage">
     <div class="canvas-wrap glass" id="stage">
@@ -245,227 +251,324 @@ section{padding:80px 0;position:relative;z-index:1}
 </section>
 
 <!-- LAPTOP -->
-<section class="laptop-sec">
+<section>
   <div class="kicker reveal">Как выглядит результат</div>
-  <h2 class="st reveal">Сайт должен<br>хорошо смотреться <em>везде</em>.</h2>
+  <h2 class="st reveal">Клиент заходит —<br>и <em>сразу понимает</em>.</h2>
   <div class="laptop-stage glass reveal">
     <div class="laptop">
       <div class="laptop-screen">
         <div class="screen-inner">
-          <div class="si-nav"><span>ВАШ БИЗНЕС</span><span class="si-btn">Записаться</span></div>
-          <div class="si-title">Услуги,<br>которые <em>понятны</em><br>с первого экрана.</div>
-          <p style="font-size:.7rem;color:var(--dim);max-width:160px">Цены, фото, WhatsApp — всё на месте.</p>
+          <div class="si-nav"><span>ВАШ БИЗНЕС</span><span class="si-btn">Написать</span></div>
+          <div class="si-title">Услуги и цены<br><em>на виду</em>.</div>
+          <p style="font-size:.68rem;color:var(--dim);max-width:150px">WhatsApp в один клик.</p>
           <div class="si-cards"><div class="si-card"></div><div class="si-card"></div><div class="si-card"></div></div>
         </div>
       </div>
       <div class="laptop-base"></div>
     </div>
-    <div class="laptop-cap">LIVE PREVIEW · ваш будущий сайт</div>
+    <div class="laptop-cap">PREVIEW · ваш будущий сайт</div>
   </div>
 </section>
 
+<!-- PAIN -->
 <section>
   <p class="hq reveal">Ваш клиент уже ищет вас.<br>Вопрос — <em style="font-style:italic;color:var(--g)">что он увидит</em>.</p>
   <div class="pg reveal">
     <div class="pc glass"><n>01</n><p>Нет сайта — уходит к конкуренту</p></div>
     <div class="pc glass"><n>02</n><p>Старый сайт выглядит дешевле</p></div>
     <div class="pc glass"><n>03</n><p>С телефона всё ломается</p></div>
-    <div class="pc glass"><n>04</n><p>Услуги и цены спрятаны</p></div>
+    <div class="pc glass"><n>04</n><p>Цены спрятаны</p></div>
     <div class="pc glass"><n>05</n><p>Нет быстрого контакта</p></div>
   </div>
 </section>
 
-<!-- ENGAGEMENT QUESTIONS -->
+<!-- QUESTIONS -->
 <section id="q">
   <div class="kicker reveal">Быстрый чек</div>
   <h2 class="st reveal">Узнаёте себя?</h2>
-  <p class="sl reveal">Нажмите на то, что про вас — откроется WhatsApp с готовым текстом.</p>
+  <p class="sl reveal">Нажмите — откроется WhatsApp с готовым текстом. Отвечу в течение дня и скажу формат с ценой.</p>
   <div class="q-grid">
-    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=У меня нет сайта, хочу визитку" target="_blank" rel="noopener">
+    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=У меня нет сайта. Клиенты спрашивают — а его нет. Хочу визитку." target="_blank" rel="noopener">
       <h3>У меня нет сайта</h3>
-      <p>Клиенты ищут в интернете, а находят только конкурентов.</p>
+      <p>Клиенты спрашивают «а сайт есть?» — а его нет. Или находят только конкурентов.</p>
       <span class="go">Нужна визитка →</span>
     </a>
-    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=Сайт есть, но устарел, нужен редизайн" target="_blank" rel="noopener">
+    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=Сайт есть, но стыдно показывать. Нужен редизайн." target="_blank" rel="noopener">
       <h3>Сайт есть, но стыдно</h3>
-      <p>Выглядит дешевле, чем сам бизнес. С телефона плохо.</p>
+      <p>Выглядит дешевле бизнеса. С телефона криво. Сами им почти не пользуетесь.</p>
       <span class="go">Нужен редизайн →</span>
     </a>
-    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=Нужен лендинг под одну услугу" target="_blank" rel="noopener">
-      <h3>Нужно одно действие</h3>
-      <p>Заявка, запись, заказ. Не «сайт вообще», а цель.</p>
-      <span class="go">Нужен лендинг →</span>
+    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=Люди звонят и спрашивают цены — на сайте их нет. Хочу всё на виду + WhatsApp." target="_blank" rel="noopener">
+      <h3>Цены спрашивают по телефону</h3>
+      <p>На сайте услуг и цен нет или спрятаны. Хочется, чтобы сразу было видно.</p>
+      <span class="go">Цены + WhatsApp →</span>
     </a>
-    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=Хочу нормальный сайт для бизнеса" target="_blank" rel="noopener">
-      <h3>Бизнес растёт</h3>
-      <p>Нужно больше страниц: услуги, фото, о нас, контакты.</p>
-      <span class="go">Сайт для бизнеса →</span>
+    <a class="q-card glass reveal" href="https://wa.me/79696656414?text=Нужен лендинг под одну цель: запись / заявка / заказ." target="_blank" rel="noopener">
+      <h3>Нужно одно действие</h3>
+      <p>Запись, заявка, заказ. Не «сайт вообще», а страница под одну цель.</p>
+      <span class="go">Нужен лендинг →</span>
     </a>
   </div>
 </section>
 
+<!-- FOR WHOM -->
+<section id="whom">
+  <div class="kicker reveal">Кому подходит</div>
+  <h2 class="st reveal">Честно: <em>для кого</em> и для кого нет.</h2>
+  <div class="whom">
+    <div class="whom-box glass yes reveal">
+      <h3>✓ Подходит</h3>
+      <ul>
+        <li>Кафе, рестораны, кофейни</li>
+        <li>Салоны красоты, барбершопы</li>
+        <li>Локальные услуги и специалисты</li>
+        <li>Малый бизнес, которому нужен понятный сайт</li>
+        <li>Те, кто хочет WhatsApp, а не «просто красиво»</li>
+      </ul>
+    </div>
+    <div class="whom-box glass no reveal">
+      <h3>— Не подходит</h3>
+      <ul>
+        <li>Крупные интернет-магазины</li>
+        <li>Сложные веб-сервисы и приложения</li>
+        <li>Проекты «нужен сайт на миллион»</li>
+        <li>Те, кто ищет самый дешёвый шаблон</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
 <section>
   <div class="kicker reveal">Что получаете</div>
   <h2 class="st reveal">Не код.<br><em>Инструмент</em>.</h2>
   <div class="vg">
-    <div class="vc glass reveal"><div class="vi">①</div><h3>Понятно с секунды</h3><p>Услуги, цены, фото — без воды.</p></div>
-    <div class="vc glass reveal"><div class="vi">②</div><h3>Быстрый контакт</h3><p>WhatsApp в один клик.</p></div>
-    <div class="vc glass reveal"><div class="vi">③</div><h3>Mobile-first</h3><p>Сначала телефон.</p></div>
+    <div class="vc glass reveal"><div class="vi">①</div><h3>Понятно с секунды</h3><p>Услуги, цены, фото — без воды. Клиент сразу видит, подходит ли вы.</p></div>
+    <div class="vc glass reveal"><div class="vi">②</div><h3>WhatsApp в один клик</h3><p>Не искать номер. Нажал — уже пишет вам.</p></div>
+    <div class="vc glass reveal"><div class="vi">③</div><h3>Сначала телефон</h3><p>Большинство заходят с телефона. Проектируем под него.</p></div>
   </div>
 </section>
 
+<!-- GUARANTEE / FEARS -->
+<section>
+  <div class="kicker reveal">Спокойно</div>
+  <h2 class="st reveal">Что снимает<br>лишние страхи.</h2>
+  <div class="guar">
+    <div class="guar-item glass reveal">
+      <div class="guar-n">1</div>
+      <div><h3>Цена до старта</h3><p>Называю стоимость и срок до начала работы. Без сюрпризов потом.</p></div>
+    </div>
+    <div class="guar-item glass reveal">
+      <div class="guar-n">2</div>
+      <div><h3>Правки по структуре</h3><p>Согласовываем каркас. Правки в рамках договорённого входят.</p></div>
+    </div>
+    <div class="guar-item glass reveal">
+      <div class="guar-n">3</div>
+      <div><h3>Тексты можно менять</h3><p>Цены, услуги, фото — потом меняются. Не «замуровали навсегда».</p></div>
+    </div>
+    <div class="guar-item glass reveal">
+      <div class="guar-n">4</div>
+      <div><h3>Ответ в течение дня</h3><p>Пишете — обычно отвечаю в тот же день. Без «перезвоним никогда».</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
 <section id="services">
-  <div class="kicker reveal">Услуги</div>
-  <h2 class="st reveal">Формат под задачу.</h2>
+  <div class="kicker reveal">Форматы</div>
+  <h2 class="st reveal">Под задачу,<br>а не «сайт вообще».</h2>
   <article class="svc glass reveal">
     <div class="sn">01</div>
-    <div><h3>Сайт-визитка</h3><div class="sm">Кафе, салоны, специалисты</div>
-    <p class="sd"><strong>Проблема:</strong> нет нормальной страницы.<br><strong>Решение:</strong> одна сильная с WhatsApp.</p>
-    <div class="tags"><span>Адаптив</span><span>Цены</span><span>WhatsApp</span></div></div>
+    <div>
+      <h3>Сайт-визитка</h3>
+      <div class="sm">Кафе · салоны · специалисты</div>
+      <p class="sd"><strong>Проблема:</strong> нет нормальной страницы.<br><strong>Результат:</strong> одна сильная страница + WhatsApp. 7–10 дней.</p>
+      <div class="tags"><span>Адаптив</span><span>Цены</span><span>WhatsApp</span></div>
+    </div>
     <div class="sp"><strong>от 15 000 ₽</strong><a href="https://wa.me/79696656414?text=Визитка" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
   </article>
   <article class="svc glass reveal">
     <div class="sn">02</div>
-    <div><h3>Лендинг</h3><div class="sm">Одно действие</div>
-    <p class="sd"><strong>Проблема:</strong> слабый призыв.<br><strong>Решение:</strong> страница вокруг цели.</p>
-    <div class="tags"><span>Hero</span><span>УТП</span><span>Форма</span></div></div>
+    <div>
+      <h3>Лендинг</h3>
+      <div class="sm">Одно действие — запись / заявка</div>
+      <p class="sd"><strong>Проблема:</strong> слабый призыв.<br><strong>Результат:</strong> страница вокруг одной цели. 8–12 дней.</p>
+      <div class="tags"><span>Hero</span><span>УТП</span><span>Форма</span></div>
+    </div>
     <div class="sp"><strong>от 25 000 ₽</strong><a href="https://wa.me/79696656414?text=Лендинг" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
   </article>
   <article class="svc glass reveal">
     <div class="sn">03</div>
-    <div><h3>Сайт для бизнеса</h3><div class="sm">Несколько страниц</div>
-    <p class="sd"><strong>Проблема:</strong> одной мало.<br><strong>Решение:</strong> структура и навигация.</p>
-    <div class="tags"><span>Страницы</span><span>Галерея</span><span>SEO</span></div></div>
+    <div>
+      <h3>Сайт для бизнеса</h3>
+      <div class="sm">Несколько страниц</div>
+      <p class="sd"><strong>Проблема:</strong> одной страницы мало.<br><strong>Результат:</strong> структура, услуги, галерея. 10–14 дней.</p>
+      <div class="tags"><span>Страницы</span><span>Галерея</span><span>SEO</span></div>
+    </div>
     <div class="sp"><strong>от 30 000 ₽</strong><a href="https://wa.me/79696656414?text=Сайт для бизнеса" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
   </article>
   <article class="svc glass reveal">
     <div class="sn">04</div>
-    <div><h3>Редизайн</h3><div class="sm">Сайт устарел</div>
-    <p class="sd"><strong>Проблема:</strong> стыдно показывать.<br><strong>Решение:</strong> новый визуал + mobile.</p>
-    <div class="tags"><span>Дизайн</span><span>Mobile</span></div></div>
+    <div>
+      <h3>Редизайн</h3>
+      <div class="sm">Сайт устарел</div>
+      <p class="sd"><strong>Проблема:</strong> стыдно показывать.<br><strong>Результат:</strong> новый визуал + mobile. 7–12 дней.</p>
+      <div class="tags"><span>Дизайн</span><span>Mobile</span></div>
+    </div>
     <div class="sp"><strong>от 20 000 ₽</strong><a href="https://wa.me/79696656414?text=Редизайн" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
   </article>
 </section>
 
+<!-- PRICING -->
 <section id="pricing">
   <div class="kicker reveal">Цены</div>
-  <h2 class="st reveal">Прозрачно.</h2>
+  <h2 class="st reveal">Прозрачно.<br>До старта.</h2>
+  <p class="sl reveal">Точная сумма — после короткого обсуждения. Фиксируем до начала работы.</p>
   <div class="prg">
     <div class="pr glass reveal">
-      <div class="pn">Start</div><div class="pa">от 15 000 <span>₽</span></div>
-      <div class="pf">Простое представительство</div>
-      <ul class="pl"><li>Одна страница</li><li>Услуги, цены</li><li>Mobile</li><li>WhatsApp</li><li>SEO база</li></ul>
-      <a href="https://wa.me/79696656414?text=START" class="btn btn-g" target="_blank" rel="noopener">START</a>
+      <div class="pn">Start</div>
+      <div class="pa">от 15 000 <span>₽</span></div>
+      <div class="pf">Для тех, кому нужна простая визитка</div>
+      <ul class="pl">
+        <li>Одна страница</li>
+        <li>Услуги, цены, контакты</li>
+        <li>Мобильная версия</li>
+        <li>WhatsApp</li>
+        <li>Базовая SEO</li>
+        <li>Срок ~7–10 дней</li>
+      </ul>
+      <a href="https://wa.me/79696656414?text=Тариф START" class="btn btn-g" target="_blank" rel="noopener">START</a>
     </div>
     <div class="pr glass hot reveal">
       <div class="pb">Чаще берут</div>
-      <div class="pn">Business</div><div class="pa">от 30 000 <span>₽</span></div>
-      <div class="pf">Полноценный бизнес</div>
-      <ul class="pl"><li>Несколько страниц</li><li>Структура</li><li>Галерея</li><li>Формы</li><li>SEO</li></ul>
-      <a href="https://wa.me/79696656414?text=BUSINESS" class="btn btn-p" target="_blank" rel="noopener">BUSINESS</a>
+      <div class="pn">Business</div>
+      <div class="pa">от 30 000 <span>₽</span></div>
+      <div class="pf">Для бизнеса с несколькими услугами</div>
+      <ul class="pl">
+        <li>Несколько страниц / сильный лендинг</li>
+        <li>Структура под цель</li>
+        <li>Галерея</li>
+        <li>Формы + WhatsApp</li>
+        <li>Адаптив + SEO</li>
+        <li>Срок ~10–14 дней</li>
+      </ul>
+      <a href="https://wa.me/79696656414?text=Тариф BUSINESS" class="btn btn-p" target="_blank" rel="noopener">BUSINESS</a>
     </div>
     <div class="pr glass reveal">
-      <div class="pn">Premium</div><div class="pa">от 50 000 <span>₽</span></div>
-      <div class="pf">Сложный визуал + 3D</div>
-      <ul class="pl"><li>Индивидуальный стиль</li><li>Анимации</li><li>3D</li><li>Приоритет</li><li>Глубокая проработка</li></ul>
-      <a href="https://wa.me/79696656414?text=PREMIUM" class="btn btn-g" target="_blank" rel="noopener">PREMIUM</a>
+      <div class="pn">Premium</div>
+      <div class="pa">от 50 000 <span>₽</span></div>
+      <div class="pf">Сложный визуал, анимации, 3D</div>
+      <ul class="pl">
+        <li>Индивидуальный стиль</li>
+        <li>Анимации и 3D</li>
+        <li>Сложные сценарии</li>
+        <li>Приоритет</li>
+        <li>Глубокая проработка</li>
+        <li>Срок по задаче</li>
+      </ul>
+      <a href="https://wa.me/79696656414?text=Тариф PREMIUM" class="btn btn-g" target="_blank" rel="noopener">PREMIUM</a>
     </div>
   </div>
 </section>
 
+<!-- WORK -->
 <section id="work">
   <div class="kicker reveal">Работы</div>
   <h2 class="st reveal">Реальные проекты.</h2>
   <div class="wg">
     <article class="wk glass reveal">
       <div class="wp"><span>BARBERSHOP</span></div>
-      <div class="wb"><div class="wt">Лендинг</div><h3>ЦЕХЪ</h3><p>Услуги, мастера, запись.</p>
-      <a href="https://rasulovking2577.github.io/BARBERSHOP/" class="wl" target="_blank" rel="noopener">Открыть ↗</a></div>
+      <div class="wb">
+        <div class="wt">Лендинг · Барбершоп</div>
+        <h3>ЦЕХЪ</h3>
+        <p>Услуги, мастера, запись. Клиент сразу видит, куда писать.</p>
+        <a href="https://rasulovking2577.github.io/BARBERSHOP/" class="wl" target="_blank" rel="noopener">Открыть ↗</a>
+      </div>
     </article>
     <article class="wk glass reveal">
       <div class="wp"><span>ARAGVI</span></div>
-      <div class="wb"><div class="wt">Лендинг</div><h3>ARAGVI</h3><p>Процесс и доверие.</p>
-      <a href="https://rasulovking2577.github.io/Aragvi/" class="wl" target="_blank" rel="noopener">Открыть ↗</a></div>
+      <div class="wb">
+        <div class="wt">Лендинг</div>
+        <h3>ARAGVI</h3>
+        <p>Процесс и доверие. Чистая структура под действие.</p>
+        <a href="https://rasulovking2577.github.io/Aragvi/" class="wl" target="_blank" rel="noopener">Открыть ↗</a>
+      </div>
     </article>
     <article class="wk glass reveal">
       <div class="wp"><span>1САЙТ</span></div>
-      <div class="wb"><div class="wt">Портфолио</div><h3>Пред. версия</h3><p>Сайт студии.</p>
-      <a href="https://rasulovking2577.github.io/website/" class="wl" target="_blank" rel="noopener">Открыть ↗</a></div>
+      <div class="wb">
+        <div class="wt">Портфолио</div>
+        <h3>Предыдущая версия</h3>
+        <p>Сайт студии. Показывает подход к дизайну.</p>
+        <a href="https://rasulovking2577.github.io/website/" class="wl" target="_blank" rel="noopener">Открыть ↗</a>
+      </div>
     </article>
     <article class="wk wn glass reveal">
-      <div><h3>Следующий — ваш</h3>
-      <p style="color:var(--muted);margin:6px 0 14px;font-size:.85rem">Расскажите о бизнесе</p>
-      <a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Заказать ↗</a></div>
+      <div>
+        <h3>Следующий — ваш</h3>
+        <p style="color:var(--muted);margin:6px 0 14px;font-size:.84rem">Напишите — скажу формат и цену</p>
+        <a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Написать ↗</a>
+      </div>
     </article>
   </div>
 </section>
 
+<!-- TRUST -->
 <section>
   <div class="trust glass reveal">
     <h3>Не обещаем магию.</h3>
-    <p>Не гарантируем топ в Google. Не обещаем продажи от сайта.</p>
+    <p>Не гарантируем топ в Google. Не обещаем продажи от одного сайта.</p>
     <p>Делаем инструмент: услуги, цены, фото и быстрый контакт. Честно.</p>
   </div>
 </section>
 
-<section>
-  <div class="kicker reveal">Почему 1САЙТ</div>
-  <h2 class="st reveal">Прямой разговор.</h2>
-  <div class="yg">
-    <div class="yi glass reveal"><div class="yn">01</div><div><h3>Без шаблонов</h3><p>Под ваш бизнес.</p></div></div>
-    <div class="yi glass reveal"><div class="yn">02</div><div><h3>Mobile-first</h3><p>Сначала телефон.</p></div></div>
-    <div class="yi glass reveal"><div class="yn">03</div><div><h3>Понятная структура</h3><p>Всё видно сразу.</p></div></div>
-    <div class="yi glass reveal"><div class="yn">04</div><div><h3>Прозрачная цена</h3><p>Ориентиры открыты.</p></div></div>
-    <div class="yi glass reveal"><div class="yn">05</div><div><h3>Прямое общение</h3><p>Без менеджеров.</p></div></div>
-  </div>
-</section>
-
+<!-- PROCESS -->
 <section id="process">
   <div class="kicker reveal">Процесс</div>
-  <h2 class="st reveal">От сообщения до ссылки.</h2>
+  <h2 class="st reveal">4 шага<br>до рабочей ссылки.</h2>
   <div class="psg">
-    <div class="stp glass reveal"><h3>Бриф</h3><p>Вы рассказываете.</p></div>
-    <div class="stp glass reveal"><h3>Структура</h3><p>Предлагаю каркас.</p></div>
-    <div class="stp glass reveal"><h3>Дизайн</h3><p>Визуал и экраны.</p></div>
-    <div class="stp glass reveal"><h3>Код</h3><p>Адаптив, WhatsApp.</p></div>
-    <div class="stp glass reveal"><h3>Тест</h3><p>Телефоны и ПК.</p></div>
-    <div class="stp glass reveal"><h3>Запуск</h3><p>Готовая ссылка.</p></div>
+    <div class="stp glass reveal"><h3>Сообщение</h3><p>Вы пишете о бизнесе</p><div class="t">~1 день</div></div>
+    <div class="stp glass reveal"><h3>Структура + цена</h3><p>Предлагаю формат и сумму</p><div class="t">1–2 дня</div></div>
+    <div class="stp glass reveal"><h3>Дизайн + код</h3><p>Собираю и проверяю</p><div class="t">5–12 дней</div></div>
+    <div class="stp glass reveal"><h3>Запуск</h3><p>Вы получаете ссылку</p><div class="t">готово</div></div>
   </div>
-  <p class="pnote reveal">От вас не нужно разбираться в коде.</p>
+  <p class="pnote reveal">От вас не нужно разбираться в коде. Описываете бизнес — остальное делаю я.</p>
 </section>
 
+<!-- AFTER MESSAGE -->
 <section>
   <div class="kicker reveal">Первый шаг</div>
-  <h2 class="st reveal">После сообщения?</h2>
+  <h2 class="st reveal">Что будет после<br>сообщения?</h2>
   <div class="rl reveal">
-    <div class="ri"><div class="rn">1</div><p>Вы рассказываете о бизнесе.</p></div>
-    <div class="ri"><div class="rn">2</div><p>Я задаю вопросы.</p></div>
-    <div class="ri"><div class="rn">3</div><p>Предлагаю структуру.</p></div>
-    <div class="ri"><div class="rn">4</div><p>Называю стоимость.</p></div>
-    <div class="ri"><div class="rn">5</div><p>Вы решаете. Без обязательств.</p></div>
+    <div class="ri"><div class="rn">1</div><p>Вы пишете, чем занимаетесь и что нужно.</p></div>
+    <div class="ri"><div class="rn">2</div><p>Я задаю 3–5 коротких вопросов.</p></div>
+    <div class="ri"><div class="rn">3</div><p>Предлагаю формат и называю цену.</p></div>
+    <div class="ri"><div class="rn">4</div><p>Вы решаете. Без обязательств и давления.</p></div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section id="faq">
   <div class="kicker reveal">FAQ</div>
   <h2 class="st reveal">Короткие ответы.</h2>
   <div class="fl">
-    <div class="fi glass reveal"><button class="fq">Сколько стоит?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">От 15 000 ₽. Точная сумма после обсуждения.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Сколько времени?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Простой сайт — от нескольких дней.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Одна страница?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Часто хватает.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">На телефоне?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Mobile обязателен.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Домен?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Покупаете вы. Это ваше.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Нет фото?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Можно стартовать с того, что есть.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">WhatsApp?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Стандарт.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">SEO?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Базовая подготовка входит.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">Сколько стоит?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">От 15 000 ₽. Точную сумму называю до старта, после короткого обсуждения.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">Сколько времени?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Обычно 7–14 дней. Срок фиксируем заранее.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">Можно одну страницу?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Для многих бизнесов одной сильной страницы достаточно.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">На телефоне?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Mobile-first — обязательная часть.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">Домен и хостинг?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Покупаете вы. Это ваша собственность. Могу подсказать.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">Нет хороших фото?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Можно стартовать с того, что есть, и заменить позже.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">Потом изменить?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Тексты, цены, фото — можно менять.</div></div></div>
+    <div class="fi glass reveal"><button class="fq">WhatsApp?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Кнопки WhatsApp / Telegram — стандарт.</div></div></div>
   </div>
 </section>
 
+<!-- FINAL -->
 <section class="final">
   <div class="final-bg"></div>
-  <h2 class="reveal">Расскажите,<br>что нужно<br>бизнесу.</h2>
-  <p class="reveal">Напишите, чем занимаетесь и какой сайт нужен.</p>
-  <a href="https://wa.me/79696656414" class="btn btn-p reveal" target="_blank" rel="noopener">Заказать сайт ↗</a>
+  <h2 class="reveal">Напишите —<br>скажу формат<br>и цену за 1 день.</h2>
+  <p class="reveal">Чем занимаетесь и какой сайт нужен. Без обязательств.</p>
+  <a href="https://wa.me/79696656414" class="btn btn-p reveal" target="_blank" rel="noopener">Написать в WhatsApp ↗</a>
   <div class="flinks reveal">
     <a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a>
@@ -474,12 +577,12 @@ section{padding:80px 0;position:relative;z-index:1}
 </section>
 
 <footer class="footer">
-  <div>© 1САЙТ</div>
+  <div>© 1САЙТ · Сайты, на которых пишут в WhatsApp</div>
   <div><a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a></div>
 </footer>
 </main>
 
-<div class="sticky"><a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Заказать сайт ↗</a></div>
+<div class="sticky"><a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Написать в WhatsApp ↗</a></div>
 
 <script>
 const burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu');
@@ -489,9 +592,8 @@ document.querySelectorAll('.fq').forEach(b=>b.addEventListener('click',()=>{cons
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// 3D
 (function(){
-  if(!window.THREE){console.warn('THREE missing');return}
+  if(!window.THREE)return;
   const canvas=document.getElementById('c3d'),box=document.getElementById('stage');
   if(!canvas||!box)return;
   const ren=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
@@ -500,47 +602,24 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   const cam=new THREE.PerspectiveCamera(36,1,.1,100);
   cam.position.set(0,0,5);
   const g=new THREE.Group();scene.add(g);
-
-  const mesh=new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1.35,3),
-    new THREE.MeshPhysicalMaterial({color:0xc8ff52,roughness:.12,metalness:.4,emissive:0x1a3a10,emissiveIntensity:.7,transparent:true,opacity:.9,clearcoat:1,clearcoatRoughness:.08})
-  );
+  const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1.35,3),new THREE.MeshPhysicalMaterial({color:0xc8ff52,roughness:.12,metalness:.4,emissive:0x1a3a10,emissiveIntensity:.7,transparent:true,opacity:.9,clearcoat:1,clearcoatRoughness:.08}));
   g.add(mesh);
   g.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.5,2),new THREE.MeshBasicMaterial({color:0xe2c56e,wireframe:true,transparent:true,opacity:.2})));
   const r1=new THREE.Mesh(new THREE.TorusGeometry(1.85,.014,10,80),new THREE.MeshBasicMaterial({color:0xc8ff52,transparent:true,opacity:.5}));
   r1.rotation.x=Math.PI/2.2;g.add(r1);
   const r2=new THREE.Mesh(new THREE.TorusGeometry(2.2,.009,10,80),new THREE.MeshBasicMaterial({color:0xe2c56e,transparent:true,opacity:.22}));
   r2.rotation.x=Math.PI/2.6;r2.rotation.y=.4;g.add(r2);
-
   const parts=new THREE.Group();scene.add(parts);
-  for(let i=0;i<80;i++){
-    const p=new THREE.Mesh(new THREE.SphereGeometry(.01+Math.random()*.012,5,5),new THREE.MeshBasicMaterial({color:i%3?0x9ae02e:0xe2c56e,transparent:true,opacity:.65}));
-    p.position.set((Math.random()-.5)*6,(Math.random()-.5)*5,(Math.random()-.5)*3.5);
-    parts.add(p);
-  }
+  for(let i=0;i<80;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.01+Math.random()*.012,5,5),new THREE.MeshBasicMaterial({color:i%3?0x9ae02e:0xe2c56e,transparent:true,opacity:.65}));p.position.set((Math.random()-.5)*6,(Math.random()-.5)*5,(Math.random()-.5)*3.5);parts.add(p)}
   const pl=new THREE.PointLight(0xc8ff52,6,14);pl.position.set(2,2.2,3.5);scene.add(pl);
   scene.add(new THREE.AmbientLight(0x3a5a40,1.3));
-  // extra rim light
   const rim=new THREE.PointLight(0xe2c56e,2,10);rim.position.set(-2,-1,2);scene.add(rim);
-
   let mx=0,my=0,tx=0,ty=0,t=0;
   function resize(){const r=box.getBoundingClientRect();ren.setSize(r.width,r.height,false);cam.aspect=r.width/r.height;cam.updateProjectionMatrix()}
   resize();addEventListener('resize',resize);
   box.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*2;ty=((e.clientY-r.top)/r.height-.5)*1.4});
   box.addEventListener('pointerleave',()=>{tx=0;ty=0});
-
-  function tick(){
-    requestAnimationFrame(tick);t+=.01;
-    mx+=(tx-mx)*.07;my+=(ty-my)*.07;
-    const s=1+Math.sin(t*1.3)*.05;
-    mesh.scale.setScalar(s);
-    g.rotation.y+=.006;g.rotation.x+=(-my*.5-g.rotation.x)*.05;g.rotation.z+=(-mx*.2-g.rotation.z)*.05;
-    r1.rotation.z+=.012;r2.rotation.z-=.015;
-    parts.rotation.y+=.0018;
-    mesh.material.emissiveIntensity=.55+Math.sin(t*2.2)*.25;
-    pl.intensity=5+Math.sin(t*1.5)*.8;
-    ren.render(scene,cam);
-  }
+  function tick(){requestAnimationFrame(tick);t+=.01;mx+=(tx-mx)*.07;my+=(ty-my)*.07;mesh.scale.setScalar(1+Math.sin(t*1.3)*.05);g.rotation.y+=.006;g.rotation.x+=(-my*.5-g.rotation.x)*.05;g.rotation.z+=(-mx*.2-g.rotation.z)*.05;r1.rotation.z+=.012;r2.rotation.z-=.015;parts.rotation.y+=.0018;mesh.material.emissiveIntensity=.55+Math.sin(t*2.2)*.25;pl.intensity=5+Math.sin(t*1.5)*.8;ren.render(scene,cam)}
   tick();
 })();
 </script>
