@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rasulovking2577.github.io/1site/sitemap.xml
