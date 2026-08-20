@@ -102,36 +102,46 @@
 .scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:200;background:linear-gradient(90deg,transparent,var(--g),transparent);box-shadow:0 0 12px rgba(198,255,77,.5);pointer-events:none}
 
 .orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:#010302}
-/* moss base — layered organic greens */
-.orbs::before{
-  content:"";position:absolute;inset:-30%;
+/* REAL moss photo layer */
+.orbs .moss-photo{
+  position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 50% 42% at 12% 92%,rgba(35,75,30,.95),transparent 52%),
-    radial-gradient(ellipse 48% 38% at 88% 88%,rgba(25,60,35,.9),transparent 50%),
-    radial-gradient(ellipse 55% 35% at 50% 105%,rgba(15,40,20,1),transparent 48%),
-    radial-gradient(ellipse 40% 30% at 5% 55%,rgba(50,95,40,.55),transparent 50%),
-    radial-gradient(ellipse 35% 28% at 95% 40%,rgba(70,120,50,.4),transparent 48%),
-    radial-gradient(ellipse 30% 22% at 30% 75%,rgba(90,150,55,.25),transparent 45%),
-    radial-gradient(ellipse 28% 20% at 70% 70%,rgba(110,170,60,.2),transparent 45%),
-    radial-gradient(ellipse 80% 50% at 50% -5%,rgba(4,10,6,.5),transparent 55%);
-  transform:translate3d(0,var(--par-y,0),0);
+    linear-gradient(180deg,rgba(2,4,3,.55) 0%,rgba(2,4,3,.25) 40%,rgba(2,4,3,.15) 60%,rgba(2,4,3,.75) 100%),
+    linear-gradient(90deg,rgba(2,4,3,.4),transparent 30%,transparent 70%,rgba(2,4,3,.4)),
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=60") center bottom / cover no-repeat;
+  opacity:.85;
+  transform:translate3d(0,calc(var(--par-y,0px) * 0.4),0);
   will-change:transform;
+  filter:saturate(1.15) brightness(.55) contrast(1.1);
 }
-/* vignette + soft light */
+/* dense moss clumps on top of photo */
+.orbs::before{
+  content:"";position:absolute;left:-10%;right:-10%;bottom:-5%;height:55%;
+  background:
+    radial-gradient(ellipse 28% 40% at 8% 80%,rgba(40,100,35,.95) 0%,transparent 70%),
+    radial-gradient(ellipse 32% 45% at 22% 90%,rgba(55,120,40,.9) 0%,transparent 70%),
+    radial-gradient(ellipse 30% 42% at 40% 95%,rgba(30,80,30,.95) 0%,transparent 70%),
+    radial-gradient(ellipse 34% 48% at 58% 88%,rgba(60,130,45,.85) 0%,transparent 70%),
+    radial-gradient(ellipse 30% 40% at 75% 92%,rgba(35,90,35,.9) 0%,transparent 70%),
+    radial-gradient(ellipse 36% 50% at 92% 85%,rgba(50,110,40,.9) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 30% at 50% 100%,rgba(20,55,25,1) 0%,transparent 70%);
+  filter:blur(8px);
+  opacity:.9;
+  transform:translate3d(0,var(--par-y,0),0);
+}
 .orbs::after{
   content:"";position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 90% 70% at 50% 30%,transparent 20%,rgba(0,0,0,.55) 100%),
-    radial-gradient(circle at 25% 65%,rgba(140,210,70,.12),transparent 28%),
-    radial-gradient(circle at 78% 78%,rgba(100,170,55,.1),transparent 32%),
-    radial-gradient(circle at 50% 95%,rgba(160,220,80,.08),transparent 40%);
-  animation:bgPulse 14s ease-in-out infinite;
+    radial-gradient(ellipse 100% 80% at 50% 20%,rgba(0,0,0,.35),transparent 55%),
+    radial-gradient(ellipse 90% 60% at 50% 100%,rgba(0,0,0,.5),transparent 50%),
+    radial-gradient(circle at 30% 70%,rgba(160,220,80,.1),transparent 25%),
+    radial-gradient(circle at 70% 75%,rgba(120,190,60,.08),transparent 28%);
+  pointer-events:none;
 }
-.orb{position:absolute;border-radius:50%;filter:blur(72px);opacity:.55;animation:floatOrb 20s ease-in-out infinite;will-change:transform}
-.orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(110,190,55,.5),transparent 68%);top:-20%;left:-14%}
-.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(35,95,50,.55),transparent 68%);bottom:-14%;right:-16%;animation-delay:-8s}
-.orb-3{width:380px;height:380px;background:radial-gradient(circle,rgba(198,255,77,.25),transparent 68%);top:32%;left:38%;animation-delay:-13s;opacity:.35}
-/* floating dust particles */
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;animation:floatOrb 20s ease-in-out infinite;will-change:transform}
+.orb-1{width:520px;height:520px;background:radial-gradient(circle,rgba(100,180,50,.55),transparent 68%);top:-18%;left:-12%}
+.orb-2{width:440px;height:440px;background:radial-gradient(circle,rgba(40,100,55,.5),transparent 68%);bottom:5%;right:-14%;animation-delay:-8s}
+.orb-3{width:320px;height:320px;background:radial-gradient(circle,rgba(200,255,82,.22),transparent 68%);top:30%;left:40%;animation-delay:-13s;opacity:.3}
 .dust{position:absolute;inset:0;overflow:hidden}
 .dust i{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(200,255,82,.35);box-shadow:0 0 5px rgba(200,255,82,.25);animation:dustFloat linear infinite;opacity:0}
 .dust i:nth-child(1){left:12%;bottom:0;animation-duration:14s;animation-delay:0s}
@@ -143,8 +153,9 @@
 .dust i:nth-child(7){left:8%;bottom:0;animation-duration:19s;animation-delay:6s}
 .dust i:nth-child(8){left:55%;bottom:0;animation-duration:13s;animation-delay:2.5s}
 @keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(28px,-36px) scale(1.07)}}
-@keyframes bgPulse{0%,100%{opacity:.75}50%{opacity:1}}
-@keyframes dustFloat{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.7}90%{opacity:.4}100%{transform:translateY(-100vh) translateX(20px);opacity:0}}
+@keyframes dustFloat{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.55}90%{opacity:.3}100%{transform:translateY(-100vh) translateX(20px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.orb,.dust i{animation:none!important}}
+10%{opacity:.7}90%{opacity:.4}100%{transform:translateY(-100vh) translateX(20px);opacity:0}}
 @media(prefers-reduced-motion:reduce){.orb,.dust i,.orbs::after{animation:none!important}}
 /* section ambient tints */
 section{position:relative}
@@ -423,6 +434,7 @@ section{padding:var(--space-section) 0;position:relative}
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="orbs" aria-hidden="true" id="orbs">
+  <div class="moss-photo"></div>
   <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
   <div class="dust"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 </div>
