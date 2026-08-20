@@ -2,485 +2,537 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>1САЙТ — Сайты для бизнеса | от 15 000 ₽ · Расул</title>
-<meta name="description" content="Сайты для кафе, салонов, барбершопов. Услуги и цены на виду — клиент пишет в WhatsApp. От 15 000 ₽. 7–14 дней. Махачкала.">
-<meta name="robots" content="index, follow">
-<meta name="author" content="1САЙТ · Расул">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1САЙТ — создание сайтов для бизнеса</title>
+<meta name="description" content="Делаю сайты для малого бизнеса: кафе, салоны, барбершопы. От 15 000 ₽. WhatsApp, цены, mobile. Махачкала.">
 <link rel="canonical" href="https://rasulovking2577.github.io/1site/">
-<meta name="theme-color" content="#070a08">
-<meta property="og:title" content="1САЙТ — Сайты для бизнеса">
-<meta property="og:description" content="Понятный сайт: услуги, цены, WhatsApp. От 15 000 ₽.">
-<meta property="og:type" content="website">
+<meta name="theme-color" content="#0c0c0c">
+<meta property="og:title" content="1САЙТ">
+<meta property="og:description" content="Сайт, после которого клиент пишет вам. От 15 000 ₽.">
 <meta property="og:url" content="https://rasulovking2577.github.io/1site/">
-<meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="1САЙТ">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1</text></svg>">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%230c0c0c' width='32' height='32'/><text x='4' y='24' fill='%23d4ff4a' font-size='20' font-family='sans-serif' font-weight='700'>1</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://image.thum.io" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"1САЙТ","url":"https://rasulovking2577.github.io/1site/","description":"Создание сайтов для малого бизнеса","telephone":"+79696656414","email":"rasulov2588@gmail.com","areaServed":["Махачкала","Дагестан","Россия"],"priceRange":"от 15000 RUB"}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#070a08;
-  --text:#f2f5f1;
-  --muted:#8b968e;
-  --dim:#5c665e;
-  --g:#c8ff52;
-  --gdim:rgba(200,255,82,.12);
-  --line:rgba(200,230,160,.14);
-  --stroke:rgba(200,230,160,.22);
-  --card:rgba(14,20,16,.75);
-  --sans:"Manrope",system-ui,sans-serif;
-  --serif:"Instrument Serif",Georgia,serif;
-  --ease:cubic-bezier(.22,1,.36,1);
-  --r:18px;
-  --pill:100px;
+  --bg:#0c0c0c;
+  --fg:#ececec;
+  --soft:#9a9a9a;
+  --line:#222;
+  --accent:#d4ff4a;
+  --accent-ink:#0c0c0c;
+  --card:#141414;
+  --font:"DM Sans",system-ui,sans-serif;
+  --display:"Syne",system-ui,sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
-  font-family:var(--sans);background:var(--bg);color:var(--text);
-  line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%,rgba(70,120,40,.16),transparent),
-    radial-gradient(ellipse 60% 40% at 100% 50%,rgba(40,80,40,.12),transparent),
-    radial-gradient(ellipse 50% 35% at 0% 80%,rgba(50,90,40,.14),transparent);
-  background-attachment:fixed;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--fg);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
 }
-::selection{background:rgba(200,255,82,.28)}
 a{color:inherit;text-decoration:none}
-button{font:inherit;border:none;background:none;color:inherit;cursor:pointer}
+button{font:inherit;background:none;border:none;color:inherit;cursor:pointer}
 img{max-width:100%;display:block}
-.wrap{width:min(1080px,calc(100% - 36px));margin-inline:auto}
-@media(max-width:480px){.wrap{width:calc(100% - 28px)}}
+.page{width:min(920px, calc(100% - 40px));margin:0 auto}
+@media(max-width:480px){.page{width:calc(100% - 28px)}}
 
-/* NAV */
-.nav{
-  position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:100;
-  width:min(1040px,calc(100% - 20px));height:54px;
+/* top */
+.top{
+  position:sticky;top:0;z-index:50;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 8px 0 18px;border-radius:var(--pill);
-  background:rgba(10,14,12,.72);backdrop-filter:blur(20px);
-  border:1px solid var(--stroke);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 30px rgba(0,0,0,.35);
+  padding:14px 0;
+  background:rgba(12,12,12,.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;
 }
-.logo{font-weight:800;font-size:.95rem;letter-spacing:.02em}
-.logo span{color:var(--g)}
-.nav-links{display:flex;gap:22px;font-size:.78rem;color:var(--muted)}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{
-  font-size:.78rem;font-weight:700;padding:10px 16px;border-radius:var(--pill);
-  background:linear-gradient(180deg,#e2ff7a,#b8f03c);color:#0a1208;
-  box-shadow:0 0 24px rgba(200,255,82,.35);
+.top.scrolled{border-bottom-color:var(--line)}
+.brand{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:-.02em}
+.brand i{color:var(--accent);font-style:normal}
+.top nav{display:flex;gap:20px;font-size:.85rem;color:var(--soft)}
+.top nav a:hover{color:var(--fg)}
+.top .cta{
+  font-size:.8rem;font-weight:600;
+  background:var(--accent);color:var(--accent-ink);
+  padding:10px 14px;border-radius:6px;
 }
-.burger{display:none;width:44px;height:44px;place-items:center}
-.burger span,.burger span::before,.burger span::after{
-  display:block;width:18px;height:1.5px;background:var(--text);position:relative
+@media(max-width:720px){
+  .top nav{display:none}
 }
-.burger span::before,.burger span::after{content:"";position:absolute;left:0}
-.burger span::before{top:-6px}.burger span::after{top:6px}
-@media(max-width:820px){.nav-links{display:none}.burger{display:grid}}
-.mnav{
-  position:fixed;inset:0;z-index:99;background:rgba(7,10,8,.96);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
-  opacity:0;pointer-events:none;transition:opacity .3s
-}
-.mnav.open{opacity:1;pointer-events:auto}
-.mnav a{font-size:1.35rem;font-weight:600}
 
-/* BTN */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:50px;padding:0 24px;border-radius:var(--pill);font-weight:700;font-size:.9rem;
-  transition:transform .2s var(--ease),box-shadow .2s
+/* hero */
+.hero{padding:72px 0 64px}
+.hero .tag{
+  display:inline-block;
+  font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:20px;
 }
-.btn-p{
-  background:linear-gradient(180deg,#e8ff8a,#c8ff52 45%,#a8e030);
-  color:#0a1208;border:none;
-  box-shadow:0 0 0 1px rgba(255,255,255,.25),0 0 40px rgba(200,255,82,.4),0 8px 24px rgba(0,0,0,.35)
-}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.3),0 0 52px rgba(200,255,82,.5),0 12px 28px rgba(0,0,0,.4)}
-.btn-g{
-  background:rgba(255,255,255,.06);border:1px solid var(--stroke);color:var(--text);
-  backdrop-filter:blur(12px)
-}
-.btn-g:hover{background:rgba(255,255,255,.1);border-color:rgba(200,255,82,.35)}
-@media(max-width:480px){.hero-actions .btn{width:100%}}
-
-/* HERO */
-.hero{padding:110px 0 56px}
-.eyebrow{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
 .hero h1{
-  font-family:var(--serif);font-weight:400;font-size:clamp(2.5rem,8vw,4.4rem);
-  line-height:.95;letter-spacing:-.03em;margin-bottom:16px;max-width:16ch
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(2.4rem, 7.5vw, 3.8rem);
+  line-height:1.05;
+  letter-spacing:-.04em;
+  margin-bottom:18px;
+  max-width:14ch;
 }
-.hero h1 em{font-style:italic;color:var(--g)}
-.hero-sub{font-size:1.02rem;color:var(--muted);max-width:36ch;margin-bottom:18px}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.meta span{
-  font-size:.78rem;padding:8px 12px;border-radius:var(--pill);
-  background:var(--card);border:1px solid var(--stroke);color:var(--muted)
+.hero h1 span{color:var(--accent)}
+.hero .lead{
+  font-size:1.1rem;color:var(--soft);
+  max-width:32ch;margin-bottom:28px;
 }
-.meta b{color:var(--text);font-weight:700}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 20px;
+  font-weight:600;font-size:.92rem;border-radius:6px;
+  transition:transform .15s, opacity .15s;
+}
+.btn:active{transform:scale(.98)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{opacity:.92}
+.btn-ghost{border:1px solid var(--line);color:var(--fg)}
+.btn-ghost:hover{border-color:#444}
+.facts{
+  display:flex;flex-wrap:wrap;gap:8px 20px;
+  margin-top:28px;padding-top:24px;border-top:1px solid var(--line);
+  font-size:.88rem;color:var(--soft);
+}
+.facts b{color:var(--fg);font-weight:600}
 
-/* SECTIONS */
-section{padding:64px 0}
-.sec-n{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
-.sec-t{font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:10px}
-.sec-t em{font-style:italic;color:var(--g)}
-.sec-l{color:var(--muted);max-width:42ch;margin-bottom:28px;font-size:.98rem}
-
-.card{
-  background:var(--card);border:1px solid var(--stroke);border-radius:var(--r);
-  backdrop-filter:blur(20px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 32px rgba(0,0,0,.3)
+/* blocks */
+.block{padding:56px 0;border-top:1px solid var(--line)}
+.block h2{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(1.6rem, 4vw, 2.1rem);
+  letter-spacing:-.03em;
+  margin-bottom:8px;
 }
+.block .sub{color:var(--soft);margin-bottom:28px;max-width:40ch}
 
-/* PROBLEM */
-.prob{display:grid;gap:10px}
-@media(min-width:700px){.prob{grid-template-columns:repeat(3,1fr)}}
-.prob article{padding:20px 18px}
-.prob h3{font-size:.95rem;margin-bottom:6px}
-.prob p{font-size:.88rem;color:var(--muted)}
-.sol{margin-top:14px;padding:16px 18px;border-left:3px solid var(--g);border-radius:0 var(--r) var(--r) 0;background:var(--card);border:1px solid var(--stroke);border-left:3px solid var(--g);font-size:.92rem;color:var(--muted)}
-.sol strong{color:var(--text)}
+.grid-3{display:grid;gap:12px}
+@media(min-width:700px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.tile{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:20px;
+}
+.tile h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.tile p{font-size:.9rem;color:var(--soft)}
 
-/* PAIN */
-.pain{display:grid;gap:10px}
-@media(min-width:600px){.pain{grid-template-columns:1fr 1fr}}
-.pain a{
-  display:block;padding:16px;border-radius:var(--r);background:var(--card);
-  border:1px solid var(--stroke);transition:border-color .2s,transform .2s
+/* situations */
+.sits{display:grid;gap:10px}
+@media(min-width:640px){.sits{grid-template-columns:1fr 1fr}}
+.sit{
+  display:block;
+  padding:18px 16px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--card);
+  transition:border-color .2s;
 }
-.pain a:hover{border-color:rgba(200,255,82,.4);transform:translateY(-2px)}
-.pain strong{display:block;font-size:.92rem;margin-bottom:4px}
-.pain span{font-size:.82rem;color:var(--muted)}
+.sit:hover{border-color:var(--accent)}
+.sit strong{display:block;font-size:.95rem;margin-bottom:4px}
+.sit span{font-size:.85rem;color:var(--soft)}
 
-/* WORK */
-.work{display:grid;gap:14px}
-@media(min-width:700px){.work{grid-template-columns:1fr 1fr}}
-.work a.item{
-  display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;
-  background:var(--card);border:1px solid var(--stroke);transition:transform .25s,border-color .25s
+/* works */
+.works{display:grid;gap:14px}
+@media(min-width:700px){.works{grid-template-columns:1fr 1fr}}
+.work{
+  display:flex;flex-direction:column;
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--card);
+  transition:border-color .2s;
 }
-.work a.item:hover{transform:translateY(-3px);border-color:rgba(200,255,82,.35)}
-.work .prev{
-  aspect-ratio:16/10;background:#0c120e center top/cover no-repeat;position:relative
+.work:hover{border-color:#3a3a3a}
+.work .shot{
+  aspect-ratio:16/10;
+  background:#1a1a1a center top/cover no-repeat;
+  border-bottom:1px solid var(--line);
 }
-.work .prev::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5))}
-.work .body{padding:16px 16px 18px;flex:1;display:flex;flex-direction:column}
-.work .type{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
-.work h3{font-size:1.05rem;margin-bottom:4px}
-.work p{font-size:.86rem;color:var(--muted);margin-bottom:10px;flex:1}
-.work .go{font-size:.88rem;font-weight:600}
-.work .next{
-  display:grid;place-items:center;text-align:center;padding:36px 20px;
-  border:1px dashed var(--stroke);border-radius:var(--r);background:rgba(14,20,16,.4)
+.work .info{padding:16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.work .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:600}
+.work h3{font-size:1.05rem;font-weight:700}
+.work p{font-size:.88rem;color:var(--soft);flex:1}
+.work .link{font-size:.88rem;font-weight:600;margin-top:8px}
+.work .link:hover{color:var(--accent)}
+.work-empty{
+  border:1px dashed var(--line);
+  border-radius:12px;
+  display:grid;place-items:center;
+  text-align:center;
+  padding:40px 20px;
+  min-height:240px;
 }
+.work-empty h3{font-size:1.1rem;margin-bottom:6px}
+.work-empty p{color:var(--soft);font-size:.9rem;margin-bottom:16px}
 
-/* PRICE */
+/* prices */
 .prices{display:grid;gap:12px}
 @media(min-width:800px){.prices{grid-template-columns:repeat(3,1fr)}}
-.price{padding:24px 20px;display:flex;flex-direction:column;position:relative}
-.price.opt{border-color:rgba(200,255,82,.4);box-shadow:0 0 40px rgba(200,255,82,.1),inset 0 1px 0 rgba(255,255,255,.1)}
-.price .badge{
-  position:absolute;top:-10px;left:16px;font-size:.62rem;font-weight:700;letter-spacing:.06em;
-  padding:4px 10px;border-radius:var(--pill);background:var(--g);color:#0a1208
+.price{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:22px 18px;
+  background:var(--card);
+  display:flex;flex-direction:column;
 }
-.price .name{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
-.price .amt{font-size:1.7rem;font-weight:700;margin-bottom:4px}
-.price .amt span{font-size:.85rem;font-weight:400;color:var(--muted)}
-.price .for{font-size:.88rem;color:var(--muted);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.price ul{list-style:none;flex:1;margin-bottom:18px}
-.price li{font-size:.86rem;color:var(--muted);padding:4px 0 4px 14px;position:relative}
-.price li::before{content:"—";position:absolute;left:0;color:var(--dim)}
+.price.hit{border-color:var(--accent);position:relative}
+.price .mark{
+  position:absolute;top:-10px;left:14px;
+  background:var(--accent);color:var(--accent-ink);
+  font-size:.65rem;font-weight:700;letter-spacing:.04em;
+  padding:4px 8px;border-radius:4px;
+}
+.price .tier{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-bottom:6px}
+.price .cost{font-family:var(--display);font-size:1.8rem;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+.price .cost small{font-size:.9rem;font-weight:500;color:var(--soft)}
+.price .desc{font-size:.9rem;color:var(--soft);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.price ul{list-style:none;margin-bottom:18px;flex:1}
+.price li{font-size:.88rem;color:var(--soft);padding:3px 0}
+.price li::before{content:"· ";color:var(--accent)}
 .price .btn{width:100%}
 
-/* STEPS */
-.steps{display:grid;gap:8px;counter-reset:s}
-@media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
-.steps li{
-  list-style:none;padding:18px;border-radius:var(--r);background:var(--card);border:1px solid var(--stroke)
+/* process */
+.steps{display:grid;gap:0;counter-reset:n}
+@media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr);gap:12px}}
+.step{
+  padding:18px 0;
+  border-top:1px solid var(--line);
 }
-.steps li::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.2rem;color:var(--dim);display:block;margin-bottom:6px}
-.steps h3{font-size:.92rem;margin-bottom:4px}
-.steps p{font-size:.84rem;color:var(--muted)}
+@media(min-width:700px){
+  .step{border:1px solid var(--line);border-radius:10px;padding:18px;background:var(--card)}
+}
+.step::before{
+  counter-increment:n;
+  content:counter(n, decimal-leading-zero);
+  font-family:var(--display);
+  font-weight:700;
+  font-size:1.1rem;
+  color:var(--accent);
+  display:block;
+  margin-bottom:8px;
+}
+.step h3{font-size:.95rem;margin-bottom:4px}
+.step p{font-size:.88rem;color:var(--soft)}
 
-/* WHO */
-.who{padding:28px 24px;max-width:560px}
-.who .name{font-family:var(--serif);font-size:1.5rem;color:var(--g);margin-bottom:8px}
-.who p{color:var(--muted);margin-bottom:16px}
-.who ul{list-style:none;margin-bottom:20px}
-.who li{font-size:.9rem;padding:4px 0 4px 16px;position:relative}
-.who li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
+/* about */
+.about{
+  display:grid;gap:20px;
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--card);
+}
+@media(min-width:640px){.about{grid-template-columns:1fr auto;align-items:center}}
+.about h3{font-family:var(--display);font-size:1.4rem;margin-bottom:8px}
+.about p{color:var(--soft);font-size:.95rem;max-width:40ch}
 
-/* FAQ */
+/* faq */
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{
-  list-style:none;cursor:pointer;padding:16px 0;font-weight:600;font-size:.95rem;
-  display:flex;justify-content:space-between;gap:12px;min-height:48px;align-items:center
+  list-style:none;
+  padding:16px 0;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;justify-content:space-between;gap:12px;
 }
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--dim);font-weight:400}
-.faq details[open] summary::after{content:"−"}
-.faq details p{padding:0 0 16px;color:var(--muted);font-size:.9rem}
+.faq summary::after{content:"+";color:var(--soft);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 16px;color:var(--soft);font-size:.92rem}
 
-/* FINAL */
-.final{text-align:center;padding:72px 0 80px;border-top:1px solid var(--line)}
-.final h2{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);margin-bottom:12px}
-.final p{color:var(--muted);max-width:36ch;margin:0 auto 24px}
-.final-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 18px;margin-top:20px;font-size:.88rem;color:var(--dim)}
-.final-links a:hover{color:var(--g)}
-footer{padding:20px 0 96px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.8rem;color:var(--dim)}
-
-.sticky{
-  display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
-  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-  background:rgba(7,10,8,.9);backdrop-filter:blur(16px);border-top:1px solid var(--stroke)
+/* end */
+.end{
+  padding:64px 0 72px;
+  text-align:center;
+  border-top:1px solid var(--line);
 }
-.sticky .btn{width:100%}
-@media(max-width:820px){.footer-pad{padding-bottom:88px}}
+.end h2{
+  font-family:var(--display);
+  font-size:clamp(1.8rem, 5vw, 2.6rem);
+  font-weight:800;
+  letter-spacing:-.03em;
+  margin-bottom:10px;
+}
+.end p{color:var(--soft);margin-bottom:24px}
+.end .contacts{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 18px;font-size:.9rem;color:var(--soft)}
+.end .contacts a:hover{color:var(--accent)}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.reveal.on{opacity:1;transform:none}
-:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+.foot{
+  padding:20px 0 40px;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  font-size:.8rem;color:var(--soft);
+}
+
+.bar{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(12,12,12,.94);
+  border-top:1px solid var(--line);
+}
+.bar .btn{width:100%}
+@media(max-width:720px){
+  .foot{padding-bottom:80px}
+}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 </style>
 </head>
 <body>
-<header class="nav" id="nav">
-  <a href="#" class="logo">1<span>САЙТ</span></a>
-  <nav class="nav-links" aria-label="Меню">
-    <a href="#work">Работы</a>
-    <a href="#pricing">Цены</a>
-    <a href="#how">Как работаем</a>
-    <a href="#who">О студии</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-  <a class="nav-cta" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Заказать сайт</a>
-  <button class="burger" id="burger" aria-label="Меню"><span></span></button>
-</header>
-<div class="mnav" id="mnav">
-  <a href="#work" data-c>Работы</a>
-  <a href="#pricing" data-c>Цены</a>
-  <a href="#how" data-c>Как работаем</a>
-  <a href="#who" data-c>О студии</a>
-  <a href="#faq" data-c>FAQ</a>
-  <a class="nav-cta" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Заказать сайт</a>
-</div>
+<div class="page">
+  <header class="top" id="top">
+    <a class="brand" href="#">1<i>САЙТ</i></a>
+    <nav>
+      <a href="#works">Работы</a>
+      <a href="#prices">Цены</a>
+      <a href="#flow">Процесс</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="cta" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Написать</a>
+  </header>
 
-<main>
-<section class="hero wrap">
-  <p class="eyebrow">Махачкала · Дагестан · Россия</p>
-  <h1>Сайт, на котором клиент <em>пишет вам</em></h1>
-  <p class="hero-sub">Для кафе, салонов и барбершопов. Услуги и цены сразу видны — следующий шаг очевиден: WhatsApp.</p>
-  <div class="meta">
-    <span>от <b>15 000 ₽</b></span>
-    <span><b>7–14</b> дней</span>
-    <span>Удобно с телефона</span>
-  </div>
-  <div class="hero-actions">
-    <a class="btn btn-p" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0" target="_blank" rel="noopener noreferrer">Заказать сайт ↗</a>
-    <a class="btn btn-g" href="#work">Смотреть работы</a>
-  </div>
-</section>
+  <section class="hero">
+    <p class="tag">Махачкала</p>
+    <h1>Сайт, после которого клиент <span>пишет вам</span></h1>
+    <p class="lead">Делаю понятные сайты для кафе, салонов и барбершопов. Цены на виду. WhatsApp в один тап.</p>
+    <div class="row">
+      <a class="btn btn-main" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Заказать сайт</a>
+      <a class="btn btn-ghost" href="#works">Работы</a>
+    </div>
+    <div class="facts">
+      <span>от <b>15 000 ₽</b></span>
+      <span><b>7–14</b> дней</span>
+      <span>Ответ обычно <b>в тот же день</b></span>
+    </div>
+  </section>
 
-<section class="wrap" id="problem">
-  <p class="sec-n reveal">Проблема</p>
-  <h2 class="sec-t reveal">Почему клиент<br><em>уходит</em></h2>
-  <p class="sec-l reveal">Он уже ищет вас. Если сайт мешает — уйдёт к другому.</p>
-  <div class="prob reveal">
-    <article class="card"><h3>Непонятно, чем вы занимаетесь</h3><p>Нет ясных услуг и цен — человек не понимает, подходит ли вы.</p></article>
-    <article class="card"><h3>Сложно связаться</h3><p>Номер спрятан, WhatsApp нет, форма длинная.</p></article>
-    <article class="card"><h3>С телефона всё криво</h3><p>Большинство заходят с телефона. Если неудобно — закрывают.</p></article>
-  </div>
-  <p class="sol reveal"><strong>Мы убираем эти препятствия.</strong> Структура, цены, фото, WhatsApp, нормальный mobile.</p>
-</section>
-
-<section class="wrap" id="pain">
-  <p class="sec-n reveal">Быстрый старт</p>
-  <h2 class="sec-t reveal">Что у вас<br><em>сейчас?</em></h2>
-  <p class="sec-l reveal">Нажмите — откроется WhatsApp с готовым текстом.</p>
-  <div class="pain reveal">
-    <a href="https://wa.me/79696656414?text=%D0%9D%D0%B5%D1%82%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%BA%D1%83." target="_blank" rel="noopener noreferrer"><strong>Нет сайта</strong><span>Клиенты спрашивают — а показать нечего</span></a>
-    <a href="https://wa.me/79696656414?text=%D0%A1%D0%B0%D0%B9%D1%82%20%D0%B5%D1%81%D1%82%D1%8C%2C%20%D0%BD%D0%BE%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D1%80%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD." target="_blank" rel="noopener noreferrer"><strong>Сайт стыдно показывать</strong><span>Выглядит слабее, чем бизнес</span></a>
-    <a href="https://wa.me/79696656414?text=%D0%A6%D0%B5%D0%BD%D1%8B%20%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BF%D0%BE%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D1%83.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B2%D1%81%D1%91%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5." target="_blank" rel="noopener noreferrer"><strong>Цены только по телефону</strong><span>На сайте их нет или не видно</span></a>
-    <a href="https://wa.me/79696656414?text=%D0%A1%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BD%D0%B5%D1%83%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BD%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F." target="_blank" rel="noopener noreferrer"><strong>С телефона неудобно</strong><span>Клиенты заходят и уходят</span></a>
-  </div>
-</section>
-
-<section class="wrap" id="work">
-  <p class="sec-n reveal">Работы</p>
-  <h2 class="sec-t reveal">Реальные<br><em>проекты</em></h2>
-  <p class="sec-l reveal">Без выдуманных клиентов. Можно открыть и посмотреть.</p>
-  <div class="work reveal">
-    <a class="item" href="https://rasulovking2577.github.io/SAKLYA/" target="_blank" rel="noopener noreferrer">
-      <div class="prev" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/SAKLYA/')"></div>
-      <div class="body">
-        <div class="type">Кафе · Махачкала</div>
-        <h3>САКЛЯ</h3>
-        <p>Меню, заказ, атмосфера. Клиент понимает место и что делать дальше.</p>
-        <span class="go">Открыть ↗</span>
+  <section class="block">
+    <h2>Если сайт мешает — клиент уходит</h2>
+    <p class="sub">Человек уже ищет вас. Три частые причины, почему он закрывает вкладку.</p>
+    <div class="grid-3">
+      <div class="tile">
+        <h3>Не ясно, что вы делаете</h3>
+        <p>Нет нормального списка услуг и цен.</p>
       </div>
-    </a>
-    <a class="item" href="https://rasulovking2577.github.io/BARBERSHOP/" target="_blank" rel="noopener noreferrer">
-      <div class="prev" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/BARBERSHOP/')"></div>
-      <div class="body">
-        <div class="type">Барбершоп</div>
-        <h3>ЦЕХЪ</h3>
-        <p>Услуги, запись, доверие. Акцент на ясность и контакт.</p>
-        <span class="go">Открыть ↗</span>
+      <div class="tile">
+        <h3>Некуда написать</h3>
+        <p>Телефон спрятан, WhatsApp нет.</p>
       </div>
-    </a>
-    <a class="item" href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener noreferrer">
-      <div class="prev" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/Aragvi/')"></div>
-      <div class="body">
-        <div class="type">Лендинг</div>
-        <h3>ARAGVI</h3>
-        <p>Структура под действие. Чистая подача.</p>
-        <span class="go">Открыть ↗</span>
-      </div>
-    </a>
-    <div class="next">
-      <div>
-        <h3>Следующий — ваш</h3>
-        <p style="color:var(--muted);font-size:.9rem;margin:8px 0 16px">Опишите бизнес — отвечу с форматом и ценой</p>
-        <a class="btn btn-p" href="https://wa.me/79696656414?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Написать ↗</a>
+      <div class="tile">
+        <h3>С телефона неудобно</h3>
+        <p>Кривой layout — и человек ушёл.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="wrap" id="pricing">
-  <p class="sec-n reveal">Цены</p>
-  <h2 class="sec-t reveal">Прозрачно<br><em>до старта</em></h2>
-  <p class="sec-l reveal">Точную сумму фиксируем до начала работы.</p>
-  <div class="prices">
-    <article class="card price reveal">
-      <div class="name">Start</div>
-      <div class="amt">от 15 000 <span>₽</span></div>
-      <div class="for">Визитка. Одна страница.</div>
-      <ul>
-        <li>Услуги, цены, контакты</li>
-        <li>Mobile + WhatsApp</li>
-        <li>Базовая SEO</li>
-        <li>~7–10 дней</li>
-      </ul>
-      <a class="btn btn-g" href="https://wa.me/79696656414?text=%D0%A2%D0%B0%D1%80%D0%B8%D1%84%20START" target="_blank" rel="noopener noreferrer">START</a>
-    </article>
-    <article class="card price opt reveal">
-      <div class="badge">ОПТИМАЛЬНЫЙ</div>
-      <div class="name">Business</div>
-      <div class="amt">от 30 000 <span>₽</span></div>
-      <div class="for">Лендинг или несколько страниц.</div>
-      <ul>
-        <li>Структура под цель</li>
-        <li>Галерея, формы</li>
-        <li>Адаптив + SEO</li>
-        <li>~10–14 дней</li>
-      </ul>
-      <a class="btn btn-p" href="https://wa.me/79696656414?text=%D0%A2%D0%B0%D1%80%D0%B8%D1%84%20BUSINESS" target="_blank" rel="noopener noreferrer">BUSINESS</a>
-    </article>
-    <article class="card price reveal">
-      <div class="name">Premium</div>
-      <div class="amt">от 50 000 <span>₽</span></div>
-      <div class="for">Сложный визуал, анимации.</div>
-      <ul>
-        <li>Индивидуальный стиль</li>
-        <li>Motion / 3D по задаче</li>
-        <li>Приоритет</li>
-        <li>Срок по объёму</li>
-      </ul>
-      <a class="btn btn-g" href="https://wa.me/79696656414?text=%D0%A2%D0%B0%D1%80%D0%B8%D1%84%20PREMIUM" target="_blank" rel="noopener noreferrer">PREMIUM</a>
-    </article>
-  </div>
-</section>
+  <section class="block">
+    <h2>Выберите ситуацию</h2>
+    <p class="sub">Откроется WhatsApp с готовым сообщением.</p>
+    <div class="sits">
+      <a class="sit" href="https://wa.me/79696656414?text=%D0%9D%D0%B5%D1%82%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%BA%D0%B0." target="_blank" rel="noopener noreferrer">
+        <strong>Нет сайта</strong>
+        <span>Нужна визитка с услугами и WhatsApp</span>
+      </a>
+      <a class="sit" href="https://wa.me/79696656414?text=%D0%95%D1%81%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%2C%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D1%80%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD." target="_blank" rel="noopener noreferrer">
+        <strong>Сайт есть, но слабый</strong>
+        <span>Редизайн под телефон и продажи</span>
+      </a>
+      <a class="sit" href="https://wa.me/79696656414?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3%20%D0%BF%D0%BE%D0%B4%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B8." target="_blank" rel="noopener noreferrer">
+        <strong>Нужны заявки</strong>
+        <span>Лендинг под одну цель</span>
+      </a>
+      <a class="sit" href="https://wa.me/79696656414?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0." target="_blank" rel="noopener noreferrer">
+        <strong>Пока не знаю формат</strong>
+        <span>Просто написать и спросить</span>
+      </a>
+    </div>
+  </section>
 
-<section class="wrap" id="how">
-  <p class="sec-n reveal">Процесс</p>
-  <h2 class="sec-t reveal">Как<br><em>работаем</em></h2>
-  <ol class="steps reveal">
-    <li><h3>Бриф</h3><p>Вы рассказываете о бизнесе в WhatsApp</p></li>
-    <li><h3>Структура и цена</h3><p>Фиксируем объём, сумму и срок</p></li>
-    <li><h3>Дизайн и запуск</h3><p>Собираем, проверяем на телефоне, отдаём ссылку</p></li>
-  </ol>
-  <p class="sec-l reveal" style="margin-top:20px;margin-bottom:0">Вам не нужно разбираться в коде. Домен и хостинг — ваши; подскажу, как оформить.</p>
-</section>
+  <section class="block" id="works">
+    <h2>Работы</h2>
+    <p class="sub">Живые ссылки. Можно открыть с телефона.</p>
+    <div class="works">
+      <a class="work" href="https://rasulovking2577.github.io/SAKLYA/" target="_blank" rel="noopener noreferrer">
+        <div class="shot" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/SAKLYA/')"></div>
+        <div class="info">
+          <div class="label">Кафе</div>
+          <h3>САКЛЯ</h3>
+          <p>Меню, атмосфера, заказ.</p>
+          <span class="link">Открыть →</span>
+        </div>
+      </a>
+      <a class="work" href="https://rasulovking2577.github.io/BARBERSHOP/" target="_blank" rel="noopener noreferrer">
+        <div class="shot" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/BARBERSHOP/')"></div>
+        <div class="info">
+          <div class="label">Барбершоп</div>
+          <h3>ЦЕХЪ</h3>
+          <p>Услуги и запись без лишнего.</p>
+          <span class="link">Открыть →</span>
+        </div>
+      </a>
+      <a class="work" href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener noreferrer">
+        <div class="shot" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/Aragvi/')"></div>
+        <div class="info">
+          <div class="label">Лендинг</div>
+          <h3>ARAGVI</h3>
+          <p>Структура под действие.</p>
+          <span class="link">Открыть →</span>
+        </div>
+      </a>
+      <div class="work-empty">
+        <div>
+          <h3>Ваш проект</h3>
+          <p>Напишите — предложу формат и цену</p>
+          <a class="btn btn-main" href="https://wa.me/79696656414?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Написать</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="wrap" id="who">
-  <p class="sec-n reveal">Студия</p>
-  <h2 class="sec-t reveal">Кто<br><em>делает</em></h2>
-  <div class="card who reveal">
-    <div class="name">Расул</div>
-    <p>1САЙТ — небольшая студия, не агентство. Пишете — отвечаю я. Без менеджеров и лишней бюрократии.</p>
-    <ul>
-      <li>Прямой контакт в WhatsApp</li>
-      <li>Цена и срок до старта</li>
-      <li>Обычно ответ в течение дня</li>
-    </ul>
-    <a class="btn btn-p" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Написать Расулу ↗</a>
-  </div>
-</section>
+  <section class="block" id="prices">
+    <h2>Цены</h2>
+    <p class="sub">Фиксируем сумму до начала работы.</p>
+    <div class="prices">
+      <div class="price">
+        <div class="tier">Start</div>
+        <div class="cost">15 000 <small>₽</small></div>
+        <div class="desc">Одна страница-визитка</div>
+        <ul>
+          <li>Услуги и цены</li>
+          <li>WhatsApp</li>
+          <li>Mobile</li>
+          <li>7–10 дней</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://wa.me/79696656414?text=START%20%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%BA%D0%B0" target="_blank" rel="noopener noreferrer">Выбрать</a>
+      </div>
+      <div class="price hit">
+        <div class="mark">ЧАСТО БЕРУТ</div>
+        <div class="tier">Business</div>
+        <div class="cost">30 000 <small>₽</small></div>
+        <div class="desc">Лендинг или несколько страниц</div>
+        <ul>
+          <li>Структура под цель</li>
+          <li>Галерея / формы</li>
+          <li>SEO-база</li>
+          <li>10–14 дней</li>
+        </ul>
+        <a class="btn btn-main" href="https://wa.me/79696656414?text=BUSINESS%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Выбрать</a>
+      </div>
+      <div class="price">
+        <div class="tier">Premium</div>
+        <div class="cost">50 000 <small>₽</small></div>
+        <div class="desc">Сложный визуал под задачу</div>
+        <ul>
+          <li>Индивидуальный дизайн</li>
+          <li>Анимации</li>
+          <li>Приоритет</li>
+          <li>Срок по объёму</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://wa.me/79696656414?text=PREMIUM%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Выбрать</a>
+      </div>
+    </div>
+  </section>
 
-<section class="wrap" id="faq">
-  <p class="sec-n reveal">FAQ</p>
-  <h2 class="sec-t reveal">Короткие<br>ответы</h2>
-  <div class="faq reveal">
-    <details><summary>Сколько стоит сайт?</summary><p>От 15 000 ₽. Точную сумму называю до старта, после короткого обсуждения.</p></details>
-    <details><summary>Сколько занимает разработка?</summary><p>Обычно 7–14 дней. Срок фиксируем заранее.</p></details>
-    <details><summary>Можно одну страницу?</summary><p>Да. Для многих бизнесов одной сильной страницы достаточно.</p></details>
-    <details><summary>Работает на телефоне?</summary><p>Да. Сначала делаем удобно на телефоне, потом на большом экране.</p></details>
-    <details><summary>Кто покупает домен и хостинг?</summary><p>Вы. Это ваша собственность. Подскажу, как купить и настроить.</p></details>
-    <details><summary>Можно WhatsApp и правки?</summary><p>WhatsApp — стандарт. Правки по структуре в рамках договорённого входят.</p></details>
-  </div>
-</section>
+  <section class="block" id="flow">
+    <h2>Как это проходит</h2>
+    <p class="sub">Три шага. Без лишних созвонов «ради созвона».</p>
+    <div class="steps">
+      <div class="step">
+        <h3>Пишете</h3>
+        <p>Кратко о бизнесе в WhatsApp</p>
+      </div>
+      <div class="step">
+        <h3>Согласуем</h3>
+        <p>Формат, цена, срок — до старта</p>
+      </div>
+      <div class="step">
+        <h3>Запуск</h3>
+        <p>Готовая ссылка, проверка с телефона</p>
+      </div>
+    </div>
+  </section>
 
-<section class="final wrap" id="contacts">
-  <h2 class="reveal">Готовы сделать сайт?</h2>
-  <p class="reveal">Напишите, чем занимаетесь. Отвечу с форматом и ценой — обычно в течение дня.</p>
-  <a class="btn btn-p reveal" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Заказать сайт ↗</a>
-  <div class="final-links reveal">
-    <a href="https://wa.me/79696656414" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    <a href="https://t.me/rasulov1site" target="_blank" rel="noopener noreferrer">Telegram</a>
-    <a href="tel:+79696656414">+7 969 665 64 14</a>
-    <a href="mailto:rasulov2588@gmail.com">Email</a>
-  </div>
-</section>
-</main>
+  <section class="block">
+    <h2>Кто делает</h2>
+    <p class="sub">Не агентство.</p>
+    <div class="about">
+      <div>
+        <h3>Расул</h3>
+        <p>1САЙТ — небольшая студия. Вы пишете мне напрямую. Цена и срок известны до начала работы. Домен и хостинг остаются вашими.</p>
+      </div>
+      <a class="btn btn-main" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!" target="_blank" rel="noopener noreferrer">Написать Расулу</a>
+    </div>
+  </section>
 
-<footer class="wrap footer-pad">
-  <div>© 1САЙТ · Расул</div>
-  <div>
-    <a href="https://wa.me/79696656414" target="_blank" rel="noopener noreferrer">WhatsApp</a> ·
-    <a href="https://t.me/rasulov1site" target="_blank" rel="noopener noreferrer">Telegram</a>
-  </div>
-</footer>
+  <section class="block" id="faq">
+    <h2>Вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько стоит?</summary>
+        <p>От 15 000 ₽. Точную сумму говорю до старта.</p>
+      </details>
+      <details>
+        <summary>Сколько по времени?</summary>
+        <p>Обычно 7–14 дней. Фиксируем заранее.</p>
+      </details>
+      <details>
+        <summary>Только одна страница — нормально?</summary>
+        <p>Да. Для многих локальных бизнесов этого хватает.</p>
+      </details>
+      <details>
+        <summary>Кто платит за домен?</summary>
+        <p>Вы. Сайт ваш. Подскажу, где купить и как привязать.</p>
+      </details>
+      <details>
+        <summary>Будет WhatsApp?</summary>
+        <p>Да. Это базовая часть.</p>
+      </details>
+    </div>
+  </section>
 
-<div class="sticky" id="sticky">
-  <a class="btn btn-p" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Заказать сайт ↗</a>
+  <section class="end">
+    <h2>Напишите, чем занимаетесь</h2>
+    <p>Пришлю формат и ориентир по цене.</p>
+    <a class="btn btn-main" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0." target="_blank" rel="noopener noreferrer">Открыть WhatsApp</a>
+    <div class="contacts">
+      <a href="https://wa.me/79696656414" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://t.me/rasulov1site" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="tel:+79696656414">+7 969 665 64 14</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>1САЙТ · Расул</span>
+    <span>Махачкала</span>
+  </footer>
+</div>
+
+<div class="bar" id="bar">
+  <a class="btn btn-main" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener noreferrer">Заказать сайт</a>
 </div>
 
 <script>
 (function(){
-  const burger=document.getElementById('burger'), mnav=document.getElementById('mnav');
-  burger.addEventListener('click',()=>{const o=mnav.classList.toggle('open');document.body.style.overflow=o?'hidden':''});
-  mnav.querySelectorAll('[data-c]').forEach(a=>a.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
-
-  const sticky=document.getElementById('sticky');
-  const mq=matchMedia('(max-width:820px)');
-  function syncSticky(){
-    if(!mq.matches){sticky.style.display='none';return}
-    sticky.style.display=scrollY>400?'block':'none';
-  }
-  addEventListener('scroll',syncSticky,{passive:true});
-  syncSticky();
-
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const top=document.getElementById('top');
+  const bar=document.getElementById('bar');
+  const mobile=()=>matchMedia('(max-width:720px)').matches;
+  addEventListener('scroll',()=>{
+    top.classList.toggle('scrolled', scrollY>8);
+    if(mobile()) bar.style.display = scrollY>380 ? 'block' : 'none';
+    else bar.style.display='none';
+  },{passive:true});
 })();
 </script>
 </body>
