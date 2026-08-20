@@ -259,7 +259,12 @@ section{padding:88px 0;position:relative}
 @media(max-width:680px){.work-grid{grid-template-columns:1fr}}
 .work{display:flex;flex-direction:column;transition:transform .3s var(--ease),border-color .25s,box-shadow .3s;border-radius:22px;overflow:hidden;background:rgba(18,26,20,.72);backdrop-filter:blur(40px);border:1px solid rgba(200,230,160,.26);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 14px 36px rgba(0,0,0,.5)}.work:hover{border-color:rgba(198,255,77,.4);transform:translateY(-3px);box-shadow:0 0 40px rgba(198,255,77,.12),0 18px 40px rgba(0,0,0,.55)}
 .work:hover{border-color:var(--line2);transform:translateY(-3px)}
-.work-prev{aspect-ratio:16/10;background:linear-gradient(145deg,#0f1814,#070c0a);display:grid;place-items:center;border-bottom:1px solid var(--line)}
+
+.work-prev{position:relative;text-decoration:none}
+.work-prev-label{position:absolute;left:12px;bottom:12px;font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,.85);text-shadow:0 2px 12px rgba(0,0,0,.8);z-index:1;background:rgba(0,0,0,.35);backdrop-filter:blur(8px);padding:6px 12px;border-radius:100px;border:1px solid rgba(255,255,255,.12)}
+.work-prev::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.55) 100%);pointer-events:none}
+
+.work-prev{aspect-ratio:16/10;background:#0a100e;display:block;border-bottom:1px solid var(--line);min-height:160px}
 .work-prev span{font-family:var(--serif);font-size:1.6rem;color:rgba(255,255,255,.12)}
 .work-body{padding:20px;flex:1;display:flex;flex-direction:column}
 .work-type{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
@@ -605,30 +610,36 @@ section{padding:88px 0;position:relative}
   <p class="sec-l reveal">Без выдуманных клиентов и метрик.</p>
   <div class="work-grid">
     <article class="work reveal">
-      <div class="work-prev"><span>BARBERSHOP</span></div>
+      <a class="work-prev" href="https://rasulovking2577.github.io/SAKLYA/" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/SAKLYA/');background-size:cover;background-position:top center">
+        <span class="work-prev-label">SAKLYA</span>
+      </a>
+      <div class="work-body">
+        <div class="work-type">Сайт кафе · Махачкала</div>
+        <h3>САКЛЯ</h3>
+        <p>Меню, заказ, атмосфера. Клиент сразу понимает, куда писать и что заказать.</p>
+        <a href="https://rasulovking2577.github.io/SAKLYA/" class="work-link" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click">Открыть проект ↗</a>
+      </div>
+    </article>
+    <article class="work reveal">
+      <a class="work-prev" href="https://rasulovking2577.github.io/BARBERSHOP/" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/BARBERSHOP/');background-size:cover;background-position:top center">
+        <span class="work-prev-label">ЦЕХЪ</span>
+      </a>
       <div class="work-body">
         <div class="work-type">Лендинг · Барбершоп</div>
         <h3>ЦЕХЪ</h3>
-        <p>Услуги, мастера, запись. Акцент на ясность и контакт.</p>
+        <p>Услуги, запись, доверие. Акцент на ясность и контакт.</p>
         <a href="https://rasulovking2577.github.io/BARBERSHOP/" class="work-link" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click">Открыть проект ↗</a>
       </div>
     </article>
     <article class="work reveal">
-      <div class="work-prev"><span>ARAGVI</span></div>
+      <a class="work-prev" href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click" style="background-image:url('https://image.thum.io/get/width/800/crop/900/noanimate/https://rasulovking2577.github.io/Aragvi/');background-size:cover;background-position:top center">
+        <span class="work-prev-label">ARAGVI</span>
+      </a>
       <div class="work-body">
         <div class="work-type">Лендинг</div>
         <h3>ARAGVI</h3>
-        <p>Структура под процесс и доверие. Чистая подача.</p>
+        <p>Структура под процесс и действие. Чистая подача.</p>
         <a href="https://rasulovking2577.github.io/Aragvi/" class="work-link" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click">Открыть проект ↗</a>
-      </div>
-    </article>
-    <article class="work reveal">
-      <div class="work-prev"><span>1САЙТ</span></div>
-      <div class="work-body">
-        <div class="work-type">Портфолио</div>
-        <h3>Предыдущая версия</h3>
-        <p>Сайт студии. Подход к дизайну и структуре.</p>
-        <a href="https://rasulovking2577.github.io/website/" class="work-link" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click">Открыть проект ↗</a>
       </div>
     </article>
     <article class="work work-next reveal">
@@ -638,8 +649,7 @@ section{padding:88px 0;position:relative}
         <a href="https://wa.me/79696656414?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" class="btn btn-p" target="_blank" rel="noopener noreferrer">Написать ↗</a>
       </div>
     </article>
-  </div>
-</section>
+  </div></section>
 
 <section class="wrap">
   <div class="meta-case reveal">
