@@ -101,73 +101,29 @@
 
 .scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:200;background:linear-gradient(90deg,transparent,var(--g),transparent);box-shadow:0 0 12px rgba(198,255,77,.5);pointer-events:none}
 
-.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:#030805}
-/* CSS moss carpet — bottom half, clearly visible */
-.orbs .moss-photo{
-  position:absolute;left:-5%;right:-5%;bottom:-8%;height:62%;
-  background:
-    /* moss clumps */
-    radial-gradient(ellipse 18% 28% at 6% 70%,#2a6b2a 0%,transparent 70%),
-    radial-gradient(ellipse 22% 32% at 14% 85%,#3d8f35 0%,transparent 68%),
-    radial-gradient(ellipse 16% 26% at 24% 62%,#1f5a1f 0%,transparent 70%),
-    radial-gradient(ellipse 20% 30% at 32% 88%,#4a9e3c 0%,transparent 68%),
-    radial-gradient(ellipse 18% 28% at 42% 68%,#2d732c 0%,transparent 70%),
-    radial-gradient(ellipse 24% 34% at 52% 92%,#3a8834 0%,transparent 68%),
-    radial-gradient(ellipse 17% 27% at 62% 72%,#245f24 0%,transparent 70%),
-    radial-gradient(ellipse 21% 31% at 72% 90%,#459a3a 0%,transparent 68%),
-    radial-gradient(ellipse 19% 29% at 82% 66%,#2a6e28 0%,transparent 70%),
-    radial-gradient(ellipse 23% 33% at 92% 86%,#3f9336 0%,transparent 68%),
-    radial-gradient(ellipse 15% 24% at 10% 55%,#1a4d1a 0%,transparent 72%),
-    radial-gradient(ellipse 15% 24% at 50% 58%,#255825 0%,transparent 72%),
-    radial-gradient(ellipse 15% 24% at 88% 52%,#1c521c 0%,transparent 72%),
-    /* base soil */
-    linear-gradient(180deg,transparent 0%,#0a1a0a 45%,#061208 100%);
-  filter:blur(6px) saturate(1.2);
-  opacity:.95;
-  transform:translate3d(0,calc(var(--par-y,0px) * 0.3),0);
-  will-change:transform;
-}
-.orbs .moss-photo::before{
-  content:"";position:absolute;inset:0;
-  background-image:radial-gradient(circle at 50% 50%,rgba(80,160,60,.35) 0 1px,transparent 1.5px);
-  background-size:10px 10px;
-  opacity:.35;
-  mask-image:linear-gradient(180deg,transparent,#000 40%);
-  -webkit-mask-image:linear-gradient(180deg,transparent,#000 40%);
-}
-.orbs .moss-photo::after{
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:#050807}
+.orbs .moss-photo{display:none!important}
+.orbs::before{
   content:"";position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 30% 40% at 20% 80%,rgba(140,210,80,.2),transparent 60%),
-    radial-gradient(ellipse 35% 45% at 75% 85%,rgba(100,180,60,.18),transparent 60%);
-  mix-blend-mode:screen;
-  opacity:.7;
+    radial-gradient(ellipse 90% 60% at 50% -10%,rgba(60,100,40,.18),transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 50%,rgba(30,60,35,.2),transparent 50%),
+    radial-gradient(ellipse 70% 50% at 0% 80%,rgba(40,80,40,.22),transparent 50%),
+    radial-gradient(ellipse 80% 40% at 50% 110%,rgba(50,90,40,.25),transparent 50%);
 }
-.orbs::before{display:none;content:none}
 .orbs::after{
   content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 100% 50% at 50% 0%,rgba(0,0,0,.55),transparent 50%),
-    radial-gradient(ellipse 80% 40% at 50% 100%,rgba(0,0,0,.25),transparent 50%);
-  pointer-events:none;
+  background:radial-gradient(ellipse 100% 80% at 50% 40%,transparent 30%,rgba(0,0,0,.45) 100%);
+  opacity:.9;
 }
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;animation:floatOrb 22s ease-in-out infinite}
-.orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(90,170,50,.45),transparent 68%);top:-18%;left:-12%}
-.orb-2{width:420px;height:420px;background:radial-gradient(circle,rgba(40,100,55,.4),transparent 68%);bottom:10%;right:-14%;animation-delay:-8s}
-.orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(200,255,82,.18),transparent 68%);top:30%;left:40%;animation-delay:-12s;opacity:.25}
-.dust{position:absolute;inset:0;overflow:hidden;opacity:.5}
-.dust i{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(200,255,82,.4);animation:dustFloat linear infinite;opacity:0}
-.dust i:nth-child(1){left:12%;bottom:0;animation-duration:14s}
-.dust i:nth-child(2){left:28%;bottom:0;animation-duration:18s;animation-delay:2s}
-.dust i:nth-child(3){left:45%;bottom:0;animation-duration:16s;animation-delay:4s}
-.dust i:nth-child(4){left:62%;bottom:0;animation-duration:20s;animation-delay:1s}
-.dust i:nth-child(5){left:78%;bottom:0;animation-duration:15s;animation-delay:3s}
-.dust i:nth-child(6){left:88%;bottom:0;animation-duration:17s;animation-delay:5s}
-.dust i:nth-child(7){left:8%;bottom:0;animation-duration:19s;animation-delay:6s}
-.dust i:nth-child(8){left:55%;bottom:0;animation-duration:13s;animation-delay:2.5s}
-@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-32px) scale(1.06)}}
-@keyframes dustFloat{0%{transform:translateY(0);opacity:0}15%{opacity:.4}100%{transform:translateY(-100vh);opacity:0}}
-@media(prefers-reduced-motion:reduce){.orb,.dust i{animation:none!important}}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.4;animation:floatOrb 24s ease-in-out infinite}
+.orb-1{width:480px;height:480px;background:radial-gradient(circle,rgba(90,150,50,.35),transparent 70%);top:-20%;left:-15%}
+.orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(40,90,50,.4),transparent 70%);bottom:-10%;right:-12%;animation-delay:-9s}
+.orb-3{width:280px;height:280px;background:radial-gradient(circle,rgba(200,255,82,.12),transparent 70%);top:40%;left:45%;animation-delay:-14s;opacity:.3}
+.dust{display:none!important}
+@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-28px) scale(1.05)}}
+@media(prefers-reduced-motion:reduce){.orb{animation:none!important}}
+
 
 /* final section - let moss show more */
 .final{position:relative}
