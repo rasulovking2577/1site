@@ -3,699 +3,762 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>1САЙТ — Сайт, на котором клиент пишет вам в WhatsApp</title>
-<meta name="description" content="Через 7–14 дней — рабочая ссылка: услуги, цены, WhatsApp. Для кафе, салонов, барбершопов. От 15 000 ₽.">
-<meta name="theme-color" content="#020504">
+<title>1САЙТ — Создание сайтов для бизнеса | от 15 000 ₽</title>
+<meta name="description" content="Создаём понятные сайты для кафе, салонов, барбершопов и локального бизнеса. Услуги, цены, WhatsApp. От 15 000 ₽. 7–14 дней.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="1САЙТ">
 <link rel="canonical" href="https://rasulovking2577.github.io/1site/">
+<meta name="theme-color" content="#0a0c0b">
+<meta property="og:title" content="1САЙТ — Сайты для бизнеса">
+<meta property="og:description" content="Понятный сайт: услуги, цены, WhatsApp. От 15 000 ₽. 7–14 дней.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rasulovking2577.github.io/1site/">
+<meta property="og:site_name" content="1САЙТ">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="1САЙТ — Сайты для бизнеса">
+<meta name="twitter:description" content="Понятный сайт: услуги, цены, WhatsApp. От 15 000 ₽.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"1САЙТ","url":"https://rasulovking2577.github.io/1site/","description":"Создание сайтов для малого и среднего бизнеса","telephone":"+79696656414","email":"rasulov2588@gmail.com","areaServed":["Махачкала","Дагестан","Россия"],"priceRange":"от 15000 RUB","sameAs":["https://t.me/rasulov1site"]}
+</script>
 <style>
-:root{--bg:#020504;--text:#f4f7f3;--muted:#8b978e;--dim:#4e5a52;--g:#c8ff52;--gold:#e2c56e;--line:rgba(255,255,255,.1);--sans:"Manrope",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif;--ease:cubic-bezier(.22,1,.36,1)}
+:root{
+  --bg:#0a0c0b;--bg2:#0e110f;--bg3:#121612;
+  --text:#f2f4f0;--muted:#8a928a;--dim:#5a625a;
+  --g:#b8f03c;--gdim:rgba(184,240,60,.12);
+  --line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+  --sans:"Manrope",system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
-@media(max-width:900px){body{cursor:auto}}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.03;z-index:9998;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}body{cursor:auto}.cursor,.cursor-dot{display:none!important}}
-a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
-.wrap{width:min(1160px,calc(100% - 32px));margin-inline:auto}
-@media(max-width:480px){.wrap{width:calc(100% - 22px)}}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+@media(max-width:480px){.wrap{width:calc(100% - 28px)}}
 
-/* custom cursor */
-.cursor{position:fixed;width:40px;height:40px;border:1.5px solid rgba(200,255,82,.5);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s,background .2s;mix-blend-mode:difference}
-.cursor-dot{position:fixed;width:6px;height:6px;background:var(--g);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);transition:transform .1s}
-.cursor.hover{width:64px;height:64px;background:rgba(200,255,82,.12);border-color:var(--g)}
-@media(max-width:900px){.cursor,.cursor-dot{display:none}}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.nav.scrolled{background:rgba(10,12,11,.92);backdrop-filter:blur(16px);border-color:var(--line)}
+.nav-in{width:min(1120px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:.95rem;letter-spacing:.04em}
+.logo span{color:var(--g)}
+.nav-links{display:flex;gap:28px;font-size:.78rem;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-size:.78rem;font-weight:700;padding:10px 18px;border-radius:2px;background:var(--g);color:#0a0c0b;transition:opacity .2s}
+.nav-cta:hover{opacity:.9}
+.burger{display:none;width:44px;height:44px;place-items:center}
+.burger span{display:block;width:18px;height:1.5px;background:var(--text);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--text)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+@media(max-width:800px){.nav-links,.nav-cta{display:none}.burger{display:grid}}
+.mnav{position:fixed;inset:0;z-index:99;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mnav.open{opacity:1;pointer-events:auto}
+.mnav a{font-size:1.4rem;font-weight:600}
+.mnav .nav-cta{display:inline-flex;margin-top:8px}
 
-.glass{background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);border:1px solid rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 24px 50px rgba(0,0,0,.4);position:relative;overflow:hidden}
-.glass .shine{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle 120px at var(--mx,50%) var(--my,50%),rgba(255,255,255,.12),transparent 60%);opacity:0;transition:opacity .3s;z-index:1}
-.glass:hover .shine{opacity:1}
+/* BTN */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;font-weight:700;font-size:.88rem;border-radius:2px;transition:transform .2s,opacity .2s,background .2s}
+.btn-p{background:var(--g);color:#0a0c0b}
+.btn-p:hover{opacity:.92;transform:translateY(-1px)}
+.btn-g{border:1px solid var(--line2);color:var(--text)}
+.btn-g:hover{background:rgba(255,255,255,.04)}
 
-.lights{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);animation:blob 20s ease-in-out infinite}
-.blob-1{width:500px;height:500px;background:radial-gradient(circle,#6a9a28,transparent 70%);top:-15%;left:-10%;opacity:.3}
-.blob-2{width:400px;height:400px;background:radial-gradient(circle,#2a4a20,transparent 70%);bottom:5%;right:-10%;opacity:.35;animation-delay:-7s}
-.blob-3{width:300px;height:300px;background:radial-gradient(circle,rgba(200,255,82,.2),transparent 70%);top:45%;left:40%;opacity:.25;animation-delay:-14s}
-@keyframes blob{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.1)}}
+/* HERO */
+.hero{min-height:100svh;padding:120px 0 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 80% 30%,rgba(184,240,60,.06),transparent 60%);pointer-events:none}
+.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6.5vw,4.8rem);font-weight:400;line-height:.95;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--g)}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:420px;margin-bottom:12px;line-height:1.6}
+.hero-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:.8rem;color:var(--dim);margin-bottom:28px}
+.hero-meta b{color:var(--text);font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-visual{position:relative;height:min(480px,60vw);background:var(--bg2);border:1px solid var(--line);overflow:hidden}
+#c3d{width:100%;height:100%;display:block}
+.hv-label{position:absolute;left:14px;top:12px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);z-index:2;pointer-events:none}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:100px;gap:36px}.hero-visual{height:300px;order:-1}}
+@media(max-width:480px){.hero h1{font-size:clamp(2.4rem,11vw,3.2rem)}.hero-visual{height:240px}}
 
-.nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:100;width:min(1060px,calc(100% - 18px));height:54px;padding:0 8px 0 16px;display:flex;align-items:center;justify-content:space-between;border-radius:100px}
-.logo{font-weight:800;font-size:.9rem;letter-spacing:.03em}.logo i{font-style:normal;color:var(--g)}
-.nav-links{display:flex;gap:18px;font-size:.72rem;color:var(--muted)}.nav-links a:hover{color:var(--g)}
-.nav-cta{background:var(--g);color:#041006;font-weight:700;font-size:.72rem;padding:9px 15px;border-radius:100px;transition:.3s}
-.nav-cta:hover{box-shadow:0 0 30px rgba(200,255,82,.5);transform:translateY(-1px)}
-.burger{display:none;width:38px;height:38px;place-items:center;border-radius:50%;border:1px solid var(--line)}
-.burger span{width:14px;height:1.5px;background:var(--text);position:relative;display:block}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:14px;height:1.5px;background:var(--text)}.burger span::before{top:-4.5px}.burger span::after{top:4.5px}
-@media(max-width:780px){.nav-links,.nav-cta{display:none}.burger{display:grid}}
-.mmenu{position:fixed;inset:0;z-index:99;background:rgba(2,5,4,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:.3s}
-.mmenu.open{opacity:1;pointer-events:auto}.mmenu a{font-size:1.3rem;font-weight:600}.mmenu .nav-cta{display:inline-flex}
+/* SECTION COMMON */
+section{padding:88px 0;position:relative}
+.sec-n{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.sec-t{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:12px}
+.sec-t em{font-style:italic;color:var(--g)}
+.sec-l{font-size:.98rem;color:var(--muted);max-width:480px;margin-bottom:36px;line-height:1.6}
+.line{height:1px;background:var(--line);margin:0}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:48px;padding:0 22px;border-radius:100px;font-weight:700;font-size:.86rem;transition:transform .25s var(--ease),box-shadow .3s;position:relative}
-.btn-p{background:var(--g);color:#041006}.btn-p:hover{box-shadow:0 14px 40px rgba(200,255,82,.35)}
-.btn-g{border:1px solid rgba(255,255,255,.18)}.btn-g:hover{background:rgba(255,255,255,.05)}
-.magnetic{display:inline-block;transition:transform .2s var(--ease)}
+/* PROBLEM */
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:700px){.prob-grid{grid-template-columns:1fr}}
+.prob-item{background:var(--bg);padding:28px 22px}
+.prob-item h3{font-size:.95rem;font-weight:700;margin-bottom:8px}
+.prob-item p{font-size:.88rem;color:var(--muted)}
+.prob-sol{margin-top:24px;padding:20px 24px;border-left:3px solid var(--g);background:var(--bg2);font-size:.95rem;color:var(--muted)}
+.prob-sol strong{color:var(--text)}
 
-.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;padding:115px 0 50px;position:relative;z-index:1}
-.eyebrow{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 18px var(--g);animation:blink 2s infinite}
-@keyframes blink{50%{opacity:.35}}
-.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:400;line-height:.96;letter-spacing:-.03em;margin-bottom:14px}
-.hero h1 em{font-style:italic;color:var(--g);text-shadow:0 0 40px rgba(200,255,82,.35)}
-.hero-result{font-size:1.05rem;color:var(--text);max-width:400px;margin-bottom:10px;font-weight:500}
-.hero-lead{font-size:.95rem;color:var(--muted);max-width:380px;margin-bottom:24px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
-.hero-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:.74rem;color:var(--dim)}
-.hero-meta span::before{content:"✦ ";color:var(--g)}
-.hero-stage{position:relative;height:min(500px,68vw)}
-.canvas-wrap{position:absolute;inset:0;border-radius:26px;overflow:hidden;cursor:pointer}
-#c3d{width:100%;height:100%;display:block;touch-action:none}
-.canvas-wrap::after{content:"";position:absolute;inset:0;border-radius:26px;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 1px rgba(255,255,255,.1);pointer-events:none;z-index:2}
-.stage-label{position:absolute;left:14px;top:12px;z-index:3;font-size:.6rem;letter-spacing:.14em;color:rgba(255,255,255,.3);text-transform:uppercase}
-.stage-badge{position:absolute;right:12px;bottom:12px;z-index:3;padding:10px 14px;border-radius:14px;font-size:.75rem;display:flex;align-items:center;gap:8px}
-.stage-badge i{width:7px;height:7px;border-radius:50%;background:var(--g);display:block;animation:blink 2s infinite}
-.stage-hint{position:absolute;left:50%;bottom:50px;transform:translateX(-50%);z-index:3;font-size:.7rem;color:rgba(255,255,255,.4);opacity:0;transition:opacity .4s;pointer-events:none}
-.canvas-wrap:hover .stage-hint{opacity:1}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:100px;gap:28px}.hero-stage{height:320px;order:-1}.stage-hint{display:none}}
-@media(max-width:480px){.hero h1{font-size:clamp(2.3rem,10vw,2.9rem)}.hero-stage{height:260px}}
+/* VALUE */
+.val-list{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:640px){.val-list{grid-template-columns:1fr}}
+.val-item{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.val-n{font-family:var(--serif);font-size:1.3rem;color:var(--dim)}
+.val-item h3{font-size:1rem;font-weight:700;margin-bottom:4px}
+.val-item p{font-size:.88rem;color:var(--muted)}
 
-section{padding:72px 0;position:relative;z-index:1}
-.kicker{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.st{font-family:var(--serif);font-size:clamp(1.85rem,4.4vw,3rem);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:10px}
-.st em{font-style:italic;color:var(--g)}
-.sl{font-size:.95rem;color:var(--muted);max-width:420px;margin-bottom:28px}
+/* SERVICES */
+.svc{display:grid;grid-template-columns:80px 1fr auto;gap:20px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+@media(max-width:700px){.svc{grid-template-columns:1fr;gap:8px}}
+.svc-n{font-family:var(--serif);font-size:1.8rem;color:var(--dim);line-height:1}
+.svc h3{font-size:1.2rem;font-weight:700;margin-bottom:4px}
+.svc-who{font-size:.8rem;color:var(--dim);margin-bottom:8px}
+.svc-desc{font-size:.92rem;color:var(--muted);max-width:480px}
+.svc-price{text-align:right;white-space:nowrap}
+@media(max-width:700px){.svc-price{text-align:left}}
+.svc-price strong{display:block;font-size:1.2rem;margin-bottom:8px}
+.svc-price .btn{min-height:40px;padding:0 16px;font-size:.8rem}
 
-/* tilt cards */
-.tilt{transform-style:preserve-3d;transition:transform .15s ease-out}
-.tilt-inner{transform:translateZ(20px)}
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.price-grid{grid-template-columns:1fr;max-width:400px}}
+.price{padding:32px 26px;border:1px solid var(--line);background:var(--bg2);display:flex;flex-direction:column;position:relative}
+.price.opt{border-color:rgba(184,240,60,.35)}
+.price-badge{position:absolute;top:-11px;left:24px;background:var(--g);color:#0a0c0b;font-size:.65rem;font-weight:700;padding:4px 10px;letter-spacing:.04em}
+.price-name{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.price-amt{font-size:2rem;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+.price-amt span{font-size:.9rem;font-weight:400;color:var(--muted)}
+.price-for{font-size:.88rem;color:var(--muted);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.price ul{flex:1;list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.price li{font-size:.88rem;color:var(--muted);display:flex;gap:8px}
+.price li::before{content:"—";color:var(--dim)}
+.price .btn{width:100%}
 
-.laptop-stage{position:relative;min-height:420px;display:grid;place-items:center;border-radius:24px;overflow:hidden;padding:36px 16px}
-.laptop{width:min(680px,92%);transform:perspective(1200px) rotateX(6deg) rotateY(-6deg);filter:drop-shadow(0 36px 48px rgba(0,0,0,.5));transition:transform .4s var(--ease)}
-.laptop-screen{background:#0a0e0c;border:7px solid #1a1f1c;border-radius:14px 14px 5px 5px;padding:7px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
-.screen-inner{width:100%;height:min(300px,38vw);border-radius:7px;background:#0d1210;padding:14px;display:flex;flex-direction:column;gap:8px}
-.si-nav{display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:var(--muted)}
-.si-btn{background:var(--g);color:#041006;padding:3px 9px;border-radius:100px;font-weight:700;font-size:.62rem}
-.si-title{font-family:var(--serif);font-size:1.15rem;line-height:1.15;max-width:180px}
-.si-title em{color:var(--g);font-style:italic}
-.si-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:auto}
-.si-card{height:36px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
-.laptop-base{height:16px;margin:0 -5%;background:linear-gradient(#3a403c,#151a17);border-radius:0 0 20px 20px;position:relative}
-.laptop-base::after{content:"";position:absolute;left:38%;right:38%;top:3px;height:3px;border-radius:4px;background:#555}
-.laptop-cap{position:absolute;left:16px;bottom:14px;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-@media(max-width:600px){.laptop-stage{min-height:320px}.screen-inner{height:200px}}
+/* CALC */
+.calc{border:1px solid var(--line);background:var(--bg2);padding:32px 28px;max-width:560px}
+.calc-row{margin-bottom:20px}
+.calc-row label{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.calc-opts{display:flex;flex-wrap:wrap;gap:8px}
+.calc-opt{padding:10px 14px;border:1px solid var(--line);font-size:.85rem;color:var(--muted);cursor:pointer;transition:.2s;border-radius:2px}
+.calc-opt:hover,.calc-opt.on{border-color:var(--g);color:var(--text);background:var(--gdim)}
+.calc-result{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.calc-result strong{font-size:1.4rem}
+.calc-note{font-size:.8rem;color:var(--dim);margin-top:8px}
 
-.hq{font-family:var(--serif);font-size:clamp(1.35rem,3.4vw,2.1rem);line-height:1.2;max-width:620px;margin-bottom:28px}
-.pg{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-@media(max-width:900px){.pg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.pg{grid-template-columns:1fr}}
-.pc{padding:14px 12px;border-radius:14px}.pc n{display:block;font-size:.58rem;color:var(--dim);margin-bottom:4px;letter-spacing:.08em}.pc p{font-size:.8rem;color:var(--muted);line-height:1.35}
-
-/* quiz */
-.quiz{padding:24px;border-radius:20px;max-width:560px}
-.quiz-step{display:none}.quiz-step.active{display:block}
+/* QUIZ */
+.quiz{max-width:520px;border:1px solid var(--line);background:var(--bg2);padding:28px}
+.quiz-bar{display:flex;gap:6px;margin-bottom:20px}
+.quiz-bar i{height:2px;flex:1;background:var(--line)}
+.quiz-bar i.on{background:var(--g)}
 .quiz-q{font-size:1.1rem;font-weight:700;margin-bottom:16px}
 .quiz-opts{display:flex;flex-direction:column;gap:8px}
-.quiz-opt{padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);text-align:left;font-size:.9rem;transition:.25s;cursor:pointer}
-.quiz-opt:hover,.quiz-opt.selected{border-color:rgba(200,255,82,.4);background:rgba(200,255,82,.08)}
-.quiz-progress{display:flex;gap:6px;margin-bottom:18px}
-.quiz-progress span{height:3px;flex:1;border-radius:2px;background:rgba(255,255,255,.1)}
-.quiz-progress span.on{background:var(--g)}
-.quiz-result{text-align:center;padding:10px 0}
-.quiz-result h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:8px}
-.quiz-result p{color:var(--muted);margin-bottom:16px;font-size:.9rem}
+.quiz-opt{padding:14px 16px;border:1px solid var(--line);text-align:left;font-size:.9rem;color:var(--muted);cursor:pointer;transition:.2s}
+.quiz-opt:hover{border-color:var(--line2);color:var(--text)}
+.quiz-step{display:none}.quiz-step.active{display:block}
+.quiz-out{text-align:center}
+.quiz-out h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:8px}
+.quiz-out p{color:var(--muted);margin-bottom:20px;font-size:.92rem}
 
-.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:700px){.q-grid{grid-template-columns:1fr}}
-.q-card{padding:20px 16px;border-radius:16px;cursor:pointer;text-align:left;display:block;transition:border-color .3s,box-shadow .3s}
-.q-card:hover{border-color:rgba(200,255,82,.35);box-shadow:0 0 32px rgba(200,255,82,.08)}
-.q-card h3{font-size:.98rem;font-weight:700;margin-bottom:5px}
-.q-card p{font-size:.84rem;color:var(--muted);margin-bottom:10px}
-.q-card .go{font-size:.78rem;font-weight:600;color:var(--g)}
+/* WORK */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:680px){.work-grid{grid-template-columns:1fr}}
+.work{border:1px solid var(--line);background:var(--bg2);display:flex;flex-direction:column;transition:border-color .25s}
+.work:hover{border-color:var(--line2)}
+.work-prev{aspect-ratio:16/10;background:linear-gradient(145deg,#141a16,#0a0c0b);display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.work-prev span{font-family:var(--serif);font-size:1.6rem;color:rgba(255,255,255,.12)}
+.work-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.work-type{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
+.work h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.work p{font-size:.88rem;color:var(--muted);margin-bottom:14px;flex:1}
+.work-link{font-size:.88rem;font-weight:600}
+.work-link:hover{color:var(--g)}
+.work-next{border-style:dashed;align-items:center;justify-content:center;text-align:center;padding:40px 20px;min-height:260px}
 
-.whom{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* THIS SITE */
+.meta-case{border:1px solid var(--line);padding:36px 32px;background:var(--bg2)}
+.meta-case h3{font-family:var(--serif);font-size:1.6rem;margin-bottom:12px}
+.meta-case p{color:var(--muted);margin-bottom:16px;max-width:520px}
+.meta-tags{display:flex;flex-wrap:wrap;gap:8px}
+.meta-tags span{font-size:.75rem;padding:6px 12px;border:1px solid var(--line);color:var(--muted)}
+
+/* WHOM */
+.whom{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:700px){.whom{grid-template-columns:1fr}}
-.whom-box{padding:22px 18px;border-radius:16px}
-.whom-box h3{font-size:1rem;font-weight:700;margin-bottom:12px}
-.whom-box.yes h3{color:var(--g)}.whom-box.no h3{color:var(--muted)}
+.whom-box{padding:28px 24px;border:1px solid var(--line);background:var(--bg2)}
+.whom-box h3{font-size:1rem;font-weight:700;margin-bottom:14px}
+.whom-box.yes h3{color:var(--g)}
 .whom-box ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.whom-box li{font-size:.88rem;color:var(--muted);padding-left:18px;position:relative}
-.whom-box.yes li::before{content:"✓";position:absolute;left:0;color:var(--g)}
+.whom-box li{font-size:.9rem;color:var(--muted);padding-left:16px;position:relative}
+.whom-box.yes li::before{content:"✓";position:absolute;left:0;color:var(--g);font-size:.8rem}
 .whom-box.no li::before{content:"—";position:absolute;left:0;color:var(--dim)}
 
-.guar{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(max-width:640px){.guar{grid-template-columns:1fr}}
-.guar-item{padding:18px 16px;border-radius:14px;display:grid;grid-template-columns:36px 1fr;gap:12px}
-.guar-n{width:32px;height:32px;border-radius:50%;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;font-size:.75rem;font-weight:700}
-.guar-item h3{font-size:.92rem;font-weight:700;margin-bottom:3px}.guar-item p{font-size:.82rem;color:var(--muted)}
+/* TRUST */
+.trust-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.trust-list{grid-template-columns:1fr}}
+.trust-i{padding:20px;border:1px solid var(--line)}
+.trust-i h3{font-size:.95rem;font-weight:700;margin-bottom:6px}
+.trust-i p{font-size:.85rem;color:var(--muted)}
+.honest{margin-top:28px;padding:24px;border-left:3px solid var(--g);background:var(--bg2);max-width:560px}
+.honest h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:8px}
+.honest p{font-size:.9rem;color:var(--muted)}
 
-.vg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-@media(max-width:768px){.vg{grid-template-columns:1fr}}
-.vc{padding:20px 16px;border-radius:16px}
-.vi{width:34px;height:34px;border-radius:10px;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;margin-bottom:10px;font-size:.95rem}
-.vc h3{font-size:.98rem;font-weight:700;margin-bottom:4px}.vc p{font-size:.84rem;color:var(--muted)}
+/* PROCESS */
+.proc{display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:p}
+@media(max-width:900px){.proc{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:500px){.proc{grid-template-columns:1fr 1fr}}
+.proc-i{padding:20px 16px;border:1px solid var(--line);border-right:none}
+.proc-i:last-child{border-right:1px solid var(--line)}
+@media(max-width:900px){.proc-i{border-right:1px solid var(--line)}}
+.proc-i::before{counter-increment:p;content:"0" counter(p);font-family:var(--serif);font-size:1.2rem;color:var(--dim);display:block;margin-bottom:8px}
+.proc-i h3{font-size:.9rem;font-weight:700;margin-bottom:4px}
+.proc-i p{font-size:.8rem;color:var(--muted)}
+.proc-note{margin-top:20px;font-size:.9rem;color:var(--muted)}
 
-.svc{display:grid;grid-template-columns:52px 1fr auto;gap:12px;padding:18px;border-radius:16px;margin-bottom:8px}
-@media(max-width:700px){.svc{grid-template-columns:1fr;gap:6px}}
-.sn{font-family:var(--serif);font-size:1.4rem;color:var(--dim)}
-.svc h3{font-size:1.05rem;font-weight:700}.sm{font-size:.72rem;color:var(--dim);margin-bottom:5px}
-.sd{font-size:.86rem;color:var(--muted);margin-bottom:7px}
-.tags{display:flex;flex-wrap:wrap;gap:4px}.tags span{font-size:.64rem;padding:2px 7px;border-radius:100px;border:1px solid var(--line);color:var(--muted)}
-.sp{text-align:right;white-space:nowrap}@media(max-width:700px){.sp{text-align:left}}
-.sp strong{display:block;font-size:1.1rem;margin-bottom:6px}.sp .btn{min-height:34px;padding:0 12px;font-size:.74rem}
+/* DOMAIN */
+.dom{max-width:560px}
+.dom p{font-size:.95rem;color:var(--muted);margin-bottom:12px}
+.dom strong{color:var(--text)}
 
-.prg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-@media(max-width:860px){.prg{grid-template-columns:1fr;max-width:360px;margin-inline:auto}}
-.pr{padding:24px 18px;border-radius:18px;display:flex;flex-direction:column;position:relative}
-.pr.hot{border-color:rgba(200,255,82,.4);box-shadow:0 0 40px rgba(200,255,82,.1)}
-.pb{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--g);color:#041006;font-size:.6rem;font-weight:700;padding:3px 10px;border-radius:100px}
-.pn{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.pa{font-size:1.7rem;font-weight:700}.pa span{font-size:.82rem;font-weight:400;color:var(--muted)}
-.pf{font-size:.8rem;color:var(--dim);margin:5px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-.pl{flex:1;display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
-.pl li{font-size:.8rem;color:var(--muted);display:flex;gap:5px}.pl li::before{content:"→";color:var(--g)}
-.pr .btn{width:100%}
+/* FAQ */
+.faq{max-width:640px}
+.faq-i{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;padding:16px 0;font-size:.95rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px}
+.faq-q:hover{color:var(--g)}
+.faq-q svg{flex-shrink:0;transition:transform .25s}
+.faq-i.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
+.faq-i.open .faq-a{max-height:200px}
+.faq-a-in{padding:0 0 16px;font-size:.9rem;color:var(--muted)}
 
-.wg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(max-width:680px){.wg{grid-template-columns:1fr}}
-.wk{border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.wp{aspect-ratio:16/10;background:linear-gradient(145deg,#0c1510,#050a08);display:grid;place-items:center;position:relative}
-.wp::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(200,255,82,.08),transparent 50%)}
-.wp span{font-family:var(--serif);font-size:1.4rem;color:rgba(255,255,255,.1);position:relative;z-index:1}
-.wb{padding:14px;flex:1;display:flex;flex-direction:column}
-.wt{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g);margin-bottom:3px}
-.wk h3{font-size:1rem;font-weight:700;margin-bottom:3px}.wk p{font-size:.8rem;color:var(--muted);margin-bottom:8px;flex:1}
-.wl{font-size:.8rem;font-weight:600}.wl:hover{color:var(--g)}
-.wn{border-style:dashed;background:transparent;align-items:center;justify-content:center;text-align:center;padding:32px 14px;min-height:220px}
+/* FINAL */
+.final{padding:100px 0 80px;text-align:center;border-top:1px solid var(--line)}
+.final h2{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin-bottom:14px}
+.final p{color:var(--muted);max-width:400px;margin:0 auto 28px}
+.final-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 20px;margin-top:24px;font-size:.88rem;color:var(--dim)}
+.final-links a:hover{color:var(--g)}
 
-.trust{max-width:540px;padding:24px 20px;border-radius:16px}
-.trust h3{font-family:var(--serif);font-size:1.25rem;margin-bottom:8px}.trust p{color:var(--muted);margin-bottom:5px;font-size:.88rem}
+.footer{padding:28px 0 100px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8rem;color:var(--dim)}
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(10,12,11,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.sticky .btn{width:100%}
+@media(max-width:800px){.sticky{display:block}.footer{padding-bottom:90px}}
 
-.psg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;counter-reset:s}
-@media(max-width:800px){.psg{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.psg{grid-template-columns:1fr}}
-.stp{padding:16px;border-radius:14px}
-.stp::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.15rem;color:var(--dim);display:block;margin-bottom:6px}
-.stp h3{font-size:.88rem;font-weight:700;margin-bottom:2px}.stp p{font-size:.78rem;color:var(--muted)}.stp .t{font-size:.7rem;color:var(--g);margin-top:4px}
-.pnote{margin-top:14px;padding:12px 14px;border-radius:12px;background:rgba(200,255,82,.1);border-left:3px solid var(--g);font-size:.84rem;color:var(--muted)}
-
-.rl{max-width:460px}
-.ri{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.ri:last-child{border-bottom:none}
-.rn{width:26px;height:26px;border-radius:50%;background:rgba(200,255,82,.12);color:var(--g);display:grid;place-items:center;font-size:.68rem;font-weight:700}
-.ri p{font-size:.86rem;color:var(--muted);padding-top:2px}
-
-.fl{max-width:580px;display:flex;flex-direction:column;gap:6px}
-.fi{border-radius:12px;overflow:hidden}
-.fq{width:100%;text-align:left;padding:12px 14px;font-size:.86rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:44px}
-.fq:hover{color:var(--g)}.fq svg{transition:transform .25s;flex-shrink:0}.fi.open .fq svg{transform:rotate(45deg)}
-.fa{max-height:0;overflow:hidden;transition:max-height .3s}.fi.open .fa{max-height:140px}
-.fai{padding:0 14px 12px;font-size:.82rem;color:var(--muted)}
-
-.final{text-align:center;padding:80px 0 60px;position:relative}
-.final-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 50% 50%,rgba(200,255,82,.08),transparent)}
-.final h2{font-family:var(--serif);font-size:clamp(1.8rem,4.6vw,3.1rem);line-height:1.08;margin-bottom:10px}
-.final p{color:var(--muted);max-width:360px;margin:0 auto 20px;font-size:.92rem}
-.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:18px;font-size:.8rem;color:var(--dim)}.flinks a:hover{color:var(--g)}
-.footer{padding:18px 0 85px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.74rem;color:var(--dim);position:relative;z-index:1}
-.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(2,5,4,.93);backdrop-filter:blur(20px);border-top:1px solid var(--line)}.sticky .btn{width:100%}
-@media(max-width:780px){.sticky{display:block}.footer{padding-bottom:78px}}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.on{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
 :focus-visible{outline:2px solid var(--g);outline-offset:3px}
 </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="lights" aria-hidden="true">
-  <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
-</div>
-
-<nav class="nav glass">
-  <a href="#" class="logo">1<i>САЙТ</i></a>
-  <div class="nav-links">
-    <a href="#quiz">Квиз</a>
-    <a href="#q">Вопросы</a>
-    <a href="#whom">Для кого</a>
-    <a href="#pricing">Цены</a>
-    <a href="#work">Работы</a>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#" class="logo">1<span>САЙТ</span></a>
+    <nav class="nav-links" aria-label="Основная">
+      <a href="#services">Услуги</a>
+      <a href="#pricing">Цены</a>
+      <a href="#calc">Калькулятор</a>
+      <a href="#work">Работы</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0." class="nav-cta" target="_blank" rel="noopener noreferrer" data-ev="whatsapp_click">Заказать сайт</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span></button>
   </div>
-  <a href="https://wa.me/79696656414" class="nav-cta magnetic" target="_blank" rel="noopener">Заказать ↗</a>
-  <button class="burger" id="burger" aria-label="Меню"><span></span></button>
-</nav>
-<div class="mmenu" id="mmenu">
-  <a href="#quiz" data-c>Квиз</a><a href="#q" data-c>Вопросы</a><a href="#whom" data-c>Для кого</a><a href="#pricing" data-c>Цены</a><a href="#work" data-c>Работы</a>
-  <a href="https://wa.me/79696656414" class="nav-cta" target="_blank" rel="noopener">Заказать ↗</a>
+</header>
+<div class="mnav" id="mnav">
+  <a href="#services" data-c>Услуги</a>
+  <a href="#pricing" data-c>Цены</a>
+  <a href="#calc" data-c>Калькулятор</a>
+  <a href="#work" data-c>Работы</a>
+  <a href="#faq" data-c>FAQ</a>
+  <a href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82." class="nav-cta" target="_blank" rel="noopener noreferrer">Заказать сайт</a>
 </div>
 
-<main class="wrap">
-<section class="hero">
+<main>
+<section class="hero wrap">
   <div>
-    <div class="eyebrow">Махачкала · Дагестан · remote</div>
-    <h1>Сайт, на котором<br>клиент <em>пишет вам</em><br>в WhatsApp.</h1>
-    <p class="hero-result">Через 7–14 дней — рабочая ссылка: услуги, цены, кнопка WhatsApp.</p>
-    <p class="hero-lead">Для кафе, салонов, барбершопов и локального бизнеса. Без шаблонов и воды.</p>
+    <p class="eyebrow">Махачкала · Дагестан · Россия</p>
+    <h1>Сайт, который<br>делает следующий<br>шаг <em>очевидным</em>.</h1>
+    <p class="hero-sub">Понятные сайты для кафе, салонов, барбершопов и локального бизнеса. Клиент видит услуги, цены и пишет в WhatsApp.</p>
+    <div class="hero-meta">
+      <span>от <b>15 000 ₽</b></span>
+      <span><b>7–14</b> дней</span>
+      <span>Mobile-first</span>
+    </div>
     <div class="hero-actions">
-      <span class="magnetic"><a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Получить расчёт ↗</a></span>
-      <span class="magnetic"><a href="#quiz" class="btn btn-g">Собрать формат ↓</a></span>
+      <a href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0." class="btn btn-p" target="_blank" rel="noopener noreferrer" data-ev="whatsapp_click">Заказать сайт ↗</a>
+      <a href="#work" class="btn btn-g">Смотреть работы</a>
     </div>
-    <div class="hero-meta"><span>Цена до старта</span><span>Ответ в течение дня</span><span>Mobile-first</span></div>
   </div>
-  <div class="hero-stage">
-    <div class="canvas-wrap glass" id="stage">
-      <canvas id="c3d"></canvas>
-      <div class="stage-label">DRAG · TAP</div>
-      <div class="stage-badge glass"><i></i> Живой 3D</div>
-      <div class="stage-hint">Кликни — вспышка</div>
+  <div class="hero-visual" id="stage">
+    <canvas id="c3d" aria-label="3D объект"></canvas>
+    <span class="hv-label">3D · drag</span>
+  </div>
+</section>
+
+<div class="line wrap"></div>
+
+<section class="wrap" id="problem">
+  <p class="sec-n reveal">01 — Проблема</p>
+  <h2 class="sec-t reveal">Почему клиент<br><em>уходит</em></h2>
+  <p class="sec-l reveal">Человек уже ищет вас. Если сайт мешает — он уйдёт к конкуренту.</p>
+  <div class="prob-grid reveal">
+    <div class="prob-item"><h3>Непонятные услуги</h3><p>Не ясно, чем вы занимаетесь и сколько это стоит.</p></div>
+    <div class="prob-item"><h3>Нет быстрого контакта</h3><p>Номер спрятан. WhatsApp нет. Форма сложная.</p></div>
+    <div class="prob-item"><h3>Плохо с телефона</h3><p>Большинство заходят с телефона. Если криво — уходят.</p></div>
+  </div>
+  <div class="prob-sol reveal"><strong>Мы убираем эти препятствия.</strong> Структура, цены, фото, WhatsApp, нормальный mobile.</div>
+</section>
+
+<section class="wrap" id="value">
+  <p class="sec-n reveal">02 — Что получаете</p>
+  <h2 class="sec-t reveal">Не код.<br><em>Инструмент</em></h2>
+  <div class="val-list reveal">
+    <div class="val-item"><div class="val-n">01</div><div><h3>Понятная структура</h3><p>Услуги, цены, фото — без воды. Клиент сразу видит суть.</p></div></div>
+    <div class="val-item"><div class="val-n">02</div><div><h3>WhatsApp и Telegram</h3><p>Один клик — уже пишет вам. Не ищет номер.</p></div></div>
+    <div class="val-item"><div class="val-n">03</div><div><h3>Mobile-first</h3><p>Сначала телефон. Потом десктоп.</p></div></div>
+    <div class="val-item"><div class="val-n">04</div><div><h3>Базовая SEO</h3><p>Title, description, разметка. Чтобы вас находили.</p></div></div>
+    <div class="val-item"><div class="val-n">05</div><div><h3>Публикация</h3><p>Готовая ссылка. Домен и хостинг — на вас, подскажем.</p></div></div>
+    <div class="val-item"><div class="val-n">06</div><div><h3>Правки по структуре</h3><p>Согласовываем каркас. В рамках договорённого — правки входят.</p></div></div>
+  </div>
+</section>
+
+<section class="wrap" id="services">
+  <p class="sec-n reveal">03 — Услуги</p>
+  <h2 class="sec-t reveal">Формат<br><em>под задачу</em></h2>
+  <p class="sec-l reveal">Не «сайт вообще». Конкретный формат под ваш бизнес.</p>
+
+  <article class="svc reveal">
+    <div class="svc-n">01</div>
+    <div>
+      <h3>Сайт-визитка</h3>
+      <div class="svc-who">Кафе · салоны · специалисты · локальные услуги</div>
+      <p class="svc-desc">Одна сильная страница: услуги, цены, фото, WhatsApp. Клиент понимает и пишет.</p>
+    </div>
+    <div class="svc-price">
+      <strong>от 15 000 ₽</strong>
+      <a href="https://wa.me/79696656414?text=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%81%D0%B0%D0%B9%D1%82-%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%BA%D0%B0" class="btn btn-g" target="_blank" rel="noopener noreferrer" data-ev="pricing_click">Обсудить</a>
+    </div>
+  </article>
+  <article class="svc reveal">
+    <div class="svc-n">02</div>
+    <div>
+      <h3>Лендинг</h3>
+      <div class="svc-who">Одно действие: запись, заявка, заказ</div>
+      <p class="svc-desc">Страница вокруг одной цели. Hero, преимущества, CTA. Без лишнего.</p>
+    </div>
+    <div class="svc-price">
+      <strong>от 25 000 ₽</strong>
+      <a href="https://wa.me/79696656414?text=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3" class="btn btn-g" target="_blank" rel="noopener noreferrer" data-ev="pricing_click">Обсудить</a>
+    </div>
+  </article>
+  <article class="svc reveal">
+    <div class="svc-n">03</div>
+    <div>
+      <h3>Сайт для бизнеса</h3>
+      <div class="svc-who">Несколько страниц: услуги, о нас, галерея</div>
+      <p class="svc-desc">Когда одной страницы мало. Структура, навигация, единый стиль.</p>
+    </div>
+    <div class="svc-price">
+      <strong>от 30 000 ₽</strong>
+      <a href="https://wa.me/79696656414?text=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0" class="btn btn-g" target="_blank" rel="noopener noreferrer" data-ev="pricing_click">Обсудить</a>
+    </div>
+  </article>
+  <article class="svc reveal">
+    <div class="svc-n">04</div>
+    <div>
+      <h3>Редизайн</h3>
+      <div class="svc-who">Сайт есть, но устарел или плохо с телефона</div>
+      <p class="svc-desc">Новый визуал, структура, mobile. Без смены домена.</p>
+    </div>
+    <div class="svc-price">
+      <strong>от 20 000 ₽</strong>
+      <a href="https://wa.me/79696656414?text=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%80%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD" class="btn btn-g" target="_blank" rel="noopener noreferrer" data-ev="pricing_click">Обсудить</a>
+    </div>
+  </article>
+</section>
+
+<section class="wrap" id="pricing">
+  <p class="sec-n reveal">04 — Цены</p>
+  <h2 class="sec-t reveal">Прозрачно.<br><em>До старта.</em></h2>
+  <p class="sec-l reveal">Точная сумма — после короткого обсуждения. Фиксируем до начала работы.</p>
+  <div class="price-grid">
+    <div class="price reveal">
+      <div class="price-name">Start</div>
+      <div class="price-amt">от 15 000 <span>₽</span></div>
+      <div class="price-for">Визитка. Одна страница.</div>
+      <ul>
+        <li>Услуги, цены, контакты</li>
+        <li>Mobile + WhatsApp</li>
+        <li>Базовая SEO</li>
+        <li>~7–10 дней</li>
+      </ul>
+      <a href="https://wa.me/79696656414?text=%D0%A2%D0%B0%D1%80%D0%B8%D1%84%20START" class="btn btn-g" target="_blank" rel="noopener noreferrer" data-ev="pricing_click">START</a>
+    </div>
+    <div class="price opt reveal">
+      <div class="price-badge">ОПТИМАЛЬНЫЙ</div>
+      <div class="price-name">Business</div>
+      <div class="price-amt">от 30 000 <span>₽</span></div>
+      <div class="price-for">Лендинг или несколько страниц.</div>
+      <ul>
+        <li>Структура под цель</li>
+        <li>Галерея, формы</li>
+        <li>Адаптив + SEO</li>
+        <li>~10–14 дней</li>
+      </ul>
+      <a href="https://wa.me/79696656414?text=%D0%A2%D0%B0%D1%80%D0%B8%D1%84%20BUSINESS" class="btn btn-p" target="_blank" rel="noopener noreferrer" data-ev="pricing_click">BUSINESS</a>
+    </div>
+    <div class="price reveal">
+      <div class="price-name">Premium</div>
+      <div class="price-amt">от 50 000 <span>₽</span></div>
+      <div class="price-for">Сложный визуал, анимации, 3D.</div>
+      <ul>
+        <li>Индивидуальный стиль</li>
+        <li>Motion / 3D</li>
+        <li>Приоритет</li>
+        <li>Срок по задаче</li>
+      </ul>
+      <a href="https://wa.me/79696656414?text=%D0%A2%D0%B0%D1%80%D0%B8%D1%84%20PREMIUM" class="btn btn-g" target="_blank" rel="noopener noreferrer" data-ev="pricing_click">PREMIUM</a>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="kicker reveal">Как выглядит результат</div>
-  <h2 class="st reveal">Клиент заходит —<br>и <em>сразу понимает</em>.</h2>
-  <div class="laptop-stage glass reveal" id="laptopStage">
-    <div class="laptop" id="laptop">
-      <div class="laptop-screen">
-        <div class="screen-inner">
-          <div class="si-nav"><span>ВАШ БИЗНЕС</span><span class="si-btn">Написать</span></div>
-          <div class="si-title">Услуги и цены<br><em>на виду</em>.</div>
-          <p style="font-size:.68rem;color:var(--dim);max-width:150px">WhatsApp в один клик.</p>
-          <div class="si-cards"><div class="si-card"></div><div class="si-card"></div><div class="si-card"></div></div>
-        </div>
+<section class="wrap" id="calc">
+  <p class="sec-n reveal">05 — Калькулятор</p>
+  <h2 class="sec-t reveal">Ориентир<br><em>по бюджету</em></h2>
+  <p class="sec-l reveal">Не окончательная цена. После расчёта — обсудим в WhatsApp.</p>
+  <div class="calc reveal">
+    <div class="calc-row">
+      <label>Тип сайта</label>
+      <div class="calc-opts" data-key="type">
+        <button type="button" class="calc-opt on" data-v="15000">Визитка</button>
+        <button type="button" class="calc-opt" data-v="25000">Лендинг</button>
+        <button type="button" class="calc-opt" data-v="30000">Бизнес</button>
+        <button type="button" class="calc-opt" data-v="20000">Редизайн</button>
       </div>
-      <div class="laptop-base"></div>
     </div>
-    <div class="laptop-cap">PREVIEW · ваш будущий сайт</div>
+    <div class="calc-row">
+      <label>Анимации / 3D</label>
+      <div class="calc-opts" data-key="anim">
+        <button type="button" class="calc-opt on" data-v="0">Без</button>
+        <button type="button" class="calc-opt" data-v="10000">Лёгкие</button>
+        <button type="button" class="calc-opt" data-v="20000">Сложные</button>
+      </div>
+    </div>
+    <div class="calc-row">
+      <label>Дополнительно</label>
+      <div class="calc-opts" data-key="extra">
+        <button type="button" class="calc-opt on" data-v="0">Нет</button>
+        <button type="button" class="calc-opt" data-v="5000">Галерея / формы</button>
+        <button type="button" class="calc-opt" data-v="8000">Несколько страниц</button>
+      </div>
+    </div>
+    <div class="calc-result">
+      <div>
+        <div style="font-size:.75rem;color:var(--dim);margin-bottom:4px">Ориентир</div>
+        <strong id="calcSum">от 15 000 ₽</strong>
+        <p class="calc-note">Точная сумма — после обсуждения</p>
+      </div>
+      <a href="#" id="calcWa" class="btn btn-p" target="_blank" rel="noopener noreferrer" data-ev="calculator_complete">Получить расчёт ↗</a>
+    </div>
   </div>
 </section>
 
-<section>
-  <p class="hq reveal">Ваш клиент уже ищет вас.<br>Вопрос — <em style="font-style:italic;color:var(--g)">что он увидит</em>.</p>
-  <div class="pg reveal">
-    <div class="pc glass tilt"><div class="tilt-inner"><n>01</n><p>Нет сайта — уходит к конкуренту</p></div></div>
-    <div class="pc glass tilt"><div class="tilt-inner"><n>02</n><p>Старый сайт выглядит дешевле</p></div></div>
-    <div class="pc glass tilt"><div class="tilt-inner"><n>03</n><p>С телефона всё ломается</p></div></div>
-    <div class="pc glass tilt"><div class="tilt-inner"><n>04</n><p>Цены спрятаны</p></div></div>
-    <div class="pc glass tilt"><div class="tilt-inner"><n>05</n><p>Нет быстрого контакта</p></div></div>
-  </div>
-</section>
-
-<!-- QUIZ -->
-<section id="quiz">
-  <div class="kicker reveal">3 клика</div>
-  <h2 class="st reveal">Собери свой формат.</h2>
-  <p class="sl reveal">Ответь на 3 вопроса — получишь готовое сообщение в WhatsApp с рекомендацией.</p>
-  <div class="quiz glass reveal" id="quizBox">
-    <div class="quiz-progress"><span class="on" id="qp1"></span><span id="qp2"></span><span id="qp3"></span></div>
-    <div class="quiz-step active" data-step="1">
+<section class="wrap" id="quiz">
+  <p class="sec-n reveal">06 — Квиз</p>
+  <h2 class="sec-t reveal">3 вопроса.<br><em>Формат и бюджет.</em></h2>
+  <div class="quiz reveal" id="quizBox">
+    <div class="quiz-bar"><i class="on" id="qb1"></i><i id="qb2"></i><i id="qb3"></i></div>
+    <div class="quiz-step active" data-s="1">
       <div class="quiz-q">Что сейчас с сайтом?</div>
       <div class="quiz-opts">
-        <button class="quiz-opt" data-v="none">Нет сайта</button>
-        <button class="quiz-opt" data-v="old">Есть, но стыдно / устарел</button>
-        <button class="quiz-opt" data-v="ok">Есть, хочу улучшить</button>
+        <button type="button" class="quiz-opt" data-v="none">Нет сайта</button>
+        <button type="button" class="quiz-opt" data-v="old">Есть, но устарел</button>
+        <button type="button" class="quiz-opt" data-v="ok">Есть, хочу улучшить</button>
       </div>
     </div>
-    <div class="quiz-step" data-step="2">
-      <div class="quiz-q">Какая главная цель?</div>
+    <div class="quiz-step" data-s="2">
+      <div class="quiz-q">Главная цель?</div>
       <div class="quiz-opts">
-        <button class="quiz-opt" data-v="show">Показать услуги и цены</button>
-        <button class="quiz-opt" data-v="lead">Заявки / запись / WhatsApp</button>
-        <button class="quiz-opt" data-v="full">Полноценный сайт бизнеса</button>
+        <button type="button" class="quiz-opt" data-v="show">Показать услуги и цены</button>
+        <button type="button" class="quiz-opt" data-v="lead">Заявки / WhatsApp</button>
+        <button type="button" class="quiz-opt" data-v="full">Полноценный сайт</button>
       </div>
     </div>
-    <div class="quiz-step" data-step="3">
+    <div class="quiz-step" data-s="3">
       <div class="quiz-q">Ориентир по бюджету?</div>
       <div class="quiz-opts">
-        <button class="quiz-opt" data-v="15">до 20 000 ₽</button>
-        <button class="quiz-opt" data-v="30">20–40 000 ₽</button>
-        <button class="quiz-opt" data-v="50">от 40 000 ₽</button>
+        <button type="button" class="quiz-opt" data-v="15">до 20 000 ₽</button>
+        <button type="button" class="quiz-opt" data-v="30">20–40 000 ₽</button>
+        <button type="button" class="quiz-opt" data-v="50">от 40 000 ₽</button>
       </div>
     </div>
-    <div class="quiz-step" data-step="4">
-      <div class="quiz-result">
-        <h3 id="quizTitle">Готово</h3>
-        <p id="quizText">Рекомендация появится здесь</p>
-        <a id="quizLink" href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Написать в WhatsApp ↗</a>
+    <div class="quiz-step" data-s="4">
+      <div class="quiz-out">
+        <h3 id="qzTitle">Готово</h3>
+        <p id="qzText"></p>
+        <a id="qzLink" href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener noreferrer" data-ev="quiz_complete">Получить расчёт ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="q">
-  <div class="kicker reveal">Или выберите сразу</div>
-  <h2 class="st reveal">Узнаёте себя?</h2>
-  <div class="q-grid">
-    <a class="q-card glass tilt reveal" href="https://wa.me/79696656414?text=У меня нет сайта. Хочу визитку." target="_blank" rel="noopener">
-      <div class="tilt-inner"><h3>У меня нет сайта</h3><p>Клиенты спрашивают — а его нет.</p><span class="go">Нужна визитка →</span></div>
-    </a>
-    <a class="q-card glass tilt reveal" href="https://wa.me/79696656414?text=Сайт есть, но стыдно. Нужен редизайн." target="_blank" rel="noopener">
-      <div class="tilt-inner"><h3>Сайт есть, но стыдно</h3><p>Выглядит дешевле бизнеса.</p><span class="go">Нужен редизайн →</span></div>
-    </a>
-    <a class="q-card glass tilt reveal" href="https://wa.me/79696656414?text=Цены спрашивают по телефону. Хочу всё на сайте + WhatsApp." target="_blank" rel="noopener">
-      <div class="tilt-inner"><h3>Цены только по телефону</h3><p>На сайте их нет или спрятаны.</p><span class="go">Цены + WhatsApp →</span></div>
-    </a>
-    <a class="q-card glass tilt reveal" href="https://wa.me/79696656414?text=Нужен лендинг под запись / заявку." target="_blank" rel="noopener">
-      <div class="tilt-inner"><h3>Нужно одно действие</h3><p>Запись, заявка, заказ.</p><span class="go">Нужен лендинг →</span></div>
-    </a>
+<section class="wrap" id="work">
+  <p class="sec-n reveal">07 — Работы</p>
+  <h2 class="sec-t reveal">Реальные<br><em>проекты</em></h2>
+  <p class="sec-l reveal">Без выдуманных клиентов и метрик.</p>
+  <div class="work-grid">
+    <article class="work reveal">
+      <div class="work-prev"><span>BARBERSHOP</span></div>
+      <div class="work-body">
+        <div class="work-type">Лендинг · Барбершоп</div>
+        <h3>ЦЕХЪ</h3>
+        <p>Услуги, мастера, запись. Акцент на ясность и контакт.</p>
+        <a href="https://rasulovking2577.github.io/BARBERSHOP/" class="work-link" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click">Открыть проект ↗</a>
+      </div>
+    </article>
+    <article class="work reveal">
+      <div class="work-prev"><span>ARAGVI</span></div>
+      <div class="work-body">
+        <div class="work-type">Лендинг</div>
+        <h3>ARAGVI</h3>
+        <p>Структура под процесс и доверие. Чистая подача.</p>
+        <a href="https://rasulovking2577.github.io/Aragvi/" class="work-link" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click">Открыть проект ↗</a>
+      </div>
+    </article>
+    <article class="work reveal">
+      <div class="work-prev"><span>1САЙТ</span></div>
+      <div class="work-body">
+        <div class="work-type">Портфолио</div>
+        <h3>Предыдущая версия</h3>
+        <p>Сайт студии. Подход к дизайну и структуре.</p>
+        <a href="https://rasulovking2577.github.io/website/" class="work-link" target="_blank" rel="noopener noreferrer" data-ev="portfolio_click">Открыть проект ↗</a>
+      </div>
+    </article>
+    <article class="work work-next reveal">
+      <div>
+        <h3>Следующий — ваш</h3>
+        <p style="color:var(--muted);margin:8px 0 18px;font-size:.9rem">Напишите — предложим формат и цену</p>
+        <a href="https://wa.me/79696656414?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82" class="btn btn-p" target="_blank" rel="noopener noreferrer">Написать ↗</a>
+      </div>
+    </article>
   </div>
 </section>
 
-<section id="whom">
-  <div class="kicker reveal">Кому подходит</div>
-  <h2 class="st reveal">Честно: <em>для кого</em>.</h2>
+<section class="wrap">
+  <div class="meta-case reveal">
+    <h3>Этот сайт — тоже наша работа</h3>
+    <p>3D, анимации, адаптив, квиз, калькулятор, WhatsApp-воронка, SEO. Показывает, что умеем — без чужих кейсов.</p>
+    <div class="meta-tags">
+      <span>3D</span><span>Motion</span><span>Mobile</span><span>Quiz</span><span>Calculator</span><span>SEO</span><span>WhatsApp CTA</span>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="whom">
+  <p class="sec-n reveal">08 — Для кого</p>
+  <h2 class="sec-t reveal">Честно</h2>
   <div class="whom">
-    <div class="whom-box glass yes tilt reveal"><div class="tilt-inner">
+    <div class="whom-box yes reveal">
       <h3>✓ Подходит</h3>
       <ul>
         <li>Кафе, рестораны, кофейни</li>
         <li>Салоны, барбершопы</li>
-        <li>Локальные услуги и специалисты</li>
-        <li>Малый бизнес с понятной задачей</li>
-        <li>Кто хочет WhatsApp, а не «просто красиво»</li>
+        <li>Гостиницы, гостевые дома</li>
+        <li>Специалисты и локальные услуги</li>
+        <li>Кому нужен WhatsApp, а не «просто красиво»</li>
       </ul>
-    </div></div>
-    <div class="whom-box glass no tilt reveal"><div class="tilt-inner">
+    </div>
+    <div class="whom-box no reveal">
       <h3>— Не подходит</h3>
       <ul>
         <li>Крупные интернет-магазины</li>
-        <li>Сложные веб-сервисы</li>
-        <li>«Сайт на миллион»</li>
+        <li>Сложные веб-сервисы и приложения</li>
+        <li>Проекты «сайт на миллион»</li>
         <li>Только самый дешёвый шаблон</li>
       </ul>
-    </div></div>
+    </div>
   </div>
 </section>
 
-<section>
-  <div class="kicker reveal">Что получаете</div>
-  <h2 class="st reveal">Не код. <em>Инструмент</em>.</h2>
-  <div class="vg">
-    <div class="vc glass tilt reveal"><div class="tilt-inner"><div class="vi">①</div><h3>Понятно с секунды</h3><p>Услуги, цены, фото — без воды.</p></div></div>
-    <div class="vc glass tilt reveal"><div class="tilt-inner"><div class="vi">②</div><h3>WhatsApp в один клик</h3><p>Нажал — уже пишет вам.</p></div></div>
-    <div class="vc glass tilt reveal"><div class="tilt-inner"><div class="vi">③</div><h3>Сначала телефон</h3><p>Проектируем под mobile.</p></div></div>
+<section class="wrap">
+  <p class="sec-n reveal">09 — Доверие</p>
+  <h2 class="sec-t reveal">Почему нам<br><em>можно доверять</em></h2>
+  <div class="trust-list reveal">
+    <div class="trust-i"><h3>Реальные проекты</h3><p>Ссылки открываются. Без выдуманных кейсов.</p></div>
+    <div class="trust-i"><h3>Цены до старта</h3><p>Сумма и срок фиксируем до начала работы.</p></div>
+    <div class="trust-i"><h3>Прямой контакт</h3><p>Без менеджеров. Пишете — отвечаю.</p></div>
+    <div class="trust-i"><h3>Вы владеете сайтом</h3><p>Домен и хостинг на вас. Не создаём зависимость.</p></div>
+  </div>
+  <div class="honest reveal">
+    <h3>Не обещаем магию</h3>
+    <p>Не гарантируем топ в Google и продажи от одного сайта. Делаем инструмент: услуги, цены, фото и быстрый контакт. Честно.</p>
   </div>
 </section>
 
-<section>
-  <div class="kicker reveal">Спокойно</div>
-  <h2 class="st reveal">Снимаем страхи.</h2>
-  <div class="guar">
-    <div class="guar-item glass tilt reveal"><div class="tilt-inner" style="display:contents"><div class="guar-n">1</div><div><h3>Цена до старта</h3><p>Фиксируем до начала. Без сюрпризов.</p></div></div></div>
-    <div class="guar-item glass tilt reveal"><div class="tilt-inner" style="display:contents"><div class="guar-n">2</div><div><h3>Правки по структуре</h3><p>В рамках договорённого входят.</p></div></div></div>
-    <div class="guar-item glass tilt reveal"><div class="tilt-inner" style="display:contents"><div class="guar-n">3</div><div><h3>Тексты можно менять</h3><p>Цены и услуги — не навсегда.</p></div></div></div>
-    <div class="guar-item glass tilt reveal"><div class="tilt-inner" style="display:contents"><div class="guar-n">4</div><div><h3>Ответ в течение дня</h3><p>Обычно отвечаю в тот же день.</p></div></div></div>
+<section class="wrap" id="process">
+  <p class="sec-n reveal">10 — Процесс</p>
+  <h2 class="sec-t reveal">От сообщения<br>до ссылки</h2>
+  <div class="proc reveal">
+    <div class="proc-i"><h3>Бриф</h3><p>Вы рассказываете о бизнесе</p></div>
+    <div class="proc-i"><h3>Структура</h3><p>Каркас и цена</p></div>
+    <div class="proc-i"><h3>Дизайн</h3><p>Визуал и экраны</p></div>
+    <div class="proc-i"><h3>Разработка</h3><p>Код, адаптив, WhatsApp</p></div>
+    <div class="proc-i"><h3>Тест</h3><p>Телефоны и ПК</p></div>
+    <div class="proc-i"><h3>Запуск</h3><p>Готовая ссылка</p></div>
+  </div>
+  <p class="proc-note reveal">Вам не нужно разбираться в коде. Описываете бизнес — остальное делаю я.</p>
+</section>
+
+<section class="wrap">
+  <p class="sec-n reveal">11 — Домен и хостинг</p>
+  <h2 class="sec-t reveal">Простыми<br><em>словами</em></h2>
+  <div class="dom reveal">
+    <p><strong>Домен</strong> — адрес сайта (например, yourcafe.ru). Покупаете вы, владеете вы.</p>
+    <p><strong>Хостинг</strong> — место, где лежит сайт. Тоже ваш аккаунт.</p>
+    <p>Так вы не зависите от разработчика. Могу подсказать, как купить и настроить.</p>
   </div>
 </section>
 
-<section id="services">
-  <div class="kicker reveal">Форматы</div>
-  <h2 class="st reveal">Под задачу.</h2>
-  <article class="svc glass tilt reveal"><div class="tilt-inner" style="display:contents">
-    <div class="sn">01</div>
-    <div><h3>Сайт-визитка</h3><div class="sm">Кафе · салоны · специалисты</div>
-    <p class="sd"><strong>Результат:</strong> одна страница + WhatsApp. 7–10 дней.</p>
-    <div class="tags"><span>Адаптив</span><span>Цены</span><span>WhatsApp</span></div></div>
-    <div class="sp"><strong>от 15 000 ₽</strong><a href="https://wa.me/79696656414?text=Визитка" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
-  </div></article>
-  <article class="svc glass tilt reveal"><div class="tilt-inner" style="display:contents">
-    <div class="sn">02</div>
-    <div><h3>Лендинг</h3><div class="sm">Одно действие</div>
-    <p class="sd"><strong>Результат:</strong> страница вокруг цели. 8–12 дней.</p>
-    <div class="tags"><span>Hero</span><span>УТП</span><span>Форма</span></div></div>
-    <div class="sp"><strong>от 25 000 ₽</strong><a href="https://wa.me/79696656414?text=Лендинг" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
-  </div></article>
-  <article class="svc glass tilt reveal"><div class="tilt-inner" style="display:contents">
-    <div class="sn">03</div>
-    <div><h3>Сайт для бизнеса</h3><div class="sm">Несколько страниц</div>
-    <p class="sd"><strong>Результат:</strong> структура + галерея. 10–14 дней.</p>
-    <div class="tags"><span>Страницы</span><span>Галерея</span><span>SEO</span></div></div>
-    <div class="sp"><strong>от 30 000 ₽</strong><a href="https://wa.me/79696656414?text=Сайт для бизнеса" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
-  </div></article>
-  <article class="svc glass tilt reveal"><div class="tilt-inner" style="display:contents">
-    <div class="sn">04</div>
-    <div><h3>Редизайн</h3><div class="sm">Сайт устарел</div>
-    <p class="sd"><strong>Результат:</strong> новый визуал + mobile. 7–12 дней.</p>
-    <div class="tags"><span>Дизайн</span><span>Mobile</span></div></div>
-    <div class="sp"><strong>от 20 000 ₽</strong><a href="https://wa.me/79696656414?text=Редизайн" class="btn btn-g" target="_blank" rel="noopener">Обсудить</a></div>
-  </div></article>
-</section>
-
-<section id="pricing">
-  <div class="kicker reveal">Цены</div>
-  <h2 class="st reveal">Прозрачно. До старта.</h2>
-  <div class="prg">
-    <div class="pr glass tilt reveal"><div class="tilt-inner" style="display:contents">
-      <div class="pn">Start</div><div class="pa">от 15 000 <span>₽</span></div>
-      <div class="pf">Простая визитка</div>
-      <ul class="pl"><li>Одна страница</li><li>Услуги, цены</li><li>Mobile + WhatsApp</li><li>~7–10 дней</li></ul>
-      <a href="https://wa.me/79696656414?text=START" class="btn btn-g" target="_blank" rel="noopener">START</a>
-    </div></div>
-    <div class="pr glass hot tilt reveal"><div class="tilt-inner" style="display:contents">
-      <div class="pb">Чаще берут</div>
-      <div class="pn">Business</div><div class="pa">от 30 000 <span>₽</span></div>
-      <div class="pf">Несколько услуг / лендинг</div>
-      <ul class="pl"><li>Страницы / лендинг</li><li>Структура</li><li>Галерея + формы</li><li>~10–14 дней</li></ul>
-      <a href="https://wa.me/79696656414?text=BUSINESS" class="btn btn-p" target="_blank" rel="noopener">BUSINESS</a>
-    </div></div>
-    <div class="pr glass tilt reveal"><div class="tilt-inner" style="display:contents">
-      <div class="pn">Premium</div><div class="pa">от 50 000 <span>₽</span></div>
-      <div class="pf">Визуал + анимации + 3D</div>
-      <ul class="pl"><li>Индивидуальный стиль</li><li>3D и motion</li><li>Приоритет</li><li>Срок по задаче</li></ul>
-      <a href="https://wa.me/79696656414?text=PREMIUM" class="btn btn-g" target="_blank" rel="noopener">PREMIUM</a>
-    </div></div>
+<section class="wrap" id="faq">
+  <p class="sec-n reveal">12 — FAQ</p>
+  <h2 class="sec-t reveal">Короткие<br>ответы</h2>
+  <div class="faq">
+    <div class="faq-i reveal"><button class="faq-q" type="button">Сколько стоит сайт?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">От 15 000 ₽. Точную сумму называю до старта, после короткого обсуждения.</div></div></div>
+    <div class="faq-i reveal"><button class="faq-q" type="button">Сколько занимает разработка?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">Обычно 7–14 дней. Срок фиксируем заранее.</div></div></div>
+    <div class="faq-i reveal"><button class="faq-q" type="button">Можно только одну страницу?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">Да. Для многих бизнесов одной сильной страницы достаточно.</div></div></div>
+    <div class="faq-i reveal"><button class="faq-q" type="button">Работает на телефоне?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">Да. Mobile-first — обязательная часть.</div></div></div>
+    <div class="faq-i reveal"><button class="faq-q" type="button">Кто покупает домен и хостинг?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">Вы. Это ваша собственность. Подскажу, как купить и настроить.</div></div></div>
+    <div class="faq-i reveal"><button class="faq-q" type="button">Что после запуска?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">Вы получаете рабочую ссылку. Тексты и цены можно менять позже.</div></div></div>
+    <div class="faq-i reveal"><button class="faq-q" type="button">Можно подключить WhatsApp?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">Да. Это стандарт. Telegram тоже.</div></div></div>
+    <div class="faq-i reveal"><button class="faq-q" type="button">Делаете SEO?<svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="faq-a"><div class="faq-a-in">Базовая подготовка входит. Продвижение в топ — отдельная работа.</div></div></div>
   </div>
 </section>
 
-<section id="work">
-  <div class="kicker reveal">Работы</div>
-  <h2 class="st reveal">Реальные проекты.</h2>
-  <div class="wg">
-    <article class="wk glass tilt reveal"><div class="tilt-inner" style="display:contents">
-      <div class="wp"><span>BARBERSHOP</span></div>
-      <div class="wb"><div class="wt">Лендинг</div><h3>ЦЕХЪ</h3><p>Услуги, мастера, запись.</p>
-      <a href="https://rasulovking2577.github.io/BARBERSHOP/" class="wl" target="_blank" rel="noopener">Открыть ↗</a></div>
-    </div></article>
-    <article class="wk glass tilt reveal"><div class="tilt-inner" style="display:contents">
-      <div class="wp"><span>ARAGVI</span></div>
-      <div class="wb"><div class="wt">Лендинг</div><h3>ARAGVI</h3><p>Процесс и доверие.</p>
-      <a href="https://rasulovking2577.github.io/Aragvi/" class="wl" target="_blank" rel="noopener">Открыть ↗</a></div>
-    </div></article>
-    <article class="wk glass tilt reveal"><div class="tilt-inner" style="display:contents">
-      <div class="wp"><span>1САЙТ</span></div>
-      <div class="wb"><div class="wt">Портфолио</div><h3>Пред. версия</h3><p>Сайт студии.</p>
-      <a href="https://rasulovking2577.github.io/website/" class="wl" target="_blank" rel="noopener">Открыть ↗</a></div>
-    </div></article>
-    <article class="wk wn glass tilt reveal"><div class="tilt-inner">
-      <h3>Следующий — ваш</h3>
-      <p style="color:var(--muted);margin:6px 0 14px;font-size:.84rem">Напишите — скажу формат и цену</p>
-      <a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Написать ↗</a>
-    </div></article>
+<section class="final wrap" id="contacts">
+  <h2 class="reveal">Готовы<br>сделать сайт?</h2>
+  <p class="reveal">Расскажите, чем занимается ваш бизнес. Обсудим задачу и предложим вариант.</p>
+  <a href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0." class="btn btn-p reveal" target="_blank" rel="noopener noreferrer" data-ev="whatsapp_click">Заказать сайт ↗</a>
+  <div class="final-links reveal">
+    <a href="https://wa.me/79696656414" target="_blank" rel="noopener noreferrer" data-ev="whatsapp_click">WhatsApp</a>
+    <a href="https://t.me/rasulov1site" target="_blank" rel="noopener noreferrer" data-ev="telegram_click">Telegram</a>
+    <a href="tel:+79696656414" data-ev="phone_click">+7 969 665 64 14</a>
+    <a href="mailto:rasulov2588@gmail.com">Email</a>
   </div>
 </section>
 
-<section>
-  <div class="trust glass reveal">
-    <h3>Не обещаем магию.</h3>
-    <p>Не гарантируем топ в Google. Не обещаем продажи от сайта.</p>
-    <p>Делаем инструмент: услуги, цены, фото и быстрый контакт. Честно.</p>
+<footer class="footer wrap">
+  <div>© 1САЙТ · Сайты для бизнеса</div>
+  <div>
+    <a href="https://wa.me/79696656414" target="_blank" rel="noopener noreferrer">WhatsApp</a> ·
+    <a href="https://t.me/rasulov1site" target="_blank" rel="noopener noreferrer">Telegram</a>
   </div>
-</section>
-
-<section id="process">
-  <div class="kicker reveal">Процесс</div>
-  <h2 class="st reveal">4 шага до ссылки.</h2>
-  <div class="psg">
-    <div class="stp glass tilt reveal"><div class="tilt-inner"><h3>Сообщение</h3><p>Пишете о бизнесе</p><div class="t">~1 день</div></div></div>
-    <div class="stp glass tilt reveal"><div class="tilt-inner"><h3>Структура + цена</h3><p>Формат и сумма</p><div class="t">1–2 дня</div></div></div>
-    <div class="stp glass tilt reveal"><div class="tilt-inner"><h3>Дизайн + код</h3><p>Собираю и проверяю</p><div class="t">5–12 дней</div></div></div>
-    <div class="stp glass tilt reveal"><div class="tilt-inner"><h3>Запуск</h3><p>Готовая ссылка</p><div class="t">готово</div></div></div>
-  </div>
-  <p class="pnote reveal">От вас не нужно разбираться в коде.</p>
-</section>
-
-<section>
-  <div class="kicker reveal">Первый шаг</div>
-  <h2 class="st reveal">После сообщения?</h2>
-  <div class="rl reveal">
-    <div class="ri"><div class="rn">1</div><p>Пишете, чем занимаетесь.</p></div>
-    <div class="ri"><div class="rn">2</div><p>Я задаю 3–5 вопросов.</p></div>
-    <div class="ri"><div class="rn">3</div><p>Предлагаю формат и цену.</p></div>
-    <div class="ri"><div class="rn">4</div><p>Вы решаете. Без давления.</p></div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="kicker reveal">FAQ</div>
-  <h2 class="st reveal">Короткие ответы.</h2>
-  <div class="fl">
-    <div class="fi glass reveal"><button class="fq">Сколько стоит?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">От 15 000 ₽. Точную сумму — до старта.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Сколько времени?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Обычно 7–14 дней.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Одна страница?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Часто хватает.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">На телефоне?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Mobile-first.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Домен?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Покупаете вы. Это ваше.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">Нет фото?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Можно стартовать с того, что есть.</div></div></div>
-    <div class="fi glass reveal"><button class="fq">WhatsApp?<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v10M4 9h10"/></svg></button><div class="fa"><div class="fai">Да. Стандарт.</div></div></div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="final-bg"></div>
-  <h2 class="reveal">Напишите —<br>скажу формат<br>и цену за 1 день.</h2>
-  <p class="reveal">Чем занимаетесь и какой сайт нужен.</p>
-  <span class="magnetic"><a href="https://wa.me/79696656414" class="btn btn-p reveal" target="_blank" rel="noopener">Написать в WhatsApp ↗</a></span>
-  <div class="flinks reveal">
-    <a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a>
-    <a href="tel:+79696656414">+7 969 665 64 14</a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div>© 1САЙТ · Сайты, на которых пишут в WhatsApp</div>
-  <div><a href="https://wa.me/79696656414" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a></div>
 </footer>
 </main>
 
-<div class="sticky"><a href="https://wa.me/79696656414" class="btn btn-p" target="_blank" rel="noopener">Написать в WhatsApp ↗</a></div>
+<div class="sticky">
+  <a href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82." class="btn btn-p" target="_blank" rel="noopener noreferrer">Заказать сайт ↗</a>
+</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-// cursor
-const cur=document.getElementById('cursor'),dot=document.getElementById('cursorDot');
-let cx=0,cy=0,dx=0,dy=0;
-if(window.matchMedia('(pointer:fine)').matches){
-  document.addEventListener('mousemove',e=>{dx=e.clientX;dy=e.clientY});
-  (function loop(){cx+=(dx-cx)*.18;cy+=(dy-cy)*.18;cur.style.left=cx+'px';cur.style.top=cy+'px';dot.style.left=dx+'px';dot.style.top=dy+'px';requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button,.quiz-opt,.canvas-wrap').forEach(el=>{
-    el.addEventListener('mouseenter',()=>cur.classList.add('hover'));
-    el.addEventListener('mouseleave',()=>cur.classList.remove('hover'));
+(function(){
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+
+  const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+  burger.addEventListener('click',()=>{const o=mnav.classList.toggle('open');document.body.style.overflow=o?'hidden':''});
+  mnav.querySelectorAll('[data-c]').forEach(a=>a.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
+
+  document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{
+    const i=b.closest('.faq-i'),o=i.classList.contains('open');
+    document.querySelectorAll('.faq-i.open').forEach(x=>x.classList.remove('open'));
+    if(!o)i.classList.add('open');
+  }));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -24px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Calculator
+  const calcState={type:15000,anim:0,extra:0};
+  function calcUpdate(){
+    const s=calcState.type+calcState.anim+calcState.extra;
+    document.getElementById('calcSum').textContent='от '+s.toLocaleString('ru-RU')+' ₽';
+    const msg='Здравствуйте! Хочу обсудить сайт. Ориентировочный бюджет: от '+s.toLocaleString('ru-RU')+' ₽.';
+    document.getElementById('calcWa').href='https://wa.me/79696656414?text='+encodeURIComponent(msg);
+  }
+  document.querySelectorAll('.calc-opts').forEach(group=>{
+    group.querySelectorAll('.calc-opt').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        group.querySelectorAll('.calc-opt').forEach(b=>b.classList.remove('on'));
+        btn.classList.add('on');
+        calcState[group.dataset.key]=+btn.dataset.v;
+        calcUpdate();
+      });
+    });
   });
-}
+  calcUpdate();
 
-// magnetic
-document.querySelectorAll('.magnetic').forEach(wrap=>{
-  wrap.addEventListener('pointermove',e=>{
-    const r=wrap.getBoundingClientRect();
-    const x=(e.clientX-r.left-r.width/2)*.25;
-    const y=(e.clientY-r.top-r.height/2)*.25;
-    wrap.style.transform=`translate(${x}px,${y}px)`;
-  });
-  wrap.addEventListener('pointerleave',()=>{wrap.style.transform=''});
-});
-
-// glass shine
-document.querySelectorAll('.glass').forEach(el=>{
-  if(!el.querySelector('.shine')){const s=document.createElement('div');s.className='shine';el.prepend(s)}
-  el.addEventListener('pointermove',e=>{
-    const r=el.getBoundingClientRect();
-    el.style.setProperty('--mx',(e.clientX-r.left)+'px');
-    el.style.setProperty('--my',(e.clientY-r.top)+'px');
-  });
-});
-
-// tilt
-document.querySelectorAll('.tilt').forEach(el=>{
-  el.addEventListener('pointermove',e=>{
-    const r=el.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5;
-    const y=(e.clientY-r.top)/r.height-.5;
-    el.style.transform=`perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`;
-  });
-  el.addEventListener('pointerleave',()=>{el.style.transform=''});
-});
-
-// laptop parallax
-const laptop=document.getElementById('laptop');
-const laptopStage=document.getElementById('laptopStage');
-if(laptop&&laptopStage){
-  laptopStage.addEventListener('pointermove',e=>{
-    const r=laptopStage.getBoundingClientRect();
-    const x=((e.clientX-r.left)/r.width-.5)*10;
-    const y=((e.clientY-r.top)/r.height-.5)*6;
-    laptop.style.transform=`perspective(1200px) rotateX(${6-y}deg) rotateY(${-6+x}deg)`;
-  });
-  laptopStage.addEventListener('pointerleave',()=>{laptop.style.transform='perspective(1200px) rotateX(6deg) rotateY(-6deg)'});
-}
-
-// menu faq reveal
-const burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu');
-burger.addEventListener('click',()=>{const o=mmenu.classList.toggle('open');document.body.style.overflow=o?'hidden':''});
-mmenu.querySelectorAll('[data-c]').forEach(a=>a.addEventListener('click',()=>{mmenu.classList.remove('open');document.body.style.overflow=''}));
-document.querySelectorAll('.fq').forEach(b=>b.addEventListener('click',()=>{const i=b.closest('.fi'),o=i.classList.contains('open');document.querySelectorAll('.fi.open').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// QUIZ
-const answers={};
-let step=1;
-document.querySelectorAll('.quiz-opt').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const st=btn.closest('.quiz-step');
-    st.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));
-    btn.classList.add('selected');
-    answers[st.dataset.step]=btn.dataset.v;
-    setTimeout(()=>{
+  // Quiz
+  const ans={};let step=1;
+  document.querySelectorAll('.quiz-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const st=btn.closest('.quiz-step');
+      ans[st.dataset.s]=btn.dataset.v;
       st.classList.remove('active');
       step++;
       if(step<=3){
-        document.querySelector(`.quiz-step[data-step="${step}"]`).classList.add('active');
-        document.getElementById('qp'+step).classList.add('on');
+        document.querySelector('.quiz-step[data-s="'+step+'"]').classList.add('active');
+        document.getElementById('qb'+step).classList.add('on');
       } else {
-        document.querySelector('.quiz-step[data-step="4"]').classList.add('active');
-        const a=answers;
-        let title='Рекомендация: Start', text='Визитка — понятная страница с услугами и WhatsApp. Ориентир от 15 000 ₽.', msg='Хочу визитку (START)';
-        if(a[1]==='old'||a[2]==='full'||a[3]==='30'){title='Рекомендация: Business';text='Сильный лендинг или сайт на несколько страниц. Ориентир от 30 000 ₽.';msg='Интересует BUSINESS'}
-        if(a[3]==='50'||(a[2]==='full'&&a[3]==='30')){title='Рекомендация: Premium / Business';text='Индивидуальный визуал, анимации. Обсудим задачу и бюджет.';msg='Хочу обсудить Premium / сложный проект'}
-        if(a[1]==='old'&&a[2]!=='full'){title='Рекомендация: Редизайн';text='Обновим визуал и mobile. Ориентир от 20 000 ₽.';msg='Нужен редизайн'}
-        document.getElementById('quizTitle').textContent=title;
-        document.getElementById('quizText').textContent=text;
-        document.getElementById('quizLink').href='https://wa.me/79696656414?text='+encodeURIComponent(msg);
+        document.querySelector('.quiz-step[data-s="4"]').classList.add('active');
+        let title='Рекомендация: Start', text='Визитка — одна страница с услугами и WhatsApp. Ориентир от 15 000 ₽.', msg='Хочу визитку (START)';
+        if(ans[1]==='old'){title='Рекомендация: Редизайн';text='Обновим визуал и mobile. Ориентир от 20 000 ₽.';msg='Нужен редизайн'}
+        if(ans[2]==='full'||ans[3]==='30'){title='Рекомендация: Business';text='Лендинг или сайт на несколько страниц. Ориентир от 30 000 ₽.';msg='Интересует BUSINESS'}
+        if(ans[3]==='50'){title='Рекомендация: Premium / Business';text='Индивидуальный визуал. Обсудим задачу и бюджет.';msg='Хочу обсудить Premium'}
+        document.getElementById('qzTitle').textContent=title;
+        document.getElementById('qzText').textContent=text;
+        document.getElementById('qzLink').href='https://wa.me/79696656414?text='+encodeURIComponent(msg);
       }
-    },280);
+    });
   });
-});
 
-// 3D
-(function(){
-  if(!window.THREE)return;
-  const canvas=document.getElementById('c3d'),box=document.getElementById('stage');
-  if(!canvas||!box)return;
-  const ren=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
-  ren.setPixelRatio(Math.min(devicePixelRatio,2));
-  const scene=new THREE.Scene();
-  const cam=new THREE.PerspectiveCamera(36,1,.1,100);
-  cam.position.set(0,0,5);
-  const g=new THREE.Group();scene.add(g);
-  const mat=new THREE.MeshPhysicalMaterial({color:0xc8ff52,roughness:.12,metalness:.4,emissive:0x1a3a10,emissiveIntensity:.7,transparent:true,opacity:.9,clearcoat:1,clearcoatRoughness:.08});
-  const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1.35,3),mat);
-  g.add(mesh);
-  g.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.5,2),new THREE.MeshBasicMaterial({color:0xe2c56e,wireframe:true,transparent:true,opacity:.2})));
-  const r1=new THREE.Mesh(new THREE.TorusGeometry(1.85,.014,10,80),new THREE.MeshBasicMaterial({color:0xc8ff52,transparent:true,opacity:.5}));
-  r1.rotation.x=Math.PI/2.2;g.add(r1);
-  const r2=new THREE.Mesh(new THREE.TorusGeometry(2.2,.009,10,80),new THREE.MeshBasicMaterial({color:0xe2c56e,transparent:true,opacity:.22}));
-  r2.rotation.x=Math.PI/2.6;r2.rotation.y=.4;g.add(r2);
-  const parts=new THREE.Group();scene.add(parts);
-  for(let i=0;i<80;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.01+Math.random()*.012,5,5),new THREE.MeshBasicMaterial({color:i%3?0x9ae02e:0xe2c56e,transparent:true,opacity:.65}));p.position.set((Math.random()-.5)*6,(Math.random()-.5)*5,(Math.random()-.5)*3.5);parts.add(p)}
-  const pl=new THREE.PointLight(0xc8ff52,6,14);pl.position.set(2,2.2,3.5);scene.add(pl);
-  scene.add(new THREE.AmbientLight(0x3a5a40,1.3));
-  const rim=new THREE.PointLight(0xe2c56e,2,10);rim.position.set(-2,-1,2);scene.add(rim);
-  let mx=0,my=0,tx=0,ty=0,t=0,burst=0;
-  function resize(){const r=box.getBoundingClientRect();ren.setSize(r.width,r.height,false);cam.aspect=r.width/r.height;cam.updateProjectionMatrix()}
-  resize();addEventListener('resize',resize);
-  box.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*2;ty=((e.clientY-r.top)/r.height-.5)*1.4});
-  box.addEventListener('pointerleave',()=>{tx=0;ty=0});
-  box.addEventListener('click',()=>{burst=1;mat.emissiveIntensity=2;pl.intensity=12});
-  function tick(){
-    requestAnimationFrame(tick);t+=.01;
-    mx+=(tx-mx)*.07;my+=(ty-my)*.07;
-    if(burst>0){burst*=.92;if(burst<.02)burst=0;mat.emissiveIntensity=.55+burst*1.5;pl.intensity=5+burst*8}
-    else{mat.emissiveIntensity=.55+Math.sin(t*2.2)*.25;pl.intensity=5+Math.sin(t*1.5)*.8}
-    mesh.scale.setScalar(1+Math.sin(t*1.3)*.05+burst*.15);
-    g.rotation.y+=.006+burst*.02;g.rotation.x+=(-my*.5-g.rotation.x)*.05;g.rotation.z+=(-mx*.2-g.rotation.z)*.05;
-    r1.rotation.z+=.012;r2.rotation.z-=.015;parts.rotation.y+=.0018;
-    ren.render(scene,cam);
+  // 3D — one object, reduced motion aware
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && window.THREE){
+    const canvas=document.getElementById('c3d'),box=document.getElementById('stage');
+    if(canvas&&box){
+      const ren=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+      ren.setPixelRatio(Math.min(devicePixelRatio,2));
+      const scene=new THREE.Scene();
+      const cam=new THREE.PerspectiveCamera(38,1,.1,100);
+      cam.position.z=4.8;
+      const g=new THREE.Group();scene.add(g);
+      const mesh=new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1.2,1),
+        new THREE.MeshStandardMaterial({color:0xb8f03c,roughness:.35,metalness:.45,emissive:0x1a2e0a,emissiveIntensity:.4})
+      );
+      g.add(mesh);
+      const wire=new THREE.Mesh(new THREE.IcosahedronGeometry(1.35,1),new THREE.MeshBasicMaterial({color:0x5a625a,wireframe:true,transparent:true,opacity:.25}));
+      g.add(wire);
+      scene.add(new THREE.AmbientLight(0x404840,1.2));
+      const pl=new THREE.PointLight(0xb8f03c,3,12);pl.position.set(2,2,3);scene.add(pl);
+      let mx=0,my=0,tx=0,ty=0;
+      function resize(){const r=box.getBoundingClientRect();ren.setSize(r.width,r.height,false);cam.aspect=r.width/r.height;cam.updateProjectionMatrix()}
+      resize();addEventListener('resize',resize);
+      box.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*1.4;ty=((e.clientY-r.top)/r.height-.5)*1});
+      box.addEventListener('pointerleave',()=>{tx=0;ty=0});
+      (function tick(){
+        requestAnimationFrame(tick);
+        mx+=(tx-mx)*.06;my+=(ty-my)*.06;
+        g.rotation.y+=.004;g.rotation.x+=(-my*.35-g.rotation.x)*.04;g.rotation.z+=(-mx*.12-g.rotation.z)*.04;
+        ren.render(scene,cam);
+      })();
+    }
   }
-  tick();
 })();
 </script>
 </body>
