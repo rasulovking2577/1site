@@ -48,32 +48,59 @@
   border-radius:22px;
   position:relative;
 }
-.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:#020403}
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:#010302}
+/* moss base — layered organic greens */
 .orbs::before{
-  content:"";position:absolute;inset:-20%;
+  content:"";position:absolute;inset:-30%;
   background:
-    radial-gradient(ellipse 55% 40% at 15% 85%,rgba(45,90,35,.9),transparent 55%),
-    radial-gradient(ellipse 50% 35% at 90% 75%,rgba(30,70,40,.85),transparent 50%),
-    radial-gradient(ellipse 45% 30% at 50% 100%,rgba(20,50,25,.95),transparent 45%),
-    radial-gradient(ellipse 40% 28% at 8% 40%,rgba(60,110,45,.5),transparent 50%),
-    radial-gradient(ellipse 35% 25% at 92% 25%,rgba(80,140,50,.35),transparent 50%),
-    radial-gradient(ellipse 70% 50% at 50% 0%,rgba(8,16,10,.3),transparent 60%);
-  filter:blur(2px);
+    radial-gradient(ellipse 50% 42% at 12% 92%,rgba(35,75,30,.95),transparent 52%),
+    radial-gradient(ellipse 48% 38% at 88% 88%,rgba(25,60,35,.9),transparent 50%),
+    radial-gradient(ellipse 55% 35% at 50% 105%,rgba(15,40,20,1),transparent 48%),
+    radial-gradient(ellipse 40% 30% at 5% 55%,rgba(50,95,40,.55),transparent 50%),
+    radial-gradient(ellipse 35% 28% at 95% 40%,rgba(70,120,50,.4),transparent 48%),
+    radial-gradient(ellipse 30% 22% at 30% 75%,rgba(90,150,55,.25),transparent 45%),
+    radial-gradient(ellipse 28% 20% at 70% 70%,rgba(110,170,60,.2),transparent 45%),
+    radial-gradient(ellipse 80% 50% at 50% -5%,rgba(4,10,6,.5),transparent 55%);
+  transform:translate3d(0,var(--par-y,0),0);
+  will-change:transform;
 }
+/* vignette + soft light */
 .orbs::after{
   content:"";position:absolute;inset:0;
   background:
-    radial-gradient(circle at 20% 70%,rgba(120,200,60,.15),transparent 25%),
-    radial-gradient(circle at 80% 80%,rgba(90,160,50,.12),transparent 30%),
-    radial-gradient(circle at 50% 90%,rgba(150,220,80,.08),transparent 35%);
-  animation:bgPulse 12s ease-in-out infinite;
+    radial-gradient(ellipse 90% 70% at 50% 30%,transparent 20%,rgba(0,0,0,.55) 100%),
+    radial-gradient(circle at 25% 65%,rgba(140,210,70,.12),transparent 28%),
+    radial-gradient(circle at 78% 78%,rgba(100,170,55,.1),transparent 32%),
+    radial-gradient(circle at 50% 95%,rgba(160,220,80,.08),transparent 40%);
+  animation:bgPulse 14s ease-in-out infinite;
 }
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;animation:floatOrb 18s ease-in-out infinite}
-.orb-1{width:560px;height:560px;background:radial-gradient(circle,rgba(100,180,50,.55),transparent 65%);top:-18%;left:-12%}
-.orb-2{width:480px;height:480px;background:radial-gradient(circle,rgba(40,100,55,.6),transparent 65%);bottom:-10%;right:-15%;animation-delay:-7s}
-.orb-3{width:360px;height:360px;background:radial-gradient(circle,rgba(198,255,77,.28),transparent 65%);top:35%;left:40%;animation-delay:-12s;opacity:.4}
-@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.08)}}
-@keyframes bgPulse{0%,100%{opacity:.7}50%{opacity:1}}
+.orb{position:absolute;border-radius:50%;filter:blur(72px);opacity:.55;animation:floatOrb 20s ease-in-out infinite;will-change:transform}
+.orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(110,190,55,.5),transparent 68%);top:-20%;left:-14%}
+.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(35,95,50,.55),transparent 68%);bottom:-14%;right:-16%;animation-delay:-8s}
+.orb-3{width:380px;height:380px;background:radial-gradient(circle,rgba(198,255,77,.25),transparent 68%);top:32%;left:38%;animation-delay:-13s;opacity:.35}
+/* floating dust particles */
+.dust{position:absolute;inset:0;overflow:hidden}
+.dust i{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(198,255,77,.55);box-shadow:0 0 6px rgba(198,255,77,.4);animation:dustFloat linear infinite;opacity:0}
+.dust i:nth-child(1){left:12%;bottom:0;animation-duration:14s;animation-delay:0s}
+.dust i:nth-child(2){left:28%;bottom:0;animation-duration:18s;animation-delay:2s;width:3px;height:3px}
+.dust i:nth-child(3){left:45%;bottom:0;animation-duration:16s;animation-delay:4s}
+.dust i:nth-child(4){left:62%;bottom:0;animation-duration:20s;animation-delay:1s}
+.dust i:nth-child(5){left:78%;bottom:0;animation-duration:15s;animation-delay:3s;width:3px;height:3px}
+.dust i:nth-child(6){left:88%;bottom:0;animation-duration:17s;animation-delay:5s}
+.dust i:nth-child(7){left:8%;bottom:0;animation-duration:19s;animation-delay:6s}
+.dust i:nth-child(8){left:55%;bottom:0;animation-duration:13s;animation-delay:2.5s}
+@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(28px,-36px) scale(1.07)}}
+@keyframes bgPulse{0%,100%{opacity:.75}50%{opacity:1}}
+@keyframes dustFloat{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.7}90%{opacity:.4}100%{transform:translateY(-100vh) translateX(20px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.orb,.dust i,.orbs::after{animation:none!important}}
+/* section ambient tints */
+section{position:relative}
+section::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0;transition:opacity .6s}
+section > *{position:relative;z-index:1}
+#problem::before{background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(40,80,30,.2),transparent 70%);opacity:1}
+#pricing::before{background:radial-gradient(ellipse 60% 45% at 70% 40%,rgba(198,255,77,.06),transparent 65%);opacity:1}
+#work::before{background:radial-gradient(ellipse 55% 40% at 30% 60%,rgba(50,100,40,.15),transparent 65%);opacity:1}
+.final::before{background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(198,255,77,.08),transparent 65%);opacity:1}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -316,7 +343,10 @@ section{padding:88px 0;position:relative}
 </style>
 </head>
 <body>
-<div class="orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+<div class="orbs" aria-hidden="true" id="orbs">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  <div class="dust"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
 <header class="nav" id="nav">
   <div class="nav-in">
     <a href="#" class="logo">1<span>САЙТ</span></a>
@@ -788,6 +818,19 @@ section{padding:88px 0;position:relative}
       }
     });
   });
+
+
+  // parallax background
+  const orbsEl=document.getElementById('orbs');
+  if(orbsEl && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    let py=0,ty=0;
+    addEventListener('scroll',()=>{ty=scrollY*.12},{passive:true});
+    (function pLoop(){
+      py+=(ty-py)*.06;
+      orbsEl.style.setProperty('--par-y',py+'px');
+      requestAnimationFrame(pLoop);
+    })();
+  }
 
   // 3D — one object, reduced motion aware
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
