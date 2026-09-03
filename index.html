@@ -3,416 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>1САЙТ — сайты для бизнеса | Расул</title>
-<meta name="description" content="1САЙТ — Расул. Сайты для кафе, салонов, барбершопов и магазинов. От 15 000 ₽. WhatsApp. Махачкала.">
-<meta name="theme-color" content="#E8F4E8">
+<title>1САЙТ — Расул</title>
+<meta name="description" content="Сайты для бизнеса. Расул, Махачкала. WhatsApp.">
+<meta name="theme-color" content="#7EC8E3">
 <link rel="canonical" href="https://rasulovking2577.github.io/1site/">
-<meta property="og:title" content="1САЙТ — сайты для бизнеса">
-<meta property="og:description" content="Понятный сайт с WhatsApp. От 15 000 ₽.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"1САЙТ","url":"https://rasulovking2577.github.io/1site/","telephone":"+79696656414","email":"rasulov2588@gmail.com","areaServed":["Махачкала","Дагестан","Россия"],"priceRange":"от 15000 RUB"}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --sky:#E3F2FD;
-  --sun:#F5C542;
-  --sun2:#FFD76A;
-  --grass:#3D8B5F;
-  --grass2:#2F6B4A;
-  --earth:#5C4033;
-  --stone:#6B7B8A;
-  --cream:#FBF8F1;
-  --leaf:#A8D5A2;
-  --text:#1E2A1E;
-  --muted:#4A5C4A;
-  --card:rgba(255,255,255,.82);
+  --text:#1a2e1a;
+  --muted:#3d5c3d;
+  --green:#2d6a4f;
+  --sun:#ffd54a;
   --serif:"Fraunces",Georgia,serif;
   --sans:Manrope,system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:var(--sans);color:var(--text);line-height:1.55;
-  background:var(--cream);
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
-  padding-bottom:90px;
-}
+body{font-family:var(--sans);color:var(--text);overflow-x:hidden;min-height:100dvh}
 a{color:inherit;text-decoration:none}
-.wrap{width:min(1000px,calc(100% - 32px));margin:0 auto}
+button{font:inherit;border:none;cursor:pointer;background:none}
 
-/* nature background */
-.sky{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    linear-gradient(180deg,#87CEEB 0%,#E3F2FD 28%,#F5F0E0 55%,#E8F0E0 75%,#D4E8C8 100%);
+/* ===== LIVING SCENE ===== */
+.scene{
+  position:fixed;inset:0;z-index:0;overflow:hidden;
+  background:linear-gradient(180deg,
+    #5BA3D9 0%,
+    #87CEEB 18%,
+    #B8DFF0 32%,
+    #E8F4C8 48%,
+    #C8E6A0 62%,
+    #8FBC6B 78%,
+    #5A9B4A 100%);
 }
 .sun{
-  position:fixed;top:6%;right:8%;width:90px;height:90px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,#FFF3C4 0%,var(--sun) 45%,#E8A820 100%);
-  box-shadow:0 0 60px 20px rgba(245,197,66,.45),0 0 120px 40px rgba(245,197,66,.2);
-  z-index:0;pointer-events:none;
-  animation:sunPulse 8s ease-in-out infinite;
+  position:absolute;top:7%;right:10%;
+  width:min(18vw,100px);height:min(18vw,100px);border-radius:50%;
+  background:radial-gradient(circle at 40% 40%,#fff8d0,#ffd54a 50%,#f0a020);
+  box-shadow:0 0 40px 15px rgba(255,213,74,.5),0 0 100px 40px rgba(255,200,50,.25);
+  animation:breathe 10s ease-in-out infinite;
 }
-@keyframes sunPulse{
-  0%,100%{transform:scale(1);box-shadow:0 0 60px 20px rgba(245,197,66,.45),0 0 120px 40px rgba(245,197,66,.2)}
-  50%{transform:scale(1.06);box-shadow:0 0 80px 28px rgba(245,197,66,.55),0 0 140px 50px rgba(245,197,66,.28)}
-}
-.mountains{
-  position:fixed;bottom:0;left:0;right:0;height:42vh;z-index:0;pointer-events:none;
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+/* mountains */
+.mtn{
+  position:absolute;bottom:28%;left:0;right:0;height:35%;
   background:
-    linear-gradient(165deg,transparent 40%,rgba(107,123,138,.35) 40%,rgba(90,105,120,.5) 70%,transparent 70%) 0 100%/55% 100% no-repeat,
-    linear-gradient(195deg,transparent 35%,rgba(80,100,90,.4) 35%,rgba(60,80,70,.55) 65%,transparent 65%) 100% 100%/60% 100% no-repeat,
-    linear-gradient(180deg,transparent 50%,rgba(61,139,95,.25) 80%,rgba(47,107,74,.4) 100%);
-}
-.grass-line{
-  position:fixed;bottom:0;left:0;right:0;height:28px;z-index:1;pointer-events:none;
-  background:repeating-linear-gradient(90deg,
-    var(--grass2) 0 3px, var(--grass) 3px 7px, #4A9B68 7px 10px, var(--grass2) 10px 14px);
+    linear-gradient(160deg,transparent 45%,#6a8a9a 45.2%,#5a7a88 70%,#4a6a78 100%) left bottom/50% 100% no-repeat,
+    linear-gradient(200deg,transparent 40%,#7a9a8a 40.2%,#5a8068 100%) right bottom/55% 90% no-repeat,
+    linear-gradient(175deg,transparent 50%,#8aaa9a 50%,#6a8a7a 100%) center bottom/40% 70% no-repeat;
   opacity:.85;
-  clip-path:polygon(0 40%,2% 10%,4% 50%,6% 0%,8% 45%,10% 5%,12% 55%,14% 15%,16% 40%,18% 0,20% 50%,22% 20%,24% 60%,26% 10%,28% 45%,30% 5%,32% 55%,34% 15%,36% 40%,38% 0,40% 50%,42% 25%,44% 55%,46% 10%,48% 40%,50% 0,52% 50%,54% 20%,56% 45%,58% 5%,60% 55%,62% 15%,64% 40%,66% 0,68% 50%,70% 25%,72% 55%,74% 10%,76% 40%,78% 0,80% 50%,82% 20%,84% 45%,86% 5%,88% 55%,90% 15%,92% 40%,94% 0,96% 50%,98% 25%,100% 40%,100% 100%,0 100%);
 }
+
+/* forest silhouettes */
+.trees{
+  position:absolute;bottom:22%;left:0;right:0;height:28%;
+  background:
+    radial-gradient(ellipse 20px 50px at 8% 100%,#1e4d2b 0 70%,transparent 71%),
+    radial-gradient(ellipse 28px 70px at 14% 100%,#245c32 0 70%,transparent 71%),
+    radial-gradient(ellipse 18px 45px at 22% 100%,#1a4528 0 70%,transparent 71%),
+    radial-gradient(ellipse 32px 80px at 78% 100%,#1e4d2b 0 70%,transparent 71%),
+    radial-gradient(ellipse 24px 60px at 88% 100%,#245c32 0 70%,transparent 71%),
+    radial-gradient(ellipse 16px 40px at 95% 100%,#1a4528 0 70%,transparent 71%);
+}
+
+/* grass field */
+.field{
+  position:absolute;bottom:0;left:0;right:0;height:24%;
+  background:linear-gradient(180deg,#7cb86a 0%,#5a9b4a 40%,#4a8a3a 100%);
+}
+.blades{
+  position:absolute;bottom:0;left:0;right:0;height:40px;
+  background:repeating-linear-gradient(90deg,
+    transparent 0 4px,#3d7a32 4px 6px,transparent 6px 11px,#2d6a28 11px 13px,transparent 13px 18px);
+  opacity:.7;
+  animation:sway 4s ease-in-out infinite;
+  transform-origin:bottom;
+}
+@keyframes sway{0%,100%{transform:skewX(-2deg)}50%{transform:skewX(2deg)}}
+
+/* water */
+.water{
+  position:absolute;bottom:18%;left:5%;right:25%;height:8%;
+  border-radius:50% 40% 0 0;
+  background:linear-gradient(180deg,rgba(100,180,220,.55),rgba(70,150,190,.4));
+  box-shadow:inset 0 4px 12px rgba(255,255,255,.3);
+  overflow:hidden;
+}
+.wave{
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,
+    transparent 0 20px,rgba(255,255,255,.25) 20px 22px,transparent 22px 45px);
+  animation:wave 6s linear infinite;
+}
+@keyframes wave{from{transform:translateX(0)}to{transform:translateX(45px)}}
+
+/* birds */
+.bird{
+  position:absolute;width:12px;height:6px;
+  border-radius:50%;
+  background:transparent;
+  box-shadow:-4px 0 0 #1a2e1a,4px 0 0 #1a2e1a;
+  animation:fly 18s linear infinite;
+  opacity:.7;
+}
+.bird::before,.bird::after{
+  content:"";position:absolute;top:0;width:8px;height:3px;
+  background:#1a2e1a;border-radius:50% 50% 0 0;
+}
+.bird::before{left:-8px;transform:rotate(-25deg);transform-origin:right}
+.bird::after{right:-8px;transform:rotate(25deg);transform-origin:left;animation:flap 0.4s ease-in-out infinite alternate}
+@keyframes flap{to{transform:rotate(-15deg)}}
+@keyframes fly{
+  0%{left:-5%;top:18%;transform:scale(.7)}
+  100%{left:110%;top:12%;transform:scale(.7)}
+}
+.bird2{animation-delay:6s;top:22%;animation-duration:22s}
+.bird3{animation-delay:12s;animation-duration:16s}
+
+/* leaves */
 .leaf{
-  position:fixed;width:14px;height:14px;z-index:2;pointer-events:none;
-  background:var(--grass);border-radius:0 80% 0 80%;
-  opacity:.55;animation:fall linear infinite;
+  position:absolute;width:10px;height:10px;border-radius:0 70% 0 70%;
+  background:#3d8b4f;opacity:.6;
+  animation:fall linear infinite;
 }
-.leaf:nth-child(1){left:10%;top:-20px;animation-duration:14s;animation-delay:0s;background:#5BAE6E}
-.leaf:nth-child(2){left:25%;top:-20px;animation-duration:18s;animation-delay:3s;background:#3D8B5F;width:10px;height:10px}
-.leaf:nth-child(3){left:45%;top:-20px;animation-duration:16s;animation-delay:6s;background:#A8D5A2}
-.leaf:nth-child(4){left:65%;top:-20px;animation-duration:20s;animation-delay:2s;background:#2F6B4A;width:12px;height:12px}
-.leaf:nth-child(5){left:80%;top:-20px;animation-duration:15s;animation-delay:8s;background:#7BC47E}
-.leaf:nth-child(6){left:90%;top:-20px;animation-duration:17s;animation-delay:4s;background:#4A9B68;width:11px;height:11px}
+.leaf:nth-child(1){left:12%;animation-duration:13s}
+.leaf:nth-child(2){left:30%;animation-duration:17s;animation-delay:2s;background:#6ab07a}
+.leaf:nth-child(3){left:55%;animation-duration:15s;animation-delay:5s;background:#2d6a4f;width:8px;height:8px}
+.leaf:nth-child(4){left:72%;animation-duration:19s;animation-delay:1s}
+.leaf:nth-child(5){left:88%;animation-duration:14s;animation-delay:7s;background:#8bc98a}
 @keyframes fall{
-  0%{transform:translateY(0) rotate(0deg) translateX(0);opacity:0}
-  10%{opacity:.55}
-  100%{transform:translateY(105vh) rotate(360deg) translateX(40px);opacity:0}
+  0%{top:-5%;transform:rotate(0) translateX(0);opacity:0}
+  8%{opacity:.6}
+  100%{top:90%;transform:rotate(320deg) translateX(30px);opacity:0}
 }
+
 @media(prefers-reduced-motion:reduce){
-  .sun,.leaf{animation:none!important}
-  .leaf{display:none}
+  .sun,.blades,.wave,.bird,.bird::after,.leaf{animation:none!important}
+  .leaf,.bird{display:none}
 }
 
-/* content above nature */
-.hd,.main,footer,.sticky{position:relative;z-index:5}
+/* ===== UI ===== */
+.ui{position:relative;z-index:10;min-height:100dvh;display:flex;flex-direction:column}
+.top{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 20px;max-width:720px;margin:0 auto;width:100%;
+}
+.logo{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:#1a2e1a}
+.logo b{color:var(--green)}
+.sound{
+  font-size:.78rem;font-weight:600;padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,.55);backdrop-filter:blur(8px);
+  border:1px solid rgba(30,46,30,.12);color:var(--text);
+}
+.sound.on{background:rgba(45,106,79,.9);color:#fff}
 
-.hd{
-  position:sticky;top:0;z-index:30;
-  background:rgba(251,248,241,.88);backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(30,42,30,.08);
+.center{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:24px 20px 100px;
+  max-width:520px;margin:0 auto;width:100%;
 }
-.hd-in{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
-.logo{font-family:var(--serif);font-size:1.4rem;font-weight:600}
-.logo span{color:var(--grass2)}
-.nav{display:none;gap:20px;font-size:.9rem;color:var(--muted);font-weight:500}
-@media(min-width:720px){.nav{display:flex}}
-.hd-cta{
-  font-size:.8rem;font-weight:700;padding:10px 16px;border-radius:999px;
-  background:var(--grass2);color:#fff;
+.center h1{
+  font-family:var(--serif);font-weight:500;font-size:clamp(2rem,7vw,2.9rem);
+  line-height:1.15;margin-bottom:12px;letter-spacing:-.02em;
+  text-shadow:0 1px 0 rgba(255,255,255,.4);
 }
-
-.hero{padding:52px 0 36px;text-align:center}
-.badge{
-  display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.05em;
-  text-transform:uppercase;color:var(--grass2);background:rgba(61,139,95,.12);
-  padding:6px 12px;border-radius:999px;margin-bottom:14px;
+.center h1 em{font-style:italic;color:var(--green)}
+.center .sub{
+  font-size:1rem;color:var(--muted);margin-bottom:28px;
+  max-width:28ch;line-height:1.45;
 }
-.hero h1{
-  font-family:var(--serif);font-weight:400;
-  font-size:clamp(2.3rem,6.5vw,3.5rem);line-height:1.1;
-  letter-spacing:-.03em;margin-bottom:14px;
-}
-.hero h1 em{font-style:italic;color:var(--grass2)}
-.hero p{color:var(--muted);max-width:36ch;margin:0 auto 24px;font-size:1.05rem}
-.acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
-  min-height:50px;padding:0 22px;font-weight:700;font-size:.92rem;border-radius:999px;
+  min-height:52px;padding:0 28px;border-radius:999px;
+  font-weight:700;font-size:.95rem;
+  background:var(--green);color:#fff;
+  box-shadow:0 8px 28px rgba(45,106,79,.35);
 }
-.btn-m{background:var(--grass2);color:#fff;box-shadow:0 8px 24px rgba(47,107,74,.28)}
-.btn-g{background:rgba(255,255,255,.9);border:1px solid rgba(30,42,30,.12)}
-.stats{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:18px 28px;
-  margin-top:32px;padding-top:24px;border-top:1px solid rgba(30,42,30,.1);
+.btn:active{transform:scale(.98)}
+.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.chip{
+  font-size:.8rem;font-weight:600;padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,.5);backdrop-filter:blur(6px);
+  border:1px solid rgba(30,46,30,.1);
 }
-.stat strong{display:block;font-family:var(--serif);font-size:1.45rem}
-.stat span{font-size:.8rem;color:var(--muted)}
 
-.sec{padding:44px 0}
-.sec h2{
-  font-family:var(--serif);font-size:clamp(1.55rem,4vw,2.15rem);
-  font-weight:400;text-align:center;margin-bottom:8px;
+/* bottom sheet - short */
+.sheet{
+  position:relative;z-index:10;
+  background:rgba(251,248,241,.92);backdrop-filter:blur(14px);
+  border-radius:24px 24px 0 0;
+  border-top:1px solid rgba(30,46,30,.08);
+  padding:28px 20px 100px;
+  margin-top:auto;
 }
-.sec .lead{text-align:center;color:var(--muted);margin-bottom:26px;max-width:40ch;margin-left:auto;margin-right:auto}
-
-.card{
-  background:var(--card);backdrop-filter:blur(8px);
-  border:1px solid rgba(30,42,30,.1);border-radius:18px;padding:22px;
-  box-shadow:0 6px 24px rgba(30,42,30,.06);
+.sheet-in{max-width:520px;margin:0 auto}
+.sheet h2{
+  font-family:var(--serif);font-size:1.35rem;font-weight:500;
+  margin-bottom:16px;text-align:center;
 }
-.grid3{display:grid;gap:14px}
-@media(min-width:700px){.grid3{grid-template-columns:repeat(3,1fr)}}
-.card .num{font-family:var(--serif);font-size:1.7rem;color:var(--grass2);margin-bottom:4px}
-.card h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px}
-.card p{color:var(--muted);font-size:.93rem}
-
-.work-grid{display:grid;gap:14px}
-@media(min-width:640px){.work-grid{grid-template-columns:1fr 1fr}}
-.work{
-  display:block;background:var(--card);backdrop-filter:blur(8px);
-  border:1px solid rgba(30,42,30,.1);border-radius:18px;overflow:hidden;
-  box-shadow:0 6px 24px rgba(30,42,30,.06);
-  transition:transform .25s ease,box-shadow .25s;
+.row{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;
 }
-.work:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(30,42,30,.1)}
-.work-ph{
-  aspect-ratio:16/10;
-  background:linear-gradient(145deg,#c8e6c9 0%,#a5d6a7 40%,#81c784 100%);
-  display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;color:var(--grass2);
+.pill{
+  background:rgba(255,255,255,.8);border-radius:14px;padding:14px;
+  border:1px solid rgba(30,46,30,.08);text-align:center;
 }
-.work-body{padding:14px 16px 16px}
-.work-body small{font-size:.7rem;color:var(--grass2);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-.work-body h3{font-size:1.05rem;margin:4px 0 4px}
-.work-body p{font-size:.86rem;color:var(--muted)}
-
-.price-card{
-  background:var(--card);backdrop-filter:blur(8px);
-  border:1px solid rgba(30,42,30,.1);border-radius:18px;padding:22px;
-  display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(30,42,30,.06);
+.pill strong{display:block;font-family:var(--serif);font-size:1.15rem}
+.pill span{font-size:.78rem;color:var(--muted)}
+.works{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.works a{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 14px;border-radius:12px;
+  background:rgba(255,255,255,.75);border:1px solid rgba(30,46,30,.08);
+  font-size:.9rem;font-weight:600;
 }
-.price-card.hit{border-color:var(--grass);box-shadow:0 8px 28px rgba(61,139,95,.18)}
-.price-card .tag{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grass2);margin-bottom:6px}
-.price-card h3{font-family:var(--serif);font-size:1.3rem}
-.price-card .sum{font-size:1.4rem;font-weight:700;margin:8px 0 12px}
-.price-card ul{list-style:none;margin-bottom:16px;flex:1}
-.price-card li{font-size:.88rem;color:var(--muted);padding:4px 0 4px 14px;position:relative}
-.price-card li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--grass)}
-
-.about{
-  display:grid;gap:18px;
-  background:var(--card);backdrop-filter:blur(8px);
-  border:1px solid rgba(30,42,30,.1);border-radius:20px;padding:26px;
-  box-shadow:0 6px 24px rgba(30,42,30,.06);
-}
-@media(min-width:700px){.about{grid-template-columns:1.3fr 1fr}}
-.about h2{text-align:left}
-.about .name{font-family:var(--serif);font-size:1.25rem;margin-bottom:8px}
-.about p{color:var(--muted);margin-bottom:8px}
-
-.faq details{border-bottom:1px solid rgba(30,42,30,.1)}
-.faq summary{
-  list-style:none;cursor:pointer;padding:14px 0;font-weight:600;
-  display:flex;justify-content:space-between;gap:12px;min-height:48px;align-items:center;
-}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--muted)}
-.faq details[open] summary::after{content:"−"}
-.faq p{padding:0 0 14px;color:var(--muted);font-size:.93rem}
-
-.final{
-  text-align:center;padding:36px 22px;border-radius:20px;
-  background:linear-gradient(160deg,rgba(168,213,162,.35),rgba(245,197,66,.15));
-  border:1px solid rgba(61,139,95,.2);
-}
-.final h2{margin-bottom:8px}
-.final p{color:var(--muted);margin-bottom:18px}
-
-footer{
-  padding:24px 0 16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
-  font-size:.85rem;color:var(--muted);
-}
+.works a span{color:var(--muted);font-weight:500;font-size:.8rem}
+.me{text-align:center;font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.me b{color:var(--text)}
 
 .sticky{
-  position:fixed;bottom:0;left:0;right:0;z-index:40;
+  position:fixed;bottom:0;left:0;right:0;z-index:20;
   padding:12px 16px calc(12px + env(safe-area-inset-bottom));
   background:rgba(251,248,241,.95);backdrop-filter:blur(10px);
-  border-top:1px solid rgba(30,42,30,.1);
+  border-top:1px solid rgba(30,46,30,.1);
 }
-.sticky .btn{width:100%}
-@media(min-width:720px){.sticky{display:none}body{padding-bottom:0}}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
-.reveal.on{opacity:1;transform:none}
+.sticky .btn{width:100%;display:flex}
 </style>
 </head>
 <body>
-<div class="sky" aria-hidden="true"></div>
-<div class="sun" aria-hidden="true"></div>
-<div class="mountains" aria-hidden="true"></div>
-<div class="grass-line" aria-hidden="true"></div>
-<span class="leaf" aria-hidden="true"></span>
-<span class="leaf" aria-hidden="true"></span>
-<span class="leaf" aria-hidden="true"></span>
-<span class="leaf" aria-hidden="true"></span>
-<span class="leaf" aria-hidden="true"></span>
-<span class="leaf" aria-hidden="true"></span>
-
-<header class="hd">
-  <div class="wrap hd-in">
-    <a class="logo" href="#">1<span>САЙТ</span></a>
-    <nav class="nav">
-      <a href="#work">Работы</a>
-      <a href="#price">Цены</a>
-      <a href="#faq">Вопросы</a>
-    </nav>
-    <a class="hd-cta" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</header>
-
-<main class="main">
-<section class="hero wrap">
-  <p class="badge reveal">Махачкала · природа · ясность</p>
-  <h1 class="reveal">Сайт растёт<br>вместе с <em>вашим делом</em></h1>
-  <p class="reveal">Для кафе, салонов, барбершопов и магазинов. Понятно, тепло, с кнопкой в WhatsApp.</p>
-  <div class="acts reveal">
-    <a class="btn btn-m" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener">Написать в WhatsApp</a>
-    <a class="btn btn-g" href="#work">Смотреть работы</a>
-  </div>
-  <div class="stats reveal">
-    <div class="stat"><strong>от 15 000 ₽</strong><span>старт</span></div>
-    <div class="stat"><strong>7–14 дней</strong><span>срок</span></div>
-    <div class="stat"><strong>WhatsApp</strong><span>следующий шаг</span></div>
-  </div>
-</section>
-
-<section class="sec wrap">
-  <h2 class="reveal">Зачем сайт</h2>
-  <p class="lead reveal">Клиент уже ищет вас. Если страница непонятная — он уходит.</p>
-  <div class="grid3">
-    <div class="card reveal"><div class="num">01</div><h3>Неясно, чем вы занимаетесь</h3><p>Человек закрыл страницу за несколько секунд.</p></div>
-    <div class="card reveal"><div class="num">02</div><h3>Нет цены и кнопки</h3><p>Без WhatsApp заявка часто не доходит.</p></div>
-    <div class="card reveal"><div class="num">03</div><h3>Плохо с телефона</h3><p>Большинство заходят с телефона.</p></div>
-  </div>
-</section>
-
-<section class="sec wrap" id="work">
-  <h2 class="reveal">Работы</h2>
-  <p class="lead reveal">Реальные проекты — можно открыть</p>
-  <div class="work-grid">
-    <a class="work reveal" href="https://rasulovking2577.github.io/SAKLYA/" target="_blank" rel="noopener">
-      <div class="work-ph">САКЛЯ</div>
-      <div class="work-body"><small>Кафе</small><h3>САКЛЯ</h3><p>Меню и заказ в WhatsApp</p></div>
-    </a>
-    <a class="work reveal" href="https://rasulovking2577.github.io/BARBERSHOP/" target="_blank" rel="noopener">
-      <div class="work-ph">ЦЕХЪ</div>
-      <div class="work-body"><small>Барбершоп</small><h3>ЦЕХЪ</h3><p>Услуги и запись</p></div>
-    </a>
-    <a class="work reveal" href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener">
-      <div class="work-ph">RIHTOVKA</div>
-      <div class="work-body"><small>Кузовной</small><h3>RIHTOVKA.MHK</h3><p>Оценка по фото</p></div>
-    </a>
-    <a class="work reveal" href="https://rasulovking2577.github.io/fatima/" target="_blank" rel="noopener">
-      <div class="work-ph">Fatima</div>
-      <div class="work-body"><small>Одежда</small><h3>Fatima Pakhrudinova</h3><p>Каталог и WhatsApp</p></div>
-    </a>
-    <a class="work reveal" href="https://rasulovking2577.github.io/arabiyan-med/" target="_blank" rel="noopener">
-      <div class="work-ph">Arabiyan-Med</div>
-      <div class="work-body"><small>Магазин</small><h3>Arabiyan-Med</h3><p>Товары и филиалы</p></div>
-    </a>
-    <a class="work reveal" href="https://rasulovking2577.github.io/website/" target="_blank" rel="noopener">
-      <div class="work-ph">Портфолио</div>
-      <div class="work-body"><small>Студия</small><h3>Портфолио</h3><p>Сборка проектов</p></div>
-    </a>
-  </div>
-</section>
-
-<section class="sec wrap" id="price">
-  <h2 class="reveal">Цены</h2>
-  <p class="lead reveal">Фиксируем до начала</p>
-  <div class="grid3">
-    <div class="price-card reveal">
-      <div class="tag">Старт</div>
-      <h3>Визитка</h3>
-      <div class="sum">от 15 000 ₽</div>
-      <ul>
-        <li>Одна страница</li>
-        <li>Услуги и контакты</li>
-        <li>Mobile + WhatsApp</li>
-        <li>~7–10 дней</li>
-      </ul>
-      <a class="btn btn-g" style="width:100%" href="https://wa.me/79696656414?text=%D0%9F%D0%B0%D0%BA%D0%B5%D1%82%20%D0%A1%D1%82%D0%B0%D1%80%D1%82" target="_blank" rel="noopener">Выбрать</a>
-    </div>
-    <div class="price-card hit reveal">
-      <div class="tag">Чаще берут</div>
-      <h3>Бизнес</h3>
-      <div class="sum">от 25 000 ₽</div>
-      <ul>
-        <li>Каталог или услуги</li>
-        <li>Несколько блоков</li>
-        <li>WhatsApp с карточек</li>
-        <li>~10–14 дней</li>
-      </ul>
-      <a class="btn btn-m" style="width:100%" href="https://wa.me/79696656414?text=%D0%9F%D0%B0%D0%BA%D0%B5%D1%82%20%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81" target="_blank" rel="noopener">Выбрать</a>
-    </div>
-    <div class="price-card reveal">
-      <div class="tag">Под задачу</div>
-      <h3>Индивидуально</h3>
-      <div class="sum">от 40 000 ₽</div>
-      <ul>
-        <li>Сложнее структура</li>
-        <li>Больше функций</li>
-        <li>Обсуждаем объём</li>
-        <li>Срок по задаче</li>
-      </ul>
-      <a class="btn btn-g" style="width:100%" href="https://wa.me/79696656414?text=%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE" target="_blank" rel="noopener">Обсудить</a>
-    </div>
-  </div>
-</section>
-
-<section class="sec wrap">
-  <div class="about reveal">
-    <div>
-      <h2>Кто делает</h2>
-      <p class="name">Расул · 1САЙТ</p>
-      <p>Небольшая студия. Прямой контакт — пишете мне, я отвечаю.</p>
-      <p>Сайт должен быть понятным и вести к заявке. Без лишнего.</p>
-      <a class="btn btn-m" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5" target="_blank" rel="noopener" style="margin-top:10px">Написать</a>
-    </div>
-    <div class="card" style="box-shadow:none;background:rgba(232,240,224,.7)">
-      <p style="color:var(--muted);font-size:.9rem;margin-bottom:8px">Связь</p>
-      <p><a href="https://wa.me/79696656414" style="font-weight:700">+7 969 665-64-14</a></p>
-      <p style="margin-top:6px"><a href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a></p>
-      <p style="margin-top:6px;font-size:.9rem;color:var(--muted)">rasulov2588@gmail.com</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec wrap" id="faq">
-  <h2 class="reveal">Вопросы</h2>
-  <div class="card faq reveal" style="max-width:520px;margin:0 auto">
-    <details><summary>Сколько времени?</summary><p>Обычно 7–14 дней — зависит от объёма и материалов.</p></details>
-    <details><summary>Домен и хостинг?</summary><p>Можно начать бесплатно. С доменом помогу, когда будете готовы.</p></details>
-    <details><summary>Правки?</summary><p>Да, после показа есть правки, чтобы попасть в ожидания.</p></details>
-    <details><summary>Оплата?</summary><p>Обычно предоплата, остальное после сдачи. Детали — в переписке.</p></details>
-  </div>
-</section>
-
-<section class="sec wrap">
-  <div class="final reveal">
-    <h2>Готовы обсудить?</h2>
-    <p>Напишите — подскажу, что подойдёт под задачу и бюджет.</p>
-    <a class="btn btn-m" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</section>
-</main>
-
-<footer class="wrap">
-  <span>1САЙТ · Расул</span>
-  <span>Махачкала</span>
-</footer>
-
-<div class="sticky">
-  <a class="btn btn-m" href="https://wa.me/79696656414?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5" target="_blank" rel="noopener">WhatsApp</a>
+<div class="scene" aria-hidden="true">
+  <div class="sun"></div>
+  <div class="mtn"></div>
+  <div class="trees"></div>
+  <div class="water"><div class="wave"></div></div>
+  <div class="field"></div>
+  <div class="blades"></div>
+  <div class="bird"></div>
+  <div class="bird bird2"></div>
+  <div class="bird bird3"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
 </div>
 
+<div class="ui">
+  <div class="top">
+    <a class="logo" href="#">1<b>САЙТ</b></a>
+    <button type="button" class="sound" id="soundBtn" aria-pressed="false">Звук</button>
+  </div>
+
+  <div class="center">
+    <h1>Сайт,<br>который <em>понятен</em></h1>
+    <p class="sub">Делаю для кафе, салонов и магазинов. Клиент сразу пишет в WhatsApp.</p>
+    <a class="btn" href="https://wa.me/79696656414?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82" target="_blank" rel="noopener">Написать</a>
+    <div class="links">
+      <a class="chip" href="#more">Работы и цены</a>
+      <a class="chip" href="https://t.me/rasulov1site" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div>
+
+  <section class="sheet" id="more">
+    <div class="sheet-in">
+      <h2>Коротко</h2>
+      <div class="row">
+        <div class="pill"><strong>от 15 000 ₽</strong><span>визитка</span></div>
+        <div class="pill"><strong>7–14 дней</strong><span>срок</span></div>
+      </div>
+
+      <div class="works">
+        <a href="https://rasulovking2577.github.io/SAKLYA/" target="_blank" rel="noopener">САКЛЯ <span>кафе</span></a>
+        <a href="https://rasulovking2577.github.io/BARBERSHOP/" target="_blank" rel="noopener">ЦЕХЪ <span>барбершоп</span></a>
+        <a href="https://rasulovking2577.github.io/Aragvi/" target="_blank" rel="noopener">RIHTOVKA <span>кузовной</span></a>
+        <a href="https://rasulovking2577.github.io/fatima/" target="_blank" rel="noopener">Fatima <span>одежда</span></a>
+        <a href="https://rasulovking2577.github.io/arabiyan-med/" target="_blank" rel="noopener">Arabiyan-Med <span>магазин</span></a>
+      </div>
+
+      <p class="me">Расул · <b>+7 969 665-64-14</b></p>
+      <p class="me" style="margin-bottom:0">Махачкала</p>
+    </div>
+  </section>
+</div>
+
+<div class="sticky">
+  <a class="btn" href="https://wa.me/79696656414?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<audio id="amb" loop preload="none">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_c8c8a73467.mp3?filename=birds-singing-in-the-forest-ambient-nature-sounds-11353.mp3" type="audio/mpeg">
+</audio>
 <script>
 (function(){
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}});
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var btn=document.getElementById('soundBtn');
+  var audio=document.getElementById('amb');
+  var on=false;
+  btn.addEventListener('click',function(){
+    if(!on){
+      audio.volume=0.35;
+      audio.play().then(function(){
+        on=true;btn.classList.add('on');btn.setAttribute('aria-pressed','true');btn.textContent='Звук вкл';
+      }).catch(function(){btn.textContent='Звук недоступен'});
+    }else{
+      audio.pause();on=false;btn.classList.remove('on');btn.setAttribute('aria-pressed','false');btn.textContent='Звук';
+    }
+  });
 })();
 </script>
 </body>
